@@ -3,113 +3,726 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>বাংলা পঞ্জিকা ১৪৩২-১৪৩৭ | স্বয়ংক্রিয় হালনাগাদ</title>
-    <meta name="description" content="নির্ভুল বাংলা পঞ্জিকা - প্রতিদিন স্বয়ংক্রিয় হালনাগাদ হয়">
+    <title>বাংলা পঞ্জিকা ১৪৩২-১৪৩৭ | আধুনিক পঞ্জিকা</title>
+    <meta name="description" content="নির্ভুল বাংলা পঞ্জিকা - আধুনিক ডিজাইন • স্বয়ংক্রিয় হালনাগাদ">
     
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700;800&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        /* [Previous CSS remains exactly the same] */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --primary: #8B4513; --primary-dark: #5C2E0B; --primary-light: #D2B48C; --secondary: #DAA520; --accent: #2E8B57; --bg-main: #FFF8DC; --bg-card: #FFFFFF; --bg-alt: #FDF5E6; --text-primary: #2C1810; --text-secondary: #5C4033; --border-color: #DEB887; --success: #228B22; --danger: #B22222; --warning: #FF8C00; --info: #4169E1; --shadow-sm: 0 2px 8px rgba(0,0,0,0.06); --shadow-md: 0 4px 16px rgba(0,0,0,0.1); --shadow-lg: 0 8px 24px rgba(0,0,0,0.12); }
-        body { font-family: 'Hind Siliguri', 'Noto Serif Bengali', sans-serif; background: var(--bg-main); color: var(--text-primary); line-height: 1.6; min-height: 100vh; }
-        
+
+        :root {
+            --primary: #6C5CE7;
+            --primary-dark: #5B4BC4;
+            --primary-light: #A29BFE;
+            --secondary: #00CEC9;
+            --secondary-dark: #00B4B0;
+            --accent: #FD79A8;
+            --accent-light: #FFEAA7;
+            --success: #00B894;
+            --warning: #FDCB6E;
+            --danger: #FF7675;
+            --info: #74B9FF;
+            --bg-primary: #F8F9FF;
+            --bg-secondary: #FFFFFF;
+            --bg-gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --bg-gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --bg-gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --text-primary: #2D3436;
+            --text-secondary: #636E72;
+            --text-light: #B2BEC3;
+            --border-light: #DFE6E9;
+            --shadow-sm: 0 2px 8px rgba(108, 92, 231, 0.08);
+            --shadow-md: 0 8px 24px rgba(108, 92, 231, 0.12);
+            --shadow-lg: 0 16px 48px rgba(108, 92, 231, 0.16);
+            --shadow-glow: 0 0 40px rgba(108, 92, 231, 0.2);
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.5);
+        }
+
+        body {
+            font-family: 'Hind Siliguri', 'Noto Serif Bengali', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: -1;
+        }
+
         /* Auto-update Banner */
-        .auto-update-banner { background: linear-gradient(90deg, var(--success), var(--accent)); color: white; text-align: center; padding: 6px 20px; font-size: 0.9rem; font-weight: 500; display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; }
-        .update-status { display: flex; align-items: center; gap: 8px; }
-        .pulse-dot { width: 10px; height: 10px; background: #fff; border-radius: 50%; animation: pulse 1.5s infinite; }
-        @keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.2); } 100% { opacity: 1; transform: scale(1); } }
-        
-        .top-header { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: white; padding: 10px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; box-shadow: var(--shadow-md); }
-        .date-display { display: flex; gap: 16px; font-size: 1.1rem; }
-        .live-time { background: rgba(255,255,255,0.15); padding: 8px 20px; border-radius: 40px; font-family: monospace; font-size: 1.3rem; font-weight: 600; backdrop-filter: blur(5px); }
-        .last-update-badge { background: rgba(255,215,0,0.2); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; }
-        
-        .container { max-width: 1400px; margin: 0 auto; padding: 20px 24px; }
-        .era-section { background: linear-gradient(135deg, #FFF8DC 0%, #FFEFD5 100%); border: 2px solid var(--primary-light); border-radius: 20px; padding: 20px 28px; margin: 20px 0; box-shadow: var(--shadow-md); }
-        .era-main { font-size: 1.8rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--secondary); }
-        .era-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px 24px; }
-        .era-item { display: flex; align-items: baseline; }
-        .era-label { font-weight: 600; color: var(--primary-dark); min-width: 130px; font-size: 0.95rem; }
-        .era-value { font-weight: 500; color: var(--text-primary); }
-        
-        .hero { text-align: center; margin: 24px 0 32px; }
-        .hero h1 { font-size: 3.2rem; font-weight: 800; color: var(--primary-dark); text-shadow: 2px 2px 0 rgba(218,165,32,0.15); letter-spacing: 1px; }
-        .hero-year { font-size: 2.2rem; font-weight: 700; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 12px 0; }
-        
-        .refresh-notice { background: var(--info); color: white; padding: 12px 20px; border-radius: 12px; margin: 15px 0; display: none; align-items: center; gap: 12px; }
-        .refresh-notice.show { display: flex; }
-        .refresh-btn { background: white; color: var(--primary); border: none; padding: 8px 20px; border-radius: 30px; font-weight: 600; cursor: pointer; margin-left: auto; }
-        
-        .year-selector { display: flex; justify-content: center; gap: 12px; margin: 24px 0; flex-wrap: wrap; }
-        .year-btn { background: white; border: 2px solid var(--primary-light); color: var(--primary-dark); padding: 12px 28px; border-radius: 40px; font-size: 1.2rem; font-weight: 600; cursor: pointer; transition: all 0.3s; box-shadow: var(--shadow-sm); }
-        .year-btn:hover { background: var(--primary-light); border-color: var(--primary); }
-        .year-btn.active { background: var(--primary); color: white; border-color: var(--primary); box-shadow: var(--shadow-md); }
-        
-        .tabs-container { background: white; border-radius: 50px; padding: 8px; margin: 28px 0; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); }
-        .tabs { display: flex; flex-wrap: wrap; gap: 4px; }
-        .tab { flex: 1; min-width: 100px; padding: 14px 16px; border: none; background: transparent; font-family: inherit; font-size: 1rem; font-weight: 600; color: var(--text-secondary); border-radius: 40px; cursor: pointer; transition: all 0.2s; text-align: center; }
-        .tab i { margin-right: 8px; }
-        .tab:hover { background: var(--bg-alt); }
-        .tab.active { background: var(--primary); color: white; }
-        .tab-pane { display: none; }
-        .tab-pane.active { display: block; }
-        
-        .month-navigator { display: flex; align-items: center; justify-content: space-between; background: white; padding: 16px 28px; border-radius: 50px; margin-bottom: 24px; box-shadow: var(--shadow-md); }
-        .month-title { font-size: 1.8rem; font-weight: 700; color: var(--primary-dark); }
-        .nav-arrow { background: var(--primary); color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.3rem; border: none; transition: all 0.2s; }
-        .nav-arrow:hover { background: var(--primary-dark); transform: scale(1.05); }
-        
-        .calendar { background: white; border-radius: 24px; padding: 24px; box-shadow: var(--shadow-md); }
-        .weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; margin-bottom: 16px; }
-        .weekday { text-align: center; font-weight: 700; padding: 12px 8px; background: var(--bg-alt); border-radius: 12px; color: var(--primary-dark); font-size: 1.1rem; }
-        .days-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
-        .day-cell { background: var(--bg-alt); border-radius: 16px; padding: 14px 6px; text-align: center; cursor: pointer; transition: all 0.2s; border: 1px solid transparent; }
-        .day-cell:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--primary-light); }
-        .day-cell.today { background: linear-gradient(145deg, #FFD700, #FFA500); border: 2px solid var(--primary); animation: todayPulse 2s infinite; }
-        @keyframes todayPulse { 0% { box-shadow: 0 0 5px #FFD700; } 50% { box-shadow: 0 0 20px #FFA500; } 100% { box-shadow: 0 0 5px #FFD700; } }
-        .day-cell .bangla-day { font-size: 1.8rem; font-weight: 700; color: var(--primary-dark); line-height: 1.2; }
-        .day-cell .tithi-short { font-size: 0.75rem; background: rgba(0,0,0,0.05); padding: 3px 6px; border-radius: 20px; margin-top: 5px; }
-        .day-cell .eng-date-small { font-size: 0.7rem; color: var(--text-secondary); margin-top: 3px; }
-        
-        .section-card { background: white; border-radius: 24px; padding: 28px; margin: 24px 0; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); }
-        .section-title { font-size: 1.6rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 24px; padding-bottom: 12px; border-bottom: 3px solid var(--secondary); display: flex; align-items: center; gap: 12px; }
-        .panchanga-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-        .info-card { background: var(--bg-alt); border-radius: 18px; padding: 22px; border-left: 5px solid var(--primary); }
-        .info-title { font-size: 1.2rem; font-weight: 600; color: var(--primary); margin-bottom: 16px; }
-        .info-row { display: flex; padding: 8px 0; border-bottom: 1px dashed var(--border-color); }
-        .info-label { font-weight: 600; min-width: 130px; color: var(--text-secondary); }
-        .info-value { font-weight: 500; color: var(--text-primary); }
-        
-        .eclipse-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; }
-        .eclipse-card { background: var(--bg-alt); border-radius: 20px; padding: 24px; }
-        .eclipse-card.solar { border-top: 5px solid #FF4500; }
-        .eclipse-card.lunar { border-top: 5px solid #4169E1; }
-        .eclipse-header { display: flex; align-items: center; gap: 12px; font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; }
-        .eclipse-header i { font-size: 2rem; }
-        .solar .eclipse-header i { color: #FF4500; }
-        .lunar .eclipse-header i { color: #4169E1; }
-        .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
-        .badge-success { background: #e8f5e9; color: #2e7d32; }
-        .badge-warning { background: #fff3e0; color: #ef6c00; }
-        .badge-danger { background: #ffebee; color: #c62828; }
-        
-        .festival-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
-        .festival-item { background: var(--bg-alt); padding: 18px 20px; border-radius: 16px; display: flex; align-items: center; gap: 16px; transition: all 0.2s; }
-        .festival-item:hover { background: white; box-shadow: var(--shadow-md); }
-        .festival-date { background: var(--primary); color: white; padding: 10px 14px; border-radius: 12px; text-align: center; min-width: 75px; font-weight: 600; }
-        .festival-info strong { color: var(--primary-dark); }
-        
-        .footer { text-align: center; margin-top: 48px; padding: 32px; background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: white; border-radius: 30px 30px 0 0; }
-        
+        .auto-update-banner {
+            background: var(--bg-gradient-3);
+            color: white;
+            text-align: center;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .update-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+            box-shadow: 0 0 20px rgba(255,255,255,0.5);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.3); }
+        }
+
+        /* Header */
+        .top-header {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: var(--text-primary);
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .date-display {
+            display: flex;
+            gap: 20px;
+            font-size: 1.1rem;
+        }
+
+        .date-display span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        .live-time {
+            background: var(--bg-gradient-1);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.4rem;
+            font-weight: 700;
+            box-shadow: var(--shadow-glow);
+            letter-spacing: 2px;
+        }
+
+        .last-update-badge {
+            background: var(--accent-light);
+            color: var(--primary-dark);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px 32px;
+        }
+
+        /* Era Section */
+        .era-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 28px 32px;
+            margin: 24px 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .era-main {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--bg-gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .era-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px 24px;
+        }
+
+        .era-item {
+            display: flex;
+            align-items: baseline;
+            padding: 8px 0;
+        }
+
+        .era-label {
+            font-weight: 600;
+            color: var(--primary);
+            min-width: 130px;
+            font-size: 0.95rem;
+        }
+
+        .era-value {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin: 32px 0 40px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: var(--shadow-glow);
+            letter-spacing: 1px;
+        }
+
+        .hero-year {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            margin: 16px 0;
+        }
+
+        .hero p {
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Refresh Notice */
+        .refresh-notice {
+            background: var(--bg-gradient-2);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 20px;
+            margin: 20px 0;
+            display: none;
+            align-items: center;
+            gap: 16px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .refresh-notice.show {
+            display: flex;
+        }
+
+        .refresh-btn {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-left: auto;
+            transition: all 0.3s;
+        }
+
+        .refresh-btn:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Year Selector */
+        .year-selector {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin: 28px 0;
+            flex-wrap: wrap;
+        }
+
+        .year-btn {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+            color: var(--text-primary);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .year-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .year-btn.active {
+            background: var(--bg-gradient-1);
+            color: white;
+            border-color: transparent;
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Tabs */
+        .tabs-container {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 60px;
+            padding: 10px;
+            margin: 32px 0;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--glass-border);
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tab {
+            flex: 1;
+            min-width: 110px;
+            padding: 16px 20px;
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .tab i {
+            margin-right: 8px;
+        }
+
+        .tab:hover {
+            background: rgba(108, 92, 231, 0.1);
+            color: var(--primary);
+        }
+
+        .tab.active {
+            background: var(--bg-gradient-1);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Tab Content */
+        .tab-pane {
+            display: none;
+            animation: fadeSlide 0.4s ease;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Month Navigator */
+        .month-navigator {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            padding: 18px 32px;
+            border-radius: 60px;
+            margin-bottom: 28px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--glass-border);
+        }
+
+        .month-title {
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--bg-gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-arrow {
+            background: var(--bg-gradient-3);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.3rem;
+            border: none;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-arrow:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Calendar */
+        .calendar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 28px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--glass-border);
+        }
+
+        .weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .weekday {
+            text-align: center;
+            font-weight: 700;
+            padding: 14px 8px;
+            background: rgba(108, 92, 231, 0.1);
+            border-radius: 16px;
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+        }
+
+        .days-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 12px;
+        }
+
+        .day-cell {
+            background: white;
+            border-radius: 18px;
+            padding: 16px 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .day-cell:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+
+        .day-cell.today {
+            background: var(--bg-gradient-1);
+            border: 2px solid white;
+            box-shadow: var(--shadow-glow);
+            animation: todayGlow 2s infinite;
+        }
+
+        .day-cell.today .bangla-day,
+        .day-cell.today .tithi-short,
+        .day-cell.today .eng-date-small {
+            color: white !important;
+        }
+
+        @keyframes todayGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(108, 92, 231, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(253, 121, 168, 0.6); }
+        }
+
+        .day-cell .bangla-day {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--bg-gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .day-cell .tithi-short {
+            font-size: 0.8rem;
+            background: rgba(108, 92, 231, 0.1);
+            color: var(--primary-dark);
+            padding: 4px 8px;
+            border-radius: 20px;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        .day-cell .eng-date-small {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* Section Card */
+        .section-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 32px;
+            margin: 28px 0;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--glass-border);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--bg-gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 28px;
+            padding-bottom: 16px;
+            border-bottom: 3px solid var(--primary-light);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .panchanga-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+            border: 1px solid var(--border-light);
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .info-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-title i {
+            color: var(--accent);
+        }
+
+        .info-row {
+            display: flex;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border-light);
+        }
+
+        .info-label {
+            font-weight: 600;
+            min-width: 130px;
+            color: var(--text-secondary);
+        }
+
+        .info-value {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* Eclipse Cards */
+        .eclipse-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 28px;
+        }
+
+        .eclipse-card {
+            background: white;
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+        }
+
+        .eclipse-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .eclipse-card.solar {
+            border-top: 5px solid var(--warning);
+        }
+
+        .eclipse-card.lunar {
+            border-top: 5px solid var(--info);
+        }
+
+        .eclipse-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .eclipse-header i {
+            font-size: 2rem;
+        }
+
+        .solar .eclipse-header i {
+            color: var(--warning);
+        }
+
+        .lunar .eclipse-header i {
+            color: var(--info);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .badge-success {
+            background: linear-gradient(135deg, var(--success), #55EFC4);
+            color: white;
+        }
+
+        .badge-warning {
+            background: linear-gradient(135deg, var(--warning), #FAB1A0);
+            color: white;
+        }
+
+        /* Festival List */
+        .festival-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 18px;
+        }
+
+        .festival-item {
+            background: white;
+            padding: 20px 24px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+        }
+
+        .festival-item:hover {
+            transform: translateX(6px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-light);
+        }
+
+        .festival-date {
+            background: var(--bg-gradient-1);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 16px;
+            text-align: center;
+            min-width: 80px;
+            font-weight: 700;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .festival-info strong {
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 56px;
+            padding: 40px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            color: var(--text-primary);
+            border-radius: 40px 40px 0 0;
+            border: 1px solid var(--glass-border);
+            border-bottom: none;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .container { padding: 12px; }
-            .hero h1 { font-size: 2rem; }
+            .container { padding: 16px; }
+            .hero h1 { font-size: 2.2rem; }
             .hero-year { font-size: 1.6rem; }
-            .era-main { font-size: 1.3rem; }
-            .month-title { font-size: 1.3rem; }
-            .day-cell .bangla-day { font-size: 1.3rem; }
+            .era-main { font-size: 1.4rem; }
+            .month-title { font-size: 1.4rem; }
+            .day-cell .bangla-day { font-size: 1.5rem; }
+            .top-header { padding: 12px 16px; }
+            .live-time { font-size: 1.1rem; padding: 8px 16px; }
+            .tab { min-width: 90px; padding: 12px 12px; font-size: 0.9rem; }
+        }
+
+        /* Glassmorphism effect for all cards */
+        .glass-effect {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
         }
     </style>
 </head>
@@ -122,7 +735,7 @@
         <span><i class="fas fa-sync-alt fa-spin"></i> স্বয়ংক্রিয় হালনাগাদ সক্রিয়</span>
     </div>
     <div>
-        <i class="far fa-clock"></i> পরবর্তী দৈনিক হালনাগাদ: <span id="nextUpdateCountdown">--:--:--</span>
+        <i class="far fa-clock"></i> পরবর্তী হালনাগাদ: <span id="nextUpdateCountdown">--:--:--</span>
     </div>
     <div>
         <i class="fas fa-history"></i> সর্বশেষ: <span id="lastUpdateTime">এখনই</span>
@@ -144,8 +757,8 @@
 <div class="container">
     <!-- Refresh Notice -->
     <div class="refresh-notice" id="refreshNotice">
-        <i class="fas fa-sync-alt fa-spin"></i>
-        <span id="refreshMessage">নতুন দিন শনাক্ত হয়েছে! হালনাগাদ করা হচ্ছে...</span>
+        <i class="fas fa-sync-alt fa-spin fa-2x"></i>
+        <span id="refreshMessage" style="font-size: 1.1rem;">নতুন দিন শনাক্ত হয়েছে! হালনাগাদ করা হচ্ছে...</span>
         <button class="refresh-btn" onclick="manualRefresh()"><i class="fas fa-redo-alt"></i> এখনই হালনাগাদ</button>
     </div>
 
@@ -157,12 +770,9 @@
 
     <!-- Hero -->
     <div class="hero">
-        <h1><i class="fas fa-om" style="color: var(--primary);"></i> নির্ভুল বাংলা পঞ্জিকা <i class="fas fa-star" style="color: var(--secondary);"></i></h1>
+        <h1><i class="fas fa-om"></i> বাংলা পঞ্জিকা <i class="fas fa-star"></i></h1>
         <div class="hero-year" id="heroYear">১৪৩২ - ১৪৩৭ বঙ্গাব্দ</div>
-        <p style="color: var(--text-secondary); margin-top: 8px;">
-            <i class="fas fa-check-circle" style="color: var(--success);"></i> 
-            প্রতিদিন রাত ১২টায় স্বয়ংক্রিয় হালনাগাদ • প্রতি মুহূর্তে লাইভ সময়
-        </p>
+        <p><i class="fas fa-check-circle" style="color: var(--success);"></i> আধুনিক ডিজাইন • স্বয়ংক্রিয় হালনাগাদ • নির্ভুল গণনা</p>
     </div>
 
     <!-- Year Selector -->
@@ -182,7 +792,7 @@
         </div>
     </div>
 
-    <!-- Tab Panes (same as before) -->
+    <!-- Tab Panes -->
     <div class="tab-pane active" id="calendar-pane">
         <div class="month-navigator">
             <button class="nav-arrow" id="prevMonth"><i class="fas fa-chevron-left"></i></button>
@@ -208,14 +818,24 @@
     <div class="tab-pane" id="festivals-pane"><div class="section-card"><div class="section-title"><i class="fas fa-gift"></i> বার্ষিক উৎসব তালিকা</div><div id="festivalsContent"></div></div></div>
 </div>
 
+<!-- Footer -->
 <div class="footer">
-    <p style="font-size: 1.2rem; font-weight: 600;"><i class="fas fa-sync-alt fa-spin"></i> স্বয়ংক্রিয় দৈনিক হালনাগাদ সক্রিয়</p>
-    <p style="margin-top: 16px;"><i class="fas fa-moon"></i> প্রতিদিন রাত ১২:০০ টায় স্বয়ংক্রিয়ভাবে হালনাগাদ হয় <i class="fas fa-sun"></i></p>
-    <p style="margin-top: 16px;">© ২০২৬ নির্ভুল বাংলা পঞ্জিকা • A Dipto Design Project</p>
+    <p style="font-size: 1.4rem; font-weight: 700; background: var(--bg-gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+        <i class="fas fa-sync-alt fa-spin"></i> স্বয়ংক্রিয় দৈনিক হালনাগাদ সক্রিয়
+    </p>
+    <p style="margin-top: 20px; color: var(--text-secondary);">
+        <i class="fas fa-moon"></i> প্রতিদিন রাত ১২:০০ টায় স্বয়ংক্রিয়ভাবে হালনাগাদ হয় <i class="fas fa-sun"></i>
+    </p>
+    <p style="margin-top: 24px; font-size: 0.95rem; color: var(--text-light);">
+        © ২০২৬ আধুনিক বাংলা পঞ্জিকা • A Dipto Design Studio Project.
+    </p>
 </div>
 
 <script>
-(function(){
+    // Complete JavaScript (same as previous version with all functionality)
+    // Including all calculations, auto-update, rendering functions
+    // [Full JavaScript code from previous version - exactly the same]
+    (function(){
     "use strict";
     
     // ==================== CONSTANTS ====================
@@ -334,22 +954,15 @@
     function checkForNewDay() {
         const now = new Date();
         const currentDateStr = now.toDateString();
-        
         if (currentDateStr !== lastDateStr) {
-            // New day detected!
             lastDateStr = currentDateStr;
             today = now;
             lastUpdateTimestamp = now;
-            
-            // Show notification
             const notice = document.getElementById('refreshNotice');
             const msg = document.getElementById('refreshMessage');
             notice.classList.add('show');
             msg.innerHTML = `🎉 নতুন দিন শনাক্ত হয়েছে! ${now.toLocaleDateString('bn-BD')} • সমস্ত তথ্য হালনাগাদ করা হয়েছে`;
-            
             setTimeout(() => notice.classList.remove('show'), 5000);
-            
-            // Refresh all data
             refreshAllData();
             return true;
         }
@@ -361,7 +974,6 @@
         const bd = getBanglaDate(today);
         currentYear = bd.year;
         currentMonth = bd.month;
-        
         updateClock();
         renderEra();
         renderYearSelector();
@@ -373,7 +985,6 @@
         refreshAllData();
         lastUpdateTimestamp = new Date();
         updateLastUpdateDisplay();
-        
         const notice = document.getElementById('refreshNotice');
         const msg = document.getElementById('refreshMessage');
         notice.classList.add('show');
@@ -391,12 +1002,10 @@
         const midnight = new Date(now);
         midnight.setDate(midnight.getDate() + 1);
         midnight.setHours(0, 0, 0, 0);
-        
         const diff = midnight - now;
         const hours = Math.floor(diff / (1000 * 60 * 60));
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-        
         document.getElementById('nextUpdateCountdown').textContent = 
             `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     }
@@ -431,7 +1040,6 @@
             `<button class="year-btn ${y === currentYear ? 'active' : ''}" data-year="${y}">${y} বঙ্গাব্দ</button>`
         ).join('');
         document.getElementById('heroYear').textContent = `${currentYear} - ${currentYear+4} বঙ্গাব্দ`;
-        
         document.querySelectorAll('.year-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 currentYear = parseInt(btn.dataset.year);
@@ -444,20 +1052,16 @@
     function renderCalendar() {
         document.getElementById('weekdays').innerHTML = BANGLA_WEEKDAYS.map(d => `<div class="weekday">${d}</div>`).join('');
         document.getElementById('monthTitle').textContent = `${BANGLA_MONTHS[currentMonth]} ${currentYear}`;
-        
         const firstDay = gregorianFromBangla(currentYear, currentMonth, 1);
         const startOffset = firstDay.getDay();
         const monthLen = [31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30][currentMonth];
-        
         let html = '';
         for (let i = 0; i < startOffset; i++) html += '<div class="day-cell" style="opacity:0.3;"></div>';
-        
         for (let d = 1; d <= monthLen; d++) {
             const date = gregorianFromBangla(currentYear, currentMonth, d);
             const astro = calculateAstro(date);
             const isToday = date.toDateString() === today.toDateString();
             const festival = FESTIVALS[currentYear]?.[`${currentMonth}-${d}`];
-            
             html += `<div class="day-cell ${isToday ? 'today' : ''}" data-date="${date.toISOString()}" data-day="${d}">
                 <div class="bangla-day">${d}</div>
                 <div class="tithi-short">${astro.tithi}</div>
@@ -466,7 +1070,6 @@
             </div>`;
         }
         document.getElementById('daysGrid').innerHTML = html;
-        
         document.querySelectorAll('.day-cell[data-date]').forEach(cell => {
             cell.addEventListener('click', () => {
                 const date = new Date(cell.dataset.date);
@@ -474,7 +1077,6 @@
                 renderSelectedDay(date, parseInt(cell.dataset.day));
             });
         });
-        
         const todayBD = getBanglaDate(today);
         if (todayBD.year === currentYear && todayBD.month === currentMonth) {
             renderSelectedDay(today, todayBD.day);
@@ -487,7 +1089,6 @@
         const bd = getBanglaDate(date);
         const astro = calculateAstro(date);
         const festival = FESTIVALS[bd.year]?.[`${bd.month}-${bd.day}`] || "—";
-        
         document.getElementById('selectedDayDetails').innerHTML = `
             <div class="panchanga-grid">
                 <div class="info-card"><div class="info-title"><i class="fas fa-calendar"></i> তারিখ</div>
@@ -540,7 +1141,6 @@
         const astro = calculateAstro(today);
         const rahuHours = [7, 8, 9, 10, 11, 12, 13];
         const rahu = `${rahuHours[today.getDay()]}:৩০ - ${rahuHours[today.getDay()]+1}:৩০`;
-        
         document.getElementById('muhurtaContent').innerHTML = `
             <div class="eclipse-grid">
                 <div class="eclipse-card solar"><div class="eclipse-header"><i class="fas fa-sun"></i> শুভ সময়</div>
@@ -561,7 +1161,6 @@
         const astro = calculateAstro(today);
         const chandraShuddhi = !["অশ্লেষা", "জ্যেষ্ঠা", "মূলা", "আর্দ্রা"].includes(astro.nakshatra);
         const taraShuddhi = ["জন্মা", "সম্পৎ", "ক্ষেম", "মিত্র", "অতি মিত্র"].includes(astro.tara);
-        
         document.getElementById('shuddhiContent').innerHTML = `
             <div class="panchanga-grid">
                 <div class="info-card"><div class="info-title"><i class="fas fa-moon"></i> চন্দ্র শুদ্ধি</div>
@@ -579,7 +1178,6 @@
     function renderEclipse() {
         const upcomingSolar = ECLIPSES.solar.filter(e => new Date(e.date) >= today).slice(0, 3);
         const upcomingLunar = ECLIPSES.lunar.filter(e => new Date(e.date) >= today).slice(0, 3);
-        
         document.getElementById('eclipseContent').innerHTML = `
             <div class="eclipse-grid">
                 <div class="eclipse-card solar"><div class="eclipse-header"><i class="fas fa-sun"></i> সূর্য গ্রহণ</div>
@@ -608,7 +1206,6 @@
         const astro = calculateAstro(today);
         const yatraOk = astro.isAuspicious;
         const dirs = ["উত্তর", "পূর্ব", "দক্ষিণ", "পশ্চিম"];
-        
         document.getElementById('yatraContent').innerHTML = `
             <div class="panchanga-grid">
                 <div class="info-card"><div class="info-title"><i class="fas fa-road"></i> যাত্রা</div>
@@ -650,7 +1247,6 @@
             document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
             tab.classList.add('active');
             document.getElementById(`${tab.dataset.tab}-pane`).classList.add('active');
-            
             const tId = tab.dataset.tab;
             if (tId === 'panchanga') renderPanchanga();
             else if (tId === 'muhurta') renderMuhurta();
@@ -662,7 +1258,6 @@
         });
     });
     
-    // Make manualRefresh globally available
     window.manualRefresh = manualRefresh;
     
     // ==================== INITIALIZATION ====================
@@ -672,27 +1267,16 @@
         const bd = getBanglaDate(today);
         currentYear = bd.year;
         currentMonth = bd.month;
-        
         updateClock();
         renderEra();
         renderYearSelector();
         renderCalendar();
         renderPanchanga();
         updateLastUpdateDisplay();
-        
-        // Live clock update every second
         setInterval(updateClock, 1000);
-        
-        // Countdown update every second
         setInterval(updateNextUpdateCountdown, 1000);
-        
-        // Check for new day every minute
         setInterval(checkForNewDay, 60000);
-        
-        // Update last update display every minute
         setInterval(updateLastUpdateDisplay, 60000);
-        
-        // Initial countdown
         updateNextUpdateCountdown();
     }
     
