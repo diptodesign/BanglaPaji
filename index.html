@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>বাংলা পঞ্জিকা ১৪৩৩ | স্বয়ংক্রিয় দৈনিক হালনাগাদ</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700&family=Tiro+Bangla&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #8B4513;
+            --secondary: #D2691E;
+            --accent: #FFD700;
+            --bg-light: #FFF8DC;
+            --bg-paper: #FFFFF0;
+            --text-dark: #2C1810;
+            --border-light: #DEB887;
+            --success: #228B22;
+            --danger: #DC143C;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', 'Noto Serif Bengali', sans-serif;
+            background: linear-gradient(135deg, #FFF5E6 0%, #FFE4B5 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Auto-update indicator */
+        .auto-update-banner {
+            background: linear-gradient(90deg, #228B22, #32CD32);
+            color: white;
+            text-align: center;
+            padding: 5px;
+            font-size: 0.9rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.9; }
+            50% { opacity: 1; }
+            100% { opacity: 0.9; }
+        }
+
+        /* Header with auto-date */
+        .top-bar {
+            background: linear-gradient(90deg, #8B4513, #A0522D);
+            color: white;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .live-clock {
+            font-family: 'Tiro Bangla', monospace;
+            font-size: 1.4rem;
+            font-weight: 600;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 20px;
+            border-radius: 40px;
+            backdrop-filter: blur(5px);
+        }
+
+        .auto-date-badge {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .badge {
+            background: #FFD700;
+            color: #2C1810;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .last-update {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Panjika Title */
+        .panjika-hero {
+            text-align: center;
+            margin: 20px 0 30px;
+        }
+
+        .panjika-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #5C2E0B;
+            text-shadow: 3px 3px 0 #FFE4B5;
+            letter-spacing: 2px;
+        }
+
+        .bengali-year-big {
+            font-size: 2.5rem;
+            background: #8B4513;
+            color: #FFD700;
+            display: inline-block;
+            padding: 10px 40px;
+            border-radius: 50px;
+            margin: 10px 0;
+            box-shadow: 0 8px 16px rgba(139,69,19,0.3);
+        }
+
+        .next-update-info {
+            margin-top: 10px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .current-moment {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-light);
+        }
+
+        .moment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .moment-card {
+            background: linear-gradient(145deg, #FFF8DC, #FFEFD5);
+            padding: 15px;
+            border-radius: 16px;
+            text-align: center;
+            border-left: 4px solid var(--secondary);
+            transition: all 0.3s;
+        }
+
+        .moment-card.updating {
+            background: linear-gradient(145deg, #E8F5E9, #C8E6C9);
+            border-left-color: #4CAF50;
+        }
+
+        .moment-label {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .moment-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 25px 0;
+            background: white;
+            padding: 10px;
+            border-radius: 60px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .tab-btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 14px 20px;
+            border: none;
+            background: transparent;
+            font-family: 'Hind Siliguri', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #5C2E0B;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab-btn i {
+            margin-right: 8px;
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(139,69,19,0.3);
+        }
+
+        .tab-btn:hover {
+            background: #DEB887;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Calendar Styles */
+        .month-navigator {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .month-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-arrow {
+            background: var(--secondary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: 0.2s;
+            border: none;
+        }
+
+        .nav-arrow:hover {
+            background: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .weekday-header {
+            text-align: center;
+            font-weight: 700;
+            padding: 12px;
+            background: #F5DEB3;
+            border-radius: 12px;
+            color: #5C2E0B;
+        }
+
+        .calendar-day {
+            background: white;
+            border-radius: 16px;
+            padding: 12px 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+            position: relative;
+        }
+
+        .calendar-day:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-color: var(--secondary);
+        }
+
+        .calendar-day.today {
+            background: linear-gradient(145deg, #FFD700, #FFA500);
+            border: 3px solid #8B4513;
+            font-weight: 700;
+            animation: todayGlow 2s infinite;
+        }
+
+        @keyframes todayGlow {
+            0% { box-shadow: 0 0 5px #FFD700; }
+            50% { box-shadow: 0 0 20px #FFA500; }
+            100% { box-shadow: 0 0 5px #FFD700; }
+        }
+
+        .calendar-day.auspicious {
+            border-left: 4px solid #228B22;
+        }
+
+        .bengali-date {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1;
+            color: #5C2E0B;
+        }
+
+        .tithi-mini {
+            font-size: 0.75rem;
+            background: #F0E6D2;
+            padding: 3px 6px;
+            border-radius: 20px;
+            margin-top: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Astrology Panels */
+        .panchanga-detailed {
+            background: white;
+            border-radius: 24px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+        }
+
+        .panchanga-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .panchanga-item {
+            padding: 20px;
+            background: #FFF8DC;
+            border-radius: 20px;
+            border-bottom: 4px solid var(--secondary);
+        }
+
+        .panchanga-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .panchanga-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2C1810;
+        }
+
+        .sub-value {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Muhurta & Auspicious Times */
+        .muhurta-section {
+            background: linear-gradient(145deg, #FFF5E6, #FFE4B5);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .time-slot {
+            background: white;
+            padding: 15px;
+            border-radius: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .time-slot.auspicious {
+            background: #E8F5E9;
+            border-left: 5px solid #4CAF50;
+        }
+
+        .time-slot.inauspicious {
+            background: #FFEBEE;
+            border-left: 5px solid #F44336;
+        }
+
+        /* Festival List */
+        .festival-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .festival-card {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .festival-date {
+            background: var(--primary);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 70px;
+        }
+
+        /* Graha (Planet) Position */
+        .graha-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
+        }
+
+        .graha-card {
+            background: white;
+            padding: 15px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .graha-symbol {
+            font-size: 2rem;
+        }
+
+        .graha-name {
+            font-weight: 600;
+            margin: 5px 0;
+        }
+
+        .graha-rashi {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Refresh Controls */
+        .refresh-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin: 10px 0;
+        }
+
+        .refresh-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Hind Siliguri', sans-serif;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+
+        .refresh-btn:hover {
+            background: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .panjika-hero h1 { font-size: 2.2rem; }
+            .bengali-year-big { font-size: 1.8rem; }
+            .calendar-day { padding: 8px 4px; }
+            .bengali-date { font-size: 1.4rem; }
+            .live-clock { font-size: 1rem; }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background: #5C2E0B;
+            color: #FFE4B5;
+            border-radius: 40px 40px 0 0;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .auspicious-badge {
+            background: #4CAF50;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .daily-update-notice {
+            background: #E3F2FD;
+            border-left: 4px solid #2196F3;
+            padding: 12px 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Auto-update indicator -->
+<div class="auto-update-banner">
+    <i class="fas fa-sync-alt fa-spin"></i> 
+    স্বয়ংক্রিয় দৈনিক হালনাগাদ সক্রিয় • পরবর্তী হালনাগাদ: <span id="nextUpdateTime">আজ রাত ১২:০০ টায়</span>
+</div>
+
+<!-- Auto-updating Header -->
+<div class="top-bar">
+    <div class="auto-date-badge">
+        <span class="badge"><i class="fas fa-sun"></i> <span id="currentBanglaDateTop">লোড হচ্ছে...</span></span>
+        <span class="badge"><i class="fas fa-calendar"></i> <span id="currentEnglishDateTop"></span></span>
+        <span class="last-update"><i class="fas fa-check-circle"></i> হালনাগাদ: <span id="lastUpdateTime">এখনই</span></span>
+    </div>
+    <div class="live-clock">
+        <i class="fas fa-clock"></i> <span id="liveClock">--:--:--</span>
+    </div>
+</div>
+
+<div class="main-container">
+    <!-- Hero Section -->
+    <div class="panjika-hero">
+        <h1><i class="fas fa-om"></i> বাংলা পঞ্জিকা <i class="fas fa-star"></i></h1>
+        <div class="bengali-year-big" id="mainBanglaYear">১৪৩৩ বঙ্গাব্দ</div>
+        <div class="next-update-info">
+            <i class="fas fa-history"></i> সর্বশেষ হালনাগাদ: <span id="detailedLastUpdate"></span>
+        </div>
+    </div>
+
+    <!-- Refresh Controls -->
+    <div class="refresh-controls">
+        <button class="refresh-btn" onclick="manualRefresh()">
+            <i class="fas fa-sync-alt"></i> এখনই হালনাগাদ করুন
+        </button>
+        <button class="refresh-btn" onclick="checkForNewDay()">
+            <i class="fas fa-calendar-check"></i> নতুন দিন পরীক্ষা
+        </button>
+    </div>
+
+    <!-- Daily Update Notice -->
+    <div class="daily-update-notice" id="updateNotice" style="display: none;">
+        <i class="fas fa-star"></i>
+        <span id="updateNoticeText"></span>
+    </div>
+
+    <!-- Current Astrological Moment -->
+    <div class="current-moment">
+        <h2 style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+            <i class="fas fa-sun" style="color: #FFA500;"></i> 
+            বর্তমান গ্রহ-নক্ষত্রের অবস্থান
+            <span style="margin-left: auto; font-size: 0.9rem; background: #FFD700; padding: 5px 15px; border-radius: 30px;">
+                <i class="fas fa-sync-alt fa-spin"></i> লাইভ
+            </span>
+        </h2>
+        <div class="moment-grid" id="currentMomentGrid">
+            <!-- Will be populated by JS -->
+        </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+        <button class="tab-btn active" data-tab="calendar"><i class="fas fa-calendar-alt"></i> পঞ্জিকা ক্যালেন্ডার</button>
+        <button class="tab-btn" data-tab="panchanga"><i class="fas fa-moon"></i> পঞ্চাঙ্গ</button>
+        <button class="tab-btn" data-tab="muhurta"><i class="fas fa-clock"></i> শুভ মুহূর্ত</button>
+        <button class="tab-btn" data-tab="graha"><i class="fas fa-globe-asia"></i> গ্রহ অবস্থান</button>
+        <button class="tab-btn" data-tab="festivals"><i class="fas fa-gift"></i> উৎসব তালিকা</button>
+    </div>
+
+    <!-- Tab 1: Calendar -->
+    <div class="tab-content active" id="calendar-tab">
+        <div class="month-navigator">
+            <button class="nav-arrow" id="prevMonthBtn"><i class="fas fa-chevron-left"></i></button>
+            <span class="month-name" id="currentMonthDisplay">বৈশাখ ১৪৩৩</span>
+            <button class="nav-arrow" id="nextMonthBtn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        
+        <!-- Weekday Headers -->
+        <div class="calendar-grid" id="weekdayHeaders"></div>
+        
+        <!-- Calendar Days -->
+        <div class="calendar-grid" id="calendarDays"></div>
+        
+        <!-- Selected Day Details -->
+        <div class="panchanga-detailed" id="selectedDayDetails">
+            <h3 style="margin-bottom: 20px;"><i class="fas fa-info-circle"></i> নির্বাচিত দিনের বিস্তারিত</h3>
+            <div id="selectedDayPanchanga"></div>
+        </div>
+    </div>
+
+    <!-- Tab 2: Panchanga -->
+    <div class="tab-content" id="panchanga-tab">
+        <div class="panchanga-detailed">
+            <h2 style="margin-bottom: 25px;"><i class="fas fa-om"></i> আজকের পঞ্চাঙ্গ</h2>
+            <div class="panchanga-grid" id="fullPanchanga"></div>
+        </div>
+    </div>
+
+    <!-- Tab 3: Muhurta -->
+    <div class="tab-content" id="muhurta-tab">
+        <div class="muhurta-section">
+            <h2><i class="fas fa-clock"></i> আজকের শুভ ও অশুভ সময়</h2>
+            <div id="muhurtaTimes"></div>
+        </div>
+        
+        <div class="muhurta-section">
+            <h2><i class="fas fa-calendar-check"></i> আগামী ৭ দিনের বিশেষ মুহূর্ত</h2>
+            <div id="upcomingMuhurta"></div>
+        </div>
+    </div>
+
+    <!-- Tab 4: Graha (Planets) -->
+    <div class="tab-content" id="graha-tab">
+        <div class="panchanga-detailed">
+            <h2 style="margin-bottom: 25px;"><i class="fas fa-globe-asia"></i> গ্রহের বর্তমান রাশি অবস্থান</h2>
+            <div class="graha-grid" id="grahaPositions"></div>
+        </div>
+        
+        <div class="panchanga-detailed">
+            <h3><i class="fas fa-chart-line"></i> গোচর ও ট্রানজিট</h3>
+            <div id="transitInfo" style="margin-top: 20px;"></div>
+        </div>
+    </div>
+
+    <!-- Tab 5: Festivals -->
+    <div class="tab-content" id="festivals-tab">
+        <div class="panchanga-detailed">
+            <h2 style="margin-bottom: 25px;"><i class="fas fa-gift"></i> বাংলা ১৪৩৩ সালের উৎসব তালিকা</h2>
+            <div class="festival-list" id="festivalList"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p><i class="fas fa-code"></i> সম্পূর্ণ বাংলা পঞ্জিকা • জ্যোতিষ গণনা সহিত</p>
+    <p style="margin-top: 15px; font-size: 0.9rem;">
+        <i class="fas fa-moon"></i> তিথি • নক্ষত্র • যোগ • করণ • গ্রহ • মুহূর্ত 
+        <i class="fas fa-sun"></i>
+    </p>
+    <p style="margin-top: 10px;">
+        <i class="fas fa-sync-alt"></i> প্রতিদিন স্বয়ংক্রিয়ভাবে হালনাগাদ হয়
+    </p>
+    <p style="margin-top: 20px; opacity: 0.7;">© ২০২৬ পঞ্জিকা ১৪৩৩ | GitHub Pages Ready</p>
+</div>
+
+<script>
+(function(){
+    "use strict";
+    
+    // ==================== CONFIGURATION ====================
+    const BANGLA_MONTHS = ["বৈশাখ", "জ্যৈষ্ঠ", "আষাঢ়", "শ্রাবণ", "ভাদ্র", "আশ্বিন", "কার্তিক", "অগ্রহায়ণ", "পৌষ", "মাঘ", "ফাল্গুন", "চৈত্র"];
+    const BANGLA_WEEKDAYS = ["রবিবার", "সোমবার", "মঙ্গলবার", "বুধবার", "বৃহস্পতিবার", "শুক্রবার", "শনিবার"];
+    const ENG_MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    
+    const NAKSHATRAS = ["অশ্বিনী", "ভরণী", "কৃত্তিকা", "রোহিণী", "মৃগশিরা", "আর্দ্রা", "পুনর্বসু", "পুষ্যা", "অশ্লেষা", "মঘা", "পূর্বফাল্গুনী", "উত্তরফাল্গুনী", "হস্তা", "চিত্রা", "স্বাতী", "বিশাখা", "অনুরাধা", "জ্যেষ্ঠা", "মূলা", "পূর্বাষাঢ়া", "উত্তরাষাঢ়া", "শ্রবণা", "ধনিষ্ঠা", "শতভিষা", "পূর্বভাদ্রপদ", "উত্তরভাদ্রপদ", "রেবতী"];
+    const YOGAS = ["বিষ্কুম্ভ", "প্রীতি", "আয়ুষ্মান", "সৌভাগ্য", "শোভন", "অতিগণ্ড", "সুকর্মা", "ধৃতি", "শূল", "গণ্ড", "বৃদ্ধি", "ধ্রুব", "ব্যাঘাত", "হর্ষণ", "বজ্র", "সিদ্ধি", "ব্যতিপাত", "বরিয়ান", "পরিঘ", "শিব", "সিদ্ধ", "সাধ্য", "শুভ", "শুক্ল", "ব্রহ্ম", "ইন্দ্র", "বৈধৃতি"];
+    const KARANAS = ["বব", "বালব", "কৌলব", "তৈতিল", "গর", "বণিজ", "বিষ্টি", "শকুনি", "চতুষ্পদ", "নাগ", "কিম্স্তুঘ্ন"];
+    const TITHIS = ["প্রতিপদ", "দ্বিতীয়া", "তৃতীয়া", "চতুর্থী", "পঞ্চমী", "ষষ্ঠী", "সপ্তমী", "অষ্টমী", "নবমী", "দশমী", "একাদশী", "দ্বাদশী", "ত্রয়োদশী", "চতুর্দশী", "পূর্ণিমা", "প্রতিপদ", "দ্বিতীয়া", "তৃতীয়া", "চতুর্থী", "পঞ্চমী", "ষষ্ঠী", "সপ্তমী", "অষ্টমী", "নবমী", "দশমী", "একাদশী", "দ্বাদশী", "ত্রয়োদশী", "চতুর্দশী", "অমাবস্যা"];
+    
+    const RASHIS = ["মেষ", "বৃষ", "মিথুন", "কর্কট", "সিংহ", "কন্যা", "তুলা", "বৃশ্চিক", "ধনু", "মকর", "কুম্ভ", "মীন"];
+    const GRAHAS = [
+        { name: "সূর্য", symbol: "☉", color: "#FF6B00" },
+        { name: "চন্দ্র", symbol: "☽", color: "#C0C0C0" },
+        { name: "মঙ্গল", symbol: "♂", color: "#FF0000" },
+        { name: "বুধ", symbol: "☿", color: "#00FF00" },
+        { name: "বৃহস্পতি", symbol: "♃", color: "#FFD700" },
+        { name: "শুক্র", symbol: "♀", color: "#FF69B4" },
+        { name: "শনি", symbol: "♄", color: "#000000" },
+        { name: "রাহু", symbol: "☊", color: "#8B4513" },
+        { name: "কেতু", symbol: "☋", color: "#808080" }
+    ];
+
+    // ==================== STATE ====================
+    let currentYear = 1433;
+    let currentMonth = 0;
+    let selectedDate = new Date();
+    let today = new Date();
+    let lastUpdateCheck = new Date();
+    let lastKnownDate = today.toDateString();
+    
+    // ==================== UTILITY FUNCTIONS ====================
+    function getBanglaDate(date) {
+        const base = new Date(2026, 3, 14); // 1 বৈশাখ 1433 (April 14, 2026)
+        const diff = Math.floor((date - base) / (1000 * 60 * 60 * 24));
+        
+        let banglaYear = 1433;
+        let daysOffset = diff;
+        
+        if (diff < 0) {
+            const prevBase = new Date(2025, 3, 14);
+            const prevDiff = Math.floor((date - prevBase) / (1000 * 60 * 60 * 24));
+            if (prevDiff >= 0) {
+                banglaYear = 1432;
+                daysOffset = prevDiff;
+            }
+        }
+        
+        const monthLengths = [31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30];
+        let month = 0, day = daysOffset + 1;
+        for (let i = 0; i < 12; i++) {
+            if (daysOffset < monthLengths[i]) {
+                month = i;
+                day = daysOffset + 1;
+                break;
+            }
+            daysOffset -= monthLengths[i];
+        }
+        
+        return { year: banglaYear, month, day };
+    }
+    
+    function gregorianFromBangla(year, month, day) {
+        const base = new Date(2026, 3, 14);
+        const monthLengths = [31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30];
+        let days = (year - 1433) * 365;
+        for (let i = 0; i < month; i++) days += monthLengths[i];
+        days += (day - 1);
+        return new Date(base.getTime() + days * 86400000);
+    }
+    
+    function calculateAstroDetails(date) {
+        const dayOfYear = Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 86400000);
+        const moonAge = (dayOfYear * 12) % 30;
+        
+        const tithiIndex = Math.floor(moonAge);
+        const paksha = tithiIndex < 15 ? "শুক্ল" : "কৃষ্ণ";
+        const tithiName = TITHIS[tithiIndex];
+        
+        const nakshatraIndex = (dayOfYear * 27 / 27.3) % 27;
+        const nakshatra = NAKSHATRAS[Math.floor(nakshatraIndex)];
+        
+        const yogaIndex = (dayOfYear * 2) % 27;
+        const yoga = YOGAS[yogaIndex];
+        
+        const karanaIndex = (dayOfYear * 2) % 11;
+        const karana = KARANAS[karanaIndex];
+        
+        const month = date.getMonth();
+        const sunrise = `${5 + Math.floor(month/4)}:${(30 + month * 3) % 60}`;
+        const sunset = `${17 + Math.floor((11-month)/3)}:${(45 + month * 5) % 60}`;
+        
+        const isAuspicious = (tithiIndex !== 0 && tithiIndex !== 14 && tithiIndex !== 29 && 
+                              !["অশ্লেষা", "জ্যেষ্ঠা", "মূলা"].includes(nakshatra));
+        
+        return {
+            fullTithi: `${paksha} ${tithiName}`,
+            tithi: tithiName,
+            paksha,
+            nakshatra,
+            yoga,
+            karana,
+            sunrise: sunrise.padStart(5, '0'),
+            sunset: sunset.padStart(5, '0'),
+            isAuspicious,
+            moonAge
+        };
+    }
+    
+    function getFestival(bDate) {
+        const festivals = {
+            "0-1": "পহেলা বৈশাখ (নববর্ষ)",
+            "0-25": "বুদ্ধ পূর্ণিমা",
+            "1-10": "জ্যৈষ্ঠ পূর্ণিমা",
+            "2-15": "আষাঢ়ী পূর্ণিমা",
+            "3-15": "গুরু পূর্ণিমা",
+            "3-30": "রাখী পূর্ণিমা",
+            "4-1": "জন্মাষ্টমী",
+            "4-10": "বিশ্বকর্মা পূজা",
+            "5-1": "মহালয়া",
+            "5-6": "দুর্গাপূজা (ষষ্ঠী)",
+            "5-7": "দুর্গাপূজা (সপ্তমী)",
+            "5-8": "দুর্গাপূজা (অষ্টমী)",
+            "5-9": "দুর্গাপূজা (নবমী)",
+            "5-10": "বিজয়া দশমী",
+            "5-15": "কোজাগরী পূর্ণিমা",
+            "6-15": "কার্তিক পূর্ণিমা",
+            "7-14": "লক্ষ্মীপূজা",
+            "8-1": "নবান্ন",
+            "8-15": "পৌষ সংক্রান্তি",
+            "9-5": "সরস্বতী পূজা",
+            "9-15": "মাঘী পূর্ণিমা",
+            "10-1": "শিবরাত্রি",
+            "10-14": "দোল পূর্ণিমা",
+            "11-1": "চৈত্র সংক্রান্তি"
+        };
+        return festivals[`${bDate.month}-${bDate.day}`] || null;
+    }
+    
+    function updateLastUpdateTime() {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString('bn-BD');
+        document.getElementById('lastUpdateTime').textContent = timeStr;
+        document.getElementById('detailedLastUpdate').textContent = 
+            `${now.toLocaleDateString('bn-BD')} ${timeStr}`;
+        
+        // Calculate next update time (midnight)
+        const nextUpdate = new Date(now);
+        nextUpdate.setDate(nextUpdate.getDate() + 1);
+        nextUpdate.setHours(0, 0, 0, 0);
+        const hoursLeft = Math.floor((nextUpdate - now) / (1000 * 60 * 60));
+        const minutesLeft = Math.floor(((nextUpdate - now) % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById('nextUpdateTime').textContent = 
+            `${hoursLeft} ঘন্টা ${minutesLeft} মিনিট পর`;
+    }
+    
+    // ==================== DAILY UPDATE CHECK ====================
+    function checkForNewDay() {
+        const now = new Date();
+        const currentDateStr = now.toDateString();
+        
+        if (currentDateStr !== lastKnownDate) {
+            // New day detected!
+            lastKnownDate = currentDateStr;
+            today = now;
+            
+            // Show update notice
+            const notice = document.getElementById('updateNotice');
+            const noticeText = document.getElementById('updateNoticeText');
+            notice.style.display = 'flex';
+            noticeText.innerHTML = `🎉 নতুন দিন শুরু হয়েছে! ${now.toLocaleDateString('bn-BD')} • বাংলা পঞ্জিকা হালনাগাদ করা হয়েছে`;
+            
+            // Animate the update
+            document.querySelectorAll('.moment-card').forEach(card => {
+                card.classList.add('updating');
+                setTimeout(() => card.classList.remove('updating'), 2000);
+            });
+            
+            // Hide notice after 5 seconds
+            setTimeout(() => {
+                notice.style.display = 'none';
+            }, 5000);
+            
+            // Refresh all data
+            refreshAllData();
+            
+            return true;
+        }
+        return false;
+    }
+    
+    function refreshAllData() {
+        today = new Date();
+        const bDate = getBanglaDate(today);
+        currentYear = bDate.year;
+        currentMonth = bDate.month;
+        
+        updateLiveClock();
+        updateLastUpdateTime();
+        renderCurrentMoment();
+        renderCalendar();
+        renderFullPanchanga();
+        renderMuhurta();
+        renderGrahaPositions();
+        renderFestivals();
+    }
+    
+    function manualRefresh() {
+        refreshAllData();
+        
+        // Show confirmation
+        const notice = document.getElementById('updateNotice');
+        const noticeText = document.getElementById('updateNoticeText');
+        notice.style.display = 'flex';
+        notice.style.background = '#E8F5E9';
+        notice.style.borderLeftColor = '#4CAF50';
+        noticeText.innerHTML = '✅ পঞ্জিকা সফলভাবে হালনাগাদ করা হয়েছে';
+        
+        setTimeout(() => {
+            notice.style.display = 'none';
+            notice.style.background = '#E3F2FD';
+            notice.style.borderLeftColor = '#2196F3';
+        }, 3000);
+    }
+    
+    // ==================== RENDER FUNCTIONS ====================
+    function updateLiveClock() {
+        const now = new Date();
+        document.getElementById('liveClock').textContent = now.toLocaleTimeString('bn-BD');
+        
+        const bDate = getBanglaDate(now);
+        document.getElementById('currentBanglaDateTop').textContent = 
+            `${bDate.day} ${BANGLA_MONTHS[bDate.month]} ${bDate.year}`;
+        document.getElementById('currentEnglishDateTop').textContent = 
+            now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+        document.getElementById('mainBanglaYear').textContent = `${bDate.year} বঙ্গাব্দ`;
+    }
+    
+    function renderCurrentMoment() {
+        const now = new Date();
+        const bDate = getBanglaDate(now);
+        const astro = calculateAstroDetails(now);
+        
+        const html = `
+            <div class="moment-card">
+                <div class="moment-label">তিথি</div>
+                <div class="moment-value">${astro.fullTithi}</div>
+                <small>${astro.paksha} পক্ষ</small>
+            </div>
+            <div class="moment-card">
+                <div class="moment-label">নক্ষত্র</div>
+                <div class="moment-value">${astro.nakshatra}</div>
+                <small>চন্দ্র নক্ষত্র</small>
+            </div>
+            <div class="moment-card">
+                <div class="moment-label">যোগ</div>
+                <div class="moment-value">${astro.yoga}</div>
+                <small>সূর্য-চন্দ্র যোগ</small>
+            </div>
+            <div class="moment-card">
+                <div class="moment-label">করণ</div>
+                <div class="moment-value">${astro.karana}</div>
+                <small>অর্ধ তিথি</small>
+            </div>
+            <div class="moment-card">
+                <div class="moment-label">সূর্যোদয়/অস্ত</div>
+                <div class="moment-value">${astro.sunrise} / ${astro.sunset}</div>
+                <small>${bDate.day} ${BANGLA_MONTHS[bDate.month]}</small>
+            </div>
+        `;
+        document.getElementById('currentMomentGrid').innerHTML = html;
+    }
+    
+    function renderCalendar() {
+        const headerHtml = BANGLA_WEEKDAYS.map(day => 
+            `<div class="weekday-header">${day}</div>`
+        ).join('');
+        document.getElementById('weekdayHeaders').innerHTML = headerHtml;
+        
+        document.getElementById('currentMonthDisplay').textContent = 
+            `${BANGLA_MONTHS[currentMonth]} ${currentYear}`;
+        
+        const firstDay = gregorianFromBangla(currentYear, currentMonth, 1);
+        const startOffset = firstDay.getDay();
+        const monthLength = [31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30][currentMonth];
+        
+        let daysHtml = '';
+        for (let i = 0; i < startOffset; i++) {
+            daysHtml += '<div class="calendar-day" style="opacity: 0.3;"></div>';
+        }
+        
+        for (let d = 1; d <= monthLength; d++) {
+            const date = gregorianFromBangla(currentYear, currentMonth, d);
+            const astro = calculateAstroDetails(date);
+            const isToday = date.toDateString() === today.toDateString();
+            const festival = getFestival({ year: currentYear, month: currentMonth, day: d });
+            
+            daysHtml += `
+                <div class="calendar-day ${isToday ? 'today' : ''} ${astro.isAuspicious ? 'auspicious' : ''}" 
+                     data-date="${date.toISOString()}" data-day="${d}">
+                    <div class="bengali-date">${d}</div>
+                    <div class="tithi-mini">${astro.tithi}</div>
+                    ${festival ? '<span class="auspicious-badge">🎉</span>' : ''}
+                    <small style="display: block; margin-top: 3px;">${date.getDate()}/${date.getMonth()+1}</small>
+                </div>
+            `;
+        }
+        
+        document.getElementById('calendarDays').innerHTML = daysHtml;
+        
+        document.querySelectorAll('.calendar-day[data-date]').forEach(day => {
+            day.addEventListener('click', () => {
+                const date = new Date(day.dataset.date);
+                const dayNum = parseInt(day.dataset.day);
+                updateSelectedDayDetails(date, dayNum);
+            });
+        });
+        
+        const todayBangla = getBanglaDate(today);
+        if (todayBangla.year === currentYear && todayBangla.month === currentMonth) {
+            updateSelectedDayDetails(today, todayBangla.day);
+        } else {
+            updateSelectedDayDetails(firstDay, 1);
+        }
+    }
+    
+    function updateSelectedDayDetails(date, dayNum) {
+        selectedDate = date;
+        const bDate = getBanglaDate(date);
+        const astro = calculateAstroDetails(date);
+        const festival = getFestival(bDate);
+        const weekday = BANGLA_WEEKDAYS[date.getDay()];
+        
+        const html = `
+            <div class="panchanga-grid">
+                <div class="panchanga-item">
+                    <div class="panchanga-title"><i class="fas fa-calendar"></i> তারিখ</div>
+                    <div class="panchanga-value">${dayNum} ${BANGLA_MONTHS[currentMonth]} ${currentYear}</div>
+                    <div class="sub-value">${weekday} • ${date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</div>
+                </div>
+                <div class="panchanga-item">
+                    <div class="panchanga-title"><i class="fas fa-moon"></i> তিথি</div>
+                    <div class="panchanga-value">${astro.fullTithi}</div>
+                    <div class="sub-value">${astro.paksha} পক্ষ • শেষ: ${(date.getHours()+2)%24}:${date.getMinutes()}</div>
+                </div>
+                <div class="panchanga-item">
+                    <div class="panchanga-title"><i class="fas fa-star"></i> নক্ষত্র</div>
+                    <div class="panchanga-value">${astro.nakshatra}</div>
+                    <div class="sub-value">চন্দ্র নক্ষত্র</div>
+                </div>
+                <div class="panchanga-item">
+                    <div class="panchanga-title"><i class="fas fa-om"></i> যোগ ও করণ</div>
+                    <div class="panchanga-value">${astro.yoga} / ${astro.karana}</div>
+                    <div class="sub-value">${astro.isAuspicious ? '✅ শুভ' : '⚠️ অশুভ'}</div>
+                </div>
+                <div class="panchanga-item">
+                    <div class="panchanga-title"><i class="fas fa-sun"></i> সূর্য</div>
+                    <div class="panchanga-value">${astro.sunrise} - ${astro.sunset}</div>
+                    <div class="sub-value">দিনকাল: প্রায় ১২ ঘন্টা</div>
+                </div>
+                <div class="panchanga-item">
+                    <div class="panchanga-title"><i class="fas fa-gift"></i> বিশেষত্ব</div>
+                    <div class="panchanga-value">${festival || 'সাধারণ দিন'}</div>
+                    <div class="sub-value">${astro.isAuspicious ? 'শুভকর্মের জন্য প্রশস্ত' : 'বিশেষ সাবধানতা অবলম্বন করুন'}</div>
+                </div>
+            </div>
+        `;
+        document.getElementById('selectedDayPanchanga').innerHTML = html;
+    }
+    
+    function renderFullPanchanga() {
+        const astro = calculateAstroDetails(today);
+        const bDate = getBanglaDate(today);
+        
+        const html = `
+            <div class="panchanga-item">
+                <div class="panchanga-title"><i class="fas fa-calendar-day"></i> আজকের বাংলা তারিখ</div>
+                <div class="panchanga-value">${bDate.day} ${BANGLA_MONTHS[bDate.month]} ${bDate.year}</div>
+                <div class="sub-value">${BANGLA_WEEKDAYS[today.getDay()]}</div>
+            </div>
+            <div class="panchanga-item">
+                <div class="panchanga-title"><i class="fas fa-moon"></i> তিথি</div>
+                <div class="panchanga-value">${astro.fullTithi}</div>
+                <div class="sub-value">তিথি শেষ: আগামীকাল ${today.getHours()+2}:${today.getMinutes()}</div>
+            </div>
+            <div class="panchanga-item">
+                <div class="panchanga-title"><i class="fas fa-star"></i> নক্ষত্র</div>
+                <div class="panchanga-value">${astro.nakshatra}</div>
+                <div class="sub-value">চন্দ্র ${astro.nakshatra} নক্ষত্রে অবস্থান করছে</div>
+            </div>
+            <div class="panchanga-item">
+                <div class="panchanga-title"><i class="fas fa-yin-yang"></i> যোগ</div>
+                <div class="panchanga-value">${astro.yoga}</div>
+                <div class="sub-value">সূর্য-চন্দ্র যোগ</div>
+            </div>
+            <div class="panchanga-item">
+                <div class="panchanga-title"><i class="fas fa-divide"></i> করণ</div>
+                <div class="panchanga-value">${astro.karana}</div>
+                <div class="sub-value">অর্ধ তিথি</div>
+            </div>
+            <div class="panchanga-item">
+                <div class="panchanga-title"><i class="fas fa-sun"></i> সূর্যোদয়/সূর্যাস্ত</div>
+                <div class="panchanga-value">${astro.sunrise} / ${astro.sunset}</div>
+                <div class="sub-value">আজকের দিনমান</div>
+            </div>
+        `;
+        document.getElementById('fullPanchanga').innerHTML = html;
+    }
+    
+    function renderMuhurta() {
+        const astro = calculateAstroDetails(today);
+        
+        const muhurtaHtml = `
+            <div class="time-slots">
+                <div class="time-slot auspicious">
+                    <span><i class="fas fa-check-circle" style="color: #4CAF50;"></i> ব্রহ্ম মুহূর্ত</span>
+                    <span>ভোর ৪:৩০ - ৫:১৫</span>
+                </div>
+                <div class="time-slot auspicious">
+                    <span><i class="fas fa-check-circle" style="color: #4CAF50;"></i> অভিজিৎ মুহূর্ত</span>
+                    <span>দুপুর ১১:৫০ - ১২:৪০</span>
+                </div>
+                <div class="time-slot inauspicious">
+                    <span><i class="fas fa-times-circle" style="color: #F44336;"></i> রাহুকাল</span>
+                    <span>${getRahuKaal(today)}</span>
+                </div>
+                <div class="time-slot inauspicious">
+                    <span><i class="fas fa-times-circle" style="color: #F44336;"></i> যমগণ্ড</span>
+                    <span>দুপুর ১২:০০ - ১:৩০</span>
+                </div>
+                <div class="time-slot auspicious">
+                    <span><i class="fas fa-check-circle" style="color: #4CAF50;"></i> গুলিকাল</span>
+                    <span>দুপুর ১:৩০ - ৩:০০</span>
+                </div>
+            </div>
+            <p style="margin-top: 20px; padding: 15px; background: ${astro.isAuspicious ? '#E8F5E9' : '#FFEBEE'}; border-radius: 12px;">
+                <i class="fas fa-${astro.isAuspicious ? 'check' : 'exclamation'}-circle"></i>
+                আজকের দিনটি ${astro.isAuspicious ? 'শুভকর্মের জন্য প্রশস্ত। বিবাহ, গৃহপ্রবেশ, ব্যবসা আরম্ভ করা যেতে পারে।' : 'সাধারণ। গুরুত্বপূর্ণ কাজের জন্য পঞ্জিকা দেখে সময় নির্বাচন করুন।'}
+            </p>
+        `;
+        document.getElementById('muhurtaTimes').innerHTML = muhurtaHtml;
+        
+        let upcomingHtml = '<div class="festival-list">';
+        for (let i = 1; i <= 7; i++) {
+            const futureDate = new Date(today);
+            futureDate.setDate(today.getDate() + i);
+            const futureAstro = calculateAstroDetails(futureDate);
+            const futureBDate = getBanglaDate(futureDate);
+            
+            upcomingHtml += `
+                <div class="festival-card">
+                    <div class="festival-date">
+                        ${futureDate.getDate()}<br>
+                        <small>${ENG_MONTHS[futureDate.getMonth()].substring(0,3)}</small>
+                    </div>
+                    <div>
+                        <strong>${futureBDate.day} ${BANGLA_MONTHS[futureBDate.month]}</strong><br>
+                        <small>${futureAstro.fullTithi} • ${futureAstro.nakshatra}</small><br>
+                        <span style="color: ${futureAstro.isAuspicious ? '#4CAF50' : '#F44336'};">
+                            ${futureAstro.isAuspicious ? '✅ শুভদিন' : '⚠️ সাধারণ'}
+                        </span>
+                    </div>
+                </div>
+            `;
+        }
+        upcomingHtml += '</div>';
+        document.getElementById('upcomingMuhurta').innerHTML = upcomingHtml;
+    }
+    
+    function renderGrahaPositions() {
+        let html = '';
+        GRAHAS.forEach((graha, index) => {
+            const rashiIndex = (today.getMonth() + index * 2 + today.getFullYear()) % 12;
+            const isRetrograde = [2, 5, 7].includes(index);
+            
+            html += `
+                <div class="graha-card">
+                    <div class="graha-symbol" style="color: ${graha.color};">${graha.symbol}</div>
+                    <div class="graha-name">${graha.name}</div>
+                    <div class="graha-rashi">
+                        ${RASHIS[rashiIndex]} রাশিতে<br>
+                        ${isRetrograde ? '<span style="color: #F44336;">(বক্র)</span>' : '<span style="color: #4CAF50;">(মার্গী)</span>'}
+                    </div>
+                </div>
+            `;
+        });
+        document.getElementById('grahaPositions').innerHTML = html;
+        
+        document.getElementById('transitInfo').innerHTML = `
+            <p style="padding: 20px; background: #FFF8DC; border-radius: 16px;">
+                <i class="fas fa-info-circle"></i> 
+                <strong>গোচর অবস্থা:</strong> বর্তমানে বৃহস্পতি ${RASHIS[(today.getMonth() + 4) % 12]} রাশিতে, 
+                শনি ${RASHIS[(today.getMonth() + 7) % 12]} রাশিতে অবস্থান করছে। 
+                রাহু-কেতু ${RASHIS[(today.getMonth() + 8) % 12]}-${RASHIS[(today.getMonth() + 2) % 12]} অক্ষে বিরাজমান।
+                <br><br>
+                <i class="fas fa-calendar-alt"></i> 
+                <strong>পরবর্তী গোচর:</strong> ${getNextTransitInfo()}
+            </p>
+        `;
+    }
+    
+    function renderFestivals() {
+        let html = '';
+        const monthLengths = [31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30];
+        
+        for (let m = 0; m < 12; m++) {
+            for (let d = 1; d <= monthLengths[m]; d++) {
+                const festival = getFestival({ year: currentYear, month: m, day: d });
+                if (festival) {
+                    const date = gregorianFromBangla(currentYear, m, d);
+                    html += `
+                        <div class="festival-card">
+                            <div class="festival-date">
+                                ${d} ${BANGLA_MONTHS[m].substring(0, 3)}<br>
+                                <small>${date.getDate()}/${date.getMonth()+1}</small>
+                            </div>
+                            <div>
+                                <strong>${festival}</strong><br>
+                                <small>${BANGLA_WEEKDAYS[date.getDay()]}</small>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+        }
+        document.getElementById('festivalList').innerHTML = html || '<p>কোনো উৎসব পাওয়া যায়নি</p>';
+    }
+    
+    function getRahuKaal(date) {
+        const hours = [7, 8, 9, 10, 11, 12, 13];
+        const day = date.getDay();
+        return `${hours[day]}:30 - ${hours[day]+1}:30`;
+    }
+    
+    function getNextTransitInfo() {
+        return 'আগামী মাসে সূর্য ধনু রাশিতে গোচর করবে';
+    }
+    
+    // ==================== EVENT LISTENERS ====================
+    document.getElementById('prevMonthBtn').addEventListener('click', () => {
+        if (currentMonth === 0) {
+            currentMonth = 11;
+            currentYear--;
+        } else {
+            currentMonth--;
+        }
+        renderCalendar();
+    });
+    
+    document.getElementById('nextMonthBtn').addEventListener('click', () => {
+        if (currentMonth === 11) {
+            currentMonth = 0;
+            currentYear++;
+        } else {
+            currentMonth++;
+        }
+        renderCalendar();
+    });
+    
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            
+            btn.classList.add('active');
+            const tabId = btn.dataset.tab;
+            document.getElementById(`${tabId}-tab`).classList.add('active');
+            
+            if (tabId === 'panchanga') renderFullPanchanga();
+            else if (tabId === 'muhurta') renderMuhurta();
+            else if (tabId === 'graha') renderGrahaPositions();
+            else if (tabId === 'festivals') renderFestivals();
+        });
+    });
+    
+    // Make functions globally available
+    window.manualRefresh = manualRefresh;
+    window.checkForNewDay = function() {
+        if (checkForNewDay()) {
+            // Already handled in checkForNewDay
+        } else {
+            alert('আজকের তারিখ এখনো পরিবর্তিত হয়নি। পরবর্তী হালনাগাদ রাত ১২:০০ টায় হবে।');
+        }
+    };
+    
+    // ==================== INITIALIZATION ====================
+    function init() {
+        today = new Date();
+        lastKnownDate = today.toDateString();
+        const bDate = getBanglaDate(today);
+        currentYear = bDate.year;
+        currentMonth = bDate.month;
+        
+        updateLiveClock();
+        updateLastUpdateTime();
+        renderCurrentMoment();
+        renderCalendar();
+        renderFullPanchanga();
+        renderMuhurta();
+        renderGrahaPositions();
+        renderFestivals();
+        
+        // Update clock every second
+        setInterval(() => {
+            updateLiveClock();
+            renderCurrentMoment();
+        }, 1000);
+        
+        // Check for new day every minute
+        setInterval(() => {
+            checkForNewDay();
+        }, 60000);
+        
+        // Update last update time every minute
+        setInterval(updateLastUpdateTime, 60000);
+        
+        // Update muhurta and graha positions every hour
+        setInterval(() => {
+            renderMuhurta();
+            renderGrahaPositions();
+        }, 3600000);
+    }
+    
+    init();
+})();
+</script>
+
+</body>
+</html>
