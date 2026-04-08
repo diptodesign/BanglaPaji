@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সম্পর্কে | বাংলা পঞ্জিকা | Dipto Design</title>
+    <meta name="description" content="বাংলা পঞ্জিকা সম্পর্কে জানুন - Dipto Design এর একটি ওপেন সোর্স প্রকল্প">
+    <meta name="author" content="Dipto Design">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700;800&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #D4A574; --primary-dark: #8B6914; --primary-light: #F5DEB3;
+            --secondary: #8B4513; --accent: #DAA520; --success: #2E8B57;
+            --bg-primary: #FFF8DC; --bg-secondary: #FFFFF0; --bg-card: #FFFFFF;
+            --text-primary: #3E2723; --text-secondary: #5D4037;
+            --border-light: #DEB887; --shadow-md: 0 8px 24px rgba(139, 69, 19, 0.12);
+            --gradient-1: linear-gradient(135deg, #FFF8DC 0%, #F5DEB3 100%);
+            --gradient-2: linear-gradient(135deg, #D4A574 0%, #8B6914 100%);
+        }
+        body {
+            font-family: 'Hind Siliguri', 'Noto Serif Bengali', sans-serif;
+            background: var(--gradient-1);
+            color: var(--text-primary);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="%23DEB887" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.4; pointer-events: none; z-index: -1;
+        }
+        .top-header {
+            background: rgba(255, 255, 240, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 3px solid var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+        .logo a {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo span {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-left: 8px;
+        }
+        .nav-links { display: flex; gap: 24px; }
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--secondary); }
+        .nav-links a.active { color: var(--secondary); font-weight: 700; border-bottom: 2px solid var(--secondary); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 24px; }
+        .page-card {
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 40px;
+            margin: 24px 0;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 3px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin: 32px 0 16px;
+        }
+        h3 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 24px 0 12px;
+        }
+        p { margin-bottom: 16px; }
+        ul, ol { margin: 16px 0 16px 24px; }
+        li { margin-bottom: 8px; }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+        .feature-card {
+            background: var(--bg-secondary);
+            padding: 24px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid var(--border-light);
+        }
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 16px;
+        }
+        .feature-card h4 { color: var(--primary-dark); margin-bottom: 12px; }
+        .highlight-box {
+            background: var(--gradient-2);
+            color: white;
+            padding: 24px;
+            border-radius: 16px;
+            margin: 32px 0;
+            text-align: center;
+        }
+        .bangladesh-box {
+            background: linear-gradient(135deg, #006A4E 0%, #F42A41 100%);
+            color: white;
+            padding: 24px;
+            border-radius: 16px;
+            margin: 32px 0;
+            text-align: center;
+        }
+        .bangladesh-box i {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        .creator-section {
+            background: var(--bg-secondary);
+            padding: 32px;
+            border-radius: 20px;
+            margin: 32px 0;
+            text-align: center;
+            border: 2px solid var(--primary);
+        }
+        .creator-icon { font-size: 4rem; color: var(--secondary); margin-bottom: 16px; }
+        .creator-name { font-size: 2rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 8px; }
+        .creator-title { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 16px; }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            padding: 12px 24px;
+            border-radius: 40px;
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-md);
+        }
+        .contact-link:hover {
+            transform: translateY(-3px);
+            background: var(--gradient-2);
+            color: white;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 56px;
+            padding: 40px;
+            background: var(--gradient-2);
+            color: white;
+            border-radius: 40px 40px 0 0;
+        }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .flag-colors {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin: 16px 0;
+        }
+        .flag-green { width: 60px; height: 8px; background: #006A4E; border-radius: 4px; }
+        .flag-red { width: 60px; height: 8px; background: #F42A41; border-radius: 4px; }
+        @media (max-width: 768px) {
+            .top-header { flex-direction: column; gap: 16px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .page-card { padding: 24px; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="top-header">
+    <div class="logo">
+        <a href="index.html">
+            <i class="fas fa-calendar-alt"></i>
+            বাংলা পঞ্জিকা
+            <span>by Dipto Design</span>
+        </a>
+    </div>
+    <nav class="nav-links">
+        <a href="index.html">হোম</a>
+        <a href="about.html" class="active">সম্পর্কে</a>
+        <a href="privacy.html">গোপনীয়তা নীতি</a>
+    </nav>
+</header>
+
+<main class="container">
+    <article class="page-card">
+        <h1><i class="fas fa-info-circle"></i> বাংলা পঞ্জিকা সম্পর্কে</h1>
+        
+        <p style="font-size: 1.2rem; font-weight: 500;">নির্ভুল বাংলা পঞ্জিকা - একটি সম্পূর্ণ জ্যোতিষ গণনাভিত্তিক ডিজিটাল পঞ্জিকা যা ১৪৩২ থেকে ১৪৩৭ বঙ্গাব্দ পর্যন্ত সকল প্রয়োজনীয় তথ্য প্রদান করে।</p>
+        
+        <!-- Bangladesh Box -->
+        <div class="bangladesh-box">
+            <i class="fas fa-flag"></i>
+            <h3 style="color: white; margin-top: 0;">🇧🇩 বাংলাদেশের পঞ্জিকা</h3>
+            <p style="font-size: 1.1rem;">এই পঞ্জিকাটি বাংলাদেশের সরকারি বাংলা বর্ষপঞ্জির সাথে সামঞ্জস্যপূর্ণ। বাংলাদেশের জাতীয় পঞ্জিকা অনুযায়ী তারিখ, উৎসব ও ছুটির দিনগুলো সঠিকভাবে প্রদর্শিত হয়।</p>
+            <div class="flag-colors">
+                <div class="flag-green"></div>
+                <div class="flag-red"></div>
+            </div>
+            <p><i class="fas fa-check-circle"></i> বাংলাদেশ সরকার কর্তৃক স্বীকৃত বাংলা সন গণনা পদ্ধতি অনুসৃত</p>
+        </div>
+        
+        <div class="highlight-box">
+            <i class="fas fa-star" style="font-size: 2rem; margin-bottom: 16px;"></i>
+            <p style="font-size: 1.2rem;"><strong>আমাদের লক্ষ্য:</strong> বাংলা সংস্কৃতি ও ঐতিহ্যকে ডিজিটাল মাধ্যমে সংরক্ষণ করা এবং সঠিক জ্যোতিষ তথ্য সবার কাছে সহজলভ্য করা।</p>
+        </div>
+        
+        <!-- Creator Section -->
+        <div class="creator-section">
+            <div class="creator-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="creator-name">Dipto Design</div>
+            <div class="creator-title">ডিজিটাল ক্রিয়েটিভ স্টুডিও • বাংলাদেশ</div>
+            <p style="max-width: 600px; margin: 16px auto;">Dipto Design বাংলাদেশ ভিত্তিক একটি স্বাধীন ডিজিটাল ক্রিয়েটিভ স্টুডিও যা ওয়েব ডেভেলপমেন্ট, UI/UX ডিজাইন এবং ওপেন সোর্স প্রকল্প নিয়ে কাজ করে।</p>
+            <div class="contact-links">
+                <a href="mailto:diptodesignstd@gmail.com" class="contact-link">
+                    <i class="fas fa-envelope"></i> diptodesignstd@gmail.com
+                </a>
+                <a href="https://github.com/diptodesign" target="_blank" class="contact-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+        
+        <h2><i class="fas fa-list-check"></i> মূল বৈশিষ্ট্যসমূহ</h2>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="fas fa-calendar-alt"></i>
+                <h4>সম্পূর্ণ পঞ্জিকা</h4>
+                <p>১৪৩২-১৪৩৭ বঙ্গাব্দের সম্পূর্ণ ক্যালেন্ডার, তিথি, নক্ষত্র, যোগ, করণ সহ</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-baby"></i>
+                <h4>নামকরণ</h4>
+                <p>নামকরণের শুভ তারিখ ও সম্পূর্ণ নিয়মাবলী</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-utensils"></i>
+                <h4>অন্নপ্রাশন</h4>
+                <p>অন্নপ্রাশনের শুভ তারিখ ও বিস্তারিত নির্দেশনা</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-male"></i>
+                <h4>৪০০০+ নাম</h4>
+                <p>হিন্দু ছেলে ও মেয়েদের নাম অর্থসহ, সার্চ ও ফিল্টার সুবিধা</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-sun"></i>
+                <h4>গ্রহণ</h4>
+                <p>সূর্য ও চন্দ্র গ্রহণের তারিখ ও দৃশ্যমানতার তথ্য</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-clock"></i>
+                <h4>শুভ মুহূর্ত</h4>
+                <p>ব্রহ্ম মুহূর্ত, অভিজিৎ, রাহুকাল সহ সকল শুভ-অশুভ সময়</p>
+            </div>
+        </div>
+        
+        <h2><i class="fas fa-calculator"></i> আমাদের গণনা পদ্ধতি</h2>
+        
+        <p>বাংলা পঞ্জিকার সকল জ্যোতিষ গণনা <strong>প্রাচীন ভারতীয় জ্যোতিষ শাস্ত্র</strong> এবং <strong>বাংলাদেশের ঐতিহ্যবাহী পঞ্জিকা গণনা পদ্ধতি</strong> এর সূত্র অনুযায়ী করা হয়েছে। আমরা ব্যবহার করি:</p>
+        
+        <ul>
+            <li><strong>সূর্য সিদ্ধান্ত</strong> - প্রাচীন ভারতীয় জ্যোতিষ গ্রন্থ, সূর্য ও গ্রহের অবস্থান নির্ণয়ে</li>
+            <li><strong>পঞ্চাঙ্গ গণনা</strong> - তিথি, নক্ষত্র, যোগ, করণ নির্ণয়ে (ভারতীয় ও বাংলাদেশী পদ্ধতি)</li>
+            <li><strong>গ্রহণ গণনা</strong> - NASA এর তথ্যের সাথে সামঞ্জস্যপূর্ণ</li>
+            <li><strong>বাংলা সন গণনা</strong> - বাংলাদেশ সরকার কর্তৃক স্বীকৃত আধুনিক বাংলা পঞ্জিকা পদ্ধতি অনুসারে</li>
+            <li><strong>বাংলাদেশ জাতীয় পঞ্জিকা</strong> - বাংলাদেশের সরকারি ছুটি ও উৎসবের তারিখ নির্ধারণে</li>
+        </ul>
+        
+        <h2><i class="fas fa-globe-asia"></i> বাংলাদেশ ও ভারতীয় উপমহাদেশের পঞ্জিকা</h2>
+        
+        <p>আমাদের পঞ্জিকা <strong>বাংলাদেশ</strong> এবং <strong>পশ্চিমবঙ্গ, ভারত</strong> উভয় অঞ্চলের জন্যই প্রযোজ্য। আমরা নিম্নলিখিত বিষয়গুলো বিবেচনা করি:</p>
+        
+        <ul>
+            <li><strong>বাংলাদেশ সরকারি পঞ্জিকা</strong> - বাংলাদেশ সরকার কর্তৃক প্রকাশিত সরকারি ছুটির তালিকা</li>
+            <li><strong>পশ্চিমবঙ্গ পঞ্জিকা</strong> - পশ্চিমবঙ্গ সরকার কর্তৃক স্বীকৃত উৎসব ও ছুটির দিন</li>
+            <li><strong>ঐতিহ্যবাহী বাঙালি উৎসব</strong> - পহেলা বৈশাখ, পহেলা ফাল্গুন, নবান্ন ইত্যাদি</li>
+            <li><strong>ধর্মীয় উৎসব</strong> - দুর্গাপূজা, ঈদ, বুদ্ধ পূর্ণিমা, ক্রিসমাস ইত্যাদি</li>
+        </ul>
+        
+        <h2><i class="fas fa-calendar-check"></i> স্বয়ংক্রিয় হালনাগাদ</h2>
+        
+        <p>আমাদের পঞ্জিকা প্রতিদিন রাত ১২:০০ টায় (বাংলাদেশ সময়) স্বয়ংক্রিয়ভাবে হালনাগাদ হয়। লাইভ ঘড়ি প্রতি সেকেন্ডে আপডেট হয় এবং তারিখ পরিবর্তন হলে সমস্ত গণনা স্বয়ংক্রিয়ভাবে রিফ্রেশ হয়। এর ফলে আপনি সর্বদা সঠিক ও হালনাগাদকৃত তথ্য পাবেন।</p>
+        
+        <h2><i class="fas fa-code-branch"></i> ওপেন সোর্স</h2>
+        
+        <p>বাংলা পঞ্জিকা একটি ওপেন সোর্স প্রকল্প। আপনি আমাদের GitHub রিপোজিটরিতে কন্ট্রিবিউট করতে পারেন, বাগ রিপোর্ট করতে পারেন, অথবা ফিচার রিকোয়েস্ট করতে পারেন।</p>
+        
+        <div style="text-align: center; margin: 32px 0;">
+            <a href="https://github.com/diptodesign/bangla-panjika" target="_blank" style="display: inline-flex; align-items: center; gap: 12px; background: #24292e; color: white; padding: 16px 32px; border-radius: 40px; text-decoration: none; font-weight: 600;">
+                <i class="fab fa-github" style="font-size: 1.5rem;"></i> GitHub এ দেখুন
+            </a>
+        </div>
+        
+        <h2><i class="fas fa-heart"></i> স্বীকৃতি</h2>
+        
+        <p>এই প্রকল্পটি সম্ভব হয়েছে নিম্নলিখিত ওপেন সোর্স লাইব্রেরি ও রিসোর্সের সহায়তায়:</p>
+        <ul>
+            <li><strong>Font Awesome</strong> - আইকনের জন্য</li>
+            <li><strong>Google Fonts</strong> - বাংলা ফন্টের জন্য</li>
+            <li><strong>GitHub Pages</strong> - ফ্রি হোস্টিংয়ের জন্য</li>
+            <li><strong>বাংলাদেশ সরকারি পঞ্জিকা</strong> - তথ্যসূত্রের জন্য</li>
+        </ul>
+        
+        <div class="highlight-box" style="background: var(--bg-secondary); color: var(--text-primary);">
+            <h3 style="color: var(--secondary); margin-top: 0;">যোগাযোগ করুন</h3>
+            <p>আপনার কোনো প্রশ্ন, পরামর্শ বা মতামত থাকলে আমাদের জানান:</p>
+            <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                <span><i class="fas fa-envelope"></i> diptodesignstd@gmail.com</span>
+                <span><i class="fab fa-github"></i> github.com/diptodesign</span>
+                <span><i class="fas fa-map-marker-alt"></i> বাংলাদেশ</span>
+            </div>
+        </div>
+    </article>
+</main>
+
+<footer class="footer">
+    <p style="font-size: 1.4rem; font-weight: 700;"><i class="fas fa-om"></i> বাংলা পঞ্জিকা</p>
+    <p>A Dipto Design Project • Made in Bangladesh 🇧🇩</p>
+    <p style="margin-top: 20px;">
+        <a href="index.html">হোম</a> • 
+        <a href="about.html">সম্পর্কে</a> • 
+        <a href="privacy.html">গোপনীয়তা নীতি</a>
+    </p>
+    <p style="margin-top: 20px; opacity: 0.8;">© ২০২৬ Dipto Design • সর্বস্বত্ব সংরক্ষিত • বাংলাদেশ</p>
+</footer>
+
+</body>
+</html>
