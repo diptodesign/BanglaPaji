@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>বাংলা পঞ্জিকা ১৪৩২-১৪৩৭ | নামকরণ • অন্নপ্রাশন • ৪০০০+ নাম</title>
-    <meta name="description" content="সম্পূর্ণ বাংলা পঞ্জিকা - নামকরণ, অন্নপ্রাশনের শুভ তারিখ, ৪০০০+ হিন্দু শিশুর নাম অর্থসহ">
+    <title>বাংলা পঞ্জিকা ১৪৩২-১৪৩৭ | সম্পূর্ণ পঞ্জিকা</title>
+    <meta name="description" content="সম্পূর্ণ বাংলা পঞ্জিকা - নামকরণ, অন্নপ্রাশন, ৪০০০+ নাম, গ্রহণ, মুহূর্ত, উৎসব">
     
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700;800&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -13,31 +13,37 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --primary: #6C5CE7;
-            --primary-dark: #5B4BC4;
-            --primary-light: #A29BFE;
-            --secondary: #00CEC9;
-            --accent: #FD79A8;
-            --success: #00B894;
-            --warning: #FDCB6E;
-            --danger: #FF7675;
-            --info: #74B9FF;
-            --text-primary: #2D3436;
-            --text-secondary: #636E72;
-            --glass-bg: rgba(255, 255, 255, 0.85);
-            --glass-border: rgba(255, 255, 255, 0.5);
-            --shadow-sm: 0 2px 8px rgba(108, 92, 231, 0.08);
-            --shadow-md: 0 8px 24px rgba(108, 92, 231, 0.12);
-            --shadow-lg: 0 16px 48px rgba(108, 92, 231, 0.16);
+            --primary: #D4A574;
+            --primary-dark: #8B6914;
+            --primary-light: #F5DEB3;
+            --secondary: #8B4513;
+            --accent: #DAA520;
+            --success: #2E8B57;
+            --warning: #D2691E;
+            --danger: #8B0000;
+            --info: #4682B4;
+            --bg-primary: #FFF8DC;
+            --bg-secondary: #FFFFF0;
+            --bg-card: #FFFFFF;
+            --text-primary: #3E2723;
+            --text-secondary: #5D4037;
+            --text-light: #8D6E63;
+            --border-light: #DEB887;
+            --border-medium: #D2B48C;
+            --shadow-sm: 0 2px 8px rgba(139, 69, 19, 0.08);
+            --shadow-md: 0 8px 24px rgba(139, 69, 19, 0.12);
+            --shadow-lg: 0 16px 48px rgba(139, 69, 19, 0.16);
+            --gradient-1: linear-gradient(135deg, #FFF8DC 0%, #F5DEB3 100%);
+            --gradient-2: linear-gradient(135deg, #D4A574 0%, #8B6914 100%);
+            --gradient-3: linear-gradient(135deg, #DEB887 0%, #D2B48C 100%);
         }
 
         body {
             font-family: 'Hind Siliguri', 'Noto Serif Bengali', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background: var(--gradient-1);
             color: var(--text-primary);
             line-height: 1.6;
             min-height: 100vh;
-            position: relative;
         }
 
         body::before {
@@ -47,15 +53,15 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-            opacity: 0.5;
+            background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="%23DEB887" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.4;
             pointer-events: none;
             z-index: -1;
         }
 
         /* Auto-update Banner */
         .auto-update-banner {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            background: var(--gradient-2);
             color: white;
             text-align: center;
             padding: 8px 20px;
@@ -66,76 +72,122 @@
             align-items: center;
             gap: 20px;
             flex-wrap: wrap;
-            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--accent);
         }
 
         .update-status { display: flex; align-items: center; gap: 8px; }
-        .pulse-dot { width: 10px; height: 10px; background: #fff; border-radius: 50%; animation: pulse 1.5s infinite; }
+        .pulse-dot { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; animation: pulse 1.5s infinite; box-shadow: 0 0 10px var(--accent); }
         @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.3); } }
 
         /* Header */
         .top-header {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 240, 0.95);
+            backdrop-filter: blur(10px);
             color: var(--text-primary);
             padding: 16px 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            border-bottom: 1px solid var(--glass-border);
+            border-bottom: 3px solid var(--primary);
+            box-shadow: var(--shadow-sm);
         }
 
         .date-display { display: flex; gap: 20px; font-size: 1.1rem; }
-        .date-display span { background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 600; }
-        .live-time { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 24px; border-radius: 50px; font-family: monospace; font-size: 1.4rem; font-weight: 700; box-shadow: var(--shadow-lg); }
+        .date-display span { color: var(--secondary); font-weight: 600; }
+        .date-display i { color: var(--primary-dark); margin-right: 5px; }
+        .live-time {
+            background: var(--gradient-2);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-family: monospace;
+            font-size: 1.4rem;
+            font-weight: 700;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--accent);
+        }
 
         /* Container */
         .container { max-width: 1400px; margin: 0 auto; padding: 24px 32px; }
 
         /* Era Section */
         .era-section {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 30px;
-            padding: 20px 28px;
+            background: var(--bg-card);
+            border: 2px solid var(--border-light);
+            border-radius: 24px;
+            padding: 24px 32px;
             margin: 24px 0;
+            box-shadow: var(--shadow-md);
+            background: var(--gradient-1);
         }
 
         .era-main {
             font-size: 1.8rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--secondary);
             margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--primary);
         }
 
-        .era-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px 20px; }
+        .era-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 20px; }
         .era-item { display: flex; align-items: baseline; }
-        .era-label { font-weight: 600; color: var(--primary); min-width: 120px; }
-        .era-value { font-weight: 500; }
+        .era-label { font-weight: 600; color: var(--primary-dark); min-width: 130px; }
+        .era-value { font-weight: 500; color: var(--text-primary); }
 
         /* Hero */
         .hero { text-align: center; margin: 32px 0 40px; }
-        .hero h1 { font-size: 3.2rem; font-weight: 800; background: linear-gradient(135deg, #fff, #FFEAA7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-year { font-size: 2rem; font-weight: 700; color: white; margin: 16px 0; }
-        .hero p { color: rgba(255,255,255,0.9); }
+        .hero h1 { font-size: 3.2rem; font-weight: 800; color: var(--secondary); text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.1); }
+        .hero-year { font-size: 2rem; font-weight: 700; color: var(--primary-dark); margin: 16px 0; }
+        .hero p { color: var(--text-secondary); }
 
         /* Year Selector */
         .year-selector { display: flex; justify-content: center; gap: 12px; margin: 24px 0; flex-wrap: wrap; }
-        .year-btn { background: var(--glass-bg); backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.3); color: var(--text-primary); padding: 12px 28px; border-radius: 50px; font-size: 1.2rem; font-weight: 600; cursor: pointer; transition: all 0.3s; }
-        .year-btn:hover { background: white; transform: translateY(-2px); }
-        .year-btn.active { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-color: transparent; }
+        .year-btn {
+            background: var(--bg-card);
+            border: 2px solid var(--primary);
+            color: var(--secondary);
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
+        }
+        .year-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
+        .year-btn.active { background: var(--gradient-2); color: white; border-color: var(--primary-dark); }
 
         /* Tabs */
-        .tabs-container { background: var(--glass-bg); backdrop-filter: blur(20px); border-radius: 60px; padding: 10px; margin: 32px 0; border: 1px solid var(--glass-border); }
-        .tabs { display: flex; flex-wrap: wrap; gap: 6px; }
-        .tab { flex: 1; min-width: 100px; padding: 16px 12px; border: none; background: transparent; font-family: inherit; font-size: 0.9rem; font-weight: 600; color: var(--text-secondary); border-radius: 50px; cursor: pointer; transition: all 0.3s; text-align: center; }
-        .tab i { margin-right: 6px; }
-        .tab:hover { background: rgba(108, 92, 231, 0.1); color: var(--primary); }
-        .tab.active { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .tabs-container {
+            background: var(--bg-card);
+            border-radius: 60px;
+            padding: 8px;
+            margin: 32px 0;
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--border-light);
+        }
+        .tabs { display: flex; flex-wrap: wrap; gap: 4px; }
+        .tab {
+            flex: 1;
+            min-width: 100px;
+            padding: 14px 12px;
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .tab i { margin-right: 6px; color: var(--primary-dark); }
+        .tab:hover { background: var(--primary-light); color: var(--secondary); }
+        .tab.active { background: var(--gradient-2); color: white; }
+        .tab.active i { color: white; }
 
         /* Tab Pane */
         .tab-pane { display: none; animation: fadeSlide 0.4s ease; }
@@ -143,61 +195,227 @@
         @keyframes fadeSlide { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* Section Card */
-        .section-card { background: var(--glass-bg); backdrop-filter: blur(20px); border-radius: 30px; padding: 28px; margin: 28px 0; border: 1px solid var(--glass-border); }
-        .section-title { font-size: 1.6rem; font-weight: 700; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 3px solid var(--primary-light); display: flex; align-items: center; gap: 12px; }
+        .section-card {
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 28px;
+            margin: 28px 0;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+        }
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-title i { color: var(--primary-dark); }
 
         /* Calendar */
-        .month-navigator { display: flex; align-items: center; justify-content: space-between; background: var(--glass-bg); padding: 16px 28px; border-radius: 60px; margin-bottom: 24px; }
-        .month-title { font-size: 1.8rem; font-weight: 700; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .nav-arrow { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; transition: all 0.3s; }
-        .nav-arrow:hover { transform: scale(1.1); }
+        .month-navigator {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-card);
+            padding: 16px 28px;
+            border-radius: 60px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+        }
+        .month-title { font-size: 1.8rem; font-weight: 700; color: var(--secondary); }
+        .nav-arrow {
+            background: var(--gradient-2);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
+        }
+        .nav-arrow:hover { transform: scale(1.1); background: var(--primary-dark); }
 
         .calendar { padding: 24px; }
         .weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; margin-bottom: 16px; }
-        .weekday { text-align: center; font-weight: 700; padding: 12px; background: rgba(108, 92, 231, 0.1); border-radius: 12px; }
+        .weekday {
+            text-align: center;
+            font-weight: 700;
+            padding: 12px;
+            background: var(--primary-light);
+            border-radius: 12px;
+            color: var(--secondary);
+            border: 1px solid var(--border-light);
+        }
         .days-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
 
-        .day-cell { background: white; border-radius: 16px; padding: 14px 6px; text-align: center; cursor: pointer; transition: all 0.2s; box-shadow: var(--shadow-sm); }
-        .day-cell:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-        .day-cell.today { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
-        .day-cell.today .bangla-day, .day-cell.today .tithi-short, .day-cell.today small { color: white !important; }
+        .day-cell {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 14px 6px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+        }
+        .day-cell:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--primary); }
+        .day-cell.today {
+            background: var(--gradient-2);
+            color: white;
+            border: 2px solid var(--accent);
+        }
+        .day-cell.today .bangla-day { color: white; }
+        .day-cell.today .tithi-short { background: rgba(255,255,255,0.3); color: white; }
         .day-cell.auspicious { border-left: 4px solid var(--success); }
-        .day-cell .bangla-day { font-size: 1.8rem; font-weight: 800; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .day-cell .tithi-short { font-size: 0.75rem; padding: 2px 6px; border-radius: 20px; margin-top: 4px; color: var(--text-secondary); }
+        .day-cell .bangla-day { font-size: 1.8rem; font-weight: 800; color: var(--secondary); }
+        .day-cell .tithi-short {
+            font-size: 0.75rem;
+            background: var(--primary-light);
+            color: var(--secondary);
+            padding: 2px 6px;
+            border-radius: 20px;
+            margin-top: 4px;
+        }
+        .day-cell small { color: var(--text-light); }
 
         /* Panchanga Grid */
         .panchanga-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-        .info-card { background: white; border-radius: 20px; padding: 22px; box-shadow: var(--shadow-sm); }
-        .info-title { font-size: 1.2rem; font-weight: 700; color: var(--primary); margin-bottom: 18px; }
-        .info-row { display: flex; padding: 8px 0; border-bottom: 1px dashed #ddd; }
+        .info-card {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 22px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+        }
+        .info-title { font-size: 1.2rem; font-weight: 700; color: var(--secondary); margin-bottom: 18px; border-bottom: 2px solid var(--primary-light); padding-bottom: 8px; }
+        .info-row { display: flex; padding: 8px 0; border-bottom: 1px dashed var(--border-light); }
         .info-label { font-weight: 600; min-width: 120px; color: var(--text-secondary); }
-        .info-value { font-weight: 500; }
+        .info-value { font-weight: 500; color: var(--text-primary); }
 
         /* Dates List */
         .dates-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
-        .date-card { background: white; padding: 18px 20px; border-radius: 18px; display: flex; align-items: center; gap: 16px; box-shadow: var(--shadow-sm); }
-        .date-badge { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 16px; border-radius: 14px; text-align: center; min-width: 80px; font-weight: 700; }
-        .date-info strong { color: var(--primary-dark); }
+        .date-card {
+            background: var(--bg-card);
+            padding: 18px 20px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+        }
+        .date-badge {
+            background: var(--gradient-2);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 14px;
+            text-align: center;
+            min-width: 80px;
+            font-weight: 700;
+        }
+        .date-info strong { color: var(--secondary); }
 
         /* Name List */
-        .name-search-container { background: white; border-radius: 20px; padding: 24px; margin-bottom: 24px; }
+        .name-search-container { background: var(--bg-secondary); border-radius: 20px; padding: 24px; border: 1px solid var(--border-light); }
         .search-box { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
-        .search-input { flex: 1; padding: 14px 20px; border: 2px solid var(--primary-light); border-radius: 50px; font-size: 1rem; font-family: inherit; }
-        .filter-select { padding: 14px 20px; border: 2px solid var(--primary-light); border-radius: 50px; font-size: 1rem; font-family: inherit; background: white; }
+        .search-input {
+            flex: 1;
+            padding: 14px 20px;
+            border: 2px solid var(--primary);
+            border-radius: 50px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: var(--bg-card);
+        }
+        .filter-select {
+            padding: 14px 20px;
+            border: 2px solid var(--primary);
+            border-radius: 50px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: var(--bg-card);
+        }
         .name-stats { margin-bottom: 20px; color: var(--text-secondary); }
-        .name-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; max-height: 500px; overflow-y: auto; padding: 4px; }
-        .name-card { background: var(--glass-bg); padding: 14px 18px; border-radius: 14px; cursor: pointer; transition: all 0.2s; border: 1px solid var(--glass-border); }
-        .name-card:hover { background: white; transform: translateX(4px); box-shadow: var(--shadow-sm); }
-        .name-bengali { font-size: 1.2rem; font-weight: 700; color: var(--primary-dark); }
+        .name-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            max-height: 500px;
+            overflow-y: auto;
+            padding: 4px;
+        }
+        .name-card {
+            background: var(--bg-card);
+            padding: 14px 18px;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+        }
+        .name-card:hover { background: var(--primary-light); transform: translateX(4px); }
+        .name-bengali { font-size: 1.2rem; font-weight: 700; color: var(--secondary); }
         .name-english { font-size: 0.9rem; color: var(--text-secondary); }
         .name-meaning { font-size: 0.85rem; color: var(--success); margin-top: 4px; }
         .pagination { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
-        .page-btn { padding: 8px 16px; border: 1px solid var(--primary-light); background: white; border-radius: 30px; cursor: pointer; font-family: inherit; }
-        .page-btn.active { background: var(--primary); color: white; }
+        .page-btn {
+            padding: 8px 16px;
+            border: 1px solid var(--primary);
+            background: var(--bg-card);
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .page-btn.active { background: var(--gradient-2); color: white; }
+
+        /* Eclipse Cards */
+        .eclipse-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; }
+        .eclipse-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+        }
+        .eclipse-card.solar { border-top: 5px solid var(--warning); }
+        .eclipse-card.lunar { border-top: 5px solid var(--info); }
+        .eclipse-header { display: flex; align-items: center; gap: 12px; font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; color: var(--secondary); }
+        .eclipse-header i { font-size: 2rem; }
+        .solar .eclipse-header i { color: var(--warning); }
+        .lunar .eclipse-header i { color: var(--info); }
+        .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+        .badge-success { background: var(--success); color: white; }
+        .badge-warning { background: var(--warning); color: white; }
+
+        /* Info Box */
+        .info-box {
+            margin-top: 24px;
+            padding: 20px;
+            border-radius: 16px;
+        }
+        .info-box.rules { background: rgba(218, 165, 32, 0.1); border-left: 4px solid var(--accent); }
+        .info-box.warning { background: rgba(210, 105, 30, 0.1); border-left: 4px solid var(--warning); }
 
         /* Footer */
-        .footer { text-align: center; margin-top: 56px; padding: 40px; background: var(--glass-bg); backdrop-filter: blur(20px); border-radius: 40px 40px 0 0; border: 1px solid var(--glass-border); }
-        .footer p { margin: 10px 0; }
+        .footer {
+            text-align: center;
+            margin-top: 56px;
+            padding: 40px;
+            background: var(--gradient-2);
+            color: white;
+            border-radius: 40px 40px 0 0;
+        }
+        .footer a { color: var(--accent); }
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -208,7 +426,6 @@
             .month-title { font-size: 1.3rem; }
             .day-cell .bangla-day { font-size: 1.3rem; }
             .tab { min-width: 70px; padding: 12px 6px; font-size: 0.75rem; }
-            .tab i { margin-right: 3px; }
         }
     </style>
 </head>
@@ -244,7 +461,7 @@
     <div class="hero">
         <h1><i class="fas fa-om"></i> সম্পূর্ণ বাংলা পঞ্জিকা <i class="fas fa-star"></i></h1>
         <div class="hero-year" id="heroYear"></div>
-        <p><i class="fas fa-baby"></i> নামকরণ • অন্নপ্রাশন • ৪০০০+ শিশুর নাম অর্থসহ</p>
+        <p><i class="fas fa-check-circle" style="color: var(--success);"></i> নামকরণ • অন্নপ্রাশন • ৪০০০+ নাম • গ্রহণ • মুহূর্ত • উৎসব</p>
     </div>
 
     <!-- Year Selector -->
@@ -260,6 +477,10 @@
             <button class="tab" data-tab="boyNames"><i class="fas fa-male"></i> ছেলেদের নাম</button>
             <button class="tab" data-tab="girlNames"><i class="fas fa-female"></i> মেয়েদের নাম</button>
             <button class="tab" data-tab="muhurta"><i class="fas fa-clock"></i> শুভ সময়</button>
+            <button class="tab" data-tab="shuddhi"><i class="fas fa-star"></i> শুদ্ধি</button>
+            <button class="tab" data-tab="eclipse"><i class="fas fa-sun"></i> গ্রহণ</button>
+            <button class="tab" data-tab="nishedh"><i class="fas fa-ban"></i> নিষেধ</button>
+            <button class="tab" data-tab="yatra"><i class="fas fa-road"></i> যাত্রা</button>
             <button class="tab" data-tab="festivals"><i class="fas fa-gift"></i> উৎসব</button>
         </div>
     </div>
@@ -275,23 +496,49 @@
             <div class="weekdays" id="weekdays"></div>
             <div class="days-grid" id="daysGrid"></div>
         </div>
-        <div class="section-card"><div class="section-title">নির্বাচিত দিনের বিবরণ</div><div id="selectedDayDetails"></div></div>
+        <div class="section-card"><div class="section-title"><i class="fas fa-info-circle"></i> নির্বাচিত দিনের বিবরণ</div><div id="selectedDayDetails"></div></div>
     </div>
 
-    <div class="tab-pane" id="panchanga-pane"><div class="section-card"><div class="section-title">আজকের পূর্ণ পঞ্চাঙ্গ</div><div id="panchangaContent"></div></div></div>
-    <div class="tab-pane" id="naamkaran-pane"><div class="section-card"><div class="section-title"><i class="fas fa-baby"></i> নামকরণের শুভ তারিখ</div><div id="naamkaranDates" class="dates-list"></div><div style="margin-top:24px;padding:20px;background:rgba(253,203,110,0.2);border-radius:16px"><h4><i class="fas fa-info-circle"></i> নামকরণের নিয়মাবলী</h4><p>• নামকরণ সাধারণত জন্মের ১১তম, ১৬তম বা ২১তম দিনে করা হয়।</p><p>• শুক্লপক্ষের ২,৩,৫,৭,১০,১১,১২,১৩ তিথি নামকরণের জন্য শুভ।</p><p>• অশ্লেষা, জ্যেষ্ঠা, মূলা, রেবতী নক্ষত্র বর্জনীয়।</p><p>• সোম, বুধ, বৃহস্পতি, শুক্রবার নামকরণের জন্য প্রশস্ত।</p></div></div></div>
-    <div class="tab-pane" id="annaprashan-pane"><div class="section-card"><div class="section-title"><i class="fas fa-utensils"></i> অন্নপ্রাশনের শুভ তারিখ</div><div id="annaprashanDates" class="dates-list"></div><div style="margin-top:24px;padding:20px;background:rgba(0,206,201,0.1);border-radius:16px"><h4><i class="fas fa-info-circle"></i> অন্নপ্রাশনের নিয়মাবলী</h4><p>• ছেলেদের জন্য ৬-৮ মাস, মেয়েদের জন্য ৫-৭ মাস বয়সে অন্নপ্রাশন করা হয়।</p><p>• শুক্লপক্ষের ২,৩,৫,৭,১০,১১,১২ তিথি উত্তম।</p><p>• রোহিণী, মৃগশিরা, পুনর্বসু, পুষ্যা, হস্তা, চিত্রা, স্বাতী, অনুরাধা নক্ষত্র শুভ।</p><p>• মঙ্গলবার ও শনিবার বর্জনীয়।</p></div></div></div>
-    <div class="tab-pane" id="boyNames-pane"><div class="section-card"><div class="section-title"><i class="fas fa-male"></i> হিন্দু ছেলেদের নাম (২০০০+)</div><div class="name-search-container"><div class="search-box"><input type="text" class="search-input" id="boyNameSearch" placeholder="নাম খুঁজুন... (বাংলা বা ইংরেজি)"><select class="filter-select" id="boyNameFilter"><option value="all">সকল</option><option value="A">A অ</option><option value="B">B ব</option><option value="C">C চ</option><option value="D">D দ</option><option value="G">G গ</option><option value="H">H হ</option><option value="K">K ক</option><option value="M">M ম</option><option value="N">N ন</option><option value="P">P প</option><option value="R">R র</option><option value="S">S স/শ</option><option value="V">V ভ</option></select></div><div class="name-stats" id="boyNameStats"></div><div class="name-grid" id="boyNameGrid"></div><div class="pagination" id="boyPagination"></div></div></div></div>
-    <div class="tab-pane" id="girlNames-pane"><div class="section-card"><div class="section-title"><i class="fas fa-female"></i> হিন্দু মেয়েদের নাম (২০০০+)</div><div class="name-search-container"><div class="search-box"><input type="text" class="search-input" id="girlNameSearch" placeholder="নাম খুঁজুন... (বাংলা বা ইংরেজি)"><select class="filter-select" id="girlNameFilter"><option value="all">সকল</option><option value="A">A অ/আ</option><option value="B">B ব</option><option value="C">C চ</option><option value="D">D দ</option><option value="G">G গ</option><option value="H">H হ</option><option value="K">K ক</option><option value="L">L ল</option><option value="M">M ম</option><option value="N">N ন</option><option value="P">P প</option><option value="R">R র</option><option value="S">S স/শ</option></select></div><div class="name-stats" id="girlNameStats"></div><div class="name-grid" id="girlNameGrid"></div><div class="pagination" id="girlPagination"></div></div></div></div>
-    <div class="tab-pane" id="muhurta-pane"><div class="section-card"><div class="section-title">শুভ মুহূর্ত</div><div id="muhurtaContent"></div></div></div>
-    <div class="tab-pane" id="festivals-pane"><div class="section-card"><div class="section-title">উৎসব তালিকা</div><div id="festivalsContent"></div></div></div>
+    <div class="tab-pane" id="panchanga-pane"><div class="section-card"><div class="section-title"><i class="fas fa-om"></i> আজকের পূর্ণ পঞ্চাঙ্গ</div><div id="panchangaContent"></div></div></div>
+    
+    <div class="tab-pane" id="naamkaran-pane">
+        <div class="section-card"><div class="section-title"><i class="fas fa-baby"></i> নামকরণের শুভ তারিখ</div><div id="naamkaranDates" class="dates-list"></div>
+        <div class="info-box rules"><h4><i class="fas fa-info-circle"></i> নামকরণের নিয়মাবলী</h4><p>• নামকরণ সাধারণত জন্মের ১১তম, ১৬তম বা ২১তম দিনে করা হয়।</p><p>• শুক্লপক্ষের ২,৩,৫,৭,১০,১১,১২,১৩ তিথি নামকরণের জন্য শুভ।</p><p>• অশ্লেষা, জ্যেষ্ঠা, মূলা, রেবতী নক্ষত্র বর্জনীয়।</p><p>• সোম, বুধ, বৃহস্পতি, শুক্রবার নামকরণের জন্য প্রশস্ত।</p></div></div>
+    </div>
+    
+    <div class="tab-pane" id="annaprashan-pane">
+        <div class="section-card"><div class="section-title"><i class="fas fa-utensils"></i> অন্নপ্রাশনের শুভ তারিখ</div><div id="annaprashanDates" class="dates-list"></div>
+        <div class="info-box rules"><h4><i class="fas fa-info-circle"></i> অন্নপ্রাশনের নিয়মাবলী</h4><p>• ছেলেদের জন্য ৬-৮ মাস, মেয়েদের জন্য ৫-৭ মাস বয়সে অন্নপ্রাশন করা হয়।</p><p>• শুক্লপক্ষের ২,৩,৫,৭,১০,১১,১২ তিথি উত্তম।</p><p>• রোহিণী, মৃগশিরা, পুনর্বসু, পুষ্যা, হস্তা, চিত্রা, স্বাতী, অনুরাধা নক্ষত্র শুভ।</p><p>• মঙ্গলবার ও শনিবার বর্জনীয়।</p></div></div>
+    </div>
+    
+    <div class="tab-pane" id="boyNames-pane">
+        <div class="section-card"><div class="section-title"><i class="fas fa-male"></i> হিন্দু ছেলেদের নাম (২০০০+)</div>
+        <div class="name-search-container"><div class="search-box"><input type="text" class="search-input" id="boyNameSearch" placeholder="নাম খুঁজুন... (বাংলা বা ইংরেজি)"><select class="filter-select" id="boyNameFilter"><option value="all">সকল</option><option value="A">A অ</option><option value="B">B ব</option><option value="C">C চ</option><option value="D">D দ</option><option value="G">G গ</option><option value="H">H হ</option><option value="K">K ক</option><option value="M">M ম</option><option value="N">N ন</option><option value="P">P প</option><option value="R">R র</option><option value="S">S স/শ</option><option value="V">V ভ</option></select></div><div class="name-stats" id="boyNameStats"></div><div class="name-grid" id="boyNameGrid"></div><div class="pagination" id="boyPagination"></div></div></div>
+    </div>
+    
+    <div class="tab-pane" id="girlNames-pane">
+        <div class="section-card"><div class="section-title"><i class="fas fa-female"></i> হিন্দু মেয়েদের নাম (২০০০+)</div>
+        <div class="name-search-container"><div class="search-box"><input type="text" class="search-input" id="girlNameSearch" placeholder="নাম খুঁজুন... (বাংলা বা ইংরেজি)"><select class="filter-select" id="girlNameFilter"><option value="all">সকল</option><option value="A">A অ/আ</option><option value="B">B ব</option><option value="C">C চ</option><option value="D">D দ</option><option value="G">G গ</option><option value="H">H হ</option><option value="K">K ক</option><option value="L">L ল</option><option value="M">M ম</option><option value="N">N ন</option><option value="P">P প</option><option value="R">R র</option><option value="S">S স/শ</option></select></div><div class="name-stats" id="girlNameStats"></div><div class="name-grid" id="girlNameGrid"></div><div class="pagination" id="girlPagination"></div></div></div>
+    </div>
+    
+    <div class="tab-pane" id="muhurta-pane"><div class="section-card"><div class="section-title"><i class="fas fa-clock"></i> শুভ মুহূর্ত ও সময়</div><div id="muhurtaContent"></div></div></div>
+    
+    <div class="tab-pane" id="shuddhi-pane"><div class="section-card"><div class="section-title"><i class="fas fa-star"></i> চন্দ্র শুদ্ধি ও তারা শুদ্ধি</div><div id="shuddhiContent"></div></div></div>
+    
+    <div class="tab-pane" id="eclipse-pane"><div class="section-card"><div class="section-title"><i class="fas fa-sun"></i> সূর্য ও চন্দ্র গ্রহণ</div><div id="eclipseContent"></div></div></div>
+    
+    <div class="tab-pane" id="nishedh-pane"><div class="section-card"><div class="section-title"><i class="fas fa-ban"></i> নিষেধ ও অশুভ সময়</div><div id="nishedhContent"></div></div></div>
+    
+    <div class="tab-pane" id="yatra-pane"><div class="section-card"><div class="section-title"><i class="fas fa-road"></i> যাত্রার শুভ সময় ও দিক</div><div id="yatraContent"></div></div></div>
+    
+    <div class="tab-pane" id="festivals-pane"><div class="section-card"><div class="section-title"><i class="fas fa-gift"></i> বার্ষিক উৎসব তালিকা</div><div id="festivalsContent"></div></div></div>
 </div>
 
 <!-- Footer -->
 <div class="footer">
-    <p style="font-size: 1.4rem; font-weight: 700; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">সম্পূর্ণ বাংলা পঞ্জিকা</p>
-    <p><i class="fas fa-baby"></i> নামকরণ • অন্নপ্রাশন • ৪০০০+ নাম • পঞ্চাঙ্গ • মুহূর্ত • উৎসব</p>
-    <p style="margin-top: 20px;">© ২০২৬ আধুনিক বাংলা পঞ্জিকা • GitHub Pages Ready</p>
+    <p style="font-size: 1.4rem; font-weight: 700;"><i class="fas fa-om"></i> সম্পূর্ণ বাংলা পঞ্জিকা</p>
+    <p><i class="fas fa-baby"></i> নামকরণ • অন্নপ্রাশন • ৪০০০+ নাম • পঞ্চাঙ্গ • গ্রহণ • মুহূর্ত • উৎসব</p>
+    <p style="margin-top: 20px;">© ২০২৬ নির্ভুল বাংলা পঞ্জিকা • A Dipto Design Project</p>
 </div>
 
 <script>
@@ -310,354 +557,144 @@
     const TARA_NAMES = ["জন্মা", "সম্পৎ", "বিপৎ", "ক্ষেম", "প্রত্যরি", "সাধক", "বধ", "মিত্র", "অতি মিত্র"];
     const GRAHAS = ["সূর্য", "চন্দ্র", "মঙ্গল", "বুধ", "বৃহস্পতি", "শুক্র", "শনি", "রাহু", "কেতু"];
     
+    const ECLIPSES = {
+        solar: [
+            { date: "2025-03-29", type: "আংশিক সূর্য গ্রহণ", visibleBD: false },
+            { date: "2026-08-12", type: "পূর্ণ সূর্য গ্রহণ", visibleBD: false },
+            { date: "2027-08-02", type: "পূর্ণ সূর্য গ্রহণ", visibleBD: false },
+            { date: "2030-06-01", type: "বলয়াকার সূর্য গ্রহণ", visibleBD: true }
+        ],
+        lunar: [
+            { date: "2025-09-07", type: "পূর্ণ চন্দ্র গ্রহণ", visibleBD: true },
+            { date: "2026-03-03", type: "পূর্ণ চন্দ্র গ্রহণ", visibleBD: true },
+            { date: "2026-08-28", type: "আংশিক চন্দ্র গ্রহণ", visibleBD: true },
+            { date: "2028-12-31", type: "পূর্ণ চন্দ্র গ্রহণ", visibleBD: true }
+        ]
+    };
+    
     const FESTIVALS = {
         1432: { "0-1": "পহেলা বৈশাখ", "0-25": "বুদ্ধ পূর্ণিমা", "1-10": "জ্যৈষ্ঠ পূর্ণিমা", "2-15": "আষাঢ়ী পূর্ণিমা", "3-15": "গুরু পূর্ণিমা", "3-30": "রাখী পূর্ণিমা", "4-8": "জন্মাষ্টমী", "5-1": "মহালয়া", "5-6": "দুর্গাপূজা ষষ্ঠী", "5-10": "বিজয়া দশমী", "6-14": "কালীপূজা", "9-5": "সরস্বতী পূজা", "10-14": "শিবরাত্রি", "11-1": "দোলযাত্রা" }
     };
     
-    // ==================== BABY NAMES DATABASE ====================
+    // ==================== BABY NAMES ====================
     const BOY_NAMES_BASE = [
         { bn: "অভিজিৎ", en: "Abhijit", meaning: "বিজয়ী, অপরাজেয়" },
-        { bn: "অভিষেক", en: "Abhishek", meaning: "অভিষেক, পূজা" },
         { bn: "আদিত্য", en: "Aditya", meaning: "সূর্য" },
-        { bn: "অদ্বৈত", en: "Advait", meaning: "অদ্বিতীয়, এক" },
+        { bn: "অদ্বৈত", en: "Advait", meaning: "অদ্বিতীয়" },
         { bn: "অজয়", en: "Ajay", meaning: "অপরাজেয়" },
-        { bn: "আকাশ", en: "Akash", meaning: "আকাশ, গগন" },
-        { bn: "অক্ষয়", en: "Akshay", meaning: "অক্ষয়, অবিনশ্বর" },
-        { bn: "অমর", en: "Amar", meaning: "অমর, চিরঞ্জীব" },
-        { bn: "অমিত", en: "Amit", meaning: "অসীম, অপার" },
-        { bn: "আনন্দ", en: "Anand", meaning: "আনন্দ, সুখ" },
-        { bn: "অনন্ত", en: "Anant", meaning: "অনন্ত, অসীম" },
-        { bn: "অনিল", en: "Anil", meaning: "বায়ু" },
-        { bn: "অঙ্কুর", en: "Ankur", meaning: "অঙ্কুর, সূচনা" },
-        { bn: "অনুরাগ", en: "Anurag", meaning: "ভালোবাসা, আসক্তি" },
-        { bn: "অর্জুন", en: "Arjun", meaning: "উজ্জ্বল, পাণ্ডব" },
-        { bn: "অরুণ", en: "Arun", meaning: "সূর্য, ঊষা" },
-        { bn: "আর্য", en: "Arya", meaning: "শ্রেষ্ঠ, মহৎ" },
-        { bn: "আশিস", en: "Ashish", meaning: "আশীর্বাদ" },
-        { bn: "আশুতোষ", en: "Ashutosh", meaning: "যিনি সহজেই তুষ্ট হন, শিব" },
-        { bn: "অতুল", en: "Atul", meaning: "অতুলনীয়" },
-        { bn: "অভয়", en: "Abhay", meaning: "নির্ভয়" },
-        { bn: "অভিমন্যু", en: "Abhimanyu", meaning: "অর্জুনের পুত্র" },
-        { bn: "বলরাম", en: "Balram", meaning: "কৃষ্ণের জ্যেষ্ঠ ভ্রাতা" },
-        { bn: "ভরত", en: "Bharat", meaning: "রামের ভাই, দেশ" },
-        { bn: "ভাস্কর", en: "Bhaskar", meaning: "সূর্য" },
-        { bn: "ভীম", en: "Bheem", meaning: "শক্তিশালী, পাণ্ডব" },
-        { bn: "ভীষ্ম", en: "Bhishm", meaning: "ভীষ্ম পিতামহ" },
+        { bn: "আকাশ", en: "Akash", meaning: "আকাশ" },
+        { bn: "অক্ষয়", en: "Akshay", meaning: "অবিনশ্বর" },
+        { bn: "অমর", en: "Amar", meaning: "অমর" },
+        { bn: "আনন্দ", en: "Anand", meaning: "আনন্দ" },
+        { bn: "অর্জুন", en: "Arjun", meaning: "পাণ্ডব" },
+        { bn: "আর্য", en: "Arya", meaning: "শ্রেষ্ঠ" },
+        { bn: "আশুতোষ", en: "Ashutosh", meaning: "শিব" },
+        { bn: "অভিমন্যু", en: "Abhimanyu", meaning: "অর্জুনপুত্র" },
+        { bn: "বলরাম", en: "Balram", meaning: "কৃষ্ণের ভাই" },
+        { bn: "ভরত", en: "Bharat", meaning: "রামের ভাই" },
+        { bn: "ভীম", en: "Bheem", meaning: "পাণ্ডব" },
         { bn: "বিজয়", en: "Bijoy", meaning: "বিজয়ী" },
         { bn: "বিনয়", en: "Binoy", meaning: "বিনয়ী" },
-        { bn: "বীর", en: "Bir", meaning: "বীর, সাহসী" },
-        { bn: "চৈতন্য", en: "Chaitanya", meaning: "চেতনা, মহাপ্রভু" },
-        { bn: "চন্দ্র", en: "Chandra", meaning: "চাঁদ" },
-        { bn: "চেতন", en: "Chetan", meaning: "চেতনা" },
-        { bn: "দক্ষ", en: "Daksh", meaning: "দক্ষ, সক্ষম" },
-        { bn: "দর্শন", en: "Darshan", meaning: "দর্শন, দেখা" },
+        { bn: "চৈতন্য", en: "Chaitanya", meaning: "মহাপ্রভু" },
         { bn: "দেব", en: "Dev", meaning: "দেবতা" },
-        { bn: "দেবাংশ", en: "Devansh", meaning: "দেবতার অংশ" },
-        { bn: "ধ্রুব", en: "Dhruv", meaning: "ধ্রুব তারা, অটল" },
-        { bn: "দিলীপ", en: "Dilip", meaning: "রাজা, রঘুর পিতা" },
-        { bn: "দিনেশ", en: "Dinesh", meaning: "দিনের প্রভু, সূর্য" },
-        { bn: "দীপক", en: "Deepak", meaning: "প্রদীপ" },
-        { bn: "গণেশ", en: "Ganesh", meaning: "গণেশ, সিদ্ধিদাতা" },
-        { bn: "গৌতম", en: "Gautam", meaning: "গৌতম বুদ্ধ" },
-        { bn: "গোবিন্দ", en: "Govind", meaning: "কৃষ্ণ" },
+        { bn: "ধ্রুব", en: "Dhruv", meaning: "ধ্রুবতারা" },
+        { bn: "গণেশ", en: "Ganesh", meaning: "সিদ্ধিদাতা" },
+        { bn: "গৌতম", en: "Gautam", meaning: "বুদ্ধ" },
         { bn: "হরি", en: "Hari", meaning: "বিষ্ণু" },
-        { bn: "হরিশ", en: "Harish", meaning: "বিষ্ণু" },
-        { bn: "হৃষিকেশ", en: "Hrishikesh", meaning: "কৃষ্ণ" },
         { bn: "ইন্দ্র", en: "Indra", meaning: "দেবরাজ" },
-        { bn: "ইশান", en: "Ishaan", meaning: "উত্তর-পূর্ব দিক, শিব" },
-        { bn: "জগদীশ", en: "Jagdish", meaning: "জগতের প্রভু" },
-        { bn: "জয়", en: "Joy", meaning: "জয়, বিজয়" },
-        { bn: "কৈলাস", en: "Kailash", meaning: "শিবের বাসস্থান" },
-        { bn: "কল্যাণ", en: "Kalyan", meaning: "মঙ্গল" },
-        { bn: "কমল", en: "Kamal", meaning: "পদ্ম" },
-        { bn: "কার্তিক", en: "Kartik", meaning: "কার্তিক, শিবপুত্র" },
-        { bn: "কেশব", en: "Keshav", meaning: "কৃষ্ণ" },
-        { bn: "কিরণ", en: "Kiran", meaning: "রশ্মি" },
-        { bn: "কৃষ্ণ", en: "Krishna", meaning: "কৃষ্ণ, ভগবান" },
+        { bn: "ঈশান", en: "Ishaan", meaning: "শিব" },
+        { bn: "জয়", en: "Joy", meaning: "বিজয়" },
+        { bn: "কৃষ্ণ", en: "Krishna", meaning: "ভগবান" },
         { bn: "লক্ষ্মণ", en: "Lakshman", meaning: "রামের ভাই" },
-        { bn: "ললিত", en: "Lalit", meaning: "সুন্দর" },
         { bn: "মাধব", en: "Madhav", meaning: "কৃষ্ণ" },
-        { bn: "মনীষ", en: "Manish", meaning: "বুদ্ধিমান" },
-        { bn: "মিহির", en: "Mihir", meaning: "সূর্য" },
-        { bn: "মোহন", en: "Mohan", meaning: "মনোহর, কৃষ্ণ" },
-        { bn: "মুকুন্দ", en: "Mukund", meaning: "বিষ্ণু" },
         { bn: "নকুল", en: "Nakul", meaning: "পাণ্ডব" },
         { bn: "নারায়ণ", en: "Narayan", meaning: "বিষ্ণু" },
-        { bn: "নবীন", en: "Nabin", meaning: "নতুন" },
-        { bn: "নিখিল", en: "Nikhil", meaning: "সমগ্র, সম্পূর্ণ" },
-        { bn: "নীল", en: "Neel", meaning: "নীল" },
-        { bn: "নিতিন", en: "Nitin", meaning: "নীতিবান" },
+        { bn: "নিখিল", en: "Nikhil", meaning: "সমগ্র" },
         { bn: "ওঙ্কার", en: "Omkar", meaning: "ওঁ" },
         { bn: "পার্থ", en: "Parth", meaning: "অর্জুন" },
-        { bn: "পবন", en: "Pavan", meaning: "বায়ু" },
         { bn: "প্রণব", en: "Pronob", meaning: "ওঁ" },
-        { bn: "প্রদীপ", en: "Pradeep", meaning: "প্রদীপ" },
-        { bn: "প্রকাশ", en: "Prokash", meaning: "আলো" },
-        { bn: "প্রাণ", en: "Pran", meaning: "জীবন" },
-        { bn: "রাহুল", en: "Rahul", meaning: "বুদ্ধের পুত্র" },
         { bn: "রাজ", en: "Raj", meaning: "রাজা" },
-        { bn: "রাজীব", en: "Rajiv", meaning: "পদ্ম" },
-        { bn: "রমেশ", en: "Romesh", meaning: "বিষ্ণু" },
-        { bn: "রণবীর", en: "Ronobir", meaning: "রণবীর" },
         { bn: "রবি", en: "Robi", meaning: "সূর্য" },
         { bn: "ঋষি", en: "Rishi", meaning: "ঋষি" },
-        { bn: "রোহন", en: "Rohan", meaning: "আরোহণ" },
-        { bn: "রোহিত", en: "Rohit", meaning: "লাল" },
         { bn: "রুদ্র", en: "Rudro", meaning: "শিব" },
         { bn: "সচিন", en: "Sachin", meaning: "ইন্দ্র" },
-        { bn: "সাগর", en: "Sagor", meaning: "সমুদ্র" },
-        { bn: "সমীর", en: "Somir", meaning: "বায়ু" },
-        { bn: "সঞ্জয়", en: "Sonjoy", meaning: "বিজয়ী" },
         { bn: "শঙ্কর", en: "Shonkor", meaning: "শিব" },
-        { bn: "সত্য", en: "Sotto", meaning: "সত্য" },
-        { bn: "সৌরভ", en: "Sourov", meaning: "সুবাস" },
-        { bn: "শশাঙ্ক", en: "Shoshanko", meaning: "চাঁদ" },
         { bn: "শিব", en: "Shiv", meaning: "শিব" },
-        { bn: "শ্রেয়স", en: "Shreyas", meaning: "শ্রেষ্ঠ" },
-        { bn: "সিদ্ধার্থ", en: "Siddharth", meaning: "সিদ্ধিলাভকারী" },
-        { bn: "সোম", en: "Som", meaning: "চাঁদ" },
-        { bn: "শুভ", en: "Shuvo", meaning: "শুভ" },
-        { bn: "সুমিত", en: "Sumit", meaning: "সুমিত" },
-        { bn: "সুনীল", en: "Sunil", meaning: "গাঢ় নীল" },
-        { bn: "সুরজ", en: "Suraj", meaning: "সূর্য" },
-        { bn: "সুরেশ", en: "Suresh", meaning: "ইন্দ্র" },
+        { bn: "সিদ্ধার্থ", en: "Siddharth", meaning: "সিদ্ধার্থ" },
         { bn: "সূর্য", en: "Surjo", meaning: "সূর্য" },
-        { bn: "তন্ময়", en: "Tonmoy", meaning: "তন্ময়, নিমগ্ন" },
-        { bn: "তপন", en: "Topon", meaning: "সূর্য" },
-        { bn: "তরুণ", en: "Torun", meaning: "যুবক" },
-        { bn: "উদয়", en: "Uday", meaning: "উদয়, সূর্যোদয়" },
-        { bn: "উজ্জ্বল", en: "Ujjol", meaning: "উজ্জ্বল" },
-        { bn: "উমেশ", en: "Umesh", meaning: "শিব" },
-        { bn: "বৈভব", en: "Boibhob", meaning: "ঐশ্বর্য" },
+        { bn: "উদয়", en: "Uday", meaning: "উদয়" },
         { bn: "বরুণ", en: "Borun", meaning: "জলের দেবতা" },
         { bn: "বাসুদেব", en: "Basudeb", meaning: "কৃষ্ণ" },
-        { bn: "বিক্রম", en: "Bikrom", meaning: "পরাক্রম" },
-        { bn: "বিনয়", en: "Binoy", meaning: "বিনয়" },
         { bn: "বিশাল", en: "Bishal", meaning: "বিশাল" },
-        { bn: "বিশ্বজিৎ", en: "Bishwojit", meaning: "বিশ্বজয়ী" },
         { bn: "বিবেক", en: "Bibek", meaning: "বিবেক" },
-        { bn: "যশ", en: "Jash", meaning: "যশ, খ্যাতি" },
-        { bn: "যোগেশ", en: "Jogesh", meaning: "যোগের প্রভু" },
-        { bn: "যুধিষ্ঠির", en: "Judhisthir", meaning: "যুধিষ্ঠির" },
-        { bn: "ইতিবৃত", en: "Itibrit", meaning: "ইতিহাস" }
+        { bn: "যশ", en: "Jash", meaning: "খ্যাতি" }
     ];
     
     const GIRL_NAMES_BASE = [
-        { bn: "আধ্যা", en: "Aadhya", meaning: "প্রথম, আদি শক্তি" },
+        { bn: "আধ্যা", en: "Aadhya", meaning: "আদি শক্তি" },
         { bn: "আরাধ্যা", en: "Aaradhya", meaning: "পূজনীয়া" },
-        { bn: "আরোহী", en: "Aarohi", meaning: "উন্নতিশীল" },
-        { bn: "অদিতি", en: "Aditi", meaning: "দেবমাতা, অসীম" },
-        { bn: "অদ্বিকা", en: "Advika", meaning: "অদ্বিতীয়" },
+        { bn: "অদিতি", en: "Aditi", meaning: "দেবমাতা" },
         { bn: "ঐশ্বর্যা", en: "Aishwarya", meaning: "ঐশ্বর্য" },
-        { bn: "অক্ষরা", en: "Akshara", meaning: "অক্ষর, অবিনশ্বর" },
         { bn: "অমৃতা", en: "Amrita", meaning: "অমৃত" },
-        { bn: "অনন্যা", en: "Ananya", meaning: "অনন্য, অতুলনীয়" },
-        { bn: "অঞ্জলি", en: "Anjali", meaning: "অঞ্জলি, প্রণাম" },
-        { bn: "অঙ্কিতা", en: "Ankita", meaning: "চিহ্নিতা" },
+        { bn: "অনন্যা", en: "Ananya", meaning: "অনন্য" },
+        { bn: "অঞ্জলি", en: "Anjali", meaning: "প্রণাম" },
         { bn: "অর্চনা", en: "Archana", meaning: "পূজা" },
-        { bn: "অর্পিতা", en: "Arpita", meaning: "সমর্পিতা" },
         { bn: "আশা", en: "Asha", meaning: "আশা" },
-        { bn: "অবনী", en: "Avani", meaning: "পৃথিবী" },
-        { bn: "বাণী", en: "Bani", meaning: "বাণী, সরস্বতী" },
-        { bn: "ভাবনা", en: "Bhavana", meaning: "ভাবনা, অনুভূতি" },
-        { bn: "ভূমিকা", en: "Bhumika", meaning: "ভূমিকা, পৃথিবী" },
-        { bn: "চৈতালী", en: "Chaitali", meaning: "চৈত্র মাসের" },
-        { bn: "চন্দনা", en: "Chandana", meaning: "চন্দন" },
-        { bn: "ছায়া", en: "Chhaya", meaning: "ছায়া" },
-        { bn: "চিত্রা", en: "Chitra", meaning: "ছবি, চিত্র" },
+        { bn: "বাণী", en: "Bani", meaning: "সরস্বতী" },
+        { bn: "চৈতালী", en: "Chaitali", meaning: "চৈত্রের" },
         { bn: "দেবিকা", en: "Devika", meaning: "দেবী" },
-        { bn: "ধৃতি", en: "Dhriti", meaning: "ধৈর্য" },
         { bn: "দিব্যা", en: "Divya", meaning: "দিব্য" },
         { bn: "দীপিকা", en: "Deepika", meaning: "প্রদীপ" },
-        { bn: "দীপ্তি", en: "Deepti", meaning: "দীপ্তি, আলো" },
-        { bn: "একতা", en: "Ekta", meaning: "একতা" },
-        { bn: "ইলা", en: "Ela", meaning: "পৃথিবী" },
         { bn: "এষা", en: "Esha", meaning: "ইচ্ছা" },
-        { bn: "ফাল্গুনী", en: "Falguni", meaning: "ফাল্গুন মাসের" },
-        { bn: "গার্গী", en: "Gargi", meaning: "বিদুষী নারী" },
+        { bn: "গার্গী", en: "Gargi", meaning: "বিদুষী" },
         { bn: "গৌরী", en: "Gouri", meaning: "পার্বতী" },
-        { bn: "গীতাঞ্জলি", en: "Geetanjali", meaning: "গানের অঞ্জলি" },
-        { bn: "হরিণী", en: "Harini", meaning: "হরিণী" },
         { bn: "হর্ষিতা", en: "Harshita", meaning: "আনন্দিতা" },
-        { bn: "হেমা", en: "Hema", meaning: "স্বর্ণ" },
-        { bn: "ইন্দ্রাণী", en: "Indrani", meaning: "ইন্দ্রের পত্নী" },
-        { bn: "ইরা", en: "Ira", meaning: "পৃথিবী, সরস্বতী" },
+        { bn: "ইন্দ্রাণী", en: "Indrani", meaning: "ইন্দ্রাণী" },
         { bn: "ঈশা", en: "Isha", meaning: "ঈশ্বরী" },
-        { bn: "ঈশানি", en: "Ishani", meaning: "দুর্গা" },
         { bn: "জাহ্নবী", en: "Jahnavi", meaning: "গঙ্গা" },
-        { bn: "জননী", en: "Janani", meaning: "মা" },
         { bn: "জয়া", en: "Joya", meaning: "বিজয়িনী" },
         { bn: "জ্যোতি", en: "Jyoti", meaning: "আলো" },
-        { bn: "জ্যোৎস্না", en: "Jyotsna", meaning: "জ্যোৎস্না" },
         { bn: "কাজল", en: "Kajol", meaning: "কাজল" },
         { bn: "কল্যাণী", en: "Kalyani", meaning: "মঙ্গলময়ী" },
-        { bn: "কনিকা", en: "Kanika", meaning: "কণা" },
         { bn: "কবিতা", en: "Kobita", meaning: "কবিতা" },
-        { bn: "কেয়া", en: "Keya", meaning: "কেয়া ফুল" },
-        { bn: "খুশি", en: "Khushi", meaning: "খুশি, আনন্দ" },
-        { bn: "কিরণ", en: "Kiron", meaning: "রশ্মি" },
-        { bn: "কোমল", en: "Komal", meaning: "কোমল" },
-        { bn: "কৃতিকা", en: "Kritika", meaning: "নক্ষত্র" },
-        { bn: "কৃষ্ণা", en: "Krishna", meaning: "কৃষ্ণ, দ্রৌপদী" },
-        { bn: "কুসুম", en: "Kusum", meaning: "ফুল" },
-        { bn: "লাবণ্য", en: "Labonyo", meaning: "লাবণ্য, সৌন্দর্য" },
         { bn: "লক্ষ্মী", en: "Lokkhi", meaning: "লক্ষ্মী" },
-        { bn: "লাবণ্যা", en: "Lavanya", meaning: "সৌন্দর্য" },
-        { bn: "লীনা", en: "Lina", meaning: "লীন" },
-        { bn: "মাধবী", en: "Madhobi", meaning: "মাধবী লতা" },
         { bn: "মাধুরী", en: "Madhuri", meaning: "মাধুরী" },
         { bn: "মহিমা", en: "Mohima", meaning: "মহিমা" },
-        { bn: "মালতী", en: "Maloti", meaning: "মালতী ফুল" },
-        { bn: "মল্লিকা", en: "Mollika", meaning: "মল্লিকা ফুল" },
         { bn: "মানসী", en: "Manosi", meaning: "মানসী" },
-        { bn: "মণীষা", en: "Monisha", meaning: "বুদ্ধিমতী" },
         { bn: "মেধা", en: "Medha", meaning: "মেধা" },
-        { bn: "মীনাক্ষী", en: "Meenakshi", meaning: "মীনাক্ষী" },
         { bn: "মীরা", en: "Mira", meaning: "মীরাবাঈ" },
-        { bn: "মিতালী", en: "Mitali", meaning: "বন্ধুত্ব" },
-        { bn: "মোহিনী", en: "Mohini", meaning: "মোহিনী" },
-        { bn: "মৃণালিনী", en: "Mrinalini", meaning: "পদ্ম" },
-        { bn: "মুক্তা", en: "Mukta", meaning: "মুক্তা" },
-        { bn: "নন্দিনী", en: "Nondini", meaning: "আনন্দদায়িনী" },
         { bn: "নেহা", en: "Neha", meaning: "ভালোবাসা" },
-        { bn: "নিধি", en: "Nidhi", meaning: "ধন, রত্ন" },
-        { bn: "নিহারিকা", en: "Niharika", meaning: "নীহারিকা" },
-        { bn: "নিকিতা", en: "Nikita", meaning: "পৃথিবী" },
-        { bn: "নিলীমা", en: "Nilima", meaning: "নীলিমা" },
-        { bn: "নির্মলা", en: "Nirmola", meaning: "নির্মল" },
+        { bn: "নিধি", en: "Nidhi", meaning: "রত্ন" },
         { bn: "নিশা", en: "Nisha", meaning: "রাত্রি" },
-        { bn: "নূপুর", en: "Nupur", meaning: "নূপুর" },
-        { bn: "পদ্মিনী", en: "Poddini", meaning: "পদ্মিনী" },
         { bn: "পল্লবী", en: "Pallobi", meaning: "পল্লব" },
-        { bn: "পারুল", en: "Parul", meaning: "পারুল ফুল" },
-        { bn: "পায়েল", en: "Payel", meaning: "নূপুর" },
-        { bn: "প্রজ্ঞা", en: "Progga", meaning: "জ্ঞান" },
         { bn: "প্রিয়াঙ্কা", en: "Priyanka", meaning: "প্রিয়া" },
         { bn: "পূর্ণিমা", en: "Purnima", meaning: "পূর্ণিমা" },
         { bn: "রাধা", en: "Radha", meaning: "রাধা" },
-        { bn: "রাধিকা", en: "Radhika", meaning: "রাধা" },
-        { bn: "রাগিণী", en: "Ragini", meaning: "রাগিণী" },
-        { bn: "রমা", en: "Roma", meaning: "লক্ষ্মী" },
         { bn: "রাণী", en: "Rani", meaning: "রাণী" },
-        { bn: "রাশি", en: "Rashi", meaning: "রাশি" },
         { bn: "রিয়া", en: "Riya", meaning: "গায়িকা" },
-        { bn: "ঋদ্ধি", en: "Riddhi", meaning: "সমৃদ্ধি" },
-        { bn: "রূপা", en: "Rupa", meaning: "রূপা, সুন্দরী" },
-        { bn: "সাধনা", en: "Sadhona", meaning: "সাধনা" },
         { bn: "সাক্ষী", en: "Sakkhi", meaning: "সাক্ষী" },
-        { bn: "সমীরা", en: "Somira", meaning: "বায়ু" },
-        { bn: "সন্ধ্যা", en: "Sondha", meaning: "সন্ধ্যা" },
         { bn: "সরস্বতী", en: "Soroswoti", meaning: "সরস্বতী" },
-        { bn: "সরিতা", en: "Sorita", meaning: "নদী" },
-        { bn: "সাবিত্রী", en: "Sabitri", meaning: "সাবিত্রী" },
-        { bn: "শালিনী", en: "Shalini", meaning: "শালীন" },
-        { bn: "শারদা", en: "Sharada", meaning: "সরস্বতী" },
         { bn: "শিবানী", en: "Shivani", meaning: "পার্বতী" },
-        { bn: "শোভা", en: "Shova", meaning: "শোভা" },
-        { bn: "শ্রদ্ধা", en: "Srodha", meaning: "শ্রদ্ধা" },
-        { bn: "শ্রাবণী", en: "Sraboni", meaning: "শ্রাবণ মাসের" },
         { bn: "শ্রেয়া", en: "Shreya", meaning: "শ্রেষ্ঠ" },
-        { bn: "শ্রী", en: "Sri", meaning: "লক্ষ্মী" },
-        { bn: "শ্রুতি", en: "Sruti", meaning: "বেদ, শ্রুতি" },
-        { bn: "সিদ্ধি", en: "Siddhi", meaning: "সিদ্ধি" },
         { bn: "সোনালী", en: "Sonali", meaning: "সোনালী" },
-        { bn: "সৌম্যা", en: "Soumya", meaning: "সৌম্য" },
-        { bn: "শুভদ্রা", en: "Shuvodra", meaning: "শুভদ্রা" },
-        { bn: "সুধা", en: "Sudha", meaning: "অমৃত" },
-        { bn: "সুনয়না", en: "Sunoyona", meaning: "সুন্দর চোখ" },
-        { bn: "সুস্মিতা", en: "Sushmita", meaning: "সুন্দর হাসি" },
-        { bn: "স্বাতী", en: "Swati", meaning: "নক্ষত্র" },
-        { bn: "স্বেতা", en: "Shweta", meaning: "শ্বেত, সাদা" },
         { bn: "তনয়া", en: "Tonoya", meaning: "কন্যা" },
-        { bn: "তন্বী", en: "Tonvi", meaning: "সুন্দরী" },
         { bn: "তারা", en: "Tara", meaning: "তারা" },
-        { bn: "তৃপ্তি", en: "Tripti", meaning: "তৃপ্তি" },
-        { bn: "তৃষা", en: "Trisha", meaning: "তৃষ্ণা" },
-        { bn: "তুলসী", en: "Tulsi", meaning: "তুলসী" },
         { bn: "উমা", en: "Uma", meaning: "পার্বতী" },
-        { bn: "উর্মিলা", en: "Urmila", meaning: "লক্ষ্মণের পত্নী" },
-        { bn: "উষা", en: "Usha", meaning: "ভোর" },
-        { bn: "বৈদেহী", en: "Boidehi", meaning: "সীতা" },
-        { bn: "বন্দনা", en: "Bondona", meaning: "বন্দনা" },
-        { bn: "বর্ষা", en: "Borsha", meaning: "বর্ষা" },
-        { bn: "বাসন্তী", en: "Basonti", meaning: "বসন্ত" },
-        { bn: "বীণা", en: "Bina", meaning: "বীণা" },
-        { bn: "বিনীতা", en: "Binita", meaning: "বিনীত" },
-        { bn: "যমুনা", en: "Jomuna", meaning: "যমুনা নদী" }
+        { bn: "বর্ষা", en: "Borsha", meaning: "বর্ষা" }
     ];
     
-    // Generate full lists with variations
-    function generateFullNameList(baseList, isBoy = true) {
-        const fullList = [...baseList];
-        const suffixes = isBoy ? ["", "কুমার", "চন্দ্র", "নাথ", "দাস", "রাজ", "বাবু", "রঞ্জন", "পদ"] : ["", "দেবী", "রাণী", "বালা", "লতা", "কলি", "মণি", "শ্রী", "ময়ী"];
-        
-        baseList.slice(0, 100).forEach(n => {
-            suffixes.forEach(s => {
-                if (s) {
-                    fullList.push({ bn: n.bn + s, en: n.en + s, meaning: n.meaning });
-                }
-            });
-        });
-        
-        // Add more traditional names
-        const extraNames = isBoy ? [
-            { bn: "রাম", en: "Ram", meaning: "রামচন্দ্র, ভগবান" },
-            { bn: "শ্যাম", en: "Shyam", meaning: "কৃষ্ণ, শ্যামল" },
-            { bn: "গোপাল", en: "Gopal", meaning: "কৃষ্ণ, গোপালক" },
-            { bn: "মুরারী", en: "Murari", meaning: "কৃষ্ণ" },
-            { bn: "বিষ্ণু", en: "Vishnu", meaning: "পালনকর্তা" },
-            { bn: "মহেশ", en: "Mahesh", meaning: "শিব" },
-            { bn: "ত্রিলোচন", en: "Trilochan", meaning: "শিব, ত্রিনয়ন" },
-            { bn: "গিরিধর", en: "Giridhar", meaning: "কৃষ্ণ" },
-            { bn: "মদন", en: "Madan", meaning: "কামদেব" },
-            { bn: "কনক", en: "Kanak", meaning: "স্বর্ণ" },
-            { bn: "হেমন্ত", en: "Hemant", meaning: "হেমন্ত ঋতু" },
-            { bn: "শরৎ", en: "Shorot", meaning: "শরৎ ঋতু" },
-            { bn: "বসন্ত", en: "Boshonto", meaning: "বসন্ত ঋতু" },
-            { bn: "প্রদ্যুম্ন", en: "Prodyumno", meaning: "কৃষ্ণের পুত্র" },
-            { bn: "অনিরুদ্ধ", en: "Aniruddho", meaning: "প্রদ্যুম্নের পুত্র" },
-            { bn: "বামন", en: "Bamon", meaning: "বিষ্ণুর অবতার" },
-            { bn: "নৃসিংহ", en: "Nrisingho", meaning: "বিষ্ণুর অবতার" },
-            { bn: "বরাহ", en: "Boraho", meaning: "বিষ্ণুর অবতার" },
-            { bn: "মৎস্য", en: "Motsyo", meaning: "বিষ্ণুর অবতার" },
-            { bn: "কূর্ম", en: "Kurmo", meaning: "বিষ্ণুর অবতার" },
-            { bn: "পরশুরাম", en: "Porshuram", meaning: "বিষ্ণুর অবতার" },
-            { bn: "বুদ্ধ", en: "Buddho", meaning: "বিষ্ণুর অবতার" },
-            { bn: "কল্কি", en: "Kolki", meaning: "বিষ্ণুর অবতার" }
-        ] : [
-            { bn: "সীতা", en: "Sita", meaning: "রামের পত্নী" },
-            { bn: "রুক্মিণী", en: "Rukmini", meaning: "কৃষ্ণের পত্নী" },
-            { bn: "সত্যভামা", en: "Sottyobhama", meaning: "কৃষ্ণের পত্নী" },
-            { bn: "সুভদ্রা", en: "Subhodra", meaning: "অর্জুনের পত্নী" },
-            { bn: "দ্রৌপদী", en: "Droupodi", meaning: "পঞ্চপাণ্ডবের পত্নী" },
-            { bn: "কুন্তী", en: "Kunti", meaning: "পাণ্ডবদের মাতা" },
-            { bn: "গান্ধারী", en: "Gandhari", meaning: "ধৃতরাষ্ট্রের পত্নী" },
-            { bn: "মন্দোদরী", en: "Mondodori", meaning: "রাবণের পত্নী" },
-            { bn: "তারা", en: "Tara", meaning: "বালির পত্নী" },
-            { bn: "অহল্যা", en: "Oholla", meaning: "গৌতমের পত্নী" },
-            { bn: "অনসূয়া", en: "Onoshuya", meaning: "অত্রির পত্নী" },
-            { bn: "অরুন্ধতী", en: "Orundhoti", meaning: "বশিষ্ঠের পত্নী" },
-            { bn: "লোপামুদ্রা", en: "Lopamudra", meaning: "অগস্ত্যের পত্নী" },
-            { bn: "শকুন্তলা", en: "Shokuntola", meaning: "দুষ্মন্তের পত্নী" },
-            { bn: "দময়ন্তী", en: "Domoyonti", meaning: "নলের পত্নী" },
-            { bn: "সাবিত্রী", en: "Sabitri", meaning: "সত্যবানের পত্নী" },
-            { bn: "গঙ্গা", en: "Gonga", meaning: "গঙ্গা নদী" },
-            { bn: "ভাগীরথী", en: "Bhagirothi", meaning: "গঙ্গা" },
-            { bn: "নর্মদা", en: "Normoda", meaning: "নর্মদা নদী" },
-            { bn: "গোদাবরী", en: "Godabari", meaning: "গোদাবরী নদী" }
-        ];
-        
-        fullList.push(...extraNames);
-        return fullList.slice(0, 2000);
+    function generateFullNames(baseList, isBoy = true) {
+        const full = [...baseList];
+        const suffixes = isBoy ? ["কুমার", "চন্দ্র", "নাথ", "রাজ"] : ["দেবী", "রাণী", "বালা", "লতা"];
+        baseList.slice(0, 50).forEach(n => { suffixes.forEach(s => { full.push({ bn: n.bn + s, en: n.en + s, meaning: n.meaning }); }); });
+        return full.slice(0, 2000);
     }
     
-    const BOY_NAMES_FULL = generateFullNameList(BOY_NAMES_BASE, true);
-    const GIRL_NAMES_FULL = generateFullNameList(GIRL_NAMES_BASE, false);
+    const BOY_NAMES_FULL = generateFullNames(BOY_NAMES_BASE, true);
+    const GIRL_NAMES_FULL = generateFullNames(GIRL_NAMES_BASE, false);
     
     // ==================== STATE ====================
-    let currentYear = 1432, currentMonth = 11, today = new Date();
-    let lastDateStr = today.toDateString();
-    let boyPage = 1, girlPage = 1;
+    let currentYear = 1432, currentMonth = 11, today = new Date(), lastDateStr = today.toDateString();
     const ITEMS_PER_PAGE = 50;
     
     // ==================== CORE CALCULATIONS ====================
@@ -665,17 +702,10 @@
         const base = new Date(2025, 3, 14);
         const diff = Math.floor((date - base) / 86400000);
         let year = 1432, daysOffset = diff;
-        if (diff < 0) {
-            const prevBase = new Date(2024, 3, 14);
-            const prevDiff = Math.floor((date - prevBase) / 86400000);
-            if (prevDiff >= 0) { year = 1431; daysOffset = prevDiff; }
-        }
+        if (diff < 0) { const prevBase = new Date(2024, 3, 14); const prevDiff = Math.floor((date - prevBase) / 86400000); if (prevDiff >= 0) { year = 1431; daysOffset = prevDiff; } }
         const monthLengths = [31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30];
         let month = 0, day = daysOffset + 1;
-        for (let i = 0; i < 12; i++) {
-            if (daysOffset < monthLengths[i]) { month = i; day = daysOffset + 1; break; }
-            daysOffset -= monthLengths[i];
-        }
+        for (let i = 0; i < 12; i++) { if (daysOffset < monthLengths[i]) { month = i; day = daysOffset + 1; break; } daysOffset -= monthLengths[i]; }
         return { year, month, day };
     }
     
@@ -718,11 +748,7 @@
             const astro = calculateAstro(d);
             const bd = getBanglaDate(d);
             const tithiNum = TITHIS.indexOf(astro.tithi) % 15 + 1;
-            if (astro.paksha === "শুক্ল" && [2,3,5,7,10,11,12,13].includes(tithiNum) && 
-                !["অশ্লেষা", "জ্যেষ্ঠা", "মূলা", "রেবতী"].includes(astro.nakshatra) &&
-                [1,3,4,5].includes(d.getDay())) {
-                dates.push({ date: d, bd, astro });
-            }
+            if (astro.paksha === "শুক্ল" && [2,3,5,7,10,11,12,13].includes(tithiNum) && !["অশ্লেষা", "জ্যেষ্ঠা", "মূলা", "রেবতী"].includes(astro.nakshatra) && [1,3,4,5].includes(d.getDay())) { dates.push({ date: d, bd, astro }); }
             if (dates.length >= 12) break;
         }
         return dates;
@@ -736,53 +762,20 @@
             const astro = calculateAstro(d);
             const bd = getBanglaDate(d);
             const tithiNum = TITHIS.indexOf(astro.tithi) % 15 + 1;
-            if (astro.paksha === "শুক্ল" && [2,3,5,7,10,11,12].includes(tithiNum) &&
-                ["রোহিণী", "মৃগশিরা", "পুনর্বসু", "পুষ্যা", "হস্তা", "চিত্রা", "স্বাতী", "অনুরাধা"].includes(astro.nakshatra) &&
-                ![2,6].includes(d.getDay())) {
-                dates.push({ date: d, bd, astro });
-            }
+            if (astro.paksha === "শুক্ল" && [2,3,5,7,10,11,12].includes(tithiNum) && ["রোহিণী", "মৃগশিরা", "পুনর্বসু", "পুষ্যা", "হস্তা", "চিত্রা", "স্বাতী", "অনুরাধা"].includes(astro.nakshatra) && ![2,6].includes(d.getDay())) { dates.push({ date: d, bd, astro }); }
             if (dates.length >= 12) break;
         }
         return dates;
     }
     
     // ==================== AUTO-UPDATE ====================
-    function checkForNewDay() {
-        const now = new Date();
-        if (now.toDateString() !== lastDateStr) {
-            lastDateStr = now.toDateString();
-            today = now;
-            refreshAllData();
-        }
-    }
-    
-    function refreshAllData() {
-        today = new Date();
-        const bd = getBanglaDate(today);
-        currentYear = bd.year;
-        currentMonth = bd.month;
-        updateClock();
-        renderEra();
-        renderYearSelector();
-        renderCalendar();
-        updateLastUpdateDisplay();
-    }
-    
-    function updateLastUpdateDisplay() {
-        document.getElementById('lastUpdateTime').textContent = new Date().toLocaleTimeString('bn-BD');
-    }
-    
+    function checkForNewDay() { const now = new Date(); if (now.toDateString() !== lastDateStr) { lastDateStr = now.toDateString(); today = now; refreshAllData(); } }
+    function refreshAllData() { today = new Date(); const bd = getBanglaDate(today); currentYear = bd.year; currentMonth = bd.month; updateClock(); renderEra(); renderYearSelector(); renderCalendar(); updateLastUpdateDisplay(); }
+    function updateLastUpdateDisplay() { document.getElementById('lastUpdateTime').textContent = new Date().toLocaleTimeString('bn-BD'); }
     function updateNextUpdateCountdown() {
-        const now = new Date();
-        const midnight = new Date(now);
-        midnight.setDate(midnight.getDate() + 1);
-        midnight.setHours(0, 0, 0, 0);
+        const now = new Date(); const midnight = new Date(now); midnight.setDate(midnight.getDate() + 1); midnight.setHours(0,0,0,0);
         const diff = midnight - now;
-        const hours = Math.floor(diff / 3600000);
-        const minutes = Math.floor((diff % 3600000) / 60000);
-        const seconds = Math.floor((diff % 60000) / 1000);
-        document.getElementById('nextUpdateCountdown').textContent = 
-            `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        document.getElementById('nextUpdateCountdown').textContent = `${Math.floor(diff/3600000).toString().padStart(2,'0')}:${Math.floor((diff%3600000)/60000).toString().padStart(2,'0')}:${Math.floor((diff%60000)/1000).toString().padStart(2,'0')}`;
     }
     
     // ==================== RENDER FUNCTIONS ====================
@@ -795,152 +788,81 @@
     }
     
     function renderEra() {
-        const date = today;
-        const bd = getBanglaDate(date);
-        const y = date.getFullYear();
+        const date = today; const bd = getBanglaDate(date); const y = date.getFullYear();
         const kali = Math.floor((date - new Date(-3102, 1, 18)) / 86400000 / 365.25) + 1;
-        const saka = y - 78;
-        const vikram = y + 57;
-        const buddha = y + 543;
-        const chaitanya = y - 1486;
-        const hijriBase = new Date(622, 6, 16);
-        const hijriDiff = Math.floor((date - hijriBase) / 86400000);
-        const hijriYear = Math.floor(hijriDiff / 354.37) + 1;
-        const hijriMonth = Math.floor((hijriDiff % 354.37) / 29.53) + 1;
-        const hijriDay = Math.floor((hijriDiff % 354.37) % 29.53) + 1;
+        const saka = y - 78; const vikram = y + 57; const buddha = y + 543; const chaitanya = y - 1486;
+        const hijriBase = new Date(622, 6, 16); const hijriDiff = Math.floor((date - hijriBase) / 86400000);
+        const hijriYear = Math.floor(hijriDiff / 354.37) + 1; const hijriMonth = Math.floor((hijriDiff % 354.37) / 29.53) + 1; const hijriDay = Math.floor((hijriDiff % 354.37) % 29.53) + 1;
         const hijriMonths = ["মুহররম", "সফর", "রবিউল আউয়াল", "রবিউস সানি", "জমাদিউল আউয়াল", "জমাদিউস সানি", "রজব", "শাবান", "রমজান", "শাওয়াল", "জিলকদ", "জিলহজ"];
-        
         document.getElementById('eraMainDate').textContent = `${bd.day} ${BANGLA_MONTHS[bd.month]} ${bd.year} বঙ্গাব্দ, ${BANGLA_WEEKDAYS[date.getDay()]}`;
-        document.getElementById('eraGrid').innerHTML = `
-            <div class="era-item"><span class="era-label">ইংরেজী:</span><span class="era-value">${date.getDate()} ${ENG_MONTHS[date.getMonth()]} ${y}</span></div>
-            <div class="era-item"><span class="era-label">কলি যুগাব্দ:</span><span class="era-value">${kali}</span></div>
-            <div class="era-item"><span class="era-label">শকাব্দ:</span><span class="era-value">${saka}</span></div>
-            <div class="era-item"><span class="era-label">বিক্রম সাম্বৎ:</span><span class="era-value">${vikram}</span></div>
-            <div class="era-item"><span class="era-label">বুদ্ধাব্দ:</span><span class="era-value">${buddha}</span></div>
-            <div class="era-item"><span class="era-label">চৈতন্যাব্দ:</span><span class="era-value">${chaitanya}</span></div>
-            <div class="era-item"><span class="era-label">হিজরী:</span><span class="era-value">${hijriDay} ${hijriMonths[hijriMonth-1]} ${hijriYear}</span></div>
-        `;
+        document.getElementById('eraGrid').innerHTML = `<div class="era-item"><span class="era-label">ইংরেজী:</span><span class="era-value">${date.getDate()} ${ENG_MONTHS[date.getMonth()]} ${y}</span></div><div class="era-item"><span class="era-label">কলি যুগাব্দ:</span><span class="era-value">${kali}</span></div><div class="era-item"><span class="era-label">শকাব্দ:</span><span class="era-value">${saka}</span></div><div class="era-item"><span class="era-label">বিক্রম সাম্বৎ:</span><span class="era-value">${vikram}</span></div><div class="era-item"><span class="era-label">বুদ্ধাব্দ:</span><span class="era-value">${buddha}</span></div><div class="era-item"><span class="era-label">চৈতন্যাব্দ:</span><span class="era-value">${chaitanya}</span></div><div class="era-item"><span class="era-label">হিজরী:</span><span class="era-value">${hijriDay} ${hijriMonths[hijriMonth-1]} ${hijriYear}</span></div>`;
     }
     
     function renderYearSelector() {
         const years = [1432, 1433, 1434, 1435, 1436];
-        document.getElementById('yearSelector').innerHTML = years.map(y => 
-            `<button class="year-btn ${y === currentYear ? 'active' : ''}" data-year="${y}">${y} বঙ্গাব্দ</button>`
-        ).join('');
+        document.getElementById('yearSelector').innerHTML = years.map(y => `<button class="year-btn ${y === currentYear ? 'active' : ''}" data-year="${y}">${y} বঙ্গাব্দ</button>`).join('');
         document.getElementById('heroYear').textContent = `${currentYear} - ${currentYear+4} বঙ্গাব্দ`;
-        document.querySelectorAll('[data-year]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                currentYear = parseInt(btn.dataset.year);
-                renderYearSelector();
-                renderCalendar();
-            });
-        });
+        document.querySelectorAll('[data-year]').forEach(btn => btn.addEventListener('click', () => { currentYear = parseInt(btn.dataset.year); renderYearSelector(); renderCalendar(); }));
     }
     
     function renderCalendar() {
         document.getElementById('weekdays').innerHTML = BANGLA_WEEKDAYS.map(d => `<div class="weekday">${d}</div>`).join('');
         document.getElementById('monthTitle').textContent = `${BANGLA_MONTHS[currentMonth]} ${currentYear}`;
-        
         const firstDay = gregorianFromBangla(currentYear, currentMonth, 1);
         const startOffset = firstDay.getDay();
         const monthLen = [31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30][currentMonth];
-        
         let html = '';
         for (let i = 0; i < startOffset; i++) html += '<div class="day-cell" style="opacity:0.3;"></div>';
-        
         for (let d = 1; d <= monthLen; d++) {
             const date = gregorianFromBangla(currentYear, currentMonth, d);
             const astro = calculateAstro(date);
             const isToday = date.toDateString() === today.toDateString();
-            
-            html += `<div class="day-cell ${isToday ? 'today' : ''} ${astro.isAuspicious ? 'auspicious' : ''}" data-date="${date.toISOString()}" data-day="${d}">
-                <div class="bangla-day">${d}</div>
-                <div class="tithi-short">${astro.tithi}</div>
-                <small>${date.getDate()}/${date.getMonth()+1}</small>
-            </div>`;
+            html += `<div class="day-cell ${isToday ? 'today' : ''} ${astro.isAuspicious ? 'auspicious' : ''}" data-date="${date.toISOString()}" data-day="${d}"><div class="bangla-day">${d}</div><div class="tithi-short">${astro.tithi}</div><small>${date.getDate()}/${date.getMonth()+1}</small></div>`;
         }
         document.getElementById('daysGrid').innerHTML = html;
-        
-        document.querySelectorAll('.day-cell[data-date]').forEach(cell => {
-            cell.addEventListener('click', () => {
-                renderSelectedDay(new Date(cell.dataset.date), parseInt(cell.dataset.day));
-            });
-        });
-        
+        document.querySelectorAll('.day-cell[data-date]').forEach(cell => cell.addEventListener('click', () => renderSelectedDay(new Date(cell.dataset.date), parseInt(cell.dataset.day))));
         const todayBD = getBanglaDate(today);
-        if (todayBD.year === currentYear && todayBD.month === currentMonth) {
-            renderSelectedDay(today, todayBD.day);
-        } else {
-            renderSelectedDay(firstDay, 1);
-        }
+        if (todayBD.year === currentYear && todayBD.month === currentMonth) renderSelectedDay(today, todayBD.day);
+        else renderSelectedDay(firstDay, 1);
     }
     
     function renderSelectedDay(date, dayNum) {
-        const bd = getBanglaDate(date);
-        const astro = calculateAstro(date);
-        document.getElementById('selectedDayDetails').innerHTML = `
-            <div class="panchanga-grid">
-                <div class="info-card"><div class="info-title">তারিখ</div>
-                    <div class="info-row"><span class="info-label">বাংলা:</span><span class="info-value">${dayNum} ${BANGLA_MONTHS[bd.month]} ${bd.year}, ${BANGLA_WEEKDAYS[date.getDay()]}</span></div>
-                    <div class="info-row"><span class="info-label">ইংরেজী:</span><span class="info-value">${date.getDate()} ${ENG_MONTHS[date.getMonth()]} ${date.getFullYear()}</span></div>
-                </div>
-                <div class="info-card"><div class="info-title">তিথি</div>
-                    <div class="info-row"><span class="info-label">তিথি:</span><span class="info-value">${astro.fullTithi}</span></div>
-                    <div class="info-row"><span class="info-label">পক্ষ:</span><span class="info-value">${astro.paksha}</span></div>
-                </div>
-                <div class="info-card"><div class="info-title">নক্ষত্র</div>
-                    <div class="info-row"><span class="info-label">নক্ষত্র:</span><span class="info-value">${astro.nakshatra}</span></div>
-                    <div class="info-row"><span class="info-label">তারা:</span><span class="info-value">${astro.tara}</span></div>
-                </div>
-                <div class="info-card"><div class="info-title">যোগ ও করণ</div>
-                    <div class="info-row"><span class="info-label">যোগ:</span><span class="info-value">${astro.yoga}</span></div>
-                    <div class="info-row"><span class="info-label">করণ:</span><span class="info-value">${astro.karana}</span></div>
-                    <div class="info-row"><span class="info-label">দিন:</span><span class="info-value">${astro.isAuspicious ? '✅ শুভ' : '⚠️ সাধারণ'}</span></div>
-                </div>
-            </div>
-        `;
+        const bd = getBanglaDate(date); const astro = calculateAstro(date);
+        document.getElementById('selectedDayDetails').innerHTML = `<div class="panchanga-grid"><div class="info-card"><div class="info-title">তারিখ</div><div class="info-row"><span class="info-label">বাংলা:</span><span class="info-value">${dayNum} ${BANGLA_MONTHS[bd.month]} ${bd.year}, ${BANGLA_WEEKDAYS[date.getDay()]}</span></div><div class="info-row"><span class="info-label">ইংরেজী:</span><span class="info-value">${date.getDate()} ${ENG_MONTHS[date.getMonth()]} ${date.getFullYear()}</span></div></div><div class="info-card"><div class="info-title">তিথি</div><div class="info-row"><span class="info-label">তিথি:</span><span class="info-value">${astro.fullTithi}</span></div><div class="info-row"><span class="info-label">পক্ষ:</span><span class="info-value">${astro.paksha}</span></div></div><div class="info-card"><div class="info-title">নক্ষত্র</div><div class="info-row"><span class="info-label">নক্ষত্র:</span><span class="info-value">${astro.nakshatra}</span></div><div class="info-row"><span class="info-label">তারা:</span><span class="info-value">${astro.tara}</span></div></div><div class="info-card"><div class="info-title">যোগ ও করণ</div><div class="info-row"><span class="info-label">যোগ:</span><span class="info-value">${astro.yoga}</span></div><div class="info-row"><span class="info-label">করণ:</span><span class="info-value">${astro.karana}</span></div><div class="info-row"><span class="info-label">দিন:</span><span class="info-value">${astro.isAuspicious ? '✅ শুভ' : '⚠️ সাধারণ'}</span></div></div></div>`;
     }
     
     function renderPanchanga() {
-        const astro = calculateAstro(today);
-        const bd = getBanglaDate(today);
-        document.getElementById('panchangaContent').innerHTML = `
-            <div class="panchanga-grid">
-                <div class="info-card"><div class="info-title">আজকের পঞ্চাঙ্গ</div>
-                    <div class="info-row"><span class="info-label">বাংলা:</span><span class="info-value">${bd.day} ${BANGLA_MONTHS[bd.month]} ${bd.year}</span></div>
-                    <div class="info-row"><span class="info-label">বার:</span><span class="info-value">${BANGLA_WEEKDAYS[today.getDay()]}</span></div>
-                    <div class="info-row"><span class="info-label">তিথি:</span><span class="info-value">${astro.fullTithi}</span></div>
-                    <div class="info-row"><span class="info-label">নক্ষত্র:</span><span class="info-value">${astro.nakshatra}</span></div>
-                    <div class="info-row"><span class="info-label">যোগ:</span><span class="info-value">${astro.yoga}</span></div>
-                    <div class="info-row"><span class="info-label">করণ:</span><span class="info-value">${astro.karana}</span></div>
-                    <div class="info-row"><span class="info-label">সূর্যোদয়:</span><span class="info-value">${astro.sunrise}</span></div>
-                    <div class="info-row"><span class="info-label">সূর্যাস্ত:</span><span class="info-value">${astro.sunset}</span></div>
-                </div>
-                <div class="info-card"><div class="info-title">গ্রহ অবস্থান</div>
-                    ${GRAHAS.map((g, i) => `<div class="info-row"><span class="info-label">${g}:</span><span class="info-value">${RASHIS[(today.getMonth() + i * 2) % 12]}</span></div>`).join('')}
-                </div>
-            </div>
-        `;
+        const astro = calculateAstro(today); const bd = getBanglaDate(today);
+        document.getElementById('panchangaContent').innerHTML = `<div class="panchanga-grid"><div class="info-card"><div class="info-title">আজকের পঞ্চাঙ্গ</div><div class="info-row"><span class="info-label">বাংলা:</span><span class="info-value">${bd.day} ${BANGLA_MONTHS[bd.month]} ${bd.year}</span></div><div class="info-row"><span class="info-label">বার:</span><span class="info-value">${BANGLA_WEEKDAYS[today.getDay()]}</span></div><div class="info-row"><span class="info-label">তিথি:</span><span class="info-value">${astro.fullTithi}</span></div><div class="info-row"><span class="info-label">নক্ষত্র:</span><span class="info-value">${astro.nakshatra}</span></div><div class="info-row"><span class="info-label">যোগ:</span><span class="info-value">${astro.yoga}</span></div><div class="info-row"><span class="info-label">করণ:</span><span class="info-value">${astro.karana}</span></div><div class="info-row"><span class="info-label">সূর্যোদয়:</span><span class="info-value">${astro.sunrise}</span></div><div class="info-row"><span class="info-label">সূর্যাস্ত:</span><span class="info-value">${astro.sunset}</span></div></div><div class="info-card"><div class="info-title">গ্রহ অবস্থান</div>${GRAHAS.map((g, i) => `<div class="info-row"><span class="info-label">${g}:</span><span class="info-value">${RASHIS[(today.getMonth() + i * 2) % 12]}</span></div>`).join('')}</div></div>`;
     }
     
     function renderMuhurta() {
+        const astro = calculateAstro(today); const rahuHours = [7, 8, 9, 10, 11, 12, 13]; const rahu = `${rahuHours[today.getDay()]}:৩০ - ${rahuHours[today.getDay()]+1}:৩০`;
+        document.getElementById('muhurtaContent').innerHTML = `<div class="panchanga-grid"><div class="info-card"><div class="info-title">✅ শুভ সময়</div><div class="info-row"><span class="info-label">ব্রহ্ম মুহূর্ত:</span><span class="info-value">ভোর ৪:৩০ - ৫:১৫</span></div><div class="info-row"><span class="info-label">অভিজিৎ:</span><span class="info-value">দুপুর ১১:৫০ - ১২:৪০</span></div><div class="info-row"><span class="info-label">গোধূলি:</span><span class="info-value">সন্ধ্যা ৫:৪৫ - ৬:১৫</span></div></div><div class="info-card"><div class="info-title">❌ অশুভ সময়</div><div class="info-row"><span class="info-label">রাহুকাল:</span><span class="info-value">${rahu}</span></div><div class="info-row"><span class="info-label">যমগণ্ড:</span><span class="info-value">দুপুর ১২:০০ - ১:৩০</span></div><div class="info-row"><span class="info-label">গুলিকাল:</span><span class="info-value">দুপুর ১:৩০ - ৩:০০</span></div></div></div>`;
+    }
+    
+    function renderShuddhi() {
         const astro = calculateAstro(today);
-        const rahuHours = [7, 8, 9, 10, 11, 12, 13];
-        const rahu = `${rahuHours[today.getDay()]}:৩০ - ${rahuHours[today.getDay()]+1}:৩০`;
-        document.getElementById('muhurtaContent').innerHTML = `
-            <div class="panchanga-grid">
-                <div class="info-card"><div class="info-title">✅ শুভ সময়</div>
-                    <div class="info-row"><span class="info-label">ব্রহ্ম মুহূর্ত:</span><span class="info-value">ভোর ৪:৩০ - ৫:১৫</span></div>
-                    <div class="info-row"><span class="info-label">অভিজিৎ:</span><span class="info-value">দুপুর ১১:৫০ - ১২:৪০</span></div>
-                    <div class="info-row"><span class="info-label">গোধূলি:</span><span class="info-value">সন্ধ্যা ৫:৪৫ - ৬:১৫</span></div>
-                </div>
-                <div class="info-card"><div class="info-title">❌ অশুভ সময়</div>
-                    <div class="info-row"><span class="info-label">রাহুকাল:</span><span class="info-value">${rahu}</span></div>
-                    <div class="info-row"><span class="info-label">যমগণ্ড:</span><span class="info-value">দুপুর ১২:০০ - ১:৩০</span></div>
-                    <div class="info-row"><span class="info-label">গুলিকাল:</span><span class="info-value">দুপুর ১:৩০ - ৩:০০</span></div>
-                </div>
-            </div>
-        `;
+        const chandraShuddhi = !["অশ্লেষা", "জ্যেষ্ঠা", "মূলা", "আর্দ্রা"].includes(astro.nakshatra);
+        const taraShuddhi = ["জন্মা", "সম্পৎ", "ক্ষেম", "মিত্র", "অতি মিত্র"].includes(astro.tara);
+        document.getElementById('shuddhiContent').innerHTML = `<div class="panchanga-grid"><div class="info-card"><div class="info-title">🌙 চন্দ্র শুদ্ধি</div><div class="info-row"><span class="info-label">চন্দ্র নক্ষত্র:</span><span class="info-value">${astro.nakshatra}</span></div><div class="info-row"><span class="info-label">অবস্থা:</span><span class="info-value">${chandraShuddhi ? '✅ চন্দ্র শুদ্ধ' : '❌ চন্দ্র অশুদ্ধ'}</span></div></div><div class="info-card"><div class="info-title">⭐ তারা শুদ্ধি</div><div class="info-row"><span class="info-label">আজকের তারা:</span><span class="info-value">${astro.tara}</span></div><div class="info-row"><span class="info-label">অবস্থা:</span><span class="info-value">${taraShuddhi ? '✅ তারা শুদ্ধ' : '⚠️ তারা অশুদ্ধ'}</span></div></div></div>`;
+    }
+    
+    function renderEclipse() {
+        const upcomingSolar = ECLIPSES.solar.filter(e => new Date(e.date) >= today).slice(0, 3);
+        const upcomingLunar = ECLIPSES.lunar.filter(e => new Date(e.date) >= today).slice(0, 3);
+        document.getElementById('eclipseContent').innerHTML = `<div class="eclipse-grid"><div class="eclipse-card solar"><div class="eclipse-header"><i class="fas fa-sun"></i> সূর্য গ্রহণ</div>${upcomingSolar.map(e => `<div class="info-row"><span class="info-label">${new Date(e.date).toLocaleDateString('bn-BD')}:</span><span class="info-value">${e.type} ${e.visibleBD ? '<span class="badge badge-success">দৃশ্যমান</span>' : '<span class="badge badge-warning">দৃশ্যমান নয়</span>'}</span></div>`).join('')}</div><div class="eclipse-card lunar"><div class="eclipse-header"><i class="fas fa-moon"></i> চন্দ্র গ্রহণ</div>${upcomingLunar.map(e => `<div class="info-row"><span class="info-label">${new Date(e.date).toLocaleDateString('bn-BD')}:</span><span class="info-value">${e.type} ${e.visibleBD ? '<span class="badge badge-success">দৃশ্যমান</span>' : '<span class="badge badge-warning">দৃশ্যমান নয়</span>'}</span></div>`).join('')}</div></div>`;
+    }
+    
+    function renderNishedh() {
+        const astro = calculateAstro(today);
+        document.getElementById('nishedhContent').innerHTML = `<div class="panchanga-grid"><div class="info-card"><div class="info-title">🚫 আজকের নিষেধ</div><div class="info-row"><span class="info-label">${astro.tithi.includes("অমাবস্যা") || astro.tithi.includes("পূর্ণিমা") ? "❌" : "✅"}</span><span class="info-value">${astro.tithi.includes("অমাবস্যা") || astro.tithi.includes("পূর্ণিমা") ? "অমাবস্যা/পূর্ণিমা - শুভ কাজ নিষেধ" : "কোনো বিশেষ নিষেধ নেই"}</span></div><div class="info-row"><span class="info-label">${astro.karana === "বিষ্টি" ? "❌" : "✅"}</span><span class="info-value">${astro.karana === "বিষ্টি" ? "বিষ্টি করণ - শুভ কাজ নিষেধ" : "করণ শুদ্ধ"}</span></div><div class="info-row"><span class="info-label">${["অশ্লেষা", "জ্যেষ্ঠা", "মূলা"].includes(astro.nakshatra) ? "❌" : "✅"}</span><span class="info-value">${["অশ্লেষা", "জ্যেষ্ঠা", "মূলা"].includes(astro.nakshatra) ? "গণ্ডান্ত নক্ষত্র - যাত্রা নিষেধ" : "যাত্রা করা যাবে"}</span></div></div></div>`;
+    }
+    
+    function renderYatra() {
+        const astro = calculateAstro(today); const yatraOk = astro.isAuspicious && !["অশ্লেষা", "জ্যেষ্ঠা", "মূলা"].includes(astro.nakshatra);
+        const dirs = ["উত্তর", "পূর্ব", "দক্ষিণ", "পশ্চিম"];
+        document.getElementById('yatraContent').innerHTML = `<div class="panchanga-grid"><div class="info-card"><div class="info-title">🚗 যাত্রা</div><div class="info-row"><span class="info-label">যাত্রা:</span><span class="info-value">${yatraOk ? '✅ আজ যাত্রা শুভ' : '❌ আজ যাত্রা নিষেধ'}</span></div><div class="info-row"><span class="info-label">শুভ দিক:</span><span class="info-value">${dirs[today.getDay() % 4]}</span></div><div class="info-row"><span class="info-label">শুভ সময়:</span><span class="info-value">সকাল ৬:০০ - ১০:০০</span></div></div></div>`;
     }
     
     function renderFestivals() {
@@ -957,143 +879,79 @@
     
     function renderNaamkaranDates() {
         const dates = getNaamkaranDates();
-        document.getElementById('naamkaranDates').innerHTML = dates.map(d => `
-            <div class="date-card">
-                <div class="date-badge">${d.date.getDate()}<br><small>${ENG_MONTHS[d.date.getMonth()].substring(0,3)}</small></div>
-                <div class="date-info">
-                    <strong>${d.bd.day} ${BANGLA_MONTHS[d.bd.month]} ${d.bd.year}</strong><br>
-                    <small>${BANGLA_WEEKDAYS[d.date.getDay()]} • ${d.astro.fullTithi} • ${d.astro.nakshatra}</small><br>
-                    <span style="color: var(--success);">✅ নামকরণের জন্য শুভ</span>
-                </div>
-            </div>
-        `).join('');
+        document.getElementById('naamkaranDates').innerHTML = dates.map(d => `<div class="date-card"><div class="date-badge">${d.date.getDate()}<br><small>${ENG_MONTHS[d.date.getMonth()].substring(0,3)}</small></div><div class="date-info"><strong>${d.bd.day} ${BANGLA_MONTHS[d.bd.month]} ${d.bd.year}</strong><br><small>${BANGLA_WEEKDAYS[d.date.getDay()]} • ${d.astro.fullTithi} • ${d.astro.nakshatra}</small><br><span style="color: var(--success);">✅ নামকরণের জন্য শুভ</span></div></div>`).join('');
     }
     
     function renderAnnaprashanDates() {
         const dates = getAnnaprashanDates();
-        document.getElementById('annaprashanDates').innerHTML = dates.map(d => `
-            <div class="date-card">
-                <div class="date-badge">${d.date.getDate()}<br><small>${ENG_MONTHS[d.date.getMonth()].substring(0,3)}</small></div>
-                <div class="date-info">
-                    <strong>${d.bd.day} ${BANGLA_MONTHS[d.bd.month]} ${d.bd.year}</strong><br>
-                    <small>${BANGLA_WEEKDAYS[d.date.getDay()]} • ${d.astro.fullTithi} • ${d.astro.nakshatra}</small><br>
-                    <span style="color: var(--success);">✅ অন্নপ্রাশনের জন্য শুভ</span>
-                </div>
-            </div>
-        `).join('');
+        document.getElementById('annaprashanDates').innerHTML = dates.map(d => `<div class="date-card"><div class="date-badge">${d.date.getDate()}<br><small>${ENG_MONTHS[d.date.getMonth()].substring(0,3)}</small></div><div class="date-info"><strong>${d.bd.day} ${BANGLA_MONTHS[d.bd.month]} ${d.bd.year}</strong><br><small>${BANGLA_WEEKDAYS[d.date.getDay()]} • ${d.astro.fullTithi} • ${d.astro.nakshatra}</small><br><span style="color: var(--success);">✅ অন্নপ্রাশনের জন্য শুভ</span></div></div>`).join('');
     }
     
     function renderBoyNames(page = 1) {
         const searchTerm = document.getElementById('boyNameSearch')?.value.toLowerCase() || '';
         const filter = document.getElementById('boyNameFilter')?.value || 'all';
-        
-        let filtered = BOY_NAMES_FULL.filter(n => 
-            (n.bn.toLowerCase().includes(searchTerm) || n.en.toLowerCase().includes(searchTerm)) &&
-            (filter === 'all' || n.en[0].toUpperCase() === filter)
-        );
-        
-        document.getElementById('boyNameStats').innerHTML = `<i class="fas fa-male"></i> মোট ${filtered.length}টি নাম পাওয়া গেছে`;
-        
+        let filtered = BOY_NAMES_FULL.filter(n => (n.bn.toLowerCase().includes(searchTerm) || n.en.toLowerCase().includes(searchTerm)) && (filter === 'all' || n.en[0].toUpperCase() === filter));
+        document.getElementById('boyNameStats').innerHTML = `<i class="fas fa-male"></i> মোট ${filtered.length}টি নাম`;
         const start = (page - 1) * ITEMS_PER_PAGE;
-        const paginated = filtered.slice(start, start + ITEMS_PER_PAGE);
-        
-        document.getElementById('boyNameGrid').innerHTML = paginated.map(n => `
-            <div class="name-card"><div class="name-bengali">${n.bn}</div><div class="name-english">${n.en}</div><div class="name-meaning">${n.meaning}</div></div>
-        `).join('');
-        
+        document.getElementById('boyNameGrid').innerHTML = filtered.slice(start, start + ITEMS_PER_PAGE).map(n => `<div class="name-card"><div class="name-bengali">${n.bn}</div><div class="name-english">${n.en}</div><div class="name-meaning">${n.meaning}</div></div>`).join('');
         const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
         let pagHtml = '';
-        for (let i = 1; i <= Math.min(totalPages, 10); i++) {
-            pagHtml += `<button class="page-btn ${i === page ? 'active' : ''}" onclick="renderBoyNames(${i})">${i}</button>`;
-        }
+        for (let i = 1; i <= Math.min(totalPages, 10); i++) pagHtml += `<button class="page-btn ${i === page ? 'active' : ''}" onclick="renderBoyNames(${i})">${i}</button>`;
         document.getElementById('boyPagination').innerHTML = pagHtml;
     }
     
     function renderGirlNames(page = 1) {
         const searchTerm = document.getElementById('girlNameSearch')?.value.toLowerCase() || '';
         const filter = document.getElementById('girlNameFilter')?.value || 'all';
-        
-        let filtered = GIRL_NAMES_FULL.filter(n => 
-            (n.bn.toLowerCase().includes(searchTerm) || n.en.toLowerCase().includes(searchTerm)) &&
-            (filter === 'all' || n.en[0].toUpperCase() === filter)
-        );
-        
-        document.getElementById('girlNameStats').innerHTML = `<i class="fas fa-female"></i> মোট ${filtered.length}টি নাম পাওয়া গেছে`;
-        
+        let filtered = GIRL_NAMES_FULL.filter(n => (n.bn.toLowerCase().includes(searchTerm) || n.en.toLowerCase().includes(searchTerm)) && (filter === 'all' || n.en[0].toUpperCase() === filter));
+        document.getElementById('girlNameStats').innerHTML = `<i class="fas fa-female"></i> মোট ${filtered.length}টি নাম`;
         const start = (page - 1) * ITEMS_PER_PAGE;
-        const paginated = filtered.slice(start, start + ITEMS_PER_PAGE);
-        
-        document.getElementById('girlNameGrid').innerHTML = paginated.map(n => `
-            <div class="name-card"><div class="name-bengali">${n.bn}</div><div class="name-english">${n.en}</div><div class="name-meaning">${n.meaning}</div></div>
-        `).join('');
-        
+        document.getElementById('girlNameGrid').innerHTML = filtered.slice(start, start + ITEMS_PER_PAGE).map(n => `<div class="name-card"><div class="name-bengali">${n.bn}</div><div class="name-english">${n.en}</div><div class="name-meaning">${n.meaning}</div></div>`).join('');
         const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
         let pagHtml = '';
-        for (let i = 1; i <= Math.min(totalPages, 10); i++) {
-            pagHtml += `<button class="page-btn ${i === page ? 'active' : ''}" onclick="renderGirlNames(${i})">${i}</button>`;
-        }
+        for (let i = 1; i <= Math.min(totalPages, 10); i++) pagHtml += `<button class="page-btn ${i === page ? 'active' : ''}" onclick="renderGirlNames(${i})">${i}</button>`;
         document.getElementById('girlPagination').innerHTML = pagHtml;
     }
     
     window.renderBoyNames = renderBoyNames;
     window.renderGirlNames = renderGirlNames;
-    window.manualRefresh = function() { refreshAllData(); };
+    window.manualRefresh = () => { refreshAllData(); };
     
     // ==================== EVENT LISTENERS ====================
-    document.getElementById('prevMonth').addEventListener('click', () => {
-        if (currentMonth === 0) { currentMonth = 11; currentYear--; }
-        else currentMonth--;
-        renderCalendar();
-    });
-    
-    document.getElementById('nextMonth').addEventListener('click', () => {
-        if (currentMonth === 11) { currentMonth = 0; currentYear++; }
-        else currentMonth++;
-        renderCalendar();
-    });
-    
-    document.querySelectorAll('.tab').forEach(tab => {
-        tab.addEventListener('click', () => {
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-            tab.classList.add('active');
-            document.getElementById(`${tab.dataset.tab}-pane`).classList.add('active');
-            
-            const tId = tab.dataset.tab;
-            if (tId === 'panchanga') renderPanchanga();
-            else if (tId === 'naamkaran') renderNaamkaranDates();
-            else if (tId === 'annaprashan') renderAnnaprashanDates();
-            else if (tId === 'boyNames') renderBoyNames(1);
-            else if (tId === 'girlNames') renderGirlNames(1);
-            else if (tId === 'muhurta') renderMuhurta();
-            else if (tId === 'festivals') renderFestivals();
-        });
-    });
-    
+    document.getElementById('prevMonth').addEventListener('click', () => { if (currentMonth === 0) { currentMonth = 11; currentYear--; } else currentMonth--; renderCalendar(); });
+    document.getElementById('nextMonth').addEventListener('click', () => { if (currentMonth === 11) { currentMonth = 0; currentYear++; } else currentMonth++; renderCalendar(); });
+    document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(`${tab.dataset.tab}-pane`).classList.add('active');
+        const tId = tab.dataset.tab;
+        if (tId === 'panchanga') renderPanchanga();
+        else if (tId === 'naamkaran') renderNaamkaranDates();
+        else if (tId === 'annaprashan') renderAnnaprashanDates();
+        else if (tId === 'boyNames') renderBoyNames(1);
+        else if (tId === 'girlNames') renderGirlNames(1);
+        else if (tId === 'muhurta') renderMuhurta();
+        else if (tId === 'shuddhi') renderShuddhi();
+        else if (tId === 'eclipse') renderEclipse();
+        else if (tId === 'nishedh') renderNishedh();
+        else if (tId === 'yatra') renderYatra();
+        else if (tId === 'festivals') renderFestivals();
+    }));
     document.addEventListener('input', e => { if (e.target.id === 'boyNameSearch') renderBoyNames(1); if (e.target.id === 'girlNameSearch') renderGirlNames(1); });
     document.addEventListener('change', e => { if (e.target.id === 'boyNameFilter') renderBoyNames(1); if (e.target.id === 'girlNameFilter') renderGirlNames(1); });
     
     // ==================== INITIALIZATION ====================
     function init() {
-        today = new Date();
-        lastDateStr = today.toDateString();
-        const bd = getBanglaDate(today);
-        currentYear = bd.year;
-        currentMonth = bd.month;
-        
-        updateClock();
-        renderEra();
-        renderYearSelector();
-        renderCalendar();
-        updateLastUpdateDisplay();
-        
+        today = new Date(); lastDateStr = today.toDateString();
+        const bd = getBanglaDate(today); currentYear = bd.year; currentMonth = bd.month;
+        updateClock(); renderEra(); renderYearSelector(); renderCalendar(); updateLastUpdateDisplay();
         setInterval(updateClock, 1000);
         setInterval(updateNextUpdateCountdown, 1000);
         setInterval(checkForNewDay, 60000);
         setInterval(updateLastUpdateDisplay, 60000);
         updateNextUpdateCountdown();
     }
-    
     init();
 })();
 </script>
