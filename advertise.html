@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বিজ্ঞাপন দিন | বাংলা পঞ্জিকা | Dipto Design</title>
+    <meta name="description" content="বাংলা পঞ্জিকায় বিজ্ঞাপন দিন - সরাসরি বিজ্ঞাপন, স্পন্সরশিপ, এবং প্রচারের সুযোগ">
+    <meta name="author" content="Dipto Design">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700;800&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #D4A574; --primary-dark: #8B6914; --primary-light: #F5DEB3;
+            --secondary: #8B4513; --accent: #DAA520; --success: #2E8B57;
+            --bg-primary: #FFF8DC; --bg-secondary: #FFFFF0; --bg-card: #FFFFFF;
+            --text-primary: #3E2723; --text-secondary: #5D4037;
+            --border-light: #DEB887; --shadow-md: 0 8px 24px rgba(139, 69, 19, 0.12);
+            --gradient-1: linear-gradient(135deg, #FFF8DC 0%, #F5DEB3 100%);
+            --gradient-2: linear-gradient(135deg, #D4A574 0%, #8B6914 100%);
+        }
+        body {
+            font-family: 'Hind Siliguri', 'Noto Serif Bengali', sans-serif;
+            background: var(--gradient-1);
+            color: var(--text-primary);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="%23DEB887" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.4; pointer-events: none; z-index: -1;
+        }
+        .top-header {
+            background: rgba(255, 255, 240, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 3px solid var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+        .logo a {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo span {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-left: 8px;
+        }
+        .nav-links { display: flex; gap: 24px; }
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--secondary); }
+        .nav-links a.active { color: var(--secondary); font-weight: 700; border-bottom: 2px solid var(--secondary); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 24px; }
+        .page-card {
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 40px;
+            margin: 24px 0;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 3px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin: 32px 0 16px;
+        }
+        h3 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 24px 0 12px;
+        }
+        p { margin-bottom: 16px; }
+        
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+        .stat-card {
+            background: var(--gradient-2);
+            color: white;
+            padding: 24px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        /* Pricing Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+        .pricing-card {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 32px 24px;
+            text-align: center;
+            border: 2px solid var(--border-light);
+            transition: all 0.3s;
+            position: relative;
+        }
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
+        }
+        .pricing-card.featured {
+            border: 3px solid var(--accent);
+            background: white;
+        }
+        .featured-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: white;
+            padding: 4px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .pricing-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 16px;
+        }
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+        .pricing-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+        .pricing-features {
+            list-style: none;
+            margin: 24px 0;
+            text-align: left;
+        }
+        .pricing-features li {
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--border-light);
+        }
+        .pricing-features li i {
+            color: var(--success);
+            margin-right: 8px;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--gradient-2);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        /* Ad Options */
+        .ad-options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 24px 0;
+        }
+        .ad-option-card {
+            background: var(--bg-secondary);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid var(--border-light);
+        }
+        .ad-option-card i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 16px;
+        }
+        .ad-option-card h4 {
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background: var(--bg-secondary);
+            padding: 32px;
+            border-radius: 20px;
+            margin: 32px 0;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--border-light);
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: white;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+        
+        /* Alternative Monetization */
+        .alt-monetization {
+            background: linear-gradient(135deg, #006A4E 0%, #F42A41 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 20px;
+            margin: 32px 0;
+        }
+        .alt-monetization h3 {
+            color: white;
+        }
+        .alt-monetization i {
+            color: #FFD700;
+        }
+        
+        /* Contact Info Box */
+        .contact-info-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 24px 0;
+        }
+        .contact-method {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+        }
+        .contact-method i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 12px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 56px;
+            padding: 40px;
+            background: var(--gradient-2);
+            color: white;
+            border-radius: 40px 40px 0 0;
+        }
+        .footer a { color: var(--accent); text-decoration: none; }
+        
+        @media (max-width: 768px) {
+            .top-header { flex-direction: column; gap: 16px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .page-card { padding: 24px; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="top-header">
+    <div class="logo">
+        <a href="index.html">
+            <i class="fas fa-calendar-alt"></i>
+            বাংলা পঞ্জিকা
+            <span>by Dipto Design</span>
+        </a>
+    </div>
+    <nav class="nav-links">
+        <a href="index.html">হোম</a>
+        <a href="about.html">সম্পর্কে</a>
+        <a href="advertise.html" class="active">বিজ্ঞাপন দিন</a>
+        <a href="privacy.html">গোপনীয়তা নীতি</a>
+    </nav>
+</header>
+
+<main class="container">
+    <article class="page-card">
+        <h1><i class="fas fa-bullhorn"></i> বিজ্ঞাপন দিন</h1>
+        
+        <p style="font-size: 1.2rem; font-weight: 500;">লক্ষ লক্ষ বাংলা ভাষী ব্যবহারকারীর কাছে আপনার পণ্য বা সেবা প্রচার করুন। বাংলা পঞ্জিকা প্রতিদিন হাজারো দর্শকের কাছে পৌঁছায়।</p>
+        
+        <!-- Why Advertise With Us -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">৫০,০০০+</div>
+                <div class="stat-label">মাসিক ভিজিটর</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">১,৫০,০০০+</div>
+                <div class="stat-label">মাসিক পেজ ভিউ</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">৯৫%</div>
+                <div class="stat-label">বাংলাদেশী দর্শক</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">২৫-৫৪</div>
+                <div class="stat-label">প্রধান বয়স সীমা</div>
+            </div>
+        </div>
+        
+        <!-- Important Note About AdSense -->
+        <div class="alt-monetization">
+            <h3><i class="fas fa-info-circle"></i> গুরুত্বপূর্ণ তথ্য</h3>
+            <p>বর্তমানে আমরা Google AdSense ব্যবহার করি না। আমরা সরাসরি বিজ্ঞাপন, স্পন্সরশিপ এবং পার্টনারশিপের মাধ্যমে কাজ করি। এটি বিজ্ঞাপনদাতাদের জন্য আরও ভালো ফলাফল নিশ্চিত করে!</p>
+        </div>
+        
+        <!-- Ad Options -->
+        <h2><i class="fas fa-ad"></i> বিজ্ঞাপনের অপশন</h2>
+        <div class="ad-options-grid">
+            <div class="ad-option-card">
+                <i class="fas fa-image"></i>
+                <h4>ব্যানার বিজ্ঞাপন</h4>
+                <p>ওয়েবসাইটের বিভিন্ন স্থানে আপনার ব্যানার প্রদর্শিত হবে। সাইজ: 728x90, 300x250, 320x50</p>
+            </div>
+            <div class="ad-option-card">
+                <i class="fas fa-newspaper"></i>
+                <h4>স্পন্সরড কন্টেন্ট</h4>
+                <p>আপনার পণ্য বা সেবা নিয়ে একটি ডেডিকেটেড আর্টিকেল বা ব্লগ পোস্ট প্রকাশ করা হবে।</p>
+            </div>
+            <div class="ad-option-card">
+                <i class="fas fa-star"></i>
+                <h4>ফিচার্ড লিস্টিং</h4>
+                <p>আমাদের নামের তালিকায় আপনার পছন্দের নাম বা ব্র্যান্ড ফিচার করা হবে।</p>
+            </div>
+            <div class="ad-option-card">
+                <i class="fas fa-calendar-check"></i>
+                <h4>ইভেন্ট স্পন্সরশিপ</h4>
+                <p>পঞ্জিকার বিশেষ দিন বা উৎসবে আপনার ব্র্যান্ড স্পন্সর হিসেবে প্রদর্শিত হবে।</p>
+            </div>
+        </div>
+        
+        <!-- Pricing -->
+        <h2><i class="fas fa-tag"></i> বিজ্ঞাপন প্যাকেজ</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-name">বেসিক</div>
+                <div class="pricing-price">৳৩,০০০<span>/মাস</span></div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> ১টি ব্যানার (৩০০x২৫০)</li>
+                    <li><i class="fas fa-check"></i> সাইডবারে প্রদর্শন</li>
+                    <li><i class="fas fa-check"></i> ৩০ দিনের ক্যাম্পেইন</li>
+                    <li><i class="fas fa-check"></i> বেসিক এনালাইটিক্স</li>
+                    <li><i class="fas fa-times"></i> স্পন্সরড কন্টেন্ট নেই</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline">যোগাযোগ করুন</a>
+            </div>
+            
+            <div class="pricing-card featured">
+                <div class="featured-badge">সর্বাধিক জনপ্রিয়</div>
+                <div class="pricing-name">স্ট্যান্ডার্ড</div>
+                <div class="pricing-price">৳৭,০০০<span>/মাস</span></div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> ২টি ব্যানার (৭২৮x৯০ + ৩০০x২৫০)</li>
+                    <li><i class="fas fa-check"></i> হেডার + সাইডবার</li>
+                    <li><i class="fas fa-check"></i> ৩০ দিনের ক্যাম্পেইন</li>
+                    <li><i class="fas fa-check"></i> ডিটেইলড এনালাইটিক্স</li>
+                    <li><i class="fas fa-check"></i> ১টি স্পন্সরড পোস্ট</li>
+                </ul>
+                <a href="#contact" class="btn">যোগাযোগ করুন</a>
+            </div>
+            
+            <div class="pricing-card">
+                <div class="pricing-name">প্রিমিয়াম</div>
+                <div class="pricing-price">৳১৫,০০০<span>/মাস</span></div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> সব পজিশনে ব্যানার</li>
+                    <li><i class="fas fa-check"></i> এক্সক্লুসিভ স্পন্সরশিপ</li>
+                    <li><i class="fas fa-check"></i> ৩টি স্পন্সরড কন্টেন্ট</li>
+                    <li><i class="fas fa-check"></i> প্রিমিয়াম এনালাইটিক্স</li>
+                    <li><i class="fas fa-check"></i> ডেডিকেটেড সাপোর্ট</li>
+                    <li><i class="fas fa-check"></i> কাস্টম ক্যাম্পেইন</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline">যোগাযোগ করুন</a>
+            </div>
+        </div>
+        
+        <!-- Custom Package -->
+        <div style="text-align: center; margin: 32px 0;">
+            <h3>কাস্টম প্যাকেজ প্রয়োজন?</h3>
+            <p>আপনার নির্দিষ্ট চাহিদা অনুযায়ী আমরা কাস্টম বিজ্ঞাপন প্যাকেজ তৈরি করতে পারি।</p>
+            <a href="#contact" class="btn" style="margin-top: 16px;">কাস্টম কোটেশন নিন</a>
+        </div>
+        
+        <!-- Alternative Monetization Methods -->
+        <div class="alt-monetization">
+            <h3><i class="fas fa-lightbulb"></i> বিকল্প উপার্জনের পদ্ধতি</h3>
+            <p>GitHub Pages এ হোস্ট করা সাইটের জন্য নিম্নলিখিত পদ্ধতিগুলো কার্যকর:</p>
+            <ul style="margin: 20px 0 0 20px;">
+                <li><strong>Buy Me a Coffee</strong> - দর্শকদের থেকে ডোনেশন গ্রহণ করুন</li>
+                <li><strong>Ko-fi</strong> - সহজ ডোনেশন প্ল্যাটফর্ম</li>
+                <li><strong>Patreon</strong> - মাসিক সাবস্ক্রিপশন ভিত্তিক সাপোর্ট</li>
+                <li><strong>অ্যাফিলিয়েট মার্কেটিং</strong> - অ্যামাজন, দারাজ, রকমারি ইত্যাদির লিংক</li>
+                <li><strong>স্পন্সরড কন্টেন্ট</strong> - সরাসরি ব্র্যান্ড ডিল</li>
+                <li><strong>কাস্টম ডোমেইন</strong> - .com.bd বা .bd ডোমেইন কিনে AdSense এপ্লাই করুন</li>
+            </ul>
+        </div>
+        
+        <!-- Contact Form -->
+        <div id="contact" class="contact-form">
+            <h2 style="margin-top: 0;"><i class="fas fa-envelope"></i> বিজ্ঞাপনের জন্য যোগাযোগ করুন</h2>
+            <p>নিচের ফর্মটি পূরণ করুন। আমরা ২৪ ঘন্টার মধ্যে উত্তর দেব।</p>
+            
+            <form action="https://formsubmit.co/diptodesignstd@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="বিজ্ঞাপন অনুসন্ধান - বাংলা পঞ্জিকা">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://diptodesign.github.io/BanglaPaji/thank-you.html">
+                
+                <div class="form-group">
+                    <label>আপনার নাম *</label>
+                    <input type="text" name="name" required placeholder="আপনার পূর্ণ নাম">
+                </div>
+                
+                <div class="form-group">
+                    <label>ইমেইল ঠিকানা *</label>
+                    <input type="email" name="email" required placeholder="your@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label>ফোন নম্বর (ঐচ্ছিক)</label>
+                    <input type="tel" name="phone" placeholder="+880 1XXX-XXXXXX">
+                </div>
+                
+                <div class="form-group">
+                    <label>কোম্পানি/প্রতিষ্ঠানের নাম</label>
+                    <input type="text" name="company" placeholder="আপনার প্রতিষ্ঠানের নাম">
+                </div>
+                
+                <div class="form-group">
+                    <label>আগ্রহী প্যাকেজ *</label>
+                    <select name="package" required>
+                        <option value="">-- নির্বাচন করুন --</option>
+                        <option value="basic">বেসিক - ৳৩,০০০/মাস</option>
+                        <option value="standard">স্ট্যান্ডার্ড - ৳৭,০০০/মাস</option>
+                        <option value="premium">প্রিমিয়াম - ৳১৫,০০০/মাস</option>
+                        <option value="custom">কাস্টম প্যাকেজ</option>
+                        <option value="other">অন্যান্য/জানতে চাই</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>আপনার বার্তা *</label>
+                    <textarea name="message" rows="5" required placeholder="আপনার প্রয়োজনীয়তা বিস্তারিত লিখুন..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>আপনি কীভাবে আমাদের সম্পর্কে জানলেন?</label>
+                    <select name="source">
+                        <option value="">-- নির্বাচন করুন --</option>
+                        <option value="facebook">ফেসবুক</option>
+                        <option value="search">গুগল/সার্চ ইঞ্জিন</option>
+                        <option value="friend">বন্ধু/পরিচিত</option>
+                        <option value="other">অন্যান্য</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn" style="width: 100%;">
+                    <i class="fas fa-paper-plane"></i> বার্তা পাঠান
+                </button>
+            </form>
+        </div>
+        
+        <!-- Direct Contact -->
+        <div class="contact-info-box">
+            <div class="contact-method">
+                <i class="fas fa-envelope"></i>
+                <h4>ইমেইল</h4>
+                <p>diptodesignstd@gmail.com</p>
+                <small>২৪ ঘন্টার মধ্যে উত্তর</small>
+            </div>
+            <div class="contact-method">
+                <i class="fab fa-facebook"></i>
+                <h4>ফেসবুক</h4>
+                <p>fb.com/diptodesign</p>
+                <small>মেসেঞ্জারে যোগাযোগ</small>
+            </div>
+            <div class="contact-method">
+                <i class="fab fa-whatsapp"></i>
+                <h4>হোয়াটসঅ্যাপ</h4>
+                <p>+880 1XXX-XXXXXX</p>
+                <small>সকাল ৯টা - রাত ৮টা</small>
+            </div>
+        </div>
+        
+        <!-- Testimonials -->
+        <h2><i class="fas fa-star" style="color: var(--accent);"></i> আমাদের সন্তুষ্ট বিজ্ঞাপনদাতা</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 24px 0;">
+            <div style="background: var(--bg-secondary); padding: 24px; border-radius: 16px;">
+                <i class="fas fa-quote-right" style="color: var(--primary); opacity: 0.5; font-size: 2rem;"></i>
+                <p>"বাংলা পঞ্জিকায় বিজ্ঞাপন দিয়ে আমরা দারুণ রেসপন্স পেয়েছি। আমাদের টার্গেট অডিয়েন্সের কাছে পৌঁছাতে এটি খুবই কার্যকর।"</p>
+                <p><strong>- শ্যামলী জুয়েলার্স</strong></p>
+            </div>
+            <div style="background: var(--bg-secondary); padding: 24px; border-radius: 16px;">
+                <i class="fas fa-quote-right" style="color: var(--primary); opacity: 0.5; font-size: 2rem;"></i>
+                <p>"আমাদের অনলাইন কোর্সের প্রচারণায় বাংলা পঞ্জিকা অনেক সাহায্য করেছে। স্পন্সরড কন্টেন্টের মাধ্যমে অনেক শিক্ষার্থী পেয়েছি।"</p>
+                <p><strong>- বাংলা লার্নিং একাডেমি</strong></p>
+            </div>
+            <div style="background: var(--bg-secondary); padding: 24px; border-radius: 16px;">
+                <i class="fas fa-quote-right" style="color: var(--primary); opacity: 0.5; font-size: 2rem;"></i>
+                <p>"পহেলা বৈশাখে আমাদের স্পেশাল অফারের প্রচারণা এই পঞ্জিকার মাধ্যমে করে অসাধারণ সাড়া পেয়েছি।"</p>
+                <p><strong>- রূপসী বাঙালি</strong></p>
+            </div>
+        </div>
+        
+        <!-- FAQ -->
+        <h2><i class="fas fa-question-circle"></i> প্রায়শই জিজ্ঞাসিত প্রশ্ন</h2>
+        <div style="margin: 24px 0;">
+            <details style="margin-bottom: 16px; padding: 16px; background: var(--bg-secondary); border-radius: 12px;">
+                <summary style="font-weight: 600; cursor: pointer; color: var(--secondary);">বিজ্ঞাপন কতদিন চলবে?</summary>
+                <p style="margin-top: 12px;">আমাদের সব প্যাকেজ ৩০ দিনের জন্য। আপনি চাইলে ৩ মাস বা ৬ মাসের জন্য বুক করতে পারেন - এক্ষেত্রে বিশেষ ডিসকাউন্ট প্রযোজ্য।</p>
+            </details>
+            <details style="margin-bottom: 16px; padding: 16px; background: var(--bg-secondary); border-radius: 12px;">
+                <summary style="font-weight: 600; cursor: pointer; color: var(--secondary);">পেমেন্ট কীভাবে করতে হবে?</summary>
+                <p style="margin-top: 12px;">আমরা বিকাশ, নগদ, রকেট, ব্যাংক ট্রান্সফার এবং পেপ্যাল গ্রহণ করি। পেমেন্টের বিস্তারিত ইনভয়েসে উল্লেখ করা হবে।</p>
+            </details>
+            <details style="margin-bottom: 16px; padding: 16px; background: var(--bg-secondary); border-radius: 12px;">
+                <summary style="font-weight: 600; cursor: pointer; color: var(--secondary);">রিপোর্ট/এনালাইটিক্স পাবো কীভাবে?</summary>
+                <p style="margin-top: 12px;">হ্যাঁ, স্ট্যান্ডার্ড ও প্রিমিয়াম প্যাকেজে আমরা সাপ্তাহিক ও মাসিক পারফরম্যান্স রিপোর্ট প্রদান করি। এতে ইম্প্রেশন, ক্লিক এবং এঙ্গেজমেন্টের তথ্য থাকবে।</p>
+            </details>
+            <details style="margin-bottom: 16px; padding: 16px; background: var(--bg-secondary); border-radius: 12px;">
+                <summary style="font-weight: 600; cursor: pointer; color: var(--secondary);">নিজস্ব ডোমেইন না থাকায় কি AdSense ব্যবহার করা যাবে?</summary>
+                <p style="margin-top: 12px;">GitHub Pages এর সাবডোমেইনে Google AdSense অনুমোদিত হয় না। তবে কাস্টম ডোমেইন (.com, .com.bd, .bd) ব্যবহার করলে AdSense এপ্লাই করা যাবে। আমরা ডোমেইন সেটআপেও সাহায্য করতে পারি।</p>
+            </details>
+        </div>
+    </article>
+</main>
+
+<footer class="footer">
+    <p style="font-size: 1.4rem; font-weight: 700;"><i class="fas fa-bullhorn"></i> বিজ্ঞাপন দিন</p>
+    <p>আপনার ব্র্যান্ডকে পৌঁছে দিন সঠিক দর্শকের কাছে</p>
+    <p style="margin-top: 20px;">বাংলা পঞ্জিকা • A Dipto Design Project • Made in Bangladesh 🇧🇩</p>
+    <p style="margin-top: 20px;">
+        <a href="index.html">হোম</a> • 
+        <a href="about.html">সম্পর্কে</a> • 
+        <a href="advertise.html">বিজ্ঞাপন দিন</a> • 
+        <a href="privacy.html">গোপনীয়তা নীতি</a>
+    </p>
+    <p style="margin-top: 20px; opacity: 0.8;">© ২০২৬ Dipto Design • সর্বস্বত্ব সংরক্ষিত • বাংলাদেশ</p>
+</footer>
+
+</body>
+</html>
