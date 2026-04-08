@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>গোপনীয়তা নীতি | বাংলা পঞ্জিকা | Dipto Design</title>
+    <meta name="description" content="বাংলা পঞ্জিকার গোপনীয়তা নীতি - আমরা কীভাবে আপনার তথ্য সুরক্ষিত রাখি">
+    <meta name="author" content="Dipto Design">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700;800&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #D4A574; --primary-dark: #8B6914; --primary-light: #F5DEB3;
+            --secondary: #8B4513; --accent: #DAA520; --success: #2E8B57;
+            --bg-primary: #FFF8DC; --bg-secondary: #FFFFF0; --bg-card: #FFFFFF;
+            --text-primary: #3E2723; --text-secondary: #5D4037;
+            --border-light: #DEB887; --shadow-md: 0 8px 24px rgba(139, 69, 19, 0.12);
+            --gradient-1: linear-gradient(135deg, #FFF8DC 0%, #F5DEB3 100%);
+            --gradient-2: linear-gradient(135deg, #D4A574 0%, #8B6914 100%);
+        }
+        body {
+            font-family: 'Hind Siliguri', 'Noto Serif Bengali', sans-serif;
+            background: var(--gradient-1);
+            color: var(--text-primary);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="%23DEB887" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.4; pointer-events: none; z-index: -1;
+        }
+        .top-header {
+            background: rgba(255, 255, 240, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 3px solid var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+        .logo a {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo span {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-left: 8px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--secondary); }
+        .nav-links a.active { color: var(--secondary); font-weight: 700; border-bottom: 2px solid var(--secondary); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 24px; }
+        .page-card {
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 40px;
+            margin: 24px 0;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 3px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin: 32px 0 16px;
+        }
+        h3 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 24px 0 12px;
+        }
+        p { margin-bottom: 16px; }
+        ul, ol { margin: 16px 0 16px 24px; }
+        li { margin-bottom: 8px; }
+        .info-box {
+            background: var(--bg-secondary);
+            padding: 24px;
+            border-radius: 16px;
+            margin: 24px 0;
+            border-left: 4px solid var(--success);
+        }
+        .info-box.warning {
+            border-left-color: #D2691E;
+        }
+        .info-box.highlight {
+            background: linear-gradient(135deg, #006A4E 0%, #F42A41 100%);
+            color: white;
+            border-left: none;
+        }
+        .info-box.highlight h3 {
+            color: white;
+            margin-top: 0;
+        }
+        .info-box.highlight i {
+            color: #FFD700;
+        }
+        .last-updated {
+            text-align: right;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-top: 32px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-light);
+        }
+        .contact-info {
+            background: var(--bg-secondary);
+            padding: 24px;
+            border-radius: 16px;
+            margin: 24px 0;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+        .contact-item i {
+            width: 24px;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 56px;
+            padding: 40px;
+            background: var(--gradient-2);
+            color: white;
+            border-radius: 40px 40px 0 0;
+        }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .flag-colors {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin: 16px 0;
+        }
+        .flag-green { width: 60px; height: 8px; background: #006A4E; border-radius: 4px; }
+        .flag-red { width: 60px; height: 8px; background: #F42A41; border-radius: 4px; }
+        @media (max-width: 768px) {
+            .top-header { flex-direction: column; gap: 16px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .page-card { padding: 24px; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="top-header">
+    <div class="logo">
+        <a href="index.html">
+            <i class="fas fa-calendar-alt"></i>
+            বাংলা পঞ্জিকা
+            <span>by Dipto Design</span>
+        </a>
+    </div>
+    <nav class="nav-links">
+        <a href="index.html">হোম</a>
+        <a href="about.html">সম্পর্কে</a>
+        <a href="privacy.html" class="active">গোপনীয়তা নীতি</a>
+    </nav>
+</header>
+
+<main class="container">
+    <article class="page-card">
+        <h1><i class="fas fa-lock"></i> গোপনীয়তা নীতি</h1>
+        
+        <p style="font-size: 1.1rem;">বাংলা পঞ্জিকা ("আমরা", "আমাদের", "Dipto Design") আপনার গোপনীয়তাকে সম্মান করে এবং আপনার ব্যক্তিগত তথ্য সুরক্ষায় প্রতিশ্রুতিবদ্ধ। এই গোপনীয়তা নীতিতে আমরা ব্যাখ্যা করেছি কীভাবে আমরা তথ্য সংগ্রহ, ব্যবহার এবং সুরক্ষা করি।</p>
+        
+        <div class="info-box">
+            <h3 style="margin-top: 0;"><i class="fas fa-check-circle" style="color: var(--success);"></i> মূল বিষয়সমূহ</h3>
+            <ul style="margin-bottom: 0;">
+                <li><strong>কোনো ব্যক্তিগত তথ্য সংগ্রহ করা হয় না</strong> - আমরা আপনার নাম, ইমেইল, বা অন্য কোনো তথ্য সংগ্রহ করি না</li>
+                <li><strong>কোনো কুকি ব্যবহার করা হয় না</strong> - আমরা কোনো ট্র্যাকিং বা সেশন কুকি ব্যবহার করি না</li>
+                <li><strong>সমস্ত গণনা লোকাল</strong> - সকল জ্যোতিষ গণনা আপনার ব্রাউজারেই সম্পন্ন হয়</li>
+                <li><strong>কোনো সার্ভার স্টোরেজ নেই</strong> - কোনো তথ্য আমাদের সার্ভারে প্রেরণ বা সংরক্ষণ করা হয় না</li>
+            </ul>
+        </div>
+        
+        <!-- Bangladesh Data Privacy -->
+        <div class="info-box highlight">
+            <h3 style="margin-top: 0;"><i class="fas fa-shield-alt"></i> বাংলাদেশের তথ্য সুরক্ষা</h3>
+            <p>আমরা <strong>বাংলাদেশের ডিজিটাল নিরাপত্তা আইন, ২০১৮</strong> এবং তথ্য সুরক্ষা সংক্রান্ত সকল প্রযোজ্য আইন মেনে চলি। আমাদের পঞ্জিকা বাংলাদেশের নাগরিকদের জন্য সম্পূর্ণ নিরাপদ।</p>
+            <div class="flag-colors">
+                <div class="flag-green"></div>
+                <div class="flag-red"></div>
+            </div>
+            <p><i class="fas fa-check-circle"></i> বাংলাদেশ সরকারের ডিজিটাল নিরাপত্তা নির্দেশিকা অনুসৃত</p>
+        </div>
+        
+        <h2><i class="fas fa-database"></i> আমরা কী তথ্য সংগ্রহ করি?</h2>
+        
+        <p><strong>আমরা কোনো ব্যক্তিগত তথ্য সংগ্রহ করি না।</strong> বাংলা পঞ্জিকা একটি সম্পূর্ণ স্ট্যাটিক ওয়েব অ্যাপ্লিকেশন যা আপনার ব্রাউজারে সম্পূর্ণরূপে চলে। আমরা সংগ্রহ করি না:</p>
+        
+        <ul>
+            <li>নাম, ইমেইল ঠিকানা, ফোন নম্বর, বা যোগাযোগের তথ্য</li>
+            <li>লোকেশন, জিপিএস, বা জিওলোকেশন ডেটা</li>
+            <li>ব্রাউজিং হিস্টোরি, ক্লিক ডেটা, বা ব্যবহারের পরিসংখ্যান</li>
+            <li>ডিভাইস তথ্য, আইপি ঠিকানা, বা নেটওয়ার্ক তথ্য</li>
+            <li>কোনো ব্যক্তিগত পরিচয় সংক্রান্ত তথ্য</li>
+        </ul>
+        
+        <h2><i class="fas fa-cookie-bite"></i> কুকি নীতি</h2>
+        
+        <p>বাংলা পঞ্জিকা <strong>কোনো কুকি ব্যবহার করে না</strong>। আমরা ব্যবহার করি না:</p>
+        
+        <ul>
+            <li>ট্র্যাকিং কুকি</li>
+            <li>সেশন কুকি</li>
+            <li>পার্সোনালাইজেশন কুকি</li>
+            <li>থার্ড-পার্টি কুকি</li>
+            <li>বিজ্ঞাপন কুকি</li>
+        </ul>
+        
+        <p>আপনার ব্রাউজারে কোনো কুকি সংরক্ষিত হয় না।</p>
+        
+        <h2><i class="fas fa-calculator"></i> কীভাবে গণনা কাজ করে?</h2>
+        
+        <p>সমস্ত জ্যোতিষ গণনা (তিথি, নক্ষত্র, যোগ, করণ, সূর্যোদয়, সূর্যাস্ত, গ্রহণ, ইত্যাদি) আপনার ব্রাউজারে জাভাস্ক্রিপ্টের মাধ্যমে সম্পন্ন হয়। এর অর্থ:</p>
+        
+        <ul>
+            <li>সকল গণনা আপনার ডিভাইসেই হয়</li>
+            <li>কোনো ডেটা আমাদের সার্ভারে প্রেরণ করা হয় না</li>
+            <li>আপনি অফলাইনেও পঞ্জিকা ব্যবহার করতে পারবেন (একবার লোড হওয়ার পর)</li>
+            <li>আপনার লোকেশন বা সময় অঞ্চলের তথ্য শুধুমাত্র আপনার ব্রাউজার ব্যবহার করে</li>
+        </ul>
+        
+        <h2><i class="fas fa-shield-alt"></i> তথ্য সুরক্ষা</h2>
+        
+        <p>যেহেতু আমরা কোনো তথ্য সংগ্রহ বা সংরক্ষণ করি না, তাই আপনার তথ্য সুরক্ষার বিষয়ে কোনো ঝুঁকি নেই। সমস্ত ডেটা আপনার নিজস্ব ডিভাইসে থাকে এবং তৃতীয় পক্ষের সাথে শেয়ার করা হয় না।</p>
+        
+        <p><strong>বাংলাদেশের ব্যবহারকারীদের জন্য:</strong> এই ওয়েবসাইট বাংলাদেশের ডিজিটাল নিরাপত্তা আইনের সম্পূর্ণ অনুসারী। কোনো ব্যক্তিগত তথ্য সংগ্রহ না করায় ডেটা লঙ্ঘনের কোনো সম্ভাবনা নেই।</p>
+        
+        <div class="info-box warning">
+            <h3 style="margin-top: 0;"><i class="fas fa-exclamation-triangle" style="color: #D2691E;"></i> থার্ড-পার্টি সার্ভিস</h3>
+            <p>আমরা নিম্নলিখিত থার্ড-পার্টি সার্ভিস ব্যবহার করি যাদের নিজস্ব গোপনীয়তা নীতি রয়েছে:</p>
+            <ul style="margin-bottom: 0;">
+                <li><strong>Google Fonts</strong> - বাংলা ও ইংরেজি ফন্ট লোড করার জন্য</li>
+                <li><strong>Font Awesome</strong> - আইকন প্রদর্শনের জন্য</li>
+                <li><strong>GitHub Pages</strong> - ওয়েবসাইট হোস্টিংয়ের জন্য</li>
+            </ul>
+            <p style="margin-top: 12px;">এই সার্ভিসগুলোর নিজস্ব গোপনীয়তা নীতি রয়েছে। বিস্তারিত জানতে তাদের নিজস্ব ওয়েবসাইট দেখুন। আমরা এই তৃতীয় পক্ষের গোপনীয়তা অনুশীলনের জন্য দায়ী নই।</p>
+        </div>
+        
+        <h2><i class="fas fa-child"></i> শিশুদের গোপনীয়তা</h2>
+        
+        <p>আমাদের ওয়েবসাইট সকল বয়সের ব্যবহারকারীদের জন্য উপযুক্ত এবং নিরাপদ। আমরা জেনেশুনে কোনো ব্যক্তিগত তথ্য সংগ্রহ করি না, তাই শিশুদের গোপনীয়তা নিয়ে কোনো উদ্বেগ নেই। পিতামাতা বা অভিভাবকগণ নিশ্চিন্তে তাদের শিশুদের এই ওয়েবসাইট ব্যবহার করতে দিতে পারেন।</p>
+        
+        <h2><i class="fas fa-globe"></i> আন্তর্জাতিক ব্যবহারকারী</h2>
+        
+        <p>বাংলা পঞ্জিকা বিশ্বের যেকোনো স্থান থেকে ব্যবহার করা যায়। যেহেতু আমরা কোনো তথ্য সংগ্রহ করি না, তাই ডেটা স্থানান্তর সংক্রান্ত কোনো বিধিনিষেধ প্রযোজ্য নয়। আপনি বাংলাদেশ, ভারত, বা বিশ্বের যেকোনো প্রান্ত থেকে আমাদের পঞ্জিকা ব্যবহার করতে পারেন।</p>
+        
+        <h2><i class="fas fa-ad"></i> বিজ্ঞাপন নীতি</h2>
+        
+        <p>বর্তমানে বাংলা পঞ্জিকা <strong>কোনো বিজ্ঞাপন প্রদর্শন করে না</strong>। আমরা কোনো বিজ্ঞাপন নেটওয়ার্ক বা ট্র্যাকিং সার্ভিস ব্যবহার করি না। ভবিষ্যতে যদি আমরা বিজ্ঞাপন যোগ করি, তাহলে এই নীতি হালনাগাদ করা হবে এবং ব্যবহারকারীদের অবহিত করা হবে।</p>
+        
+        <h2><i class="fas fa-sync-alt"></i> নীতির পরিবর্তন</h2>
+        
+        <p>আমরা সময়ে সময়ে এই গোপনীয়তা নীতি হালনাগাদ করতে পারি। কোনো পরিবর্তন হলে তা এই পৃষ্ঠায় প্রকাশিত হবে। গুরুত্বপূর্ণ পরিবর্তনের ক্ষেত্রে আমরা হোম পেজে একটি নোটিশ প্রদর্শন করব।</p>
+        
+        <h2><i class="fas fa-gavel"></i> আইনগত অধিকার</h2>
+        
+        <p>এই গোপনীয়তা নীতি <strong>বাংলাদেশের আইন</strong> অনুযায়ী পরিচালিত এবং ব্যাখ্যাকৃত হবে। কোনো বিরোধ দেখা দিলে বাংলাদেশের আদালতের এক্তিয়ারভুক্ত হবে।</p>
+        
+        <h2><i class="fas fa-question-circle"></i> আপনার অধিকার</h2>
+        
+        <p>যেহেতু আমরা কোনো ব্যক্তিগত তথ্য সংগ্রহ করি না, তাই ডেটা অ্যাক্সেস, সংশোধন, বা মুছে ফেলার মতো কোনো অনুরোধ প্রযোজ্য নয়। তবে আপনার কোনো প্রশ্ন বা উদ্বেগ থাকলে নিচের যোগাযোগের তথ্য ব্যবহার করে আমাদের জানাতে পারেন।</p>
+        
+        <h2><i class="fas fa-envelope"></i> যোগাযোগ</h2>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-user"></i>
+                <span><strong>প্রতিষ্ঠান:</strong> Dipto Design</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span><strong>ইমেইল:</strong> diptodesignstd@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <span><strong>GitHub:</strong> github.com/diptodesign</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span><strong>অবস্থান:</strong> বাংলাদেশ 🇧🇩</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-globe"></i>
+                <span><strong>ওয়েবসাইট:</strong> bangla-panjika.github.io</span>
+            </div>
+        </div>
+        
+        <p style="margin-top: 20px;">এই গোপনীয়তা নীতি সম্পর্কে আপনার কোনো প্রশ্ন, মন্তব্য, বা উদ্বেগ থাকলে অনুগ্রহ করে উপরের ইমেইল ঠিকানায় আমাদের সাথে যোগাযোগ করুন। আমরা যত দ্রুত সম্ভব উত্তর দেওয়ার চেষ্টা করব।</p>
+        
+        <div class="last-updated">
+            <i class="far fa-calendar-alt"></i> সর্বশেষ হালনাগাদ: ৮ এপ্রিল, ২০২৬<br>
+            <i class="far fa-clock"></i> কার্যকর হওয়ার তারিখ: ৮ এপ্রিল, ২০২৬
+        </div>
+    </article>
+</main>
+
+<footer class="footer">
+    <p style="font-size: 1.4rem; font-weight: 700;"><i class="fas fa-lock"></i> গোপনীয়তা নীতি</p>
+    <p>আপনার তথ্য সুরক্ষা আমাদের অঙ্গীকার</p>
+    <p style="margin-top: 20px;">বাংলা পঞ্জিকা • A Dipto Design Project • Made in Bangladesh 🇧🇩</p>
+    <p style="margin-top: 20px;">
+        <a href="index.html">হোম</a> • 
+        <a href="about.html">সম্পর্কে</a> • 
+        <a href="privacy.html">গোপনীয়তা নীতি</a>
+    </p>
+    <p style="margin-top: 20px; opacity: 0.8;">© ২০২৬ Dipto Design • সর্বস্বত্ব সংরক্ষিত • বাংলাদেশ</p>
+</footer>
+
+</body>
+</html>
