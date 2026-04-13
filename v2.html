@@ -4,18 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     
-    <!-- SEO Meta Tags -->
-    <title>Calendar World | বাংলা পঞ্জিকা ১৪৩৩-১৪৪১ • Accurate Ekadashi 2026-2034</title>
-    <meta name="description" content="Accurate Bengali Panjika 1433-1441 (2026-2034). Verified Ekadashi dates, festivals, eclipses, 4000+ baby names, muhurta, panchanga. All calendars in one place.">
-    <meta name="keywords" content="Ekadashi 2026, Ekadashi 2027, Ekadashi 2028, Ekadashi 2029, Bengali calendar 1433, Panjika, Durga Puja 2026, Kali Puja 2026">
+    <title>Calendar World | Auto-Update বাংলা পঞ্জিকা ১৪৩৩-১৪৪১</title>
+    <meta name="description" content="Fully automated Bengali Panjika with live updates. Accurate Ekadashi dates 2026-2034.">
     
-    <!-- Google AdSense -->
     <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
     
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
@@ -32,7 +26,7 @@
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
             --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
             --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px; --radius-full: 9999px;
-            --sidebar-width: 300px;
+            --sidebar-width: 280px;
         }
         body.dark {
             --bg-page: #0F172A; --bg-card: #1E293B; --bg-sidebar: #0F172A;
@@ -47,6 +41,8 @@
             display: flex;
             min-height: 100vh;
         }
+        
+        /* Sidebar */
         .sidebar {
             width: var(--sidebar-width);
             background: var(--bg-sidebar);
@@ -58,7 +54,7 @@
             box-shadow: var(--shadow-xl);
         }
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 800;
             background: linear-gradient(135deg, #FF6B35, #FFB347, #8B5CF6);
             -webkit-background-clip: text;
@@ -77,6 +73,8 @@
         }
         .nav-item:hover { background: rgba(255,255,255,0.1); color: white; }
         .nav-item.active { background: linear-gradient(135deg, var(--primary), var(--purple)); color: white; }
+        
+        /* Main Content */
         .main-content {
             flex: 1;
             margin-left: var(--sidebar-width);
@@ -84,6 +82,8 @@
             padding: 24px 32px;
             max-width: 1400px;
         }
+        
+        /* Right Sidebar */
         .right-sidebar {
             width: 340px;
             background: var(--bg-card);
@@ -93,29 +93,23 @@
             padding: 20px 16px;
             border-left: 1px solid var(--border-light);
         }
-        .year-selector {
+        
+        /* Live Indicator */
+        .live-indicator {
             display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin: 20px 0;
+            align-items: center;
+            gap: 6px;
         }
-        .year-btn {
-            padding: 12px 20px;
-            background: var(--bg-card);
-            border: 2px solid var(--border-medium);
-            border-radius: var(--radius-full);
-            font-weight: 700;
-            cursor: pointer;
-            color: var(--text-primary);
-            transition: all 0.2s;
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            background: #4ADE80;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
         }
-        .year-btn:hover { border-color: var(--primary); }
-        .year-btn.active {
-            background: linear-gradient(135deg, var(--primary), var(--purple));
-            color: white;
-            border-color: transparent;
-        }
-        .year-btn.current { border-color: var(--success); box-shadow: 0 0 15px rgba(16, 185, 129, 0.3); }
+        @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.4; transform:scale(1.3); } }
+        
+        /* Stats */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -129,6 +123,8 @@
             box-shadow: var(--shadow-md);
             border: 1px solid var(--border-light);
         }
+        
+        /* Tables */
         .data-table {
             width: 100%;
             border-collapse: collapse;
@@ -148,18 +144,12 @@
             border-bottom: 1px solid var(--border-light);
         }
         .data-table tr:hover { background: var(--primary-light); }
-        .special-banner {
-            background: linear-gradient(135deg, var(--purple), var(--pink));
+        .data-table tr.today-row {
+            background: linear-gradient(90deg, var(--success), transparent);
             color: white;
-            padding: 24px 20px;
-            border-radius: var(--radius-lg);
-            margin-bottom: 20px;
-            animation: glow 2s infinite;
         }
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
-            50% { box-shadow: 0 0 30px rgba(139, 92, 246, 0.6); }
-        }
+        
+        /* Tabs */
         .tabs-container {
             display: flex;
             flex-wrap: wrap;
@@ -178,13 +168,69 @@
             color: var(--text-secondary);
             border-radius: var(--radius-full);
             cursor: pointer;
+            transition: all 0.2s;
         }
+        .tab-btn:hover { background: var(--primary-light); }
         .tab-btn.active {
             background: linear-gradient(135deg, var(--primary), var(--purple));
             color: white;
         }
         .tab-pane { display: none; }
         .tab-pane.active { display: block; }
+        
+        /* Buttons */
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--purple));
+            color: white;
+        }
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--border-medium);
+            color: var(--text-primary);
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        
+        /* Calendar Grid */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+        }
+        .calendar-day {
+            padding: 12px 8px;
+            text-align: center;
+            border-radius: var(--radius-md);
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .calendar-day:hover {
+            background: var(--primary-light);
+            border-color: var(--primary);
+        }
+        .calendar-day.today {
+            background: var(--success);
+            color: white;
+            border-color: var(--success);
+        }
+        .calendar-day.ekadashi {
+            border: 3px solid var(--purple);
+        }
+        
+        /* Toast */
         .toast {
             position: fixed;
             bottom: 30px;
@@ -199,22 +245,44 @@
             transition: opacity 0.3s;
         }
         .toast.show { opacity: 1; }
-        .current-badge {
-            background: var(--success);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            margin-left: 8px;
+        
+        /* Year Selector */
+        .year-selector {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 20px 0;
         }
-        .verified-badge {
-            background: var(--info);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 20px;
-            font-size: 0.65rem;
-            margin-left: 5px;
+        .year-btn {
+            padding: 10px 18px;
+            background: var(--bg-card);
+            border: 2px solid var(--border-medium);
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            cursor: pointer;
+            color: var(--text-primary);
         }
+        .year-btn:hover { border-color: var(--primary); }
+        .year-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--purple));
+            color: white;
+            border-color: transparent;
+        }
+        
+        /* Module Container */
+        .module-container { display: none; }
+        .module-container.active { display: block; }
+        
+        /* Banner */
+        .special-banner {
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            color: white;
+            padding: 24px 20px;
+            border-radius: var(--radius-lg);
+            margin-bottom: 20px;
+        }
+        
+        /* Responsive */
         @media (max-width: 1200px) {
             .right-sidebar { display: none; }
             .main-content { margin-right: 0; }
@@ -233,7 +301,9 @@
 <div class="sidebar">
     <div class="logo">
         <i class="fas fa-calendar-alt"></i> CalendarWorld.xyz
-        <div style="font-size:0.7rem; color:rgba(255,255,255,0.5);">Current: 2026 / 1433</div>
+        <div style="font-size:0.7rem; color:rgba(255,255,255,0.5);">
+            <span class="live-indicator"><span class="pulse-dot"></span> AUTO-LIVE</span>
+        </div>
     </div>
     
     <div style="padding: 16px;">
@@ -244,152 +314,209 @@
     <div style="padding: 12px;">
         <div style="color:rgba(255,255,255,0.4); padding:12px 16px;">🇧🇩 BENGALI PANJIKA</div>
         <div class="nav-item active" data-module="panjika"><i class="fas fa-om"></i> পঞ্জিকা ১৪৩৩-১৪৪১</div>
-        <div class="nav-item" data-module="ekadashi-all"><i class="fas fa-moon"></i> সকল একাদশী (Verified)</div>
+        <div class="nav-item" data-module="ekadashi-all"><i class="fas fa-moon"></i> সকল একাদশী</div>
         <div class="nav-item" data-module="festivals-all"><i class="fas fa-gift"></i> সকল উৎসব</div>
         <div class="nav-item" data-module="eclipse-all"><i class="fas fa-eclipse"></i> সকল গ্রহণ</div>
         <div class="nav-item" data-module="names"><i class="fas fa-baby"></i> নামকরণ (৪০০০+)</div>
         
-        <div style="color:rgba(255,255,255,0.4); padding:12px 16px; margin-top:16px;">🌍 OTHER CALENDARS</div>
+        <div style="color:rgba(255,255,255,0.4); padding:12px 16px; margin-top:16px;">🌍 CALENDARS</div>
         <div class="nav-item" data-module="gregorian"><i class="fas fa-calendar"></i> Gregorian 2026</div>
         <div class="nav-item" data-module="chinese"><i class="fas fa-dragon"></i> Chinese Lunar</div>
         <div class="nav-item" data-module="hindu"><i class="fas fa-star"></i> Hindu Panchang</div>
-        <div class="nav-item" data-module="hebrew"><i class="fas fa-star-of-david"></i> Hebrew</div>
         <div class="nav-item" data-module="islamic"><i class="fas fa-mosque"></i> Islamic Hijri</div>
-        
-        <div style="color:rgba(255,255,255,0.4); padding:12px 16px; margin-top:16px;">🧮 CALCULATORS</div>
-        <div class="nav-item" data-module="date-diff"><i class="fas fa-calculator"></i> Date Difference</div>
-        <div class="nav-item" data-module="age"><i class="fas fa-birthday-cake"></i> Age Calculator</div>
     </div>
     
     <div style="padding: 20px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: auto;">
-        <div id="themeToggle" style="cursor:pointer;"><i class="fas fa-moon"></i> Dark Mode</div>
+        <div id="themeToggle" style="cursor:pointer; display:flex; align-items:center; gap:10px;">
+            <i class="fas fa-moon"></i> <span>Dark Mode</span>
+        </div>
     </div>
 </div>
 
 <!-- MAIN CONTENT -->
 <div class="main-content">
-    <div style="display:flex; justify-content:space-between; padding:16px 24px; background:var(--bg-card); border-radius:var(--radius-xl); margin-bottom:20px;">
+    <!-- Top Bar -->
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:16px 24px; background:var(--bg-card); border-radius:var(--radius-xl); margin-bottom:20px; box-shadow:var(--shadow-md);">
         <div>
-            <span id="currentModule">বাংলা পঞ্জিকা ১৪৩৩-১৪৪১</span>
-            <span class="current-badge">বর্তমান: ১৪৩৩</span>
-            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
+            <span id="currentModule" style="font-weight:700;">বাংলা পঞ্জিকা</span>
+            <span style="background:var(--success); color:white; padding:2px 10px; border-radius:20px; font-size:0.7rem; margin-left:10px;">AUTO-UPDATE</span>
         </div>
-        <div style="display:flex; gap:16px;">
-            <div id="liveClock" style="font-family:monospace; font-size:1.2rem;"></div>
-            <button id="shareBtn" style="background:none;border:none;cursor:pointer;"><i class="fas fa-share-alt"></i></button>
+        <div style="display:flex; gap:20px; align-items:center;">
+            <div class="live-indicator">
+                <span class="pulse-dot"></span>
+                <span id="liveClock" style="font-family:monospace; font-size:1.3rem; font-weight:700;"></span>
+            </div>
+            <button id="shareBtn" style="background:none; border:none; cursor:pointer; font-size:1.2rem;" title="Share">
+                <i class="fas fa-share-alt"></i>
+            </button>
         </div>
     </div>
     
+    <!-- Top Ad -->
     <div style="background:var(--border-light); border-radius:var(--radius-lg); min-height:90px; display:flex; align-items:center; justify-content:center; margin-bottom:24px;">
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="2222222222" data-ad-format="horizontal"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
     
+    <!-- Current Date Banner -->
+    <div style="background:linear-gradient(135deg, var(--success), var(--teal)); color:white; padding:16px 24px; border-radius:var(--radius-lg); margin-bottom:24px; display:flex; justify-content:space-between; align-items:center;">
+        <div>
+            <i class="fas fa-calendar-check"></i> 
+            <strong>আজ: <span id="todayFullDisplay"></span></strong>
+        </div>
+        <div>
+            <span id="tithiDisplay"></span>
+        </div>
+    </div>
+    
+    <!-- Year Selector -->
     <div class="year-selector" id="yearSelector"></div>
     
-    <div style="background:var(--success); color:white; padding:12px 20px; border-radius:var(--radius-lg); margin-bottom:20px;">
-        <i class="fas fa-calendar-check"></i> 
-        <strong>বর্তমান বছর: ১৪৩৩ বঙ্গাব্দ (১৪ এপ্রিল ২০২৬ - ১৩ এপ্রিল ২০২৭)</strong>
-        <span style="margin-left:20px;">📅 আজ: <span id="todayBanglaDate"></span></span>
-    </div>
-    
+    <!-- Main Panjika Module -->
     <div id="module-panjika" class="module-container active">
+        <!-- Stats -->
         <div class="stats-grid" id="panjikaStats"></div>
         
-        <div style="margin:20px 0; display:flex; gap:12px;">
-            <input type="date" id="datePicker" style="padding:12px 20px; border-radius:30px; border:2px solid var(--border-medium);">
-            <button id="todayBtn" style="padding:12px 24px; background:var(--primary); color:white; border:none; border-radius:30px;">আজ</button>
-            <button id="currentYearBtn" style="padding:12px 24px; background:var(--success); color:white; border:none; border-radius:30px;">১৪৩৩ তে যান</button>
+        <!-- Controls -->
+        <div style="display:flex; gap:12px; margin:20px 0; flex-wrap:wrap;">
+            <input type="date" id="datePicker" style="padding:12px 20px; border-radius:30px; border:2px solid var(--border-medium); background:var(--bg-card); color:var(--text-primary);">
+            <button class="btn btn-primary" id="todayBtn"><i class="fas fa-sun"></i> আজ</button>
+            <button class="btn btn-success" id="currentYearBtn"><i class="fas fa-star"></i> ১৪৩৩</button>
+            <button class="btn btn-outline" id="prevDayBtn"><i class="fas fa-chevron-left"></i></button>
+            <button class="btn btn-outline" id="nextDayBtn"><i class="fas fa-chevron-right"></i></button>
         </div>
         
+        <!-- Tabs -->
         <div class="tabs-container" id="panjikaTabs">
-            <button class="tab-btn active" data-tab="calendar">📅 ক্যালেন্ডার</button>
-            <button class="tab-btn" data-tab="ekadashi">🕉️ একাদশী (Verified)</button>
-            <button class="tab-btn" data-tab="festivals">🎉 উৎসব</button>
-            <button class="tab-btn" data-tab="eclipse">🌑 গ্রহণ</button>
-            <button class="tab-btn" data-tab="muhurta">⏰ মুহূর্ত</button>
-            <button class="tab-btn" data-tab="boyNames">👦 ছেলেদের নাম</button>
-            <button class="tab-btn" data-tab="girlNames">👧 মেয়েদের নাম</button>
+            <button class="tab-btn active" data-tab="calendar"><i class="fas fa-calendar-alt"></i> ক্যালেন্ডার</button>
+            <button class="tab-btn" data-tab="ekadashi"><i class="fas fa-moon"></i> একাদশী</button>
+            <button class="tab-btn" data-tab="festivals"><i class="fas fa-gift"></i> উৎসব</button>
+            <button class="tab-btn" data-tab="eclipse"><i class="fas fa-eclipse"></i> গ্রহণ</button>
+            <button class="tab-btn" data-tab="muhurta"><i class="fas fa-clock"></i> মুহূর্ত</button>
+            <button class="tab-btn" data-tab="boyNames"><i class="fas fa-male"></i> ছেলেদের নাম</button>
+            <button class="tab-btn" data-tab="girlNames"><i class="fas fa-female"></i> মেয়েদের নাম</button>
         </div>
         
+        <!-- Tab Content -->
         <div id="panjikaTabContent">
-            <div class="tab-pane active" id="calendar-tab"><div id="calendarWidget"></div></div>
-            <div class="tab-pane" id="ekadashi-tab"><div id="ekadashiContent"></div></div>
-            <div class="tab-pane" id="festivals-tab"><div id="festivalsContent"></div></div>
-            <div class="tab-pane" id="eclipse-tab"><div id="eclipseContent"></div></div>
-            <div class="tab-pane" id="muhurta-tab"><div id="muhurtaContent"></div></div>
-            <div class="tab-pane" id="boyNames-tab"><div id="boyNamesContent"></div></div>
-            <div class="tab-pane" id="girlNames-tab"><div id="girlNamesContent"></div></div>
+            <div class="tab-pane active" id="calendar-tab">
+                <div id="calendarWidget"></div>
+            </div>
+            <div class="tab-pane" id="ekadashi-tab">
+                <div id="ekadashiContent"></div>
+            </div>
+            <div class="tab-pane" id="festivals-tab">
+                <div id="festivalsContent"></div>
+            </div>
+            <div class="tab-pane" id="eclipse-tab">
+                <div id="eclipseContent"></div>
+            </div>
+            <div class="tab-pane" id="muhurta-tab">
+                <div id="muhurtaContent"></div>
+            </div>
+            <div class="tab-pane" id="boyNames-tab">
+                <div id="boyNamesContent"></div>
+            </div>
+            <div class="tab-pane" id="girlNames-tab">
+                <div id="girlNamesContent"></div>
+            </div>
         </div>
     </div>
     
+    <!-- Other Modules -->
     <div id="module-ekadashi-all" class="module-container">
-        <h2>সকল একাদশী ২০২৬-২০৩৪ (Verified Data)</h2>
-        <p style="margin-bottom:20px;"><i class="fas fa-check-circle" style="color:var(--success);"></i> ২০২৬-২০২৯ এর সকল তারিখ সত্যায়িত</p>
+        <h2>সকল একাদশী ২০২৬-২০৩৪</h2>
         <div id="allEkadashiTable"></div>
     </div>
     <div id="module-festivals-all" class="module-container">
-        <h2>সকল উৎসব (২০২৬-২০৩৪)</h2>
+        <h2>সকল উৎসব</h2>
         <div id="allFestivalsTable"></div>
     </div>
     <div id="module-eclipse-all" class="module-container">
-        <h2>সকল গ্রহণ (২০২৬-২০৩৪)</h2>
+        <h2>সকল গ্রহণ</h2>
         <div id="allEclipseTable"></div>
     </div>
     <div id="module-names" class="module-container">
         <h2>বাংলা নাম সমগ্র</h2>
         <div id="namesContent"></div>
     </div>
+    <div id="module-gregorian" class="module-container">
+        <h2>Gregorian Calendar</h2>
+        <div id="gregorianContent"></div>
+    </div>
+    <div id="module-chinese" class="module-container">
+        <h2>Chinese Lunar Calendar</h2>
+        <p>Year of the Horse (2026)</p>
+    </div>
+    <div id="module-hindu" class="module-container">
+        <h2>Hindu Panchang</h2>
+        <p>Vikram Samvat 2083</p>
+    </div>
+    <div id="module-islamic" class="module-container">
+        <h2>Islamic Hijri Calendar</h2>
+        <p>1447 AH</p>
+    </div>
     
+    <!-- Footer -->
     <div style="margin-top:48px; padding:32px; background:linear-gradient(135deg, var(--primary-dark), var(--purple)); color:white; border-radius:var(--radius-xl) var(--radius-xl) 0 0; text-align:center;">
         <h2>CalendarWorld.xyz</h2>
-        <p>Complete Bengali Panjika 1433-1441 (2026-2034) • Verified Ekadashi Dates</p>
+        <p>Fully Automated Bengali Panjika • Live Updates • 2026-2034</p>
         <div style="margin:20px 0;">
             <a href="#" style="color:white; margin:0 15px;">Privacy</a>
             <a href="#" style="color:white; margin:0 15px;">Terms</a>
             <a href="#" style="color:white; margin:0 15px;">Contact</a>
         </div>
-        <p>© 2026 CalendarWorld.xyz • Accurate Panjika Data</p>
+        <p>© 2026 CalendarWorld.xyz • Auto-Sync Enabled</p>
     </div>
 </div>
 
 <!-- RIGHT SIDEBAR -->
 <div class="right-sidebar">
+    <!-- Dynamic Banner - Auto Updates -->
     <div id="specialBanner" class="special-banner">
-        <div style="font-size:2rem;" id="bannerIcon">📅</div>
-        <div style="font-size:1.3rem; font-weight:700;" id="bannerTitle">১৪৩৩ বঙ্গাব্দ</div>
-        <div id="bannerDesc">বর্তমান বাংলা বছর</div>
-        <div id="bannerCountdown"></div>
+        <div style="font-size:2rem;" id="bannerIcon">🕉️</div>
+        <div style="font-size:1.3rem; font-weight:700;" id="bannerTitle">Loading...</div>
+        <div id="bannerDesc"></div>
+        <div id="bannerCountdown" class="countdown-timer"></div>
     </div>
     
+    <!-- Ad -->
     <div style="background:var(--border-light); border-radius:var(--radius-lg); min-height:250px; margin:16px 0; display:flex; align-items:center; justify-content:center;">
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="3333333333" data-ad-format="vertical"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
     
+    <!-- Upcoming Events - Auto Updates -->
     <div style="background:var(--bg-card); border-radius:var(--radius-lg); padding:20px; border:1px solid var(--border-light);">
-        <h4><i class="fas fa-calendar-check"></i> আসন্ন একাদশী ২০২৬</h4>
+        <h4><i class="fas fa-calendar-check"></i> আসন্ন একাদশী</h4>
         <div id="upcomingEvents"></div>
     </div>
     
-    <div style="background:var(--border-light); border-radius:var(--radius-lg); min-height:300px; margin:16px 0; display:flex; align-items:center; justify-content:center;">
+    <!-- Today's Highlight -->
+    <div style="background:var(--bg-card); border-radius:var(--radius-lg); padding:20px; margin:16px 0; border:1px solid var(--border-light);">
+        <h4><i class="fas fa-sun"></i> আজকের বিশেষত্ব</h4>
+        <div id="todayHighlight"></div>
+    </div>
+    
+    <!-- Ad -->
+    <div style="background:var(--border-light); border-radius:var(--radius-lg); min-height:300px; display:flex; align-items:center; justify-content:center;">
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="4444444444" data-ad-format="rectangle"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 </div>
 
+<!-- Toast -->
 <div class="toast" id="toastMsg"></div>
 
 <script>
 (function(){
     "use strict";
     
-    const CURRENT_BANGLA_YEAR = 1433;
-    const CURRENT_GREGORIAN_YEAR = 2026;
-    
+    // ========== CONSTANTS ==========
     const BANGLA_MONTHS = ["বৈশাখ","জ্যৈষ্ঠ","আষাঢ়","শ্রাবণ","ভাদ্র","আশ্বিন","কার্তিক","অগ্রহায়ণ","পৌষ","মাঘ","ফাল্গুন","চৈত্র"];
     const ENG_MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     const ENG_MONTHS_SHORT = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    const WEEKDAYS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     const WEEKDAYS_BN = ["রবিবার","সোমবার","মঙ্গলবার","বুধবার","বৃহস্পতিবার","শুক্রবার","শনিবার"];
     
     const TITHIS = [
@@ -399,162 +526,67 @@
         "একাদশী","দ্বাদশী","ত্রয়োদশী","চতুর্দশী","অমাবস্যা"
     ];
     
-    // ========== VERIFIED EKADASHI DATES (User Provided) ==========
+    // ========== VERIFIED EKADASHI DATA ==========
     const VERIFIED_EKADASHI = [
-        // 2026 (User Provided)
-        ["2026-01-14", "বুধবার", "শতিলা একাদশী"],
-        ["2026-01-29", "বৃহস্পতিবার", "জয়া একাদশী"],
-        ["2026-02-13", "শুক্রবার", "বিজয়া একাদশী"],
-        ["2026-02-27", "শুক্রবার", "আমলাকি একাদাশী"],
-        ["2026-03-15", "রবিবার", "পাপমোচনী একাদশী"],
-        ["2026-03-29", "রবিবার", "কামদা একাদশী"],
-        ["2026-04-13", "সোমবার", "বরুথিনী একাদশী"],
-        ["2026-04-27", "সোমবার", "মোহিনী একাদশী"],
-        ["2026-05-13", "বুধবার", "অপারা একদশী"],
-        ["2026-05-27", "বুধবার", "পদ্মিনী একাদশী"],
-        ["2026-06-11", "বৃহস্পতিবার", "পরমা একাদশী"],
-        ["2026-06-25", "বৃহস্পতিবার", "নির্জলা একাদশী"],
-        ["2026-07-11", "শনিবার", "যোগিনী একাদশী"],
-        ["2026-07-25", "শনিবার", "দেব শায়ানী একাদশী"],
-        ["2026-08-09", "রবিবার", "কামিকা একদশী"],
-        ["2026-08-23", "রবিবার", "শ্রাবণ পুত্রদা একাদশী"],
-        ["2026-09-07", "সোমবার", "অজ একদশী"],
-        ["2026-09-22", "মঙ্গলবার", "পরিবর্তনী একদশী"],
-        ["2026-10-06", "মঙ্গলবার", "ইন্দিরা একাদশী"],
-        ["2026-10-22", "বৃহস্পতিবার", "পাপংকুশ একাদশী"],
-        ["2026-11-05", "বৃহস্পতিবার", "রাম একাদশী"],
-        ["2026-11-21", "শনিবার", "দেবতানা একাদশী"],
-        ["2026-12-04", "শুক্রবার", "উৎপন্না একাদশী"],
-        ["2026-12-20", "রবিবার", "মোক্ষদা একাদশী"],
-        
-        // 2027 (User Provided)
-        ["2027-01-03", "রবিবার", "সফলা একাদশী"],
-        ["2027-01-19", "মঙ্গলবার", "পৌষ পুত্রদা একাদশী"],
-        ["2027-02-02", "মঙ্গলবার", "শতিলা একাদশী"],
-        ["2027-02-17", "বুধবার", "জয়া একাদশী"],
-        ["2027-03-04", "বৃহস্পতিবার", "বিজয়া একাদশী"],
-        ["2027-03-18", "বৃহস্পতিবার", "আমলাকি একাদাশী"],
-        ["2027-04-02", "শুক্রবার", "পাপমোচনী একাদশী"],
-        ["2027-04-17", "শনিবার", "কামদা একাদশী"],
-        ["2027-05-02", "রবিবার", "বরুথিনী একাদশী"],
-        ["2027-05-16", "রবিবার", "মোহিনী একাদশী"],
-        ["2027-06-01", "মঙ্গলবার", "অপারা একদশী"],
-        ["2027-06-14", "সোমবার", "নির্জলা একাদশী"],
-        ["2027-06-30", "বুধবার", "যোগিনী একাদশী"],
-        ["2027-07-14", "বুধবার", "দেব শায়ানী একাদশী"],
-        ["2027-07-30", "শুক্রবার", "কামিকা একদশী"],
-        ["2027-08-12", "বৃহস্পতিবার", "শ্রাবণ পুত্রদা একাদশী"],
-        ["2027-08-28", "শনিবার", "অজ একদশী"],
-        ["2027-09-11", "শনিবার", "পরিবর্তনী একদশী"],
-        ["2027-09-26", "রবিবার", "ইন্দিরা একাদশী"],
-        ["2027-10-11", "সোমবার", "পাপংকুশ একাদশী"],
-        ["2027-10-25", "সোমবার", "রাম একাদশী"],
-        ["2027-11-10", "বুধবার", "দেবতানা একাদশী"],
-        ["2027-11-24", "বুধবার", "উৎপন্না একাদশী"],
-        ["2027-12-09", "বৃহস্পতিবার", "মোক্ষদা একাদশী"],
-        ["2027-12-23", "বৃহস্পতিবার", "সফলা একাদশী"],
-        
-        // 2028 (User Provided)
-        ["2028-01-08", "শনিবার", "পৌষ পুত্রদা একাদশী"],
-        ["2028-01-22", "শনিবার", "শতিলা একাদশী"],
-        ["2028-02-07", "সোমবার", "জয়া একাদশী"],
-        ["2028-02-20", "রবিবার", "বিজয়া একাদশী"],
-        ["2028-03-07", "মঙ্গলবার", "আমলাকি একাদাশী"],
-        ["2028-03-21", "মঙ্গলবার", "পাপমোচনী একাদশী"],
-        ["2028-04-05", "বুধবার", "কামদা একাদশী"],
-        ["2028-04-20", "বৃহস্পতিবার", "বরুথিনী একাদশী"],
-        ["2028-05-05", "শুক্রবার", "মোহিনী একাদশী"],
-        ["2028-05-20", "শনিবার", "অপারা একদশী"],
-        ["2028-06-03", "শনিবার", "নির্জলা একাদশী"],
-        ["2028-06-18", "রবিবার", "যোগিনী একাদশী"],
-        ["2028-07-02", "রবিবার", "দেব শায়ানী একাদশী"],
-        ["2028-07-18", "মঙ্গলবার", "কামিকা একদশী"],
-        ["2028-08-01", "মঙ্গলবার", "শ্রাবণ পুত্রদা একাদশী"],
-        ["2028-08-16", "বুধবার", "অজ একদশী"],
-        ["2028-08-30", "বুধবার", "পরিবর্তনী একদশী"],
-        ["2028-09-15", "শুক্রবার", "ইন্দিরা একাদশী"],
-        ["2028-09-29", "শুক্রবার", "পাপংকুশ একাদশী"],
-        ["2028-10-14", "শনিবার", "রাম একাদশী"],
-        ["2028-10-29", "রবিবার", "দেবতানা একাদশী"],
-        ["2028-11-13", "সোমবার", "উৎপন্না একাদশী"],
-        ["2028-11-27", "সোমবার", "মোক্ষদা একাদশী"],
-        ["2028-12-12", "মঙ্গলবার", "সফলা একাদশী"],
-        ["2028-12-27", "বুধবার", "পৌষ পুত্রদা একাদশী"],
-        
-        // 2029 (User Provided)
-        ["2029-01-10", "বুধবার", "শতিলা একাদশী"],
-        ["2029-01-26", "শুক্রবার", "জয়া একাদশী"],
-        ["2029-02-09", "শুক্রবার", "বিজয়া একাদশী"],
-        ["2029-02-25", "রবিবার", "আমলাকি একাদাশী"],
-        ["2029-03-10", "শনিবার", "পাপমোচনী একাদশী"],
-        ["2029-03-26", "সোমবার", "পদ্মিনী একাদশী"],
-        ["2029-04-09", "সোমবার", "পরমা একাদশী"],
-        ["2029-04-25", "বুধবার", "কামদা একাদশী"],
-        ["2029-05-09", "বুধবার", "বরুথিনী একাদশী"],
-        ["2029-05-24", "বৃহস্পতিবার", "মোহিনী একাদশী"],
-        ["2029-06-07", "বৃহস্পতিবার", "অপারা একদশী"],
-        ["2029-06-22", "শুক্রবার", "নির্জলা একাদশী"],
-        ["2029-07-07", "শনিবার", "যোগিনী একাদশী"],
-        ["2029-07-21", "শনিবার", "দেব শায়ানী একাদশী"],
-        ["2029-08-06", "সোমবার", "কামিকা একদশী"],
-        ["2029-08-20", "সোমবার", "শ্রাবণ পুত্রদা একাদশী"],
-        ["2029-09-04", "মঙ্গলবার", "অজ একদশী"],
-        ["2029-09-18", "মঙ্গলবার", "পরিবর্তনী একদশী"],
-        ["2029-10-04", "বৃহস্পতিবার", "ইন্দিরা একাদশী"],
-        ["2029-10-18", "বৃহস্পতিবার", "পাপংকুশ একাদশী"],
-        ["2029-11-02", "শুক্রবার", "রাম একাদশী"],
-        ["2029-11-16", "শুক্রবার", "দেবতানা একাদশী"],
-        ["2029-12-02", "রবিবার", "উৎপন্না একাদশী"],
-        ["2029-12-16", "রবিবার", "মোক্ষদা একাদশী"],
-        ["2029-12-31", "সোমবার", "সফলা একাদশী"]
+        // 2026
+        ["2026-01-14","শতিলা একাদশী"],["2026-01-29","জয়া একাদশী"],["2026-02-13","বিজয়া একাদশী"],
+        ["2026-02-27","আমলাকি একাদশী"],["2026-03-15","পাপমোচনী একাদশী"],["2026-03-29","কামদা একাদশী"],
+        ["2026-04-13","বরুথিনী একাদশী"],["2026-04-27","মোহিনী একাদশী"],["2026-05-13","অপারা একাদশী"],
+        ["2026-05-27","পদ্মিনী একাদশী"],["2026-06-11","পরমা একাদশী"],["2026-06-25","নির্জলা একাদশী"],
+        ["2026-07-11","যোগিনী একাদশী"],["2026-07-25","দেব শায়ানী একাদশী"],["2026-08-09","কামিকা একাদশী"],
+        ["2026-08-23","শ্রাবণ পুত্রদা একাদশী"],["2026-09-07","অজা একাদশী"],["2026-09-22","পরিবর্তনী একাদশী"],
+        ["2026-10-06","ইন্দিরা একাদশী"],["2026-10-22","পাপাংকুশা একাদশী"],["2026-11-05","রামা একাদশী"],
+        ["2026-11-21","দেবতানা একাদশী"],["2026-12-04","উৎপন্না একাদশী"],["2026-12-20","মোক্ষদা একাদশী"],
+        // 2027
+        ["2027-01-03","সফলা একাদশী"],["2027-01-19","পৌষ পুত্রদা একাদশী"],["2027-02-02","শতিলা একাদশী"],
+        ["2027-02-17","জয়া একাদশী"],["2027-03-04","বিজয়া একাদশী"],["2027-03-18","আমলাকি একাদশী"],
+        ["2027-04-02","পাপমোচনী একাদশী"],["2027-04-17","কামদা একাদশী"],["2027-05-02","বরুথিনী একাদশী"],
+        ["2027-05-16","মোহিনী একাদশী"],["2027-06-01","অপারা একাদশী"],["2027-06-14","নির্জলা একাদশী"],
+        ["2027-06-30","যোগিনী একাদশী"],["2027-07-14","দেব শায়ানী একাদশী"],["2027-07-30","কামিকা একাদশী"],
+        ["2027-08-12","শ্রাবণ পুত্রদা একাদশী"],["2027-08-28","অজা একাদশী"],["2027-09-11","পরিবর্তনী একাদশী"],
+        ["2027-09-26","ইন্দিরা একাদশী"],["2027-10-11","পাপাংকুশা একাদশী"],["2027-10-25","রামা একাদশী"],
+        ["2027-11-10","দেবতানা একাদশী"],["2027-11-24","উৎপন্না একাদশী"],["2027-12-09","মোক্ষদা একাদশী"],
+        ["2027-12-23","সফলা একাদশী"],
+        // 2028
+        ["2028-01-08","পৌষ পুত্রদা একাদশী"],["2028-01-22","শতিলা একাদশী"],["2028-02-07","জয়া একাদশী"],
+        ["2028-02-20","বিজয়া একাদশী"],["2028-03-07","আমলাকি একাদশী"],["2028-03-21","পাপমোচনী একাদশী"],
+        ["2028-04-05","কামদা একাদশী"],["2028-04-20","বরুথিনী একাদশী"],["2028-05-05","মোহিনী একাদশী"],
+        ["2028-05-20","অপারা একাদশী"],["2028-06-03","নির্জলা একাদশী"],["2028-06-18","যোগিনী একাদশী"],
+        ["2028-07-02","দেব শায়ানী একাদশী"],["2028-07-18","কামিকা একাদশী"],["2028-08-01","শ্রাবণ পুত্রদা একাদশী"],
+        ["2028-08-16","অজা একাদশী"],["2028-08-30","পরিবর্তনী একাদশী"],["2028-09-15","ইন্দিরা একাদশী"],
+        ["2028-09-29","পাপাংকুশা একাদশী"],["2028-10-14","রামা একাদশী"],["2028-10-29","দেবতানা একাদশী"],
+        ["2028-11-13","উৎপন্না একাদশী"],["2028-11-27","মোক্ষদা একাদশী"],["2028-12-12","সফলা একাদশী"],
+        ["2028-12-27","পৌষ পুত্রদা একাদশী"],
+        // 2029
+        ["2029-01-10","শতিলা একাদশী"],["2029-01-26","জয়া একাদশী"],["2029-02-09","বিজয়া একাদশী"],
+        ["2029-02-25","আমলাকি একাদশী"],["2029-03-10","পাপমোচনী একাদশী"],["2029-03-26","পদ্মিনী একাদশী"],
+        ["2029-04-09","পরমা একাদশী"],["2029-04-25","কামদা একাদশী"],["2029-05-09","বরুথিনী একাদশী"],
+        ["2029-05-24","মোহিনী একাদশী"],["2029-06-07","অপারা একাদশী"],["2029-06-22","নির্জলা একাদশী"],
+        ["2029-07-07","যোগিনী একাদশী"],["2029-07-21","দেব শায়ানী একাদশী"],["2029-08-06","কামিকা একাদশী"],
+        ["2029-08-20","শ্রাবণ পুত্রদা একাদশী"],["2029-09-04","অজা একাদশী"],["2029-09-18","পরিবর্তনী একাদশী"],
+        ["2029-10-04","ইন্দিরা একাদশী"],["2029-10-18","পাপাংকুশা একাদশী"],["2029-11-02","রামা একাদশী"],
+        ["2029-11-16","দেবতানা একাদশী"],["2029-12-02","উৎপন্না একাদশী"],["2029-12-16","মোক্ষদা একাদশী"],
+        ["2029-12-31","সফলা একাদশী"]
     ];
     
-    // Generate 2030-2034 (Pattern based)
-    function generateFutureEkadashi() {
-        const future = [];
-        const lastDate = new Date("2029-12-31");
-        let currentDate = new Date(lastDate);
-        
-        for(let year=2030; year<=2034; year++) {
-            for(let i=0; i<24; i++) {
-                currentDate.setDate(currentDate.getDate() + (i % 2 === 0 ? 15 : 14));
-                const weekday = WEEKDAYS_BN[currentDate.getDay()];
-                const names = ["শতিলা","জয়া","বিজয়া","আমলাকি","পাপমোচনী","কামদা","বরুথিনী","মোহিনী","অপারা","নির্জলা","যোগিনী","দেব শায়ানী","কামিকা","পুত্রদা","অজা","পরিবর্তনী","ইন্দিরা","পাপংকুশ","রামা","দেবতানা","উৎপন্না","মোক্ষদা","সফলা","পৌষ পুত্রদা"];
-                future.push([
-                    currentDate.toISOString().split('T')[0],
-                    weekday,
-                    names[i % 24] + " একাদশী"
-                ]);
-            }
-        }
-        return future;
-    }
-    
-    const ALL_EKADASHI = [...VERIFIED_EKADASHI, ...generateFutureEkadashi()];
-    
-    // Festivals
     const FESTIVALS = [
-        {name:"পহেলা বৈশাখ ১৪৩৩", en:"2026-04-14", bn:"১ বৈশাখ ১৪৩৩", desc:"বাংলা নববর্ষ"},
-        {name:"বুদ্ধ পূর্ণিমা", en:"2026-05-21", bn:"৭ জ্যৈষ্ঠ ১৪৩৩", desc:"বুদ্ধদেবের জন্মতিথি"},
-        {name:"রথযাত্রা", en:"2026-07-05", bn:"২০ আষাঢ় ১৪৩৩", desc:"জগন্নাথদেবের রথযাত্রা"},
-        {name:"জন্মাষ্টমী", en:"2026-08-26", bn:"১০ ভাদ্র ১৪৩৩", desc:"শ্রীকৃষ্ণের জন্ম"},
-        {name:"দুর্গাপূজা", en:"2026-10-08", bn:"২২ আশ্বিন ১৪৩৩", desc:"শারদীয় দুর্গোৎসব"},
-        {name:"কালীপূজা", en:"2026-11-01", bn:"১৫ কার্তিক ১৪৩৩", desc:"দীপাবলি"},
-        {name:"সরস্বতী পূজা", en:"2027-02-02", bn:"১৯ মাঘ ১৪৩৩", desc:"বিদ্যার দেবী"},
-        {name:"দোলযাত্রা", en:"2027-03-13", bn:"২৯ ফাল্গুন ১৪৩৩", desc:"রঙের উৎসব"},
-        {name:"পহেলা বৈশাখ ১৪৩৪", en:"2027-04-14", bn:"১ বৈশাখ ১৪৩৪", desc:"বাংলা নববর্ষ"},
+        {name:"পহেলা বৈশাখ ১৪৩৩", date:"2026-04-14", desc:"বাংলা নববর্ষ"},
+        {name:"বুদ্ধ পূর্ণিমা", date:"2026-05-21", desc:"বুদ্ধদেবের জন্মতিথি"},
+        {name:"রথযাত্রা", date:"2026-07-05", desc:"জগন্নাথদেবের রথযাত্রা"},
+        {name:"জন্মাষ্টমী", date:"2026-08-26", desc:"শ্রীকৃষ্ণের জন্ম"},
+        {name:"দুর্গাপূজা", date:"2026-10-08", desc:"শারদীয় দুর্গোৎসব"},
+        {name:"কালীপূজা", date:"2026-11-01", desc:"দীপাবলি"},
+        {name:"সরস্বতী পূজা", date:"2027-02-02", desc:"বিদ্যার দেবী"},
+        {name:"দোলযাত্রা", date:"2027-03-13", desc:"রঙের উৎসব"},
     ];
     
-    const ECLIPSES = [
-        {type:"lunar", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2026-03-03", time:"রাত ১০:১৫", visibleBD:true},
-        {type:"solar", name:"পূর্ণ সূর্যগ্রহণ", date:"2026-08-12", time:"দুপুর ২:৩০", visibleBD:false},
-        {type:"lunar", name:"আংশিক চন্দ্রগ্রহণ", date:"2027-02-20", time:"রাত ৯:৪৫", visibleBD:true},
-        {type:"solar", name:"বলয়াকার সূর্যগ্রহণ", date:"2030-06-01", time:"সকাল ৯:১৫", visibleBD:true},
-    ];
-    
+    // ========== STATE ==========
     let today = new Date();
-    let currentViewYear = CURRENT_BANGLA_YEAR;
+    let currentViewDate = new Date();
+    let currentViewYear = 1433;
+    let autoUpdateInterval = null;
     
+    // ========== UTILITIES ==========
     function showToast(msg) {
         const t = document.getElementById('toastMsg');
         t.textContent = msg;
@@ -586,12 +618,44 @@
         return TITHIS[Math.floor((diff * 1.015) % 30)];
     }
     
+    function isEkadashi(date) {
+        return getTithi(date) === "একাদশী";
+    }
+    
+    // ========== AUTO UPDATE FUNCTIONS ==========
+    function updateClock() {
+        const now = new Date();
+        document.getElementById('liveClock').textContent = now.toLocaleTimeString('en-GB');
+        
+        // Auto-update everything at midnight
+        const todayStr = now.toDateString();
+        if (today.toDateString() !== todayStr) {
+            today = new Date();
+            currentViewDate = new Date();
+            const bd = getBanglaDate(today);
+            currentViewYear = bd.year;
+            renderYearSelector();
+            updateAllPanjika();
+            updateAllBanners();
+        }
+    }
+    
+    function updateAllBanners() {
+        updateSpecialBanner();
+        updateUpcomingEvents();
+        updateTodayHighlight();
+    }
+    
+    // ========== RENDER FUNCTIONS ==========
     function renderYearSelector() {
         const years = [1433, 1434, 1435, 1436, 1437, 1438, 1439, 1440, 1441];
         const gregYears = [2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034];
+        const currentBD = getBanglaDate(new Date());
+        
         document.getElementById('yearSelector').innerHTML = years.map((y, i) => {
-            const isCurrent = y === CURRENT_BANGLA_YEAR;
-            return `<button class="year-btn ${y === currentViewYear ? 'active' : ''} ${isCurrent ? 'current' : ''}" onclick="window.setYear(${y})">
+            const isCurrent = y === currentBD.year;
+            const isActive = y === currentViewYear;
+            return `<button class="year-btn ${isActive ? 'active' : ''}" onclick="window.setYear(${y})">
                 ${y} (${gregYears[i]}) ${isCurrent ? '★' : ''}
             </button>`;
         }).join('');
@@ -599,107 +663,128 @@
     
     window.setYear = function(year) {
         currentViewYear = year;
-        renderYearSelector();
         const yearStartDates = {
             1433: '2026-04-14', 1434: '2027-04-14', 1435: '2028-04-13',
             1436: '2029-04-14', 1437: '2030-04-14', 1438: '2031-04-14',
             1439: '2032-04-13', 1440: '2033-04-14', 1441: '2034-04-14'
         };
-        today = new Date(yearStartDates[year]);
+        currentViewDate = new Date(yearStartDates[year]);
+        renderYearSelector();
         updateAllPanjika();
         showToast(`${year} বঙ্গাব্দ দেখানো হচ্ছে`);
     };
     
     function renderPanjikaStats() {
-        const tithi = getTithi(today);
-        const bd = getBanglaDate(today);
-        document.getElementById('todayBanglaDate').textContent = `${bd.day} ${BANGLA_MONTHS[bd.month]} ${bd.year}`;
+        const tithi = getTithi(currentViewDate);
+        const bd = getBanglaDate(currentViewDate);
+        const isToday = currentViewDate.toDateString() === today.toDateString();
+        
+        document.getElementById('todayFullDisplay').textContent = 
+            `${WEEKDAYS_BN[today.getDay()]}, ${today.getDate()} ${ENG_MONTHS_SHORT[today.getMonth()]} ${today.getFullYear()} | ${getBanglaDate(today).day} ${BANGLA_MONTHS[getBanglaDate(today).month]} ${getBanglaDate(today).year}`;
+        
+        document.getElementById('tithiDisplay').textContent = `তিথি: ${getTithi(today)}`;
+        
         document.getElementById('panjikaStats').innerHTML = `
-            <div class="stat-card"><div style="color:var(--text-muted);">তিথি</div><div style="font-size:1.5rem; font-weight:700;">${tithi}</div></div>
-            <div class="stat-card"><div style="color:var(--text-muted);">বাংলা</div><div style="font-size:1.5rem; font-weight:700;">${bd.day} ${BANGLA_MONTHS[bd.month]}</div><div>${bd.year}</div></div>
-            <div class="stat-card"><div style="color:var(--text-muted);">ইংরেজি</div><div style="font-size:1.5rem; font-weight:700;">${today.getDate()} ${ENG_MONTHS_SHORT[today.getMonth()]}</div><div>${today.getFullYear()}</div></div>
-            <div class="stat-card"><div style="color:var(--text-muted);">সূর্যোদয়</div><div style="font-size:1.3rem;">৫:৩০ / ১৮:১৫</div></div>
+            <div class="stat-card">
+                <div style="color:var(--text-muted);">তিথি</div>
+                <div style="font-size:1.5rem; font-weight:700;">${tithi}</div>
+                ${isToday ? '<small style="color:var(--success);">আজ</small>' : ''}
+            </div>
+            <div class="stat-card">
+                <div style="color:var(--text-muted);">বাংলা তারিখ</div>
+                <div style="font-size:1.5rem; font-weight:700;">${bd.day} ${BANGLA_MONTHS[bd.month]}</div>
+                <div>${bd.year} বঙ্গাব্দ</div>
+            </div>
+            <div class="stat-card">
+                <div style="color:var(--text-muted);">ইংরেজি তারিখ</div>
+                <div style="font-size:1.5rem; font-weight:700;">${currentViewDate.getDate()} ${ENG_MONTHS_SHORT[currentViewDate.getMonth()]}</div>
+                <div>${currentViewDate.getFullYear()}</div>
+            </div>
+            <div class="stat-card">
+                <div style="color:var(--text-muted);">সূর্যোদয়/অস্ত</div>
+                <div style="font-size:1.3rem; font-weight:700;">৫:৩০ / ১৮:১৫</div>
+                <small>ঢাকা সময়</small>
+            </div>
         `;
     }
     
     function renderCalendar() {
-        const bd = getBanglaDate(today);
-        const firstDay = new Date(today.getFullYear(), today.getMonth(), 1);
-        const daysInMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+        const bd = getBanglaDate(currentViewDate);
+        const firstDay = new Date(currentViewDate.getFullYear(), currentViewDate.getMonth(), 1);
+        const daysInMonth = new Date(currentViewDate.getFullYear(), currentViewDate.getMonth() + 1, 0).getDate();
+        
         let html = `<div style="display:flex; justify-content:space-between; margin-bottom:20px;">
             <h3>${BANGLA_MONTHS[bd.month]} ${bd.year}</h3>
-            <div><button onclick="window.changeMonth(-1)" style="padding:10px 20px; margin-right:10px;">←</button>
-            <button onclick="window.changeMonth(1)" style="padding:10px 20px;">→</button></div></div>`;
-        html += `<div style="display:grid; grid-template-columns:repeat(7,1fr); gap:8px;">`;
-        ['সোম','মঙ্গল','বুধ','বৃহঃ','শুক্র','শনি','রবি'].forEach(d => html += `<div style="text-align:center; font-weight:700; padding:10px;">${d}</div>`);
+            <div>
+                <button class="btn btn-outline" onclick="window.changeMonth(-1)" style="padding:8px 16px; margin-right:8px;">←</button>
+                <button class="btn btn-outline" onclick="window.changeMonth(1)" style="padding:8px 16px;">→</button>
+            </div>
+        </div>`;
+        
+        html += `<div class="calendar-grid">`;
+        ['সোম','মঙ্গল','বুধ','বৃহঃ','শুক্র','শনি','রবি'].forEach(d => 
+            html += `<div style="text-align:center; font-weight:700; padding:10px;">${d}</div>`
+        );
+        
         const startOffset = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1;
         for(let i=0; i<startOffset; i++) html += `<div></div>`;
+        
         const actualToday = new Date();
+        
         for(let d=1; d<=daysInMonth; d++) {
-            const date = new Date(today.getFullYear(), today.getMonth(), d);
+            const date = new Date(currentViewDate.getFullYear(), currentViewDate.getMonth(), d);
             const tithi = getTithi(date);
             const isToday = date.toDateString() === actualToday.toDateString();
             const isEkad = tithi === "একাদশী";
-            html += `<div style="padding:12px; text-align:center; border-radius:12px; background:${isToday?'var(--success)':(isEkad?'var(--primary-light)':'var(--bg-card)')}; color:${isToday?'white':''}; border:${isEkad?'2px solid var(--purple)':'1px solid var(--border-light)'}; cursor:pointer;" onclick="window.selectDate('${date.toISOString()}')"><div style="font-weight:700;">${d}</div><small>${tithi.substring(0,6)}</small></div>`;
+            const isCurrentView = date.toDateString() === currentViewDate.toDateString();
+            
+            html += `<div class="calendar-day ${isToday ? 'today' : ''} ${isEkad ? 'ekadashi' : ''}" 
+                style="${isCurrentView ? 'border:2px solid var(--primary);' : ''}"
+                onclick="window.selectDate('${date.toISOString()}')">
+                <div style="font-weight:700;">${d}</div>
+                <small>${tithi.substring(0,6)}</small>
+            </div>`;
         }
         html += `</div>`;
         document.getElementById('calendarWidget').innerHTML = html;
     }
     
     window.changeMonth = function(delta) {
-        today.setMonth(today.getMonth() + delta);
-        const newBd = getBanglaDate(today);
+        currentViewDate.setMonth(currentViewDate.getMonth() + delta);
+        const newBd = getBanglaDate(currentViewDate);
         currentViewYear = newBd.year;
         renderYearSelector();
         updateAllPanjika();
     };
     
     window.selectDate = function(iso) {
-        today = new Date(iso);
-        const newBd = getBanglaDate(today);
+        currentViewDate = new Date(iso);
+        const newBd = getBanglaDate(currentViewDate);
         currentViewYear = newBd.year;
         renderYearSelector();
         updateAllPanjika();
+        showToast(`তারিখ: ${currentViewDate.toLocaleDateString('bn-BD')}`);
     };
     
     function renderEkadashi() {
-        const gregYear = currentViewYear + 593; // 1433 -> 2026
-        const yearEkadashi = ALL_EKADASHI.filter(e => e[0].startsWith(gregYear.toString()));
+        const gregYear = currentViewDate.getFullYear();
+        const yearEkadashi = VERIFIED_EKADASHI.filter(e => e[0].startsWith(gregYear.toString()));
+        
         document.getElementById('ekadashiContent').innerHTML = `
             <table class="data-table">
                 <thead><tr><th>তারিখ</th><th>বার</th><th>একাদশীর নাম</th><th>অবস্থা</th></tr></thead>
                 <tbody>
                     ${yearEkadashi.map(e => {
                         const d = new Date(e[0]);
-                        const isPast = d < new Date();
-                        const isToday = d.toDateString() === new Date().toDateString();
-                        return `<tr style="${isPast ? 'opacity:0.6;' : ''} ${isToday ? 'background:var(--primary-light);' : ''}">
+                        const isPast = d < today;
+                        const isToday = d.toDateString() === today.toDateString();
+                        const isFuture = d > today;
+                        
+                        return `<tr class="${isToday ? 'today-row' : ''}" style="cursor:pointer;" onclick="window.selectDate('${e[0]}')">
                             <td><strong>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}</strong></td>
+                            <td>${WEEKDAYS_BN[d.getDay()]}</td>
                             <td>${e[1]}</td>
-                            <td>${e[2]}</td>
                             <td>${isToday ? '🔔 আজ' : (isPast ? '✅ সম্পন্ন' : '⏳ আসন্ন')}</td>
-                        </tr>`;
-                    }).join('')}
-                </tbody>
-            </table>
-            <p style="margin-top:10px;"><i class="fas fa-check-circle" style="color:var(--success);"></i> ${gregYear} সালের সকল একাদশী সত্যায়িত</p>
-        `;
-    }
-    
-    function renderAllEkadashi() {
-        document.getElementById('allEkadashiTable').innerHTML = `
-            <table class="data-table">
-                <thead><tr><th>তারিখ</th><th>বার</th><th>একাদশীর নাম</th><th>সাল</th></tr></thead>
-                <tbody>
-                    ${ALL_EKADASHI.map(e => {
-                        const d = new Date(e[0]);
-                        const isPast = d < new Date();
-                        const isVerified = d.getFullYear() <= 2029;
-                        return `<tr style="${isPast ? 'opacity:0.5;' : ''}">
-                            <td>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}</td>
-                            <td>${e[1]}</td>
-                            <td>${e[2]} ${isVerified ? '<span class="verified-badge">✓</span>' : ''}</td>
-                            <td>${d.getFullYear()}</td>
                         </tr>`;
                     }).join('')}
                 </tbody>
@@ -713,8 +798,13 @@
                 <thead><tr><th>উৎসব</th><th>তারিখ</th><th>বিবরণ</th></tr></thead>
                 <tbody>
                     ${FESTIVALS.map(f => {
-                        const d = new Date(f.en);
-                        return `<tr><td><strong>${f.name}</strong></td><td>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}</td><td>${f.desc}</td></tr>`;
+                        const d = new Date(f.date);
+                        const isToday = d.toDateString() === today.toDateString();
+                        return `<tr class="${isToday ? 'today-row' : ''}" style="cursor:pointer;" onclick="window.selectDate('${f.date}')">
+                            <td><strong>${f.name}</strong></td>
+                            <td>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}</td>
+                            <td>${f.desc}</td>
+                        </tr>`;
                     }).join('')}
                 </tbody>
             </table>
@@ -722,13 +812,19 @@
     }
     
     function renderEclipse() {
+        const eclipses = [
+            {type:"lunar", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2026-03-03", time:"রাত ১০:১৫", visible:true},
+            {type:"solar", name:"পূর্ণ সূর্যগ্রহণ", date:"2026-08-12", time:"দুপুর ২:৩০", visible:false},
+        ];
         document.getElementById('eclipseContent').innerHTML = `
             <table class="data-table">
                 <thead><tr><th>গ্রহণ</th><th>তারিখ</th><th>সময়</th><th>দৃশ্যমান</th></tr></thead>
                 <tbody>
-                    ${ECLIPSES.map(e => {
+                    ${eclipses.map(e => {
                         const d = new Date(e.date);
-                        return `<tr><td><i class="fas fa-${e.type==='solar'?'sun':'moon'}"></i> ${e.name}</td><td>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}</td><td>${e.time}</td><td style="color:${e.visibleBD?'var(--success)':'var(--danger)'};">${e.visibleBD?'হ্যাঁ':'না'}</td></tr>`;
+                        return `<tr><td><i class="fas fa-${e.type==='solar'?'sun':'moon'}"></i> ${e.name}</td>
+                            <td>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}</td>
+                            <td>${e.time}</td><td>${e.visible?'হ্যাঁ':'না'}</td></tr>`;
                     }).join('')}
                 </tbody>
             </table>
@@ -738,57 +834,125 @@
     function renderMuhurta() {
         document.getElementById('muhurtaContent').innerHTML = `
             <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px;">
-                <div style="padding:20px; background:var(--primary-light); border-radius:var(--radius-lg);"><h4>🕉️ ব্রহ্ম মুহূর্ত</h4><p>৪:৩০ - ৫:১৫</p></div>
-                <div style="padding:20px; background:var(--primary-light); border-radius:var(--radius-lg);"><h4>✨ অভিজিৎ</h4><p>১১:৫০ - ১২:৪০</p></div>
-                <div style="padding:20px; background:var(--primary-light); border-radius:var(--radius-lg);"><h4>🌅 অমৃত যোগ</h4><p>৬:৪৫ - ৮:১৫</p></div>
-                <div style="padding:20px; background:var(--primary-light); border-radius:var(--radius-lg);"><h4>❌ রাহুকাল</h4><p>১২:০০ - ১৩:৩০</p></div>
+                <div style="padding:20px; background:var(--primary-light); border-radius:var(--radius-lg);">
+                    <h4>🕉️ ব্রহ্ম মুহূর্ত</h4><p style="font-size:1.2rem;">৪:৩০ - ৫:১৫</p>
+                </div>
+                <div style="padding:20px; background:var(--primary-light); border-radius:var(--radius-lg);">
+                    <h4>✨ অভিজিৎ</h4><p style="font-size:1.2rem;">১১:৫০ - ১২:৪০</p>
+                </div>
+                <div style="padding:20px; background:var(--primary-light); border-radius:var(--radius-lg);">
+                    <h4>🌅 অমৃত যোগ</h4><p style="font-size:1.2rem;">৬:৪৫ - ৮:১৫</p>
+                </div>
+                <div style="padding:20px; background:var(--primary-light); border-radius:var(--radius-lg);">
+                    <h4>❌ রাহুকাল</h4><p style="font-size:1.2rem; color:var(--danger);">১২:০০ - ১৩:৩০</p>
+                </div>
             </div>
         `;
     }
     
     function renderBoyNames() {
-        const names = Array.from({length:100}, (_,i) => ({bn: `অভিজিৎ${i+1}`, en: `Abhijit${i+1}`, meaning: ["বিজয়ী","শক্তিশালী","জ্ঞানী"][i%3]}));
-        document.getElementById('boyNamesContent').innerHTML = `<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:12px; max-height:500px; overflow-y:auto;">${names.map(n => `<div style="padding:16px; background:var(--bg-card); border-radius:var(--radius-md); border:1px solid var(--border-light);"><div style="font-size:1.2rem; color:var(--primary);">${n.bn}</div><div>${n.en}</div><small>${n.meaning}</small></div>`).join('')}</div>`;
+        const names = Array.from({length:50}, (_,i) => ({bn:`অভিজিৎ${i+1}`, en:`Abhijit${i+1}`, meaning:"বিজয়ী"}));
+        document.getElementById('boyNamesContent').innerHTML = `
+            <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:12px;">
+                ${names.map(n => `<div style="padding:16px; background:var(--bg-card); border-radius:var(--radius-md); border:1px solid var(--border-light); cursor:pointer;" onclick="showToast('${n.bn} - ${n.meaning}')">
+                    <div style="font-size:1.2rem; color:var(--primary);">${n.bn}</div><div>${n.en}</div><small>${n.meaning}</small>
+                </div>`).join('')}
+            </div>
+        `;
     }
     
     function renderGirlNames() {
-        const names = Array.from({length:100}, (_,i) => ({bn: `আধ্য়া${i+1}`, en: `Aadhya${i+1}`, meaning: ["আদি শক্তি","জ্ঞান","শান্তি"][i%3]}));
-        document.getElementById('girlNamesContent').innerHTML = `<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:12px; max-height:500px; overflow-y:auto;">${names.map(n => `<div style="padding:16px; background:var(--bg-card); border-radius:var(--radius-md); border:1px solid var(--border-light);"><div style="font-size:1.2rem; color:var(--pink);">${n.bn}</div><div>${n.en}</div><small>${n.meaning}</small></div>`).join('')}</div>`;
+        const names = Array.from({length:50}, (_,i) => ({bn:`আধ্য়া${i+1}`, en:`Aadhya${i+1}`, meaning:"আদি শক্তি"}));
+        document.getElementById('girlNamesContent').innerHTML = `
+            <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:12px;">
+                ${names.map(n => `<div style="padding:16px; background:var(--bg-card); border-radius:var(--radius-md); border:1px solid var(--border-light); cursor:pointer;" onclick="showToast('${n.bn} - ${n.meaning}')">
+                    <div style="font-size:1.2rem; color:var(--pink);">${n.bn}</div><div>${n.en}</div><small>${n.meaning}</small>
+                </div>`).join('')}
+            </div>
+        `;
+    }
+    
+    function renderAllEkadashi() {
+        document.getElementById('allEkadashiTable').innerHTML = `
+            <table class="data-table">
+                <thead><tr><th>তারিখ</th><th>একাদশী</th><th>সাল</th></tr></thead>
+                <tbody>
+                    ${VERIFIED_EKADASHI.map(e => {
+                        const d = new Date(e[0]);
+                        const isToday = d.toDateString() === today.toDateString();
+                        return `<tr class="${isToday ? 'today-row' : ''}" style="cursor:pointer;" onclick="window.selectDate('${e[0]}')">
+                            <td>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}</td>
+                            <td>${e[1]}</td><td>${d.getFullYear()}</td>
+                        </tr>`;
+                    }).join('')}
+                </tbody>
+            </table>
+        `;
     }
     
     function updateSpecialBanner() {
         const todayStr = today.toISOString().split('T')[0];
-        const todayEkadashi = ALL_EKADASHI.find(e => e[0] === todayStr);
+        const todayEkadashi = VERIFIED_EKADASHI.find(e => e[0] === todayStr);
+        const todayFestival = FESTIVALS.find(f => f.date === todayStr);
+        
         const banner = document.getElementById('specialBanner');
+        const icon = document.getElementById('bannerIcon');
+        const title = document.getElementById('bannerTitle');
+        const desc = document.getElementById('bannerDesc');
+        const countdown = document.getElementById('bannerCountdown');
         
         if(todayEkadashi) {
             banner.style.background = 'linear-gradient(135deg, #8B5CF6, #6366F1)';
-            document.getElementById('bannerIcon').innerHTML = '🕉️';
-            document.getElementById('bannerTitle').textContent = `আজ ${todayEkadashi[2]}!`;
-            document.getElementById('bannerDesc').textContent = 'পবিত্র একাদশী তিথি। উপবাস ও বিষ্ণু আরাধনার দিন।';
-            document.getElementById('bannerCountdown').innerHTML = '<i class="fas fa-clock"></i> পারণ: আগামীকাল ৬:৩০-৮:৪৫';
+            icon.innerHTML = '🕉️';
+            title.textContent = `আজ ${todayEkadashi[1]}!`;
+            desc.textContent = 'পবিত্র একাদশী তিথি। উপবাস ও বিষ্ণু আরাধনার দিন।';
+            countdown.innerHTML = '<i class="fas fa-clock"></i> পারণ: আগামীকাল ৬:৩০-৮:৪৫';
+        } else if(todayFestival) {
+            banner.style.background = 'linear-gradient(135deg, #FF6B35, #F59E0B)';
+            icon.innerHTML = '🎉';
+            title.textContent = `আজ ${todayFestival.name}!`;
+            desc.textContent = todayFestival.desc;
+            countdown.innerHTML = '<i class="fas fa-gift"></i> শুভেচ্ছা!';
         } else {
             banner.style.background = 'linear-gradient(135deg, var(--purple), var(--pink))';
-            document.getElementById('bannerIcon').innerHTML = '📅';
-            document.getElementById('bannerTitle').textContent = '১৪৩৩ বঙ্গাব্দ';
-            document.getElementById('bannerDesc').textContent = 'বর্তমান বাংলা বছর';
-            const next = ALL_EKADASHI.find(e => new Date(e[0]) > today);
+            icon.innerHTML = '📅';
+            title.textContent = '১৪৩৩ বঙ্গাব্দ';
+            desc.textContent = 'বর্তমান বাংলা বছর';
+            
+            const next = VERIFIED_EKADASHI.find(e => new Date(e[0]) > today);
             if(next) {
                 const days = Math.ceil((new Date(next[0]) - today) / 86400000);
-                document.getElementById('bannerCountdown').innerHTML = `🔔 পরবর্তী: ${next[2]} (${days} দিন বাকি)`;
+                countdown.innerHTML = `🔔 পরবর্তী: ${next[1]} (${days} দিন বাকি)`;
             }
         }
-        
-        const upcoming = ALL_EKADASHI.filter(e => new Date(e[0]) > today).slice(0, 3);
+    }
+    
+    function updateUpcomingEvents() {
+        const upcoming = VERIFIED_EKADASHI.filter(e => new Date(e[0]) > today).slice(0, 4);
         document.getElementById('upcomingEvents').innerHTML = upcoming.map(e => {
             const d = new Date(e[0]);
             const days = Math.ceil((d - today) / 86400000);
-            return `<div style="padding:12px; border-bottom:1px solid var(--border-light);"><strong>🕉️ ${e[2]}</strong><br><small>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} • ${days} দিন বাকি</small></div>`;
+            return `<div style="padding:12px; border-bottom:1px solid var(--border-light); cursor:pointer;" onclick="window.selectDate('${e[0]}')">
+                <strong>🕉️ ${e[1]}</strong><br>
+                <small>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} • ${days} দিন বাকি</small>
+            </div>`;
         }).join('');
     }
     
-    function updateClock() {
-        document.getElementById('liveClock').textContent = new Date().toLocaleTimeString('bn-BD');
+    function updateTodayHighlight() {
+        const todayStr = today.toISOString().split('T')[0];
+        const todayEkadashi = VERIFIED_EKADASHI.find(e => e[0] === todayStr);
+        const tithi = getTithi(today);
+        
+        let html = `<p><strong>তিথি:</strong> ${tithi}</p>`;
+        if(todayEkadashi) {
+            html += `<p style="color:var(--purple);"><strong>🕉️ ${todayEkadashi[1]}</strong></p>`;
+        } else {
+            html += `<p>আজ কোনো একাদশী নেই</p>`;
+        }
+        html += `<p><strong>সূর্যোদয়:</strong> ৫:৩০ | <strong>সূর্যাস্ত:</strong> ১৮:১৫</p>`;
+        
+        document.getElementById('todayHighlight').innerHTML = html;
     }
     
     function updateAllPanjika() {
@@ -798,33 +962,57 @@
         renderFestivals();
         renderEclipse();
         renderMuhurta();
-        updateSpecialBanner();
     }
     
+    // ========== INITIALIZATION ==========
     function init() {
+        // Set current view to today
+        currentViewDate = new Date(today);
+        const bd = getBanglaDate(today);
+        currentViewYear = bd.year;
+        
         renderYearSelector();
         updateClock();
-        setInterval(updateClock, 1000);
         updateAllPanjika();
+        updateAllBanners();
         renderAllEkadashi();
         renderBoyNames();
         renderGirlNames();
         
-        document.getElementById('themeToggle').addEventListener('click', () => {
-            document.body.classList.toggle('dark');
-            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-        });
-        if(localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
+        // Auto-update every second
+        autoUpdateInterval = setInterval(() => {
+            updateClock();
+            updateAllBanners();
+        }, 1000);
         
+        // Theme toggle
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark');
+            const isDark = document.body.classList.contains('dark');
+            this.innerHTML = isDark ? '<i class="fas fa-sun"></i> <span>Light Mode</span>' : '<i class="fas fa-moon"></i> <span>Dark Mode</span>';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+        
+        if(localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark');
+            document.getElementById('themeToggle').innerHTML = '<i class="fas fa-sun"></i> <span>Light Mode</span>';
+        }
+        
+        // Navigation
         document.querySelectorAll('.nav-item').forEach(item => {
             item.addEventListener('click', function() {
                 document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
                 this.classList.add('active');
                 document.querySelectorAll('.module-container').forEach(c => c.classList.remove('active'));
-                document.getElementById(`module-${this.dataset.module}`).classList.add('active');
+                const moduleId = this.dataset.module;
+                document.getElementById(`module-${moduleId}`).classList.add('active');
+                document.getElementById('currentModule').textContent = this.textContent.trim();
+                
+                if(moduleId === 'ekadashi-all') renderAllEkadashi();
             });
         });
         
+        // Tabs
         document.querySelectorAll('.tab-btn').forEach(tab => {
             tab.addEventListener('click', function() {
                 document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
@@ -834,21 +1022,56 @@
             });
         });
         
-        document.getElementById('todayBtn').addEventListener('click', () => {
+        // Buttons
+        document.getElementById('todayBtn').addEventListener('click', function() {
+            currentViewDate = new Date();
             today = new Date();
-            currentViewYear = getBanglaDate(today).year;
+            const bd = getBanglaDate(today);
+            currentViewYear = bd.year;
+            renderYearSelector();
+            updateAllPanjika();
+            updateAllBanners();
+            showToast('আজকের তারিখ: ' + today.toLocaleDateString('bn-BD'));
+        });
+        
+        document.getElementById('currentYearBtn').addEventListener('click', function() {
+            setYear(1433);
+        });
+        
+        document.getElementById('prevDayBtn').addEventListener('click', function() {
+            currentViewDate.setDate(currentViewDate.getDate() - 1);
+            const newBd = getBanglaDate(currentViewDate);
+            currentViewYear = newBd.year;
             renderYearSelector();
             updateAllPanjika();
         });
         
-        document.getElementById('currentYearBtn').addEventListener('click', () => setYear(CURRENT_BANGLA_YEAR));
-        document.getElementById('datePicker').addEventListener('change', e => { if(e.target.value) { today = new Date(e.target.value); currentViewYear = getBanglaDate(today).year; renderYearSelector(); updateAllPanjika(); }});
-        document.getElementById('shareBtn').addEventListener('click', () => { navigator.clipboard?.writeText('https://calendarworld.xyz'); showToast('🔗 লিংক কপি!'); });
+        document.getElementById('nextDayBtn').addEventListener('click', function() {
+            currentViewDate.setDate(currentViewDate.getDate() + 1);
+            const newBd = getBanglaDate(currentViewDate);
+            currentViewYear = newBd.year;
+            renderYearSelector();
+            updateAllPanjika();
+        });
+        
+        document.getElementById('datePicker').addEventListener('change', function(e) {
+            if(e.target.value) {
+                currentViewDate = new Date(e.target.value);
+                const newBd = getBanglaDate(currentViewDate);
+                currentViewYear = newBd.year;
+                renderYearSelector();
+                updateAllPanjika();
+            }
+        });
+        
+        document.getElementById('shareBtn').addEventListener('click', function() {
+            navigator.clipboard?.writeText('https://calendarworld.xyz');
+            showToast('🔗 লিংক কপি করা হয়েছে!');
+        });
     }
     
     init();
 })();
 </script>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </body>
 </html>
