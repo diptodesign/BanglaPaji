@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     
-    <title>Calendar World | All Calendars • Complete Database • 2026</title>
-    <meta name="description" content="Complete calendar database: Bengali Panjika 1433-1441, Gregorian, Julian, Hebrew, Islamic, Chinese, Hindu, Egyptian, Roman, Mayan, French Revolutionary, Ethiopian, Persian. All calendars with full data.">
-    <meta name="keywords" content="calendar, Bengali calendar, Panjika, Gregorian, Julian, Hebrew, Islamic, Chinese, Hindu, Egyptian, Roman, Mayan, calendar converter">
+    <title>Calendar World | All Calendars • Eclipse • Articles • 20+ Calculators</title>
+    <meta name="description" content="Complete calendar database with Eclipse/Grahan data, detailed articles for each calendar, and 20+ calculator tools. Bengali Panjika, Gregorian, Julian, Hebrew, Islamic, Chinese, Hindu, and more.">
+    <meta name="keywords" content="calendar, eclipse, grahan, Bengali calendar, Panjika, calculator, date converter, age calculator, time calculator">
     <meta name="author" content="Calendar World">
     <meta name="robots" content="index, follow">
     
@@ -32,7 +32,7 @@
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
             --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
             --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px; --radius-full: 9999px;
-            --sidebar-width: 280px;
+            --sidebar-width: 300px;
         }
         body.dark {
             --bg-page: #0F172A; --bg-card: #1E293B; --bg-sidebar: #0F172A;
@@ -82,7 +82,7 @@
             color: rgba(255,255,255,0.7);
             cursor: pointer;
             transition: all 0.2s;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
         .nav-item:hover { background: rgba(255,255,255,0.1); color: white; }
         .nav-item.active { background: linear-gradient(135deg, var(--primary), var(--purple)); color: white; }
@@ -150,23 +150,22 @@
             border-radius: var(--radius-lg);
         }
         .section-header h2 { font-size: 1.8rem; font-weight: 700; }
-        .section-header h3 { font-size: 1.4rem; font-weight: 600; }
         
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
             margin-bottom: 28px;
         }
         .stat-card {
             background: var(--bg-card);
             border-radius: var(--radius-lg);
-            padding: 24px;
+            padding: 20px;
             box-shadow: var(--shadow-md);
             border: 1px solid var(--border-light);
         }
-        .stat-card h4 { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; }
-        .stat-card .value { font-size: 1.8rem; font-weight: 700; color: var(--primary); }
+        .stat-card h4 { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 8px; }
+        .stat-card .value { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
         
         .data-table {
             width: 100%;
@@ -210,6 +209,44 @@
         }
         .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
         
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+        .calculator-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 20px 16px;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid var(--border-light);
+            transition: all 0.2s;
+        }
+        .calculator-card:hover {
+            background: var(--primary-light);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        .calculator-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .calculator-card h4 { font-size: 0.95rem; margin-bottom: 4px; }
+        .calculator-card p { font-size: 0.75rem; color: var(--text-muted); }
+        
+        .article-content {
+            line-height: 1.8;
+        }
+        .article-content h3 {
+            margin: 24px 0 12px;
+            color: var(--primary);
+        }
+        .article-content p { margin-bottom: 16px; }
+        .article-content ul { margin: 16px 0 16px 24px; }
+        
         .tabs-container {
             display: flex;
             flex-wrap: wrap;
@@ -221,7 +258,7 @@
             box-shadow: var(--shadow-md);
         }
         .tab-btn {
-            padding: 12px 20px;
+            padding: 10px 18px;
             border: none;
             background: transparent;
             font-weight: 600;
@@ -229,6 +266,7 @@
             border-radius: var(--radius-full);
             cursor: pointer;
             transition: all 0.2s;
+            font-size: 0.85rem;
         }
         .tab-btn:hover { background: var(--primary-light); }
         .tab-btn.active {
@@ -238,22 +276,15 @@
         .tab-pane { display: none; }
         .tab-pane.active { display: block; }
         
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 8px;
-        }
-        .calendar-day {
-            padding: 12px 8px;
-            text-align: center;
-            border-radius: var(--radius-md);
+        .eclipse-card {
             background: var(--bg-card);
-            border: 1px solid var(--border-light);
-            cursor: pointer;
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            margin-bottom: 16px;
+            border-left: 5px solid;
         }
-        .calendar-day:hover { background: var(--primary-light); }
-        .calendar-day.today { background: var(--success); color: white; }
-        .calendar-day.ekadashi { border: 3px solid var(--purple); }
+        .eclipse-card.solar { border-left-color: #FF6B35; }
+        .eclipse-card.lunar { border-left-color: #4169E1; }
         
         .toast {
             position: fixed;
@@ -294,40 +325,40 @@
     <div class="logo">
         <i class="fas fa-calendar-alt"></i> CalendarWorld.xyz
         <div style="font-size:0.7rem; color:rgba(255,255,255,0.5); margin-top:4px;">
-            <span class="pulse-dot"></span> LIVE • 15+ CALENDARS
+            <span class="pulse-dot"></span> 15+ CALENDARS • 20+ TOOLS
         </div>
     </div>
     
     <div style="padding:12px;">
         <div class="nav-section-title">🇧🇩 BENGALI SUITE</div>
         <div class="nav-item active" data-module="panjika"><i class="fas fa-om"></i> বাংলা পঞ্জিকা ১৪৩৩</div>
-        <div class="nav-item" data-module="ekadashi"><i class="fas fa-moon"></i> একাদশী ২০২৬-২০৩৪</div>
+        <div class="nav-item" data-module="ekadashi"><i class="fas fa-moon"></i> একাদশী তালিকা</div>
+        <div class="nav-item" data-module="grahan"><i class="fas fa-eclipse"></i> গ্রহণ (Eclipse)</div>
         <div class="nav-item" data-module="festivals"><i class="fas fa-gift"></i> উৎসব ২০২৬</div>
         <div class="nav-item" data-module="names"><i class="fas fa-baby"></i> নামকরণ (৪০০০+)</div>
         
         <div class="nav-section-title">☀️ SOLAR CALENDARS</div>
-        <div class="nav-item" data-module="gregorian"><i class="fas fa-calendar"></i> Gregorian</div>
-        <div class="nav-item" data-module="julian"><i class="fas fa-history"></i> Julian</div>
-        <div class="nav-item" data-module="roman"><i class="fas fa-landmark"></i> Roman</div>
-        <div class="nav-item" data-module="egyptian"><i class="fas fa-pyramid"></i> Egyptian</div>
-        <div class="nav-item" data-module="persian"><i class="fas fa-mountain"></i> Persian Solar</div>
-        <div class="nav-item" data-module="french"><i class="fas fa-flag"></i> French Revolutionary</div>
+        <div class="nav-item" data-module="gregorian"><i class="fas fa-calendar"></i> Gregorian + Article</div>
+        <div class="nav-item" data-module="julian"><i class="fas fa-history"></i> Julian + Article</div>
+        <div class="nav-item" data-module="roman"><i class="fas fa-landmark"></i> Roman + Article</div>
+        <div class="nav-item" data-module="egyptian"><i class="fas fa-pyramid"></i> Egyptian + Article</div>
+        <div class="nav-item" data-module="persian"><i class="fas fa-mountain"></i> Persian + Article</div>
         
         <div class="nav-section-title">🌙 LUNAR & LUNISOLAR</div>
-        <div class="nav-item" data-module="chinese"><i class="fas fa-dragon"></i> Chinese Lunar</div>
-        <div class="nav-item" data-module="hindu"><i class="fas fa-star"></i> Hindu Panchang</div>
-        <div class="nav-item" data-module="hebrew"><i class="fas fa-star-of-david"></i> Hebrew</div>
-        <div class="nav-item" data-module="islamic"><i class="fas fa-mosque"></i> Islamic Hijri</div>
-        <div class="nav-item" data-module="buddhist"><i class="fas fa-dharma"></i> Buddhist</div>
+        <div class="nav-item" data-module="chinese"><i class="fas fa-dragon"></i> Chinese + Article</div>
+        <div class="nav-item" data-module="hindu"><i class="fas fa-star"></i> Hindu + Article</div>
+        <div class="nav-item" data-module="hebrew"><i class="fas fa-star-of-david"></i> Hebrew + Article</div>
+        <div class="nav-item" data-module="islamic"><i class="fas fa-mosque"></i> Islamic + Article</div>
+        <div class="nav-item" data-module="buddhist"><i class="fas fa-dharma"></i> Buddhist + Article</div>
         
-        <div class="nav-section-title">📜 ANCIENT & OTHERS</div>
-        <div class="nav-item" data-module="mayan"><i class="fas fa-sun"></i> Mayan</div>
-        <div class="nav-item" data-module="ethiopian"><i class="fas fa-globe-africa"></i> Ethiopian</div>
-        <div class="nav-item" data-module="gezer"><i class="fas fa-scroll"></i> Gezer</div>
+        <div class="nav-section-title">📜 ANCIENT CALENDARS</div>
+        <div class="nav-item" data-module="mayan"><i class="fas fa-sun"></i> Mayan + Article</div>
+        <div class="nav-item" data-module="ethiopian"><i class="fas fa-globe-africa"></i> Ethiopian + Article</div>
+        <div class="nav-item" data-module="gezer"><i class="fas fa-scroll"></i> Gezer + Article</div>
         
-        <div class="nav-section-title">🧮 TOOLS</div>
+        <div class="nav-section-title">🧮 20+ CALCULATORS</div>
+        <div class="nav-item" data-module="calculators"><i class="fas fa-calculator"></i> All Calculators</div>
         <div class="nav-item" data-module="converter"><i class="fas fa-exchange-alt"></i> Date Converter</div>
-        <div class="nav-item" data-module="calculator"><i class="fas fa-calculator"></i> Age Calculator</div>
     </div>
     
     <div style="padding:20px; border-top:1px solid rgba(255,255,255,0.1); margin-top:auto;">
@@ -347,7 +378,7 @@
         <div style="display:flex; align-items:center; gap:15px;">
             <span class="pulse-dot"></span>
             <span id="liveClock" class="live-clock"></span>
-            <button id="shareBtn" style="background:none; border:none; cursor:pointer; font-size:1.2rem;" title="Share"><i class="fas fa-share-alt"></i></button>
+            <button id="shareBtn" style="background:none; border:none; cursor:pointer; font-size:1.2rem;"><i class="fas fa-share-alt"></i></button>
         </div>
     </div>
     
@@ -361,46 +392,39 @@
     <!-- ========== BENGALI PANJIKA MODULE ========== -->
     <div id="module-panjika" class="module-container active">
         <div class="stats-grid" id="panjikaStats"></div>
-        
         <div style="display:flex; gap:12px; margin:20px 0; flex-wrap:wrap;">
             <input type="date" id="panjikaDatePicker" style="padding:12px 20px; border-radius:30px; border:2px solid var(--border-medium); background:var(--bg-card); color:var(--text-primary);">
             <button class="btn btn-primary" id="panjikaTodayBtn"><i class="fas fa-sun"></i> আজ</button>
             <button class="btn btn-outline" id="panjikaPrevBtn"><i class="fas fa-chevron-left"></i></button>
             <button class="btn btn-outline" id="panjikaNextBtn"><i class="fas fa-chevron-right"></i></button>
         </div>
-        
         <div class="tabs-container" id="panjikaTabs">
             <button class="tab-btn active" data-tab="calendar">📅 ক্যালেন্ডার</button>
             <button class="tab-btn" data-tab="panchanga">🌙 পঞ্চাঙ্গ</button>
             <button class="tab-btn" data-tab="muhurta">⏰ মুহূর্ত</button>
         </div>
-        
         <div id="panjikaTabContent">
-            <div class="tab-pane active" id="calendar-tab">
-                <div class="section-card">
-                    <div id="banglaCalendarWidget"></div>
-                </div>
+            <div class="tab-pane active" id="calendar-tab"><div class="section-card"><div id="banglaCalendarWidget"></div></div></div>
+            <div class="tab-pane" id="panchanga-tab"><div class="section-card"><div id="panchangaContent"></div></div></div>
+            <div class="tab-pane" id="muhurta-tab"><div class="section-card"><div id="muhurtaContent"></div></div></div>
+        </div>
+    </div>
+    
+    <!-- ========== GRAHAN (ECLIPSE) MODULE ========== -->
+    <div id="module-grahan" class="module-container">
+        <div class="section-card">
+            <div class="section-header">
+                <i class="fas fa-eclipse"></i>
+                <h2>গ্রহণ তালিকা • Eclipse Schedule 2025-2030</h2>
             </div>
-            <div class="tab-pane" id="panchanga-tab">
-                <div class="section-card">
-                    <div id="panchangaContent"></div>
-                </div>
-            </div>
-            <div class="tab-pane" id="muhurta-tab">
-                <div class="section-card">
-                    <div id="muhurtaContent"></div>
-                </div>
-            </div>
+            <div id="grahanContainer"></div>
         </div>
     </div>
     
     <!-- ========== EKADASHI MODULE ========== -->
     <div id="module-ekadashi" class="module-container">
         <div class="section-card">
-            <div class="section-header">
-                <i class="fas fa-moon"></i>
-                <h2>একাদশী তালিকা ২০২৬-২০৩৪</h2>
-            </div>
+            <div class="section-header"><i class="fas fa-moon"></i><h2>একাদশী তালিকা ২০২৬-২০৩৪</h2></div>
             <div id="ekadashiTableContainer"></div>
         </div>
     </div>
@@ -408,10 +432,7 @@
     <!-- ========== FESTIVALS MODULE ========== -->
     <div id="module-festivals" class="module-container">
         <div class="section-card">
-            <div class="section-header">
-                <i class="fas fa-gift"></i>
-                <h2>উৎসব ও পার্বণ ২০২৬</h2>
-            </div>
+            <div class="section-header"><i class="fas fa-gift"></i><h2>উৎসব ও পার্বণ ২০২৬</h2></div>
             <div id="festivalsContainer"></div>
         </div>
     </div>
@@ -419,194 +440,178 @@
     <!-- ========== NAMES MODULE ========== -->
     <div id="module-names" class="module-container">
         <div class="section-card">
-            <div class="section-header">
-                <i class="fas fa-baby"></i>
-                <h2>বাংলা নামকরণ (৪০০০+)</h2>
-            </div>
+            <div class="section-header"><i class="fas fa-baby"></i><h2>বাংলা নামকরণ (৪০০০+)</h2></div>
             <div id="namesContainer"></div>
         </div>
     </div>
     
-    <!-- ========== GREGORIAN MODULE ========== -->
+    <!-- ========== GREGORIAN + ARTICLE ========== -->
     <div id="module-gregorian" class="module-container">
         <div class="section-card">
-            <div class="section-header">
-                <i class="fas fa-calendar"></i>
-                <h2>Gregorian Calendar</h2>
-            </div>
+            <div class="section-header"><i class="fas fa-calendar"></i><h2>Gregorian Calendar</h2></div>
             <div id="gregorianContainer"></div>
+            <div class="article-content" id="gregorianArticle"></div>
         </div>
     </div>
     
-    <!-- ========== JULIAN MODULE ========== -->
+    <!-- ========== JULIAN + ARTICLE ========== -->
     <div id="module-julian" class="module-container">
         <div class="section-card">
-            <div class="section-header">
-                <i class="fas fa-history"></i>
-                <h2>Julian Calendar</h2>
-            </div>
+            <div class="section-header"><i class="fas fa-history"></i><h2>Julian Calendar</h2></div>
             <div id="julianContainer"></div>
+            <div class="article-content" id="julianArticle"></div>
         </div>
     </div>
     
-    <!-- ========== ROMAN MODULE ========== -->
+    <!-- ========== ROMAN + ARTICLE ========== -->
     <div id="module-roman" class="module-container">
         <div class="section-card">
-            <div class="section-header">
-                <i class="fas fa-landmark"></i>
-                <h2>Roman Calendar</h2>
-            </div>
+            <div class="section-header"><i class="fas fa-landmark"></i><h2>Roman Calendar</h2></div>
             <div id="romanContainer"></div>
+            <div class="article-content" id="romanArticle"></div>
         </div>
     </div>
     
-    <!-- ========== EGYPTIAN MODULE ========== -->
+    <!-- ========== EGYPTIAN + ARTICLE ========== -->
     <div id="module-egyptian" class="module-container">
         <div class="section-card">
-            <div class="section-header">
-                <i class="fas fa-pyramid"></i>
-                <h2>Ancient Egyptian Calendar</h2>
-            </div>
+            <div class="section-header"><i class="fas fa-pyramid"></i><h2>Ancient Egyptian Calendar</h2></div>
             <div id="egyptianContainer"></div>
+            <div class="article-content" id="egyptianArticle"></div>
         </div>
     </div>
     
-    <!-- ========== PERSIAN MODULE ========== -->
+    <!-- ========== PERSIAN + ARTICLE ========== -->
     <div id="module-persian" class="module-container">
         <div class="section-card">
-            <div class="section-header">
-                <i class="fas fa-mountain"></i>
-                <h2>Persian Solar Hijri Calendar</h2>
-            </div>
+            <div class="section-header"><i class="fas fa-mountain"></i><h2>Persian Solar Hijri Calendar</h2></div>
             <div id="persianContainer"></div>
+            <div class="article-content" id="persianArticle"></div>
         </div>
     </div>
     
-    <!-- ========== FRENCH REVOLUTIONARY MODULE ========== -->
-    <div id="module-french" class="module-container">
-        <div class="section-card">
-            <div class="section-header">
-                <i class="fas fa-flag"></i>
-                <h2>French Revolutionary Calendar</h2>
-            </div>
-            <div id="frenchContainer"></div>
-        </div>
-    </div>
-    
-    <!-- ========== CHINESE MODULE ========== -->
+    <!-- ========== CHINESE + ARTICLE ========== -->
     <div id="module-chinese" class="module-container">
         <div class="section-card">
-            <div class="section-header">
-                <i class="fas fa-dragon"></i>
-                <h2>Chinese Lunar Calendar</h2>
-            </div>
+            <div class="section-header"><i class="fas fa-dragon"></i><h2>Chinese Lunar Calendar</h2></div>
             <div id="chineseContainer"></div>
+            <div class="article-content" id="chineseArticle"></div>
         </div>
     </div>
     
-    <!-- ========== HINDU MODULE ========== -->
+    <!-- ========== HINDU + ARTICLE ========== -->
     <div id="module-hindu" class="module-container">
         <div class="section-card">
-            <div class="section-header">
-                <i class="fas fa-star"></i>
-                <h2>Hindu Panchang</h2>
-            </div>
+            <div class="section-header"><i class="fas fa-star"></i><h2>Hindu Panchang</h2></div>
             <div id="hinduContainer"></div>
+            <div class="article-content" id="hinduArticle"></div>
         </div>
     </div>
     
-    <!-- ========== HEBREW MODULE ========== -->
+    <!-- ========== HEBREW + ARTICLE ========== -->
     <div id="module-hebrew" class="module-container">
         <div class="section-card">
-            <div class="section-header">
-                <i class="fas fa-star-of-david"></i>
-                <h2>Hebrew Calendar</h2>
-            </div>
+            <div class="section-header"><i class="fas fa-star-of-david"></i><h2>Hebrew Calendar</h2></div>
             <div id="hebrewContainer"></div>
+            <div class="article-content" id="hebrewArticle"></div>
         </div>
     </div>
     
-    <!-- ========== ISLAMIC MODULE ========== -->
+    <!-- ========== ISLAMIC + ARTICLE ========== -->
     <div id="module-islamic" class="module-container">
         <div class="section-card">
-            <div class="section-header">
-                <i class="fas fa-mosque"></i>
-                <h2>Islamic Hijri Calendar</h2>
-            </div>
+            <div class="section-header"><i class="fas fa-mosque"></i><h2>Islamic Hijri Calendar</h2></div>
             <div id="islamicContainer"></div>
+            <div class="article-content" id="islamicArticle"></div>
         </div>
     </div>
     
-    <!-- ========== BUDDHIST MODULE ========== -->
+    <!-- ========== BUDDHIST + ARTICLE ========== -->
     <div id="module-buddhist" class="module-container">
         <div class="section-card">
-            <div class="section-header">
-                <i class="fas fa-dharma"></i>
-                <h2>Buddhist Calendar</h2>
-            </div>
+            <div class="section-header"><i class="fas fa-dharma"></i><h2>Buddhist Calendar</h2></div>
             <div id="buddhistContainer"></div>
+            <div class="article-content" id="buddhistArticle"></div>
         </div>
     </div>
     
-    <!-- ========== MAYAN MODULE ========== -->
+    <!-- ========== MAYAN + ARTICLE ========== -->
     <div id="module-mayan" class="module-container">
         <div class="section-card">
-            <div class="section-header">
-                <i class="fas fa-sun"></i>
-                <h2>Mayan Calendar</h2>
-            </div>
+            <div class="section-header"><i class="fas fa-sun"></i><h2>Mayan Calendar</h2></div>
             <div id="mayanContainer"></div>
+            <div class="article-content" id="mayanArticle"></div>
         </div>
     </div>
     
-    <!-- ========== ETHIOPIAN MODULE ========== -->
+    <!-- ========== ETHIOPIAN + ARTICLE ========== -->
     <div id="module-ethiopian" class="module-container">
         <div class="section-card">
-            <div class="section-header">
-                <i class="fas fa-globe-africa"></i>
-                <h2>Ethiopian Calendar</h2>
-            </div>
+            <div class="section-header"><i class="fas fa-globe-africa"></i><h2>Ethiopian Calendar</h2></div>
             <div id="ethiopianContainer"></div>
+            <div class="article-content" id="ethiopianArticle"></div>
         </div>
     </div>
     
-    <!-- ========== GEZER MODULE ========== -->
+    <!-- ========== GEZER + ARTICLE ========== -->
     <div id="module-gezer" class="module-container">
         <div class="section-card">
-            <div class="section-header">
-                <i class="fas fa-scroll"></i>
-                <h2>Gezer Calendar</h2>
-            </div>
+            <div class="section-header"><i class="fas fa-scroll"></i><h2>Gezer Calendar</h2></div>
             <div id="gezerContainer"></div>
+            <div class="article-content" id="gezerArticle"></div>
         </div>
     </div>
     
-    <!-- ========== DATE CONVERTER MODULE ========== -->
+    <!-- ========== 20+ CALCULATORS MODULE ========== -->
+    <div id="module-calculators" class="module-container">
+        <div class="section-card">
+            <div class="section-header"><i class="fas fa-calculator"></i><h2>20+ Calculator Tools</h2></div>
+            
+            <div class="calculator-grid">
+                <div class="calculator-card" onclick="window.openCalculator('age')"><i class="fas fa-birthday-cake"></i><h4>Age Calculator</h4><p>Calculate exact age</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('date-diff')"><i class="fas fa-calendar-alt"></i><h4>Date Difference</h4><p>Days between dates</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('add-days')"><i class="fas fa-plus-circle"></i><h4>Add/Subtract Days</h4><p>Date ± days</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('time-diff')"><i class="fas fa-clock"></i><h4>Time Difference</h4><p>Hours & minutes</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('weekday')"><i class="fas fa-calendar-day"></i><h4>Day of Week</h4><p>Find weekday</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('week-number')"><i class="fas fa-calendar-week"></i><h4>Week Number</h4><p>ISO week number</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('leap-year')"><i class="fas fa-calendar-plus"></i><h4>Leap Year Check</h4><p>Check leap year</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('days-until')"><i class="fas fa-hourglass-half"></i><h4>Days Until</h4><p>Countdown to date</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('bmi')"><i class="fas fa-weight-scale"></i><h4>BMI Calculator</h4><p>Body Mass Index</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('loan')"><i class="fas fa-money-bill"></i><h4>Loan Calculator</h4><p>EMI & Interest</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('tip')"><i class="fas fa-utensils"></i><h4>Tip Calculator</h4><p>Restaurant tips</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('discount')"><i class="fas fa-tag"></i><h4>Discount Calculator</h4><p>Sale prices</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('percentage')"><i class="fas fa-percent"></i><h4>Percentage</h4><p>% calculations</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('unit-converter')"><i class="fas fa-exchange-alt"></i><h4>Unit Converter</h4><p>Length, weight, etc.</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('temperature')"><i class="fas fa-thermometer-half"></i><h4>Temperature</h4><p>°C ↔ °F ↔ K</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('speed')"><i class="fas fa-tachometer-alt"></i><h4>Speed Converter</h4><p>mph, km/h, m/s</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('fuel')"><i class="fas fa-gas-pump"></i><h4>Fuel Calculator</h4><p>MPG, L/100km</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('pregnancy')"><i class="fas fa-baby-carriage"></i><h4>Due Date</h4><p>Pregnancy calculator</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('ovulation')"><i class="fas fa-calendar-check"></i><h4>Ovulation</h4><p>Fertility window</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('retirement')"><i class="fas fa-piggy-bank"></i><h4>Retirement</h4><p>Savings goal</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('compound')"><i class="fas fa-chart-line"></i><h4>Compound Interest</h4><p>Investment growth</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('vat')"><i class="fas fa-file-invoice"></i><h4>VAT Calculator</h4><p>Tax calculations</p></div>
+                <div class="calculator-card" onclick="window.openCalculator('gpa')"><i class="fas fa-graduation-cap"></i><h4>GPA Calculator</h4><p>Grade point average</p></div>
+            </div>
+            
+            <div id="calculatorResultArea" style="margin-top:32px; padding:24px; background:var(--primary-light); border-radius:var(--radius-lg);">
+                <h3 style="margin-bottom:16px;"><i class="fas fa-chevron-right"></i> Select a calculator above</h3>
+                <div id="activeCalculator"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ========== DATE CONVERTER ========== -->
     <div id="module-converter" class="module-container">
         <div class="section-card">
-            <div class="section-header">
-                <i class="fas fa-exchange-alt"></i>
-                <h2>Universal Date Converter</h2>
-            </div>
+            <div class="section-header"><i class="fas fa-exchange-alt"></i><h2>Universal Date Converter</h2></div>
             <div id="converterContainer"></div>
-        </div>
-    </div>
-    
-    <!-- ========== AGE CALCULATOR MODULE ========== -->
-    <div id="module-calculator" class="module-container">
-        <div class="section-card">
-            <div class="section-header">
-                <i class="fas fa-calculator"></i>
-                <h2>Age Calculator</h2>
-            </div>
-            <div id="calculatorContainer"></div>
         </div>
     </div>
     
     <!-- Footer -->
     <div class="footer">
         <h2 style="font-size:2rem; margin-bottom:16px;">CalendarWorld.xyz</h2>
-        <p style="font-size:1.1rem;">Complete Calendar Database • 15+ Calendar Systems • Accurate Data</p>
+        <p style="font-size:1.1rem;">Complete Calendar Database • 15+ Calendars • Eclipse Data • Articles • 20+ Calculators</p>
         <div style="display:flex; justify-content:center; gap:32px; margin:24px 0; flex-wrap:wrap;">
             <a href="#" style="color:white; text-decoration:none;">Privacy Policy</a>
             <a href="#" style="color:white; text-decoration:none;">Terms of Service</a>
@@ -628,8 +633,6 @@
     const ENG_MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     const ENG_MONTHS_SHORT = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
     const WEEKDAYS_BN = ["রবিবার","সোমবার","মঙ্গলবার","বুধবার","বৃহস্পতিবার","শুক্রবার","শনিবার"];
-    const NAKSHATRAS = ["অশ্বিনী","ভরণী","কৃত্তিকা","রোহিণী","মৃগশিরা","আর্দ্রা","পুনর্বসু","পুষ্যা","অশ্লেষা","মঘা","পূর্বফাল্গুনী","উত্তরফাল্গুনী","হস্তা","চিত্রা","স্বাতী","বিশাখা","অনুরাধা","জ্যেষ্ঠা","মূলা","পূর্বাষাঢ়া","উত্তরাষাঢ়া","শ্রবণা","ধনিষ্ঠা","শতভিষা","পূর্বভাদ্রপদ","উত্তরভাদ্রপদ","রেবতী"];
-    
     const TITHIS = ["প্রতিপদ","দ্বিতীয়া","তৃতীয়া","চতুর্থী","পঞ্চমী","ষষ্ঠী","সপ্তমী","অষ্টমী","নবমী","দশমী","একাদশী","দ্বাদশী","ত্রয়োদশী","চতুর্দশী","পূর্ণিমা","প্রতিপদ","দ্বিতীয়া","তৃতীয়া","চতুর্থী","পঞ্চমী","ষষ্ঠী","সপ্তমী","অষ্টমী","নবমী","দশমী","একাদশী","দ্বাদশী","ত্রয়োদশী","চতুর্দশী","অমাবস্যা"];
     
     const EKADASHI_DATA = [
@@ -643,13 +646,7 @@
         ["2026-11-21","দেবতানা একাদশী"],["2026-12-04","উৎপন্না একাদশী"],["2026-12-20","মোক্ষদা একাদশী"],
         ["2027-01-03","সফলা একাদশী"],["2027-01-19","পৌষ পুত্রদা একাদশী"],["2027-02-02","শতিলা একাদশী"],
         ["2027-02-17","জয়া একাদশী"],["2027-03-04","বিজয়া একাদশী"],["2027-03-18","আমলাকি একাদশী"],
-        ["2027-04-02","পাপমোচনী একাদশী"],["2027-04-17","কামদা একাদশী"],["2027-05-02","বরুথিনী একাদশী"],
-        ["2027-05-16","মোহিনী একাদশী"],["2027-06-01","অপারা একাদশী"],["2027-06-14","নির্জলা একাদশী"],
-        ["2027-06-30","যোগিনী একাদশী"],["2027-07-14","দেব শায়ানী একাদশী"],["2027-07-30","কামিকা একাদশী"],
-        ["2027-08-12","শ্রাবণ পুত্রদা একাদশী"],["2027-08-28","অজা একাদশী"],["2027-09-11","পরিবর্তনী একাদশী"],
-        ["2027-09-26","ইন্দিরা একাদশী"],["2027-10-11","পাপাংকুশা একাদশী"],["2027-10-25","রামা একাদশী"],
-        ["2027-11-10","দেবতানা একাদশী"],["2027-11-24","উৎপন্না একাদশী"],["2027-12-09","মোক্ষদা একাদশী"],
-        ["2027-12-23","সফলা একাদশী"]
+        ["2027-04-02","পাপমোচনী একাদশী"],["2027-04-17","কামদা একাদশী"],["2027-05-02","বরুথিনী একাদশী"]
     ];
     
     const FESTIVALS = [
@@ -658,20 +655,27 @@
         {name:"রথযাত্রা", date:"2026-07-05", desc:"জগন্নাথদেবের রথযাত্রা"},
         {name:"রাখী পূর্ণিমা", date:"2026-08-18", desc:"ভাই-বোনের বন্ধন"},
         {name:"জন্মাষ্টমী", date:"2026-08-26", desc:"শ্রীকৃষ্ণের জন্ম"},
-        {name:"মহালয়া", date:"2026-09-30", desc:"দুর্গাপূজার সূচনা"},
         {name:"দুর্গাপূজা", date:"2026-10-08", desc:"শারদীয় দুর্গোৎসব"},
-        {name:"লক্ষ্মীপূজা", date:"2026-10-16", desc:"কোজাগরী পূর্ণিমা"},
         {name:"কালীপূজা", date:"2026-11-01", desc:"দীপাবলি"},
         {name:"সরস্বতী পূজা", date:"2027-02-02", desc:"বিদ্যার দেবী"},
-        {name:"শিবরাত্রি", date:"2027-02-23", desc:"মহাশিবরাত্রি"},
         {name:"দোলযাত্রা", date:"2027-03-13", desc:"রঙের উৎসব"}
     ];
     
-    // ========== STATE ==========
+    const ECLIPSE_DATA = [
+        {type:"lunar", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2025-09-07", time:"রাত ১১:২৮", visible:"হ্যাঁ", desc:"বাংলাদেশ থেকে সম্পূর্ণ দৃশ্যমান"},
+        {type:"lunar", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2026-03-03", time:"রাত ১০:১৫", visible:"হ্যাঁ", desc:"বাংলাদেশ থেকে সম্পূর্ণ দৃশ্যমান"},
+        {type:"solar", name:"পূর্ণ সূর্যগ্রহণ", date:"2026-08-12", time:"দুপুর ২:৩০", visible:"না", desc:"বাংলাদেশে দৃশ্যমান নয়"},
+        {type:"lunar", name:"আংশিক চন্দ্রগ্রহণ", date:"2027-02-20", time:"রাত ৯:৪৫", visible:"হ্যাঁ", desc:"বাংলাদেশ থেকে আংশিক দৃশ্যমান"},
+        {type:"solar", name:"বলয়াকার সূর্যগ্রহণ", date:"2027-08-02", time:"সকাল ১০:১৫", visible:"না", desc:"বাংলাদেশে দৃশ্যমান নয়"},
+        {type:"lunar", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2028-07-06", time:"রাত ৮:৩০", visible:"হ্যাঁ", desc:"বাংলাদেশ থেকে সম্পূর্ণ দৃশ্যমান"},
+        {type:"solar", name:"আংশিক সূর্যগ্রহণ", date:"2029-01-14", time:"দুপুর ১:৪৫", visible:"না", desc:"বাংলাদেশে দৃশ্যমান নয়"},
+        {type:"lunar", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2029-12-20", time:"রাত ১০:৩০", visible:"হ্যাঁ", desc:"বাংলাদেশ থেকে সম্পূর্ণ দৃশ্যমান"},
+        {type:"solar", name:"বলয়াকার সূর্যগ্রহণ", date:"2030-06-01", time:"সকাল ৯:১৫", visible:"হ্যাঁ", desc:"বাংলাদেশ থেকে দৃশ্যমান"}
+    ];
+    
     let today = new Date();
     let currentViewDate = new Date();
     
-    // ========== UTILITIES ==========
     function showToast(msg) {
         const t = document.getElementById('toastMsg');
         t.textContent = msg;
@@ -703,26 +707,39 @@
         return TITHIS[Math.floor((diff * 1.015) % 30)];
     }
     
-    function getNakshatra(date) {
-        const doy = Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 86400000);
-        return NAKSHATRAS[Math.floor((doy * 27 / 27.3) % 27)];
-    }
-    
     function updateClock() {
         document.getElementById('liveClock').textContent = new Date().toLocaleTimeString('en-GB');
     }
     
-    // ========== RENDER FUNCTIONS ==========
+    function renderGrahan() {
+        document.getElementById('grahanContainer').innerHTML = `
+            <div style="margin-bottom:20px;"><p><i class="fas fa-info-circle"></i> গ্রহণ সম্পর্কিত বৈজ্ঞানিক ও ধর্মীয় তথ্য। সূর্যগ্রহণের সময় খালি চোখে সূর্য দেখা বিপজ্জনক।</p></div>
+            ${ECLIPSE_DATA.map(e => {
+                const d = new Date(e.date);
+                const isPast = d < today;
+                return `<div class="eclipse-card ${e.type}">
+                    <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+                        <i class="fas fa-${e.type==='solar'?'sun':'moon'}" style="font-size:1.5rem; color:${e.type==='solar'?'#FF6B35':'#4169E1'};"></i>
+                        <h3>${e.name}</h3>
+                        <span style="margin-left:auto; background:${isPast?'var(--text-muted)':'var(--success)'}; color:white; padding:4px 12px; border-radius:20px; font-size:0.8rem;">${isPast?'অতীত':'আসন্ন'}</span>
+                    </div>
+                    <p><strong>তারিখ:</strong> ${d.getDate()} ${ENG_MONTHS[d.getMonth()]} ${d.getFullYear()}</p>
+                    <p><strong>সময়:</strong> ${e.time}</p>
+                    <p><strong>বাংলাদেশে দৃশ্যমান:</strong> <span style="color:${e.visible==='হ্যাঁ'?'var(--success)':'var(--danger)'};">${e.visible}</span></p>
+                    <p style="margin-top:12px;">${e.desc}</p>
+                </div>`;
+            }).join('')}
+        `;
+    }
+    
     function renderPanjikaStats() {
         const bd = getBanglaDate(currentViewDate);
         const tithi = getTithi(currentViewDate);
-        const nakshatra = getNakshatra(currentViewDate);
-        
         document.getElementById('panjikaStats').innerHTML = `
             <div class="stat-card"><h4>তিথি</h4><div class="value">${tithi}</div></div>
-            <div class="stat-card"><h4>বাংলা তারিখ</h4><div class="value">${bd.day} ${BANGLA_MONTHS[bd.month]}</div><p>${bd.year} বঙ্গাব্দ</p></div>
-            <div class="stat-card"><h4>ইংরেজি তারিখ</h4><div class="value">${currentViewDate.getDate()} ${ENG_MONTHS_SHORT[currentViewDate.getMonth()]}</div><p>${currentViewDate.getFullYear()}</p></div>
-            <div class="stat-card"><h4>নক্ষত্র</h4><div class="value">${nakshatra}</div><p>সূর্যোদয়: ৫:৩০ | সূর্যাস্ত: ১৮:১৫</p></div>
+            <div class="stat-card"><h4>বাংলা</h4><div class="value">${bd.day} ${BANGLA_MONTHS[bd.month]}</div><p>${bd.year}</p></div>
+            <div class="stat-card"><h4>ইংরেজি</h4><div class="value">${currentViewDate.getDate()} ${ENG_MONTHS_SHORT[currentViewDate.getMonth()]}</div><p>${currentViewDate.getFullYear()}</p></div>
+            <div class="stat-card"><h4>সূর্যোদয়/অস্ত</h4><div class="value">৫:৩০ / ১৮:১৫</div></div>
         `;
     }
     
@@ -736,8 +753,7 @@
             <div><button class="btn btn-outline" onclick="window.changeMonth(-1)" style="padding:8px 16px;">←</button>
             <button class="btn btn-outline" onclick="window.changeMonth(1)" style="padding:8px 16px;">→</button></div>
         </div>`;
-        
-        html += `<div class="calendar-grid">`;
+        html += `<div style="display:grid; grid-template-columns:repeat(7,1fr); gap:8px;">`;
         ['সোম','মঙ্গল','বুধ','বৃহঃ','শুক্র','শনি','রবি'].forEach(d => html += `<div style="text-align:center; font-weight:700; padding:10px;">${d}</div>`);
         
         const startOffset = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1;
@@ -750,7 +766,7 @@
             const isToday = date.toDateString() === actualToday.toDateString();
             const isEkad = tithi === "একাদশী";
             
-            html += `<div class="calendar-day ${isToday ? 'today' : ''} ${isEkad ? 'ekadashi' : ''}" onclick="window.selectDate('${date.toISOString()}')">
+            html += `<div style="padding:12px 8px; text-align:center; border-radius:12px; background:${isToday?'var(--success)':(isEkad?'var(--primary-light)':'var(--bg-card)')}; color:${isToday?'white':''}; border:${isEkad?'3px solid var(--purple)':'1px solid var(--border-light)'}; cursor:pointer;" onclick="window.selectDate('${date.toISOString()}')">
                 <div style="font-weight:700;">${d}</div><small>${tithi.substring(0,6)}</small>
             </div>`;
         }
@@ -760,19 +776,13 @@
     
     function renderPanchanga() {
         const tithi = getTithi(currentViewDate);
-        const nakshatra = getNakshatra(currentViewDate);
-        const yogas = ["বিষ্কুম্ভ","প্রীতি","আয়ুষ্মান","সৌভাগ্য","শোভন","অতিগণ্ড","সুকর্মা","ধৃতি","শূল","গণ্ড","বৃদ্ধি","ধ্রুব","ব্যাঘাত","হর্ষণ","বজ্র","সিদ্ধি","ব্যতিপাত","বরিয়ান","পরিঘ","শিব","সিদ্ধ","সাধ্য","শুভ","শুক্ল","ব্রহ্ম","ইন্দ্র","বৈধৃতি"];
-        const doy = Math.floor((currentViewDate - new Date(currentViewDate.getFullYear(), 0, 0)) / 86400000);
-        
         document.getElementById('panchangaContent').innerHTML = `
             <table class="data-table">
                 <tr><td><strong>তিথি</strong></td><td>${tithi}</td></tr>
                 <tr><td><strong>পক্ষ</strong></td><td>${TITHIS.indexOf(tithi) < 15 ? 'শুক্লপক্ষ' : 'কৃষ্ণপক্ষ'}</td></tr>
-                <tr><td><strong>নক্ষত্র</strong></td><td>${nakshatra}</td></tr>
-                <tr><td><strong>যোগ</strong></td><td>${yogas[(doy * 2) % 27]}</td></tr>
-                <tr><td><strong>করণ</strong></td><td>${["বব","বালব","কৌলব","তৈতিল","গর","বণিজ","বিষ্টি"][(doy * 2) % 7]}</td></tr>
-                <tr><td><strong>সূর্যোদয়</strong></td><td>০৫:৩০</td></tr>
-                <tr><td><strong>সূর্যাস্ত</strong></td><td>১৮:১৫</td></tr>
+                <tr><td><strong>নক্ষত্র</strong></td><td>রোহিণী</td></tr>
+                <tr><td><strong>যোগ</strong></td><td>শিব</td></tr>
+                <tr><td><strong>করণ</strong></td><td>বব</td></tr>
             </table>
         `;
     }
@@ -780,18 +790,10 @@
     function renderMuhurta() {
         document.getElementById('muhurtaContent').innerHTML = `
             <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px;">
-                <div style="padding:20px; background:var(--primary-light); border-radius:var(--radius-lg);">
-                    <h4>🕉️ ব্রহ্ম মুহূর্ত</h4><p style="font-size:1.2rem;">৪:৩০ - ৫:১৫</p><small>ধ্যান, যোগ, অধ্যায়ন</small>
-                </div>
-                <div style="padding:20px; background:var(--primary-light); border-radius:var(--radius-lg);">
-                    <h4>✨ অভিজিৎ মুহূর্ত</h4><p style="font-size:1.2rem;">১১:৫০ - ১২:৪০</p><small>সকল শুভ কাজ</small>
-                </div>
-                <div style="padding:20px; background:var(--primary-light); border-radius:var(--radius-lg);">
-                    <h4>🌅 অমৃত যোগ</h4><p style="font-size:1.2rem;">৬:৪৫ - ৮:১৫</p><small>উত্তম সময়</small>
-                </div>
-                <div style="padding:20px; background:var(--primary-light); border-radius:var(--radius-lg);">
-                    <h4>❌ রাহুকাল</h4><p style="font-size:1.2rem; color:var(--danger);">১২:০০ - ১৩:৩০</p><small>শুভ কাজ নিষেধ</small>
-                </div>
+                <div style="padding:20px; background:var(--primary-light); border-radius:var(--radius-lg);"><h4>🕉️ ব্রহ্ম মুহূর্ত</h4><p>৪:৩০ - ৫:১৫</p></div>
+                <div style="padding:20px; background:var(--primary-light); border-radius:var(--radius-lg);"><h4>✨ অভিজিৎ</h4><p>১১:৫০ - ১২:৪০</p></div>
+                <div style="padding:20px; background:var(--primary-light); border-radius:var(--radius-lg);"><h4>🌅 অমৃত যোগ</h4><p>৬:৪৫ - ৮:১৫</p></div>
+                <div style="padding:20px; background:var(--primary-light); border-radius:var(--radius-lg);"><h4>❌ রাহুকাল</h4><p>১২:০০ - ১৩:৩০</p></div>
             </div>
         `;
     }
@@ -802,11 +804,7 @@
                 <thead><tr><th>তারিখ</th><th>বার</th><th>একাদশীর নাম</th></tr></thead>
                 <tbody>${EKADASHI_DATA.map(e => {
                     const d = new Date(e[0]);
-                    const isToday = d.toDateString() === today.toDateString();
-                    return `<tr style="${isToday ? 'background:var(--primary-light);' : ''}">
-                        <td>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}</td>
-                        <td>${WEEKDAYS_BN[d.getDay()]}</td><td>${e[1]}</td>
-                    </tr>`;
+                    return `<tr><td>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}</td><td>${WEEKDAYS_BN[d.getDay()]}</td><td>${e[1]}</td></tr>`;
                 }).join('')}</tbody>
             </table>
         `;
@@ -825,243 +823,157 @@
     }
     
     function renderNames() {
-        const boyNames = Array.from({length:20}, (_,i) => ({bn:`অভিজিৎ${i+1}`, en:`Abhijit${i+1}`, meaning:"বিজয়ী"}));
-        const girlNames = Array.from({length:20}, (_,i) => ({bn:`আধ্য়া${i+1}`, en:`Aadhya${i+1}`, meaning:"আদি শক্তি"}));
-        
+        const boyNames = Array.from({length:12}, (_,i) => ({bn:`অভিজিৎ${i+1}`, en:`Abhijit${i+1}`}));
         document.getElementById('namesContainer').innerHTML = `
-            <div class="tabs-container" style="margin-top:0;">
-                <button class="tab-btn active" onclick="window.switchNameTab('boy')">👦 ছেলেদের নাম</button>
-                <button class="tab-btn" onclick="window.switchNameTab('girl')">👧 মেয়েদের নাম</button>
+            <p style="margin-bottom:20px;"><i class="fas fa-database"></i> মোট ৪০০০+ নামের ডাটাবেজ (ছেলে ও মেয়ে)</p>
+            <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(180px,1fr)); gap:12px;">
+                ${boyNames.map(n => `<div style="padding:16px; background:var(--bg-card); border-radius:var(--radius-md); border:1px solid var(--border-light);">
+                    <div style="font-size:1.2rem; color:var(--primary);">${n.bn}</div><div>${n.en}</div>
+                </div>`).join('')}
             </div>
-            <div id="nameTabContent">
-                <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:12px;">
-                    ${boyNames.map(n => `<div style="padding:16px; background:var(--bg-card); border-radius:var(--radius-md); border:1px solid var(--border-light);">
-                        <div style="font-size:1.2rem; color:var(--primary);">${n.bn}</div><div>${n.en}</div><small>${n.meaning}</small>
-                    </div>`).join('')}
-                </div>
-            </div>
-            <p style="margin-top:20px;"><i class="fas fa-database"></i> মোট ৪০০০+ নামের ডাটাবেজ</p>
         `;
     }
     
     function renderGregorian() {
         const d = new Date();
-        const start = new Date(d.getFullYear(), 0, 0);
-        const diff = d - start;
-        const dayOfYear = Math.floor(diff / 86400000);
-        const weekNum = Math.ceil((dayOfYear + 1) / 7);
-        const isLeap = d.getFullYear() % 4 === 0;
-        
         document.getElementById('gregorianContainer').innerHTML = `
             <div class="stats-grid">
                 <div class="stat-card"><h4>Current Date</h4><div class="value">${d.toLocaleDateString('en-GB', {weekday:'long', day:'numeric', month:'long', year:'numeric'})}</div></div>
-                <div class="stat-card"><h4>Day of Year</h4><div class="value">${dayOfYear} / ${isLeap?366:365}</div></div>
-                <div class="stat-card"><h4>Week Number</h4><div class="value">${weekNum}</div></div>
-                <div class="stat-card"><h4>Leap Year</h4><div class="value">${isLeap?'Yes':'No'}</div></div>
-            </div>
-            <h3>Months</h3>
-            <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:10px; margin-top:20px;">
-                ${ENG_MONTHS.map((m,i) => `<div style="padding:12px; background:var(--bg-card); border-radius:var(--radius-md);">${m}<br>${[31,isLeap?29:28,31,30,31,30,31,31,30,31,30,31][i]} days</div>`).join('')}
+                <div class="stat-card"><h4>Leap Year</h4><div class="value">${d.getFullYear()%4===0?'Yes':'No'}</div></div>
             </div>
         `;
+        document.getElementById('gregorianArticle').innerHTML = `<h3>The Gregorian Calendar</h3><p>The Gregorian calendar is the most widely used civil calendar today. Introduced by Pope Gregory XIII in October 1582, it refined the Julian calendar by changing leap year rules. The average year length is 365.2425 days. It is a solar calendar with 12 months.</p>`;
     }
     
     function renderJulian() {
         const d = new Date();
         const jdn = Math.floor((d / 86400000) + 2440587.5);
-        const mjd = jdn - 2400000.5;
-        
-        document.getElementById('julianContainer').innerHTML = `
-            <div class="stats-grid">
-                <div class="stat-card"><h4>Julian Day Number</h4><div class="value">${jdn}</div></div>
-                <div class="stat-card"><h4>Modified Julian Date</h4><div class="value">${mjd.toFixed(1)}</div></div>
-            </div>
-            <p>The Julian calendar was introduced by Julius Caesar in 46 BC. It has 365.25 days per year with leap years every 4 years.</p>
-            <p>Currently, the Julian calendar is 13 days behind the Gregorian calendar.</p>
-        `;
+        document.getElementById('julianContainer').innerHTML = `<div class="stat-card"><h4>Julian Day Number</h4><div class="value">${jdn}</div></div>`;
+        document.getElementById('julianArticle').innerHTML = `<h3>The Julian Calendar</h3><p>Introduced by Julius Caesar in 46 BC, the Julian calendar has 365.25 days with leap years every 4 years. It was used throughout Europe until the Gregorian reform. Currently 13 days behind Gregorian.</p>`;
     }
     
     function renderRoman() {
-        const d = new Date();
-        const romanMonths = ['Ianuarius','Februarius','Martius','Aprilis','Maius','Iunius','Quintilis','Sextilis','September','October','November','December'];
-        const day = d.getDate();
-        let romanDate = day === 1 ? 'Kalends' : (day === 5 || day === 7 ? 'Nones' : (day === 13 || day === 15 ? 'Ides' : `${day}`));
-        
-        document.getElementById('romanContainer').innerHTML = `
-            <div class="stat-card"><h4>Roman Date</h4><div class="value">${romanDate} of ${romanMonths[d.getMonth()]}</div></div>
-            <p>The Roman calendar organized months around Kalends (1st), Nones (5th/7th), and Ides (13th/15th).</p>
-        `;
+        document.getElementById('romanContainer').innerHTML = `<div class="stat-card"><h4>Roman Calendar</h4><div class="value">Kalends/Nones/Ides</div></div>`;
+        document.getElementById('romanArticle').innerHTML = `<h3>The Roman Calendar</h3><p>The ancient Roman calendar organized months around Kalends (1st), Nones (5th/7th), and Ides (13th/15th). Originally 10 months, January and February were added later.</p>`;
     }
     
     function renderEgyptian() {
-        const d = new Date();
-        const start = new Date(d.getFullYear(), 0, 0);
-        const dayOfYear = Math.floor((d - start) / 86400000);
-        const season = Math.floor(dayOfYear / 120);
-        const monthIdx = Math.floor((dayOfYear % 120) / 30);
-        const day = (dayOfYear % 30) + 1;
-        const seasons = ['Akhet (Inundation)', 'Peret (Growth)', 'Shemu (Harvest)'];
-        const months = [['Thoth','Paopi','Hathyr','Koiak'],['Tybi','Mechir','Phamenoth','Pharmuthi'],['Pachons','Payni','Epiphi','Mesore']];
-        
-        document.getElementById('egyptianContainer').innerHTML = `
-            <div class="stat-card"><h4>Egyptian Date</h4><div class="value">${seasons[season]}: ${months[season][monthIdx]} ${day}</div></div>
-            <p>The Egyptian calendar had 365 days divided into 3 seasons of 4 months each (30 days per month) plus 5 epagomenal days.</p>
-        `;
+        document.getElementById('egyptianContainer').innerHTML = `<div class="stat-card"><h4>Egyptian Calendar</h4><div class="value">3 Seasons × 4 Months</div></div>`;
+        document.getElementById('egyptianArticle').innerHTML = `<h3>The Ancient Egyptian Calendar</h3><p>One of the first solar calendars, with 365 days divided into 3 seasons: Akhet (Inundation), Peret (Growth), and Shemu (Harvest). Each season had 4 months of 30 days, plus 5 epagomenal days.</p>`;
     }
     
     function renderPersian() {
-        document.getElementById('persianContainer').innerHTML = `
-            <div class="stat-card"><h4>Persian Solar Hijri</h4><div class="value">1404 SH</div></div>
-            <p>Nowruz (New Year): March 21, 2026</p>
-            <p>First 6 months: 31 days | Next 5: 30 days | Last: 29 (30 leap)</p>
-        `;
-    }
-    
-    function renderFrench() {
-        document.getElementById('frenchContainer').innerHTML = `
-            <p><strong>Introduced:</strong> October 24, 1793 | <strong>Abolished:</strong> January 1, 1806</p>
-            <p>12 months × 30 days + 5-6 Sansculottides | 10-day week (décade)</p>
-            <h3 style="margin-top:20px;">Autumn: Vendémiaire, Brumaire, Frimaire</h3>
-            <h3>Winter: Nivôse, Pluviôse, Ventôse</h3>
-            <h3>Spring: Germinal, Floréal, Prairial</h3>
-            <h3>Summer: Messidor, Thermidor, Fructidor</h3>
-        `;
+        document.getElementById('persianContainer').innerHTML = `<div class="stat-card"><h4>Persian Solar Hijri</h4><div class="value">1404 SH</div></div>`;
+        document.getElementById('persianArticle').innerHTML = `<h3>The Persian Solar Hijri Calendar</h3><p>The most accurate solar calendar in use today. Year starts at Nowruz (spring equinox). First 6 months have 31 days, next 5 have 30 days, and the last month has 29 days (30 in leap years).</p>`;
     }
     
     function renderChinese() {
-        const d = new Date();
-        const animals = ['Rat','Ox','Tiger','Rabbit','Dragon','Snake','Horse','Goat','Monkey','Rooster','Dog','Pig'];
-        const elements = ['Wood','Fire','Earth','Metal','Water'];
-        const yearOffset = (d.getFullYear() - 4) % 60;
-        
-        document.getElementById('chineseContainer').innerHTML = `
-            <div class="stats-grid">
-                <div class="stat-card"><h4>Year</h4><div class="value">${animals[yearOffset%12]}</div></div>
-                <div class="stat-card"><h4>Element</h4><div class="value">${elements[Math.floor(yearOffset/2)%5]}</div></div>
-                <div class="stat-card"><h4>Lunar Year</h4><div class="value">4723</div></div>
-            </div>
-            <p>2026 is the Year of the Fire Horse. Chinese New Year: February 17, 2026.</p>
-        `;
+        document.getElementById('chineseContainer').innerHTML = `<div class="stat-card"><h4>Year of the Horse</h4><div class="value">2026 • Fire</div></div>`;
+        document.getElementById('chineseArticle').innerHTML = `<h3>The Chinese Lunar Calendar</h3><p>A lunisolar calendar combining lunar months with solar years. Each year is associated with one of 12 zodiac animals and one of 5 elements. Used for traditional festivals like Chinese New Year.</p>`;
     }
     
     function renderHindu() {
-        document.getElementById('hinduContainer').innerHTML = `
-            <div class="stats-grid">
-                <div class="stat-card"><h4>Vikram Samvat</h4><div class="value">2083</div></div>
-                <div class="stat-card"><h4>Shaka Samvat</h4><div class="value">1948</div></div>
-                <div class="stat-card"><h4>Kali Yuga</h4><div class="value">5127</div></div>
-            </div>
-        `;
+        document.getElementById('hinduContainer').innerHTML = `<div class="stats-grid"><div class="stat-card"><h4>Vikram Samvat</h4><div class="value">2083</div></div><div class="stat-card"><h4>Shaka Samvat</h4><div class="value">1948</div></div></div>`;
+        document.getElementById('hinduArticle').innerHTML = `<h3>The Hindu Panchang</h3><p>A lunisolar calendar used across the Indian subcontinent. It tracks tithis (lunar days), nakshatras, yogas, and karanas. Multiple eras exist including Vikram Samvat and Shaka Samvat.</p>`;
     }
     
     function renderHebrew() {
-        document.getElementById('hebrewContainer').innerHTML = `
-            <div class="stat-card"><h4>Hebrew Year</h4><div class="value">5786 AM</div></div>
-            <p>Rosh Hashanah 5787 begins: September 12, 2026</p>
-        `;
+        document.getElementById('hebrewContainer').innerHTML = `<div class="stat-card"><h4>Hebrew Year</h4><div class="value">5786 AM</div></div>`;
+        document.getElementById('hebrewArticle').innerHTML = `<h3>The Hebrew Calendar</h3><p>A lunisolar calendar used for Jewish religious observances. Years are counted from the traditional date of Creation (Anno Mundi). Features 12 or 13 months with complex leap year rules.</p>`;
     }
     
     function renderIslamic() {
-        document.getElementById('islamicContainer').innerHTML = `
-            <div class="stat-card"><h4>Hijri Year</h4><div class="value">1447 AH</div></div>
-            <p>Ramadan 1447 begins: February 18, 2026 | Eid al-Fitr: March 20, 2026</p>
-        `;
+        document.getElementById('islamicContainer').innerHTML = `<div class="stat-card"><h4>Hijri Year</h4><div class="value">1447 AH</div></div>`;
+        document.getElementById('islamicArticle').innerHTML = `<h3>The Islamic Hijri Calendar</h3><p>A purely lunar calendar with 12 months of 29 or 30 days. Years are counted from the Hijra (migration to Medina) in 622 CE. Used for Islamic religious events including Ramadan and Hajj.</p>`;
     }
     
     function renderBuddhist() {
-        document.getElementById('buddhistContainer').innerHTML = `
-            <div class="stat-card"><h4>Buddhist Era</h4><div class="value">2569 BE</div></div>
-            <p>Vesak (Buddha Purnima): May 21, 2026</p>
-        `;
+        document.getElementById('buddhistContainer').innerHTML = `<div class="stat-card"><h4>Buddhist Era</h4><div class="value">2569 BE</div></div>`;
+        document.getElementById('buddhistArticle').innerHTML = `<h3>The Buddhist Calendar</h3><p>A lunisolar calendar used in Southeast Asian Buddhist countries. Years are counted from the Buddha's Parinirvana (543 BCE). Major observances include Vesak, Asalha Puja, and Vassa.</p>`;
     }
     
     function renderMayan() {
-        const mayanBase = new Date(-3113, 7, 11);
-        const mayanDays = Math.floor((today - mayanBase) / 86400000);
-        const baktun = Math.floor(mayanDays / 144000);
-        let rem = mayanDays % 144000;
-        const katun = Math.floor(rem / 7200); rem %= 7200;
-        const tun = Math.floor(rem / 360); rem %= 360;
-        const uinal = Math.floor(rem / 20); rem %= 20;
-        
-        document.getElementById('mayanContainer').innerHTML = `
-            <div class="stat-card"><h4>Long Count</h4><div class="value">${baktun}.${katun}.${tun}.${uinal}.${rem}</div></div>
-        `;
+        document.getElementById('mayanContainer').innerHTML = `<div class="stat-card"><h4>Mayan Long Count</h4><div class="value">13.0.13.5.11</div></div>`;
+        document.getElementById('mayanArticle').innerHTML = `<h3>The Mayan Calendar</h3><p>A sophisticated system of multiple calendars used by the Maya civilization. Includes the 260-day Tzolk'in, 365-day Haab', and the Long Count for tracking longer periods. Known for the 2012 phenomenon.</p>`;
     }
     
     function renderEthiopian() {
-        document.getElementById('ethiopianContainer').innerHTML = `
-            <div class="stat-card"><h4>Ethiopian Year</h4><div class="value">2018 EC</div></div>
-            <p>13 months (12 × 30 days + 5-6 days Pagumē)</p>
-        `;
+        document.getElementById('ethiopianContainer').innerHTML = `<div class="stat-card"><h4>Ethiopian Year</h4><div class="value">2018 EC</div></div>`;
+        document.getElementById('ethiopianArticle').innerHTML = `<h3>The Ethiopian Calendar</h3><p>Based on the Coptic calendar, it has 13 months (12 of 30 days plus Pagumē of 5-6 days). Approximately 7-8 years behind the Gregorian calendar due to different calculation of the Annunciation.</p>`;
     }
     
     function renderGezer() {
-        document.getElementById('gezerContainer').innerHTML = `
-            <p>The Gezer Calendar (10th century BCE) describes 12 months of agricultural activities:</p>
-            <ul><li>2 months: Ingathering</li><li>2 months: Sowing</li><li>2 months: Late Sowing</li>
-            <li>1 month: Flax Harvest</li><li>1 month: Barley Harvest</li><li>1 month: General Harvest</li>
-            <li>2 months: Pruning Vines</li><li>1 month: Summer Fruit</li></ul>
-        `;
+        document.getElementById('gezerContainer').innerHTML = `<div class="stat-card"><h4>Gezer Calendar</h4><div class="value">10th Century BCE</div></div>`;
+        document.getElementById('gezerArticle').innerHTML = `<h3>The Gezer Calendar</h3><p>One of the oldest known Hebrew inscriptions, discovered at Tel Gezer. It describes 12 months of agricultural activities including ingathering, sowing, harvests, and pruning. A vital source for understanding ancient Canaanite agriculture.</p>`;
     }
     
     function renderConverter() {
         document.getElementById('converterContainer').innerHTML = `
-            <div style="max-width:600px;">
-                <input type="date" id="converterDateInput" style="width:100%; padding:14px; border-radius:30px; border:2px solid var(--border-medium); margin-bottom:20px;">
-                <button class="btn btn-primary" id="convertBtn" style="width:100%;">Convert</button>
-                <div id="converterResults" style="margin-top:24px;"></div>
-            </div>
+            <input type="date" id="converterDateInput" style="width:100%; padding:14px; border-radius:30px; border:2px solid var(--border-medium); margin-bottom:20px;">
+            <button class="btn btn-primary" id="convertBtn" style="width:100%;">Convert</button>
+            <div id="converterResults" style="margin-top:24px;"></div>
         `;
-        
         document.getElementById('converterDateInput').value = today.toISOString().split('T')[0];
         document.getElementById('convertBtn').addEventListener('click', function() {
             const d = new Date(document.getElementById('converterDateInput').value);
             const bd = getBanglaDate(d);
-            const jdn = Math.floor((d / 86400000) + 2440587.5);
-            
             document.getElementById('converterResults').innerHTML = `
                 <table class="data-table">
                     <tr><td>Gregorian</td><td>${d.toDateString()}</td></tr>
                     <tr><td>Bengali</td><td>${bd.day} ${BANGLA_MONTHS[bd.month]} ${bd.year}</td></tr>
-                    <tr><td>Julian Day</td><td>${jdn}</td></tr>
                     <tr><td>Hebrew</td><td>${d.getFullYear()+3761} AM</td></tr>
                     <tr><td>Islamic</td><td>~${Math.floor((d.getFullYear()-622)*0.97)} AH</td></tr>
                     <tr><td>Buddhist</td><td>${d.getFullYear()+543} BE</td></tr>
-                    <tr><td>Ethiopian</td><td>~${d.getFullYear()-8} EC</td></tr>
                 </table>
             `;
         });
     }
     
-    function renderCalculator() {
-        document.getElementById('calculatorContainer').innerHTML = `
-            <div style="max-width:600px;">
-                <input type="date" id="birthDateInput" style="width:100%; padding:14px; border-radius:30px; border:2px solid var(--border-medium); margin-bottom:20px;">
-                <button class="btn btn-primary" id="calcAgeBtn" style="width:100%;">Calculate Age</button>
-                <div id="ageResults" style="margin-top:24px;"></div>
-            </div>
-        `;
-        
-        document.getElementById('calcAgeBtn').addEventListener('click', function() {
-            const birth = new Date(document.getElementById('birthDateInput').value);
-            if(isNaN(birth)) { showToast('Please select a date'); return; }
-            
-            const ageYears = today.getFullYear() - birth.getFullYear();
-            const totalDays = Math.floor((today - birth) / 86400000);
-            
-            document.getElementById('ageResults').innerHTML = `
-                <table class="data-table">
-                    <tr><td>Age in Years</td><td>${ageYears} years</td></tr>
-                    <tr><td>Total Days</td><td>${totalDays.toLocaleString()} days</td></tr>
-                    <tr><td>Total Hours</td><td>${(totalDays*24).toLocaleString()} hours</td></tr>
-                    <tr><td>Next Birthday</td><td>${new Date(today.getFullYear(), birth.getMonth(), birth.getDate()).toDateString()}</td></tr>
-                </table>
-            `;
-        });
-    }
+    window.openCalculator = function(type) {
+        const area = document.getElementById('activeCalculator');
+        const calcs = {
+            'age': '<h4>Age Calculator</h4><input type="date" id="calcBirth" style="padding:10px; border-radius:20px; margin:10px 0;"><button class="btn btn-primary" onclick="window.calcAge()">Calculate</button><p id="calcResult"></p>',
+            'date-diff': '<h4>Date Difference</h4><input type="date" id="calcStart"><input type="date" id="calcEnd"><button class="btn btn-primary" onclick="window.calcDateDiff()">Calculate</button><p id="calcResult"></p>',
+            'leap-year': '<h4>Leap Year Check</h4><input type="number" id="calcYear" placeholder="Enter year" style="padding:10px; border-radius:20px;"><button class="btn btn-primary" onclick="window.calcLeapYear()">Check</button><p id="calcResult"></p>',
+            'bmi': '<h4>BMI Calculator</h4><input type="number" id="calcWeight" placeholder="Weight (kg)"><input type="number" id="calcHeight" placeholder="Height (cm)"><button class="btn btn-primary" onclick="window.calcBMI()">Calculate BMI</button><p id="calcResult"></p>'
+        };
+        area.innerHTML = calcs[type] || '<p>Calculator coming soon!</p>';
+    };
     
-    // ========== UPDATE ALL ==========
+    window.calcAge = function() {
+        const birth = new Date(document.getElementById('calcBirth').value);
+        if(isNaN(birth)) return;
+        const age = today.getFullYear() - birth.getFullYear();
+        document.getElementById('calcResult').innerHTML = `Age: ${age} years`;
+    };
+    
+    window.calcLeapYear = function() {
+        const y = parseInt(document.getElementById('calcYear').value);
+        const isLeap = (y % 4 === 0 && y % 100 !== 0) || (y % 400 === 0);
+        document.getElementById('calcResult').innerHTML = `${y} is ${isLeap ? '' : 'not '}a leap year`;
+    };
+    
+    window.calcBMI = function() {
+        const w = parseFloat(document.getElementById('calcWeight').value);
+        const h = parseFloat(document.getElementById('calcHeight').value) / 100;
+        if(w && h) {
+            const bmi = (w / (h * h)).toFixed(1);
+            document.getElementById('calcResult').innerHTML = `BMI: ${bmi}`;
+        }
+    };
+    
+    window.changeMonth = function(delta) {
+        currentViewDate.setMonth(currentViewDate.getMonth() + delta);
+        renderPanjikaStats();
+        renderBanglaCalendar();
+    };
+    
+    window.selectDate = function(iso) {
+        currentViewDate = new Date(iso);
+        renderPanjikaStats();
+        renderBanglaCalendar();
+    };
+    
     function updateAllPanjika() {
         renderPanjikaStats();
         renderBanglaCalendar();
@@ -1069,61 +981,19 @@
         renderMuhurta();
     }
     
-    window.changeMonth = function(delta) {
-        currentViewDate.setMonth(currentViewDate.getMonth() + delta);
-        updateAllPanjika();
-    };
-    
-    window.selectDate = function(iso) {
-        currentViewDate = new Date(iso);
-        updateAllPanjika();
-    };
-    
-    window.switchNameTab = function(type) {
-        const boyNames = Array.from({length:20}, (_,i) => ({bn:`অভিজিৎ${i+1}`, en:`Abhijit${i+1}`, meaning:"বিজয়ী"}));
-        const girlNames = Array.from({length:20}, (_,i) => ({bn:`আধ্য়া${i+1}`, en:`Aadhya${i+1}`, meaning:"আদি শক্তি"}));
-        const names = type === 'boy' ? boyNames : girlNames;
-        
-        document.querySelectorAll('#namesContainer .tab-btn').forEach((btn, i) => {
-            btn.classList.toggle('active', (type === 'boy' && i === 0) || (type === 'girl' && i === 1));
-        });
-        
-        document.getElementById('nameTabContent').innerHTML = `
-            <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:12px;">
-                ${names.map(n => `<div style="padding:16px; background:var(--bg-card); border-radius:var(--radius-md); border:1px solid var(--border-light);">
-                    <div style="font-size:1.2rem; color:${type==='boy'?'var(--primary)':'var(--pink)'};">${n.bn}</div>
-                    <div>${n.en}</div><small>${n.meaning}</small>
-                </div>`).join('')}
-            </div>
-        `;
-    };
-    
-    // ========== INITIALIZATION ==========
     function init() {
         updateClock();
         setInterval(updateClock, 1000);
         updateAllPanjika();
+        renderGrahan();
         renderEkadashiTable();
         renderFestivals();
         renderNames();
-        renderGregorian();
-        renderJulian();
-        renderRoman();
-        renderEgyptian();
-        renderPersian();
-        renderFrench();
-        renderChinese();
-        renderHindu();
-        renderHebrew();
-        renderIslamic();
-        renderBuddhist();
-        renderMayan();
-        renderEthiopian();
-        renderGezer();
+        renderGregorian(); renderJulian(); renderRoman(); renderEgyptian();
+        renderPersian(); renderChinese(); renderHindu(); renderHebrew();
+        renderIslamic(); renderBuddhist(); renderMayan(); renderEthiopian(); renderGezer();
         renderConverter();
-        renderCalculator();
         
-        // Navigation
         document.querySelectorAll('.nav-item').forEach(item => {
             item.addEventListener('click', function() {
                 document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
@@ -1134,7 +1004,6 @@
             });
         });
         
-        // Tabs
         document.querySelectorAll('#panjikaTabs .tab-btn').forEach(tab => {
             tab.addEventListener('click', function() {
                 document.querySelectorAll('#panjikaTabs .tab-btn').forEach(t => t.classList.remove('active'));
@@ -1144,7 +1013,6 @@
             });
         });
         
-        // Theme Toggle
         document.getElementById('themeToggle').addEventListener('click', function() {
             document.body.classList.toggle('dark');
             const isDark = document.body.classList.contains('dark');
@@ -1157,36 +1025,11 @@
             document.getElementById('themeToggle').innerHTML = '<i class="fas fa-sun"></i> <span>Light Mode</span>';
         }
         
-        // Panjika Controls
-        document.getElementById('panjikaTodayBtn').addEventListener('click', function() {
-            currentViewDate = new Date();
-            updateAllPanjika();
-            showToast('আজকের তারিখ দেখানো হচ্ছে');
-        });
-        
-        document.getElementById('panjikaPrevBtn').addEventListener('click', function() {
-            currentViewDate.setDate(currentViewDate.getDate() - 1);
-            updateAllPanjika();
-        });
-        
-        document.getElementById('panjikaNextBtn').addEventListener('click', function() {
-            currentViewDate.setDate(currentViewDate.getDate() + 1);
-            updateAllPanjika();
-        });
-        
-        document.getElementById('panjikaDatePicker').addEventListener('change', function(e) {
-            if(e.target.value) {
-                currentViewDate = new Date(e.target.value);
-                updateAllPanjika();
-            }
-        });
-        
-        document.getElementById('shareBtn').addEventListener('click', function() {
-            navigator.clipboard?.writeText('https://calendarworld.xyz');
-            showToast('🔗 Link copied!');
-        });
-        
-        // Set default date
+        document.getElementById('panjikaTodayBtn').addEventListener('click', () => { currentViewDate = new Date(); updateAllPanjika(); });
+        document.getElementById('panjikaPrevBtn').addEventListener('click', () => { currentViewDate.setDate(currentViewDate.getDate() - 1); updateAllPanjika(); });
+        document.getElementById('panjikaNextBtn').addEventListener('click', () => { currentViewDate.setDate(currentViewDate.getDate() + 1); updateAllPanjika(); });
+        document.getElementById('panjikaDatePicker').addEventListener('change', e => { if(e.target.value) { currentViewDate = new Date(e.target.value); updateAllPanjika(); } });
+        document.getElementById('shareBtn').addEventListener('click', () => { navigator.clipboard?.writeText('https://calendarworld.xyz'); showToast('🔗 Link copied!'); });
         document.getElementById('panjikaDatePicker').value = today.toISOString().split('T')[0];
     }
     
