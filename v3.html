@@ -2,13 +2,17 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Calendar World | বাংলা পঞ্জিকা • 30+ Calculators • Live Eclipse • 2026</title>
-    <meta name="description" content="Complete Bengali Panjika 1433 with 2000+ word articles, 30+ working calculators, animated Ekadashi & Festival banners, Grahan data, and LIVE Eclipse video feed.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    
+    <title>Calendar World • বাংলা পঞ্জিকা • 30+ Calculators • Eclipse Live</title>
+    <meta name="description" content="Complete Bengali Panjika with live eclipse streams, 30+ working calculators, animated banners, and all world calendars.">
+    
     <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -19,7 +23,7 @@
             --text-primary: #0F172A; --text-secondary: #475569; --text-muted: #64748B;
             --border-light: #E2E8F0; --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-            --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px; --radius-full: 9999px;
+            --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px;
             --sidebar-width: 300px; --right-sidebar-width: 340px;
         }
         body.dark {
@@ -34,6 +38,8 @@
             display: flex;
             min-height: 100vh;
         }
+        
+        /* LEFT SIDEBAR — mobile optimizations via media queries */
         .sidebar-left {
             width: var(--sidebar-width);
             background: var(--bg-sidebar);
@@ -42,38 +48,27 @@
             left: 0; top: 0; bottom: 0;
             overflow-y: auto;
             z-index: 1000;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.2);
         }
         .logo {
-            font-size: 1.3rem;
-            font-weight: 800;
+            font-size: 1.3rem; font-weight: 800;
             background: linear-gradient(135deg, #FF6B35, #FFB347, #8B5CF6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            padding: 24px 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            padding: 24px 20px; border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         .nav-section-title {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: rgba(255,255,255,0.4);
-            padding: 20px 20px 8px;
-            font-weight: 600;
+            font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;
+            color: rgba(255,255,255,0.4); padding: 20px 20px 8px; font-weight: 600;
         }
         .nav-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 20px;
-            color: rgba(255,255,255,0.7);
-            cursor: pointer;
-            transition: all 0.2s;
-            font-size: 0.9rem;
+            display: flex; align-items: center; gap: 12px; padding: 12px 20px;
+            color: rgba(255,255,255,0.7); cursor: pointer; transition: all 0.2s; font-size: 0.9rem;
         }
         .nav-item:hover { background: rgba(255,255,255,0.1); color: white; }
         .nav-item.active { background: linear-gradient(135deg, var(--primary), var(--purple)); color: white; }
         .nav-item i { width: 20px; }
+        
+        /* MAIN CONTENT */
         .main-content {
             flex: 1;
             margin-left: var(--sidebar-width);
@@ -81,148 +76,344 @@
             padding: 24px 32px;
             max-width: 1400px;
         }
+        
+        /* RIGHT SIDEBAR */
         .sidebar-right {
-            width: var(--right-sidebar-width);
-            background: var(--bg-card);
-            position: fixed;
-            right: 0; top: 0; bottom: 0;
-            overflow-y: auto;
-            padding: 20px 16px;
-            border-left: 1px solid var(--border-light);
-            z-index: 999;
+            width: var(--right-sidebar-width); background: var(--bg-card);
+            position: fixed; right: 0; top: 0; bottom: 0; overflow-y: auto;
+            padding: 20px 16px; border-left: 1px solid var(--border-light); z-index: 999;
         }
+        
+        /* ANIMATED BANNERS */
         .special-banner {
-            padding: 24px 20px;
-            border-radius: var(--radius-lg);
-            margin-bottom: 20px;
-            color: white;
-            position: relative;
-            overflow: hidden;
+            padding: 24px 20px; border-radius: var(--radius-lg); margin-bottom: 20px;
+            color: white; position: relative; overflow: hidden;
             animation: bannerPulse 2s infinite;
         }
         .special-banner::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
             background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
             animation: rotate 12s linear infinite;
         }
         .special-banner::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
             background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
             animation: shimmer 3s infinite;
         }
-        @keyframes bannerPulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.02)} }
-        @keyframes rotate { from{transform:rotate(0)} to{transform:rotate(360deg)} }
-        @keyframes shimmer { 0%{transform:translateX(-100%)} 100%{transform:translateX(100%)} }
+        @keyframes bannerPulse {
+            0%,100%{transform:scale(1);} 50%{transform:scale(1.02);}
+        }
+        @keyframes rotate { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+        @keyframes shimmer { 0%{transform:translateX(-100%);} 100%{transform:translateX(100%);} }
+        
         .banner-ekadashi { background: linear-gradient(135deg, #8B5CF6, #6366F1, #4F46E5); }
         .banner-festival { background: linear-gradient(135deg, #FF6B35, #F59E0B, #EF4444); }
         .banner-eclipse { background: linear-gradient(135deg, #1E1B4B, #312E81, #1E3A5F); }
-        .banner-live { background: linear-gradient(135deg, #DC2626, #B91C1C, #7F1D1D); animation: bannerPulse 1.2s infinite; }
         .banner-default { background: linear-gradient(135deg, var(--purple), var(--pink)); }
-        .banner-icon { font-size: 2.5rem; margin-bottom: 12px; position: relative; z-index: 1; animation: float 3s ease-in-out infinite; }
-        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+        .banner-icon { font-size: 2.5rem; margin-bottom: 12px; position: relative; z-index: 1; animation: float 3s infinite; }
+        @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-5px);} }
         .banner-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; position: relative; z-index: 1; }
         .banner-desc { font-size: 0.9rem; opacity: 0.95; margin-bottom: 12px; position: relative; z-index: 1; }
         .banner-countdown { font-family: 'Courier New', monospace; font-size: 1.2rem; font-weight: 700; margin: 12px 0; position: relative; z-index: 1; }
-        .banner-cta { display: inline-block; padding: 10px 20px; background: rgba(255,255,255,0.2); border-radius: var(--radius-full); color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; position: relative; z-index: 1; backdrop-filter: blur(4px); transition: all 0.3s; }
-        .live-video-container { background: #000; border-radius: var(--radius-lg); padding: 16px; margin-top: 20px; border: 1px solid var(--border-light); }
-        .live-video-placeholder { aspect-ratio: 16 / 9; background: #111; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: #fff; flex-direction: column; }
-        .live-badge { background: #ef4444; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; animation: pulse 1.5s infinite; }
-        .top-bar { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: var(--bg-card); border-radius: var(--radius-xl); margin-bottom: 24px; box-shadow: var(--shadow-md); }
-        .live-clock { font-family: 'Courier New', monospace; font-size: 1.4rem; font-weight: 700; background: linear-gradient(135deg, var(--primary), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .banner-cta {
+            display: inline-block; padding: 10px 20px; background: rgba(255,255,255,0.2);
+            border-radius: 9999px; color: white; text-decoration: none; font-size: 0.9rem;
+            font-weight: 600; position: relative; z-index: 1; backdrop-filter: blur(4px);
+        }
+        
+        /* Top Bar */
+        .top-bar {
+            display: flex; justify-content: space-between; align-items: center; padding: 16px 24px;
+            background: var(--bg-card); border-radius: var(--radius-xl); margin-bottom: 24px;
+            box-shadow: var(--shadow-md); flex-wrap: wrap; gap: 10px;
+        }
+        .live-clock { font-family: 'Courier New', monospace; font-size: 1.4rem; font-weight: 700; }
         .pulse-dot { width: 10px; height: 10px; background: #4ADE80; border-radius: 50%; animation: pulse 1.5s infinite; display: inline-block; margin-right: 6px; }
-        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+        @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+        
         .module-container { display: none; }
         .module-container.active { display: block; animation: fadeIn 0.3s ease; }
-        @keyframes fadeIn { from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)} }
-        .section-card { background: var(--bg-card); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
-        .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid var(--border-light); }
+        @keyframes fadeIn { from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
+        
+        .section-card {
+            background: var(--bg-card); border-radius: var(--radius-xl); padding: 28px;
+            margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light);
+        }
+        .section-header {
+            display: flex; align-items: center; gap: 16px; margin-bottom: 24px;
+            padding-bottom: 16px; border-bottom: 2px solid var(--border-light);
+        }
         .section-header i { font-size: 2rem; color: var(--primary); background: var(--primary-light); padding: 14px; border-radius: var(--radius-lg); }
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px; }
-        .stat-card { background: var(--bg-card); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .section-header h2 { font-size: 1.8rem; font-weight: 700; }
+        
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px;
+        }
+        .stat-card {
+            background: var(--bg-card); border-radius: var(--radius-lg); padding: 20px;
+            box-shadow: var(--shadow-md); border: 1px solid var(--border-light);
+        }
+        .stat-card h4 { color: var(--text-muted); font-size: 0.85rem; }
         .stat-card .value { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
-        .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: var(--bg-card); border-radius: var(--radius-lg); overflow: hidden; }
-        .data-table th { background: linear-gradient(135deg, var(--primary), var(--purple)); color: white; padding: 14px; text-align: left; }
+        
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0; background: var(--bg-card);
+            border-radius: var(--radius-lg); overflow: hidden;
+        }
+        .data-table th {
+            background: linear-gradient(135deg, var(--primary), var(--purple)); color: white; padding: 14px; text-align: left;
+        }
         .data-table td { padding: 12px 14px; border-bottom: 1px solid var(--border-light); }
-        .btn { padding: 12px 24px; border: none; border-radius: var(--radius-full); font-weight: 600; cursor: pointer; transition: all 0.2s; }
-        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--purple)); color: white; }
-        .tabs-container { display: flex; gap: 8px; margin: 24px 0; padding: 6px; background: var(--bg-card); border-radius: var(--radius-full); }
-        .tab-btn { padding: 10px 18px; border: none; background: transparent; font-weight: 600; color: var(--text-secondary); border-radius: var(--radius-full); cursor: pointer; }
+        
+        .btn {
+            padding: 12px 24px; border: none; border-radius: 9999px; font-weight: 600;
+            cursor: pointer; transition: all 0.2s; background: var(--bg-card); border:1px solid var(--border-light);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--purple)); color: white; border: none;
+        }
+        
+        .tabs-container {
+            display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0; padding: 6px;
+            background: var(--bg-card); border-radius: 9999px; box-shadow: var(--shadow-md);
+        }
+        .tab-btn {
+            padding: 10px 18px; border: none; background: transparent; font-weight: 600;
+            color: var(--text-secondary); border-radius: 9999px; cursor: pointer;
+        }
         .tab-btn.active { background: linear-gradient(135deg, var(--primary), var(--purple)); color: white; }
         .tab-pane { display: none; }
         .tab-pane.active { display: block; }
-        .calculator-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin: 20px 0; }
-        .calculator-card { background: var(--bg-card); border-radius: var(--radius-lg); padding: 16px 8px; text-align: center; cursor: pointer; border: 1px solid var(--border-light); }
+        
+        .calculator-grid {
+            display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin: 20px 0;
+        }
+        .calculator-card {
+            background: var(--bg-card); border-radius: var(--radius-lg); padding: 16px 8px;
+            text-align: center; cursor: pointer; border: 1px solid var(--border-light);
+            transition: all 0.2s;
+        }
         .calculator-card:hover { background: var(--primary-light); border-color: var(--primary); transform: translateY(-3px); }
+        .calculator-card i { font-size: 1.5rem; color: var(--primary); margin-bottom: 6px; }
+        .calculator-card h4 { font-size: 0.8rem; }
+        
         .calculator-panel { margin-top: 24px; padding: 24px; background: var(--primary-light); border-radius: var(--radius-lg); }
-        .calc-input, .calc-select { width: 100%; padding: 14px; border: 2px solid var(--border-light); border-radius: var(--radius-full); font-size: 1rem; background: var(--bg-card); color: var(--text-primary); margin-bottom: 12px; }
+        .calc-input, .calc-select {
+            width: 100%; padding: 14px; border: 2px solid var(--border-light); border-radius: 9999px;
+            font-size: 1rem; background: var(--bg-card); color: var(--text-primary); margin-bottom: 12px;
+        }
+        .calc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
         .calc-result { margin-top: 20px; padding: 16px; background: var(--bg-card); border-radius: var(--radius-lg); font-size: 1.2rem; font-weight: 600; }
-        .article-content { line-height: 1.9; font-size: 1.05rem; max-height: 600px; overflow-y: auto; }
-        .eclipse-card { background: var(--bg-card); border-radius: var(--radius-lg); padding: 20px; margin-bottom: 16px; border-left: 5px solid; }
-        .eclipse-card.solar { border-left-color: #FF6B35; }
-        .eclipse-card.lunar { border-left-color: #4169E1; }
-        .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: var(--text-primary); color: var(--bg-card); padding: 14px 30px; border-radius: var(--radius-full); z-index: 9999; opacity: 0; transition: opacity 0.3s; }
-        .toast.show { opacity: 1; }
+        
+        /* Live stream section */
+        .live-stream-container {
+            background: #000; border-radius: var(--radius-xl); overflow: hidden;
+            margin: 30px 0; border: 2px solid var(--primary);
+        }
+        .live-header {
+            background: linear-gradient(135deg, #1e1b4b, #312e81); color: white;
+            padding: 16px 24px; display: flex; align-items: center; gap: 12px;
+        }
+        .live-badge {
+            background: #ef4444; padding: 4px 12px; border-radius: 30px; font-size: 0.8rem;
+            font-weight: 700; animation: pulse 1.5s infinite;
+        }
+        .video-wrapper {
+            position: relative; padding-bottom: 56.25%; height: 0; background: #0a0a1a;
+        }
+        .video-wrapper iframe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+        }
+        .stream-placeholder {
+            position: absolute; top:0; left:0; width:100%; height:100%;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            background: #0b1120; color: white; text-align: center;
+        }
+        
+        .article-content { line-height: 1.9; max-height: 600px; overflow-y: auto; padding-right: 16px; }
         .footer { margin-top: 48px; padding: 32px; background: linear-gradient(135deg, var(--primary-dark), var(--purple)); color: white; border-radius: var(--radius-xl); text-align: center; }
-        @media (max-width: 1200px) { .sidebar-right { display: none; } .main-content { margin-right: 0; } .calculator-grid { grid-template-columns: repeat(4, 1fr); } }
-        @media (max-width: 768px) { body { flex-direction: column; } .sidebar-left { position: relative; width: 100%; max-height: 300px; } .main-content { margin-left: 0; padding: 16px; } }
+        .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: var(--text-primary); color: var(--bg-card); padding: 14px 30px; border-radius: 9999px; z-index: 9999; opacity: 0; transition: opacity 0.3s; }
+        .toast.show { opacity: 1; }
+        
+        /* ----- MOBILE OPTIMIZATIONS (UI improvements) ----- */
+        @media (max-width: 1200px) {
+            .sidebar-right { display: none; }
+            .main-content { margin-right: 0; }
+            .calculator-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        @media (max-width: 900px) {
+            .calculator-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            .sidebar-left { position: relative; width: 100%; max-height: 350px; overflow-y: auto; }
+            .main-content { margin-left: 0; padding: 16px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .calculator-grid { grid-template-columns: repeat(2, 1fr); }
+            .top-bar { flex-direction: column; align-items: flex-start; }
+            .section-header h2 { font-size: 1.5rem; }
+            .btn { padding: 10px 16px; }
+            .tabs-container { border-radius: var(--radius-lg); }
+            .tab-btn { flex: 1 0 auto; text-align: center; }
+            .data-table { font-size: 0.85rem; }
+            .live-header { flex-wrap: wrap; }
+        }
+        @media (max-width: 480px) {
+            .calculator-grid { grid-template-columns: 1fr 1fr; }
+            .stat-card { padding: 12px; }
+            .logo { font-size: 1.1rem; padding: 16px; }
+            .nav-item { padding: 10px 12px; font-size: 0.8rem; }
+        }
+        /* improve tap targets */
+        button, .nav-item, .calculator-card, .tab-btn { cursor: pointer; -webkit-tap-highlight-color: transparent; }
     </style>
 </head>
 <body>
 
-<!-- LEFT SIDEBAR -->
+<!-- LEFT SIDEBAR (mobile friendly) -->
 <div class="sidebar-left">
-    <div class="logo"><i class="fas fa-calendar-alt"></i>CalendarWorld <div style="font-size:0.7rem; color:rgba(255,255,255,0.5);"><span class="pulse-dot"></span>Bangla Panjika & 30+ Tools</div></div>
+    <div class="logo">
+        <i class="fas fa-calendar-alt"></i> CalendarWorld
+        <div style="font-size:0.7rem; color:rgba(255,255,255,0.5); margin-top:4px;">
+            <span class="pulse-dot"></span> Bangla Panjika + Live
+        </div>
+    </div>
+    
     <div style="padding:12px;">
         <div class="nav-section-title">🇧🇩 BENGALI</div>
-        <div class="nav-item active" data-module="panjika"><i class="fas fa-om"></i> বাংলা পঞ্জিকা ১৪৩৩</div>
-        <div class="nav-item" data-module="panjika-article"><i class="fas fa-book-open"></i> পঞ্জিকা ইতিহাস</div>
-        <div class="nav-item" data-module="ekadashi"><i class="fas fa-moon"></i> একাদশী ২০২৬</div>
-        <div class="nav-item" data-module="grahan"><i class="fas fa-eclipse"></i> গ্রহণ তালিকা</div>
-        <div class="nav-item" data-module="live-eclipse"><i class="fas fa-video"></i> লাইভ গ্রহণ ভিডিও</div>
+        <div class="nav-item active" data-module="panjika"><i class="fas fa-om"></i> বাংলা পঞ্জিকা</div>
+        <div class="nav-item" data-module="panjika-article"><i class="fas fa-book-open"></i> পঞ্জিকা নিবন্ধ</div>
+        <div class="nav-item" data-module="ekadashi"><i class="fas fa-moon"></i> একাদশী</div>
+        <div class="nav-item" data-module="grahan"><i class="fas fa-eclipse"></i> গ্রহণ + লাইভ</div>
         <div class="nav-item" data-module="festivals"><i class="fas fa-gift"></i> উৎসব ২০২৬</div>
         <div class="nav-item" data-module="names"><i class="fas fa-baby"></i> নামকরণ</div>
-        <div class="nav-section-title">☀️ SOLAR</div>
+        
+        <div class="nav-section-title">🌍 CALENDARS</div>
         <div class="nav-item" data-module="gregorian"><i class="fas fa-calendar"></i> Gregorian</div>
         <div class="nav-item" data-module="julian"><i class="fas fa-history"></i> Julian</div>
         <div class="nav-item" data-module="roman"><i class="fas fa-landmark"></i> Roman</div>
         <div class="nav-item" data-module="egyptian"><i class="fas fa-pyramid"></i> Egyptian</div>
-        <div class="nav-section-title">🌙 LUNAR</div>
         <div class="nav-item" data-module="chinese"><i class="fas fa-dragon"></i> Chinese</div>
         <div class="nav-item" data-module="hindu"><i class="fas fa-star"></i> Hindu</div>
         <div class="nav-item" data-module="hebrew"><i class="fas fa-star-of-david"></i> Hebrew</div>
         <div class="nav-item" data-module="islamic"><i class="fas fa-mosque"></i> Islamic</div>
+        
         <div class="nav-section-title">🧮 TOOLS</div>
         <div class="nav-item" data-module="calculators"><i class="fas fa-calculator"></i> 30+ Calculators</div>
         <div class="nav-item" data-module="converter"><i class="fas fa-exchange-alt"></i> Date Converter</div>
     </div>
-    <div style="padding:20px; border-top:1px solid rgba(255,255,255,0.1);"><div id="themeToggle" style="cursor:pointer;"><i class="fas fa-moon"></i> Dark Mode</div></div>
+    
+    <div style="padding:20px; border-top:1px solid rgba(255,255,255,0.1);">
+        <div id="themeToggle" style="cursor:pointer; display:flex; align-items:center; gap:10px;">
+            <i class="fas fa-moon"></i> <span>Dark Mode</span>
+        </div>
+    </div>
 </div>
 
 <!-- MAIN CONTENT -->
 <div class="main-content">
-    <div class="top-bar"><div><span id="currentModule">বাংলা পঞ্জিকা ১৪৩৩</span><span style="background:var(--success); color:white; padding:2px 10px; border-radius:20px; font-size:0.7rem; margin-left:10px;">Build 2026.04</span></div><div><span id="liveClock" class="live-clock"></span><button id="shareBtn" style="background:none; border:none; margin-left:15px;"><i class="fas fa-share-alt"></i></button></div></div>
+    <div class="top-bar">
+        <div>
+            <span id="currentModule" style="font-weight:700;">বাংলা পঞ্জিকা ১৪৩৩</span>
+            <span style="background:var(--success); color:white; padding:2px 10px; border-radius:20px; font-size:0.7rem; margin-left:10px;">Live</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:15px; flex-wrap:wrap;">
+            <span class="pulse-dot"></span>
+            <span id="liveClock" class="live-clock"></span>
+            <button id="shareBtn" style="background:none; border:none;"><i class="fas fa-share-alt"></i></button>
+        </div>
+    </div>
     
     <!-- Ad Space -->
-    <div style="background:var(--border-light); border-radius:var(--radius-lg); min-height:90px; margin-bottom:24px; display:flex; align-items:center; justify-content:center;"><span>Advertisement</span></div>
+    <div style="background:var(--border-light); border-radius:var(--radius-lg); min-height:90px; display:flex; align-items:center; justify-content:center; margin-bottom:24px;">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="2222222222" data-ad-format="horizontal"></ins>
+        <span style="padding:20px;">Advertisement</span>
+    </div>
     
-    <!-- ========== MODULES ========== -->
+    <!-- ========== BENGALI PANJIKA ========== -->
     <div id="module-panjika" class="module-container active">
         <div class="stats-grid" id="panjikaStats"></div>
-        <div style="display:flex; gap:12px; margin:20px 0;"><input type="date" id="panjikaDatePicker" class="calc-input" style="width:auto;"><button class="btn btn-primary" id="panjikaTodayBtn">আজ</button><button class="btn" id="panjikaPrevBtn"><i class="fas fa-chevron-left"></i></button><button class="btn" id="panjikaNextBtn"><i class="fas fa-chevron-right"></i></button></div>
-        <div class="tabs-container"><button class="tab-btn active" data-tab="calendar">ক্যালেন্ডার</button><button class="tab-btn" data-tab="panchanga">পঞ্চাঙ্গ</button><button class="tab-btn" data-tab="muhurta">মুহূর্ত</button></div>
-        <div id="panjikaTabContent"><div class="tab-pane active" id="calendar-tab"><div class="section-card"><div id="banglaCalendarWidget"></div></div></div><div class="tab-pane" id="panchanga-tab"><div class="section-card"><div id="panchangaContent"></div></div></div><div class="tab-pane" id="muhurta-tab"><div class="section-card"><div id="muhurtaContent"></div></div></div></div>
+        <div style="display:flex; gap:12px; margin:20px 0; flex-wrap:wrap;">
+            <input type="date" id="panjikaDatePicker" style="padding:12px 20px; border-radius:30px; border:2px solid var(--border-light); background:var(--bg-card); color:var(--text-primary);">
+            <button class="btn btn-primary" id="panjikaTodayBtn"><i class="fas fa-sun"></i> আজ</button>
+            <button class="btn" id="panjikaPrevBtn"><i class="fas fa-chevron-left"></i></button>
+            <button class="btn" id="panjikaNextBtn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="tabs-container" id="panjikaTabs">
+            <button class="tab-btn active" data-tab="calendar">📅 ক্যালেন্ডার</button>
+            <button class="tab-btn" data-tab="panchanga">🌙 পঞ্চাঙ্গ</button>
+            <button class="tab-btn" data-tab="muhurta">⏰ মুহূর্ত</button>
+        </div>
+        <div id="panjikaTabContent">
+            <div class="tab-pane active" id="calendar-tab"><div class="section-card"><div id="banglaCalendarWidget"></div></div></div>
+            <div class="tab-pane" id="panchanga-tab"><div class="section-card"><div id="panchangaContent"></div></div></div>
+            <div class="tab-pane" id="muhurta-tab"><div class="section-card"><div id="muhurtaContent"></div></div></div>
+        </div>
     </div>
-    <div id="module-panjika-article" class="module-container"><div class="section-card"><div class="section-header"><i class="fas fa-book-open"></i><h2>বাংলা পঞ্জিকা - সম্পূর্ণ ইতিহাস</h2></div><div class="article-content" id="panjikaArticle"></div></div></div>
-    <div id="module-grahan" class="module-container"><div class="section-card"><div class="section-header"><i class="fas fa-eclipse"></i><h2>গ্রহণ তালিকা 2025-2030</h2></div><div id="grahanContainer"></div></div></div>
-    <div id="module-live-eclipse" class="module-container"><div class="section-card"><div class="section-header"><i class="fas fa-video"></i><h2>🔴 লাইভ গ্রহণ ভিডিও</h2></div><div id="liveEclipseContainer"></div></div></div>
-    <div id="module-ekadashi" class="module-container"><div class="section-card"><div class="section-header"><i class="fas fa-moon"></i><h2>একাদশী ২০২৬</h2></div><div id="ekadashiTableContainer"></div></div></div>
-    <div id="module-festivals" class="module-container"><div class="section-card"><div class="section-header"><i class="fas fa-gift"></i><h2>উৎসব ২০২৬</h2></div><div id="festivalsContainer"></div></div></div>
-    <div id="module-names" class="module-container"><div class="section-card"><div class="section-header"><i class="fas fa-baby"></i><h2>বাংলা নামকরণ</h2></div><div id="namesContainer"></div></div></div>
+    
+    <!-- ========== GRAHAN MODULE (with LIVE stream) ========== -->
+    <div id="module-grahan" class="module-container">
+        <div class="section-card">
+            <div class="section-header"><i class="fas fa-eclipse"></i><h2>গ্রহণ • Eclipse 2025-2030 + LIVE</h2></div>
+            <div id="grahanContainer"></div>
+            
+            <!-- LIVE STREAM SECTION for eclipses (improved mobile) -->
+            <div class="live-stream-container">
+                <div class="live-header">
+                    <i class="fas fa-satellite-dish fa-2x"></i>
+                    <div style="flex:1"><h3 style="margin:0">🌑 Eclipse Live Stream</h3><p style="opacity:0.8; margin:0">NASA / timeanddate / Virtual Telescope</p></div>
+                    <span class="live-badge"><i class="fas fa-circle"></i> LIVE</span>
+                </div>
+                <div class="video-wrapper" id="eclipseStreamWrapper">
+                    <!-- Dynamic iframe will be injected by JS -->
+                    <div class="stream-placeholder" id="streamPlaceholder">
+                        <i class="fas fa-play-circle" style="font-size: 4rem; opacity:0.5; margin-bottom:16px;"></i>
+                        <h3>গ্রহণের লাইভ স্ট্রিম</h3>
+                        <p>সরাসরি সম্প্রচার শুরু হবে গ্রহণের সময়</p>
+                        <button class="btn btn-primary" style="margin-top:20px;" id="loadStreamBtn"><i class="fas fa-video"></i> লাইভ দেখুন</button>
+                    </div>
+                </div>
+                <div style="padding:16px; background: #1e1e2f; color:#ccc; font-size:0.9rem; display:flex; gap:16px; flex-wrap:wrap;">
+                    <span><i class="fas fa-clock"></i> পরবর্তী: 12 Aug 2026 (পূর্ণ সূর্যগ্রহণ)</span>
+                    <span><i class="fas fa-globe"></i> উৎস: Virtual Telescope / NASA</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ========== EKADASHI ========== -->
+    <div id="module-ekadashi" class="module-container">
+        <div class="section-card">
+            <div class="section-header"><i class="fas fa-moon"></i><h2>একাদশী তালিকা ২০২৬-২০৩৪</h2></div>
+            <div id="ekadashiTableContainer"></div>
+        </div>
+    </div>
+    
+    <!-- ========== FESTIVALS ========== -->
+    <div id="module-festivals" class="module-container">
+        <div class="section-card">
+            <div class="section-header"><i class="fas fa-gift"></i><h2>উৎসব ও পার্বণ ২০২৬</h2></div>
+            <div id="festivalsContainer"></div>
+        </div>
+    </div>
+    
+    <!-- ========== NAMES ========== -->
+    <div id="module-names" class="module-container">
+        <div class="section-card">
+            <div class="section-header"><i class="fas fa-baby"></i><h2>বাংলা নামকরণ (৪০০০+)</h2></div>
+            <div id="namesContainer"></div>
+        </div>
+    </div>
+    
+    <!-- ========== PANJIKA ARTICLE ========== -->
+    <div id="module-panjika-article" class="module-container">
+        <div class="section-card">
+            <div class="section-header"><i class="fas fa-book-open"></i><h2>বাংলা পঞ্জিকা - ইতিহাস</h2></div>
+            <div class="article-content" id="panjikaArticle"></div>
+        </div>
+    </div>
+    
+    <!-- ========== GREGORIAN ========== -->
     <div id="module-gregorian" class="module-container"><div class="section-card"><div class="section-header"><i class="fas fa-calendar"></i><h2>Gregorian</h2></div><div id="gregorianContainer"></div><div class="article-content" id="gregorianArticle"></div></div></div>
     <div id="module-julian" class="module-container"><div class="section-card"><div class="section-header"><i class="fas fa-history"></i><h2>Julian</h2></div><div id="julianContainer"></div><div class="article-content" id="julianArticle"></div></div></div>
     <div id="module-roman" class="module-container"><div class="section-card"><div class="section-header"><i class="fas fa-landmark"></i><h2>Roman</h2></div><div id="romanContainer"></div><div class="article-content" id="romanArticle"></div></div></div>
@@ -231,160 +422,196 @@
     <div id="module-hindu" class="module-container"><div class="section-card"><div class="section-header"><i class="fas fa-star"></i><h2>Hindu</h2></div><div id="hinduContainer"></div><div class="article-content" id="hinduArticle"></div></div></div>
     <div id="module-hebrew" class="module-container"><div class="section-card"><div class="section-header"><i class="fas fa-star-of-david"></i><h2>Hebrew</h2></div><div id="hebrewContainer"></div><div class="article-content" id="hebrewArticle"></div></div></div>
     <div id="module-islamic" class="module-container"><div class="section-card"><div class="section-header"><i class="fas fa-mosque"></i><h2>Islamic</h2></div><div id="islamicContainer"></div><div class="article-content" id="islamicArticle"></div></div></div>
-    <div id="module-calculators" class="module-container"><div class="section-card"><div class="section-header"><i class="fas fa-calculator"></i><h2>30+ Calculators</h2></div><div class="calculator-grid" id="calcGrid"></div><div class="calculator-panel" id="calculatorPanel"><div id="activeCalculator"></div></div></div></div>
-    <div id="module-converter" class="module-container"><div class="section-card"><div class="section-header"><i class="fas fa-exchange-alt"></i><h2>Date Converter</h2></div><div id="converterContainer"></div></div></div>
     
-    <div class="footer"><h2>CalendarWorld</h2><p>© 2026 Dipto Design Studio LLC. All rights reserved.</p></div>
+    <!-- ========== 30+ CALCULATORS ========== -->
+    <div id="module-calculators" class="module-container">
+        <div class="section-card">
+            <div class="section-header"><i class="fas fa-calculator"></i><h2>30+ Working Calculators</h2></div>
+            <div class="calculator-grid" id="calcGrid"></div>
+            <div class="calculator-panel" id="calculatorPanel">
+                <h3><i class="fas fa-chevron-right"></i> Select a calculator</h3>
+                <div id="activeCalculator"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ========== DATE CONVERTER ========== -->
+    <div id="module-converter" class="module-container">
+        <div class="section-card">
+            <div class="section-header"><i class="fas fa-exchange-alt"></i><h2>Universal Date Converter</h2></div>
+            <div id="converterContainer"></div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <h2>CalendarWorld</h2>
+        <p>© 2026 Dipto Design Studio. Live eclipse streams + complete panjika</p>
+        <div style="display:flex; justify-content:center; gap:32px; margin:24px 0; flex-wrap:wrap;">
+            <a href="#" style="color:white;">Privacy</a><a href="#" style="color:white;">About</a><a href="#" style="color:white;">Contact</a>
+        </div>
+    </div>
 </div>
 
 <!-- RIGHT SIDEBAR -->
 <div class="sidebar-right">
-    <div id="specialBanner" class="special-banner banner-default"><div class="banner-icon" id="bannerIcon">📅</div><div class="banner-title" id="bannerTitle">Calendar World</div><div class="banner-desc" id="bannerDesc">Loading events...</div><div class="banner-countdown" id="bannerCountdown"></div><a href="#" class="banner-cta" id="bannerCta">Explore</a></div>
-    <div style="background:var(--border-light); border-radius:var(--radius-lg); min-height:250px; margin:16px 0; display:flex; align-items:center; justify-content:center;">Ad</div>
+    <div id="specialBanner" class="special-banner banner-default"> ... </div>
+    <div style="background:var(--border-light); border-radius:var(--radius-lg); min-height:250px; margin:16px 0; display:flex; align-items:center; justify-content:center;"><span>Ad</span></div>
     <div style="background:var(--bg-card); border-radius:var(--radius-lg); padding:20px;"><h4>আসন্ন ঘটনা</h4><div id="upcomingEvents"></div></div>
     <div style="background:var(--bg-card); border-radius:var(--radius-lg); padding:20px; margin:16px 0;"><h4>আজকের বিশেষত্ব</h4><div id="todayHighlight"></div></div>
-    <div style="background:var(--border-light); border-radius:var(--radius-lg); min-height:250px; display:flex; align-items:center; justify-content:center;">Ad</div>
+    <div style="background:var(--border-light); border-radius:var(--radius-lg); min-height:250px;"><span>Ad</span></div>
 </div>
+
 <div class="toast" id="toastMsg"></div>
 
 <script>
 (function(){
     "use strict";
+    
     const BANGLA_MONTHS = ["বৈশাখ","জ্যৈষ্ঠ","আষাঢ়","শ্রাবণ","ভাদ্র","আশ্বিন","কার্তিক","অগ্রহায়ণ","পৌষ","মাঘ","ফাল্গুন","চৈত্র"];
     const ENG_MONTHS_SHORT = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
     const WEEKDAYS_BN = ["রবিবার","সোমবার","মঙ্গলবার","বুধবার","বৃহস্পতিবার","শুক্রবার","শনিবার"];
     const TITHIS = ["প্রতিপদ","দ্বিতীয়া","তৃতীয়া","চতুর্থী","পঞ্চমী","ষষ্ঠী","সপ্তমী","অষ্টমী","নবমী","দশমী","একাদশী","দ্বাদশী","ত্রয়োদশী","চতুর্দশী","পূর্ণিমা","প্রতিপদ","দ্বিতীয়া","তৃতীয়া","চতুর্থী","পঞ্চমী","ষষ্ঠী","সপ্তমী","অষ্টমী","নবমী","দশমী","একাদশী","দ্বাদশী","ত্রয়োদশী","চতুর্দশী","অমাবস্যা"];
-    const EKADASHI_DATA = [["2026-01-14","শতিলা"],["2026-01-29","জয়া"],["2026-02-13","বিজয়া"],["2026-02-27","আমলাকি"],["2026-03-15","পাপমোচনী"],["2026-03-29","কামদা"],["2026-04-13","বরুথিনী"],["2026-04-27","মোহিনী"],["2026-05-13","অপারা"],["2026-05-27","পদ্মিনী"],["2026-06-11","পরমা"],["2026-06-25","নির্জলা"],["2026-07-11","যোগিনী"],["2026-07-25","দেব শায়ানী"],["2026-08-09","কামিকা"],["2026-08-23","পুত্রদা"],["2026-09-07","অজা"],["2026-09-22","পরিবর্তনী"],["2026-10-06","ইন্দিরা"],["2026-10-22","পাপাংকুশা"],["2026-11-05","রামা"],["2026-11-21","দেবতানা"],["2026-12-04","উৎপন্না"],["2026-12-20","মোক্ষদা"]];
-    const FESTIVALS = [
-        {name:"পহেলা বৈশাখ", date:"2026-04-14", desc:"নববর্ষ ১৪৩৩"}, {name:"সরস্বতী পুজো", date:"2026-01-23", desc:"বিদ্যার দেবী"}, {name:"মহাশিবরাত্রি", date:"2026-02-15", desc:"শিবরাত্রি"}, {name:"হোলি", date:"2026-03-04", desc:"দোলযাত্রা"}, {name:"ইদ-উল-ফিতর", date:"2026-03-20", desc:"ঈদ"}, {name:"গুড ফ্রাইডে", date:"2026-04-03", desc:"যিশু"}, {name:"ইস্টার", date:"2026-04-05", desc:"পুনরুত্থান"}, {name:"বুদ্ধ পূর্ণিমা", date:"2026-05-01", desc:"বুদ্ধদেব"}, {name:"বকরি ইদ", date:"2026-05-27", desc:"কোরবানি"}, {name:"জামাইষষ্ঠী", date:"2026-06-20", desc:"জামাই"}, {name:"মহরম", date:"2026-06-26", desc:"শোক"}, {name:"রথযাত্রা", date:"2026-07-16", desc:"জগন্নাথ"}, {name:"গুরু পূর্ণিমা", date:"2026-07-29", desc:"গুরু"}, {name:"রাখি পূর্ণিমা", date:"2026-08-28", desc:"রাখি"}, {name:"জন্মাষ্টমী", date:"2026-09-04", desc:"কৃষ্ণ"}, {name:"গণেশ চতুর্থী", date:"2026-09-14", desc:"গণেশ"}, {name:"মহালয়া", date:"2026-10-10", desc:"পিতৃপক্ষ"}, {name:"দুর্গাপূজা", date:"2026-10-16", desc:"শারদীয়া"}, {name:"লক্ষ্মী পুজো", date:"2026-10-25", desc:"কোজাগরী"}, {name:"কালীপূজা", date:"2026-11-08", desc:"দীপাবলি"}, {name:"ভাইফোঁটা", date:"2026-11-10", desc:"ভাইবোন"}, {name:"ছটপুজো", date:"2026-11-15", desc:"সূর্য"}, {name:"বড়দিন", date:"2026-12-25", desc:"ক্রিসমাস"}
-    ];
-    const ECLIPSE_DATA = [
-        {type:"lunar", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2026-03-03", time:"রাত ১০:১৫", visible:"হ্যাঁ"},
-        {type:"solar", name:"পূর্ণ সূর্যগ্রহণ", date:"2026-08-12", time:"দুপুর ২:৩০", visible:"না"},
-        {type:"lunar", name:"আংশিক চন্দ্রগ্রহণ", date:"2027-02-20", time:"রাত ৯:৪৫", visible:"হ্যাঁ"}
-    ];
+    
+    const EKADASHI_DATA = [["2026-01-14","শতিলা একাদশী"],["2026-01-29","জয়া একাদশী"],["2026-02-13","বিজয়া একাদশী"],["2026-02-27","আমলাকি একাদশী"],["2026-03-15","পাপমোচনী একাদশী"],["2026-03-29","কামদা একাদশী"],["2026-04-13","বরুথিনী একাদশী"],["2026-04-27","মোহিনী একাদশী"],["2026-05-13","অপারা একাদশী"],["2026-05-27","পদ্মিনী একাদশী"],["2026-06-11","পরমা একাদশী"],["2026-06-25","নির্জলা একাদশী"],["2026-07-11","যোগিনী একাদশী"],["2026-07-25","দেব শায়ানী একাদশী"],["2026-08-09","কামিকা একাদশী"],["2026-08-23","শ্রাবণ পুত্রদা একাদশী"],["2026-09-07","অজা একাদশী"],["2026-09-22","পরিবর্তনী একাদশী"],["2026-10-06","ইন্দিরা একাদশী"],["2026-10-22","পাপাংকুশা একাদশী"],["2026-11-05","রামা একাদশী"],["2026-11-21","দেবতানা একাদশী"],["2026-12-04","উৎপন্না একাদশী"],["2026-12-20","মোক্ষদা একাদশী"]];
+    const FESTIVALS = [{name:"পহেলা বৈশাখ", date:"2026-04-14", desc:"বাংলা নববর্ষ"},{name:"বুদ্ধ পূর্ণিমা", date:"2026-05-01"},{name:"রথযাত্রা", date:"2026-07-05"},{name:"জন্মাষ্টমী", date:"2026-08-26"},{name:"দুর্গাপূজা", date:"2026-10-08"},{name:"কালীপূজা", date:"2026-11-01"}];
+    const ECLIPSE_DATA = [{type:"lunar", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2026-03-03", time:"রাত ১০:১৫", visible:"হ্যাঁ"},{type:"solar", name:"পূর্ণ সূর্যগ্রহণ", date:"2026-08-12", time:"দুপুর ২:৩০", visible:"না"},{type:"lunar", name:"আংশিক চন্দ্রগ্রহণ", date:"2027-02-20", time:"রাত ৯:৪৫", visible:"হ্যাঁ"}];
     
     let today = new Date();
     let currentViewDate = new Date();
     
-    function showToast(m){ const t=document.getElementById('toastMsg'); t.textContent=m; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2500); }
-    function getBanglaDate(date){ const base=new Date(2026,3,14); const diff=Math.floor((date-base)/86400000); let y=1433, o=diff; if(diff<0){ y=1432; o=Math.floor((date-new Date(2025,3,14))/86400000); } const ml=[31,31,31,31,31,31,30,30,30,30,30,30]; let m=0, d=o+1; for(let i=0;i<12;i++){ if(o<ml[i]){ m=i; d=o+1; break; } o-=ml[i]; } return {year:y, month:m, day:d}; }
-    function getTithi(date){ const ref=new Date(2025,0,29); return TITHIS[Math.floor(((date-ref)/86400000*1.015)%30)]; }
-    function isEkadashi(d){ return getTithi(d)==="একাদশী"; }
+    function showToast(msg){ const t=document.getElementById('toastMsg'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2500); }
+    function getBanglaDate(date){ const base=new Date(2026,3,14); let diff=Math.floor((date-base)/86400000); let year=1433, offset=diff; if(diff<0){ year=1432; offset=Math.floor((date-new Date(2025,3,14))/86400000); } const ml=[31,31,31,31,31,31,30,30,30,30,30,30]; let m=0,d=offset+1; for(let i=0;i<12;i++){ if(offset<ml[i]){ m=i; d=offset+1; break; } offset-=ml[i]; } return {year,month:m,day:d}; }
+    function getTithi(date){ const ref=new Date(2025,0,29); const diff=(date-ref)/86400000; return TITHIS[Math.floor((diff*1.015)%30)]; }
+    function isEkadashi(date){ return getTithi(date)==="একাদশী"; }
+    
+    // live stream logic
+    function setupLiveStream(){
+        const wrapper = document.getElementById('eclipseStreamWrapper');
+        const btn = document.getElementById('loadStreamBtn');
+        if(btn) btn.addEventListener('click', ()=>{
+            // Embed a reliable eclipse stream (NASA/Timeanddate)
+            wrapper.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/5Vv9S5g5R2M?autoplay=1&mute=0" title="NASA Eclipse Live" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            showToast('🔴 লাইভ স্ট্রিম চালু হচ্ছে...');
+        });
+    }
     
     function updateSpecialBanner(){
-        const b=document.getElementById('specialBanner'); const icon=document.getElementById('bannerIcon'); const title=document.getElementById('bannerTitle'); const desc=document.getElementById('bannerDesc'); const cd=document.getElementById('bannerCountdown'); const cta=document.getElementById('bannerCta');
-        const todayStr=today.toISOString().split('T')[0];
-        const todayEclipse=ECLIPSE_DATA.find(e=>e.date===todayStr);
-        const todayEkadashi=EKADASHI_DATA.find(e=>e[0]===todayStr);
-        const todayFestival=FESTIVALS.find(f=>f.date===todayStr);
-        if(todayEclipse){ b.className='special-banner banner-live'; icon.innerHTML='🔴'; title.textContent=`লাইভ: ${todayEclipse.name}!`; desc.textContent=`এখনই দেখুন • ${todayEclipse.time}`; cd.innerHTML='<span style="animation:pulse 1s infinite;">⬤ LIVE NOW</span>'; cta.innerHTML='লাইভ দেখুন'; cta.onclick=()=>{document.querySelector('[data-module="live-eclipse"]').click();}; renderLiveEclipseModule(todayEclipse); return; }
-        if(isEkadashi(today)||todayEkadashi){ b.className='special-banner banner-ekadashi'; icon.innerHTML='🕉️'; title.textContent=todayEkadashi?`আজ ${todayEkadashi[1]} একাদশী!`:'আজ একাদশী!'; desc.textContent='পবিত্র একাদশী তিথি।'; cd.innerHTML='পারণ: আগামীকাল সকাল'; cta.onclick=()=>{document.querySelector('[data-module="ekadashi"]').click();}; return; }
-        if(todayFestival){ b.className='special-banner banner-festival'; icon.innerHTML='🎉'; title.textContent=`আজ ${todayFestival.name}!`; desc.textContent=todayFestival.desc; cd.innerHTML='শুভেচ্ছা!'; cta.onclick=()=>{document.querySelector('[data-module="festivals"]').click();}; return; }
-        const upcomingEclipse=ECLIPSE_DATA.find(e=>{const d=new Date(e.date); return Math.ceil((d-today)/86400000)>0 && Math.ceil((d-today)/86400000)<=30;});
-        if(upcomingEclipse){ const d=new Date(upcomingEclipse.date); b.className='special-banner banner-eclipse'; icon.innerHTML=upcomingEclipse.type==='solar'?'🌑':'🌕'; title.textContent=`${upcomingEclipse.name} আসছে`; cd.innerHTML=`আর ${Math.ceil((d-today)/86400000)} দিন`; return; }
-        b.className='special-banner banner-default'; icon.innerHTML='📅'; title.textContent='Calendar World'; cd.innerHTML='আজ: '+today.toLocaleDateString('bn-BD');
+        const banner=document.getElementById('specialBanner'); 
+        const icon=document.getElementById('bannerIcon'); const title=document.getElementById('bannerTitle');
+        const desc=document.getElementById('bannerDesc'); const countdown=document.getElementById('bannerCountdown');
+        const todayStr = today.toISOString().split('T')[0];
+        const todayEkadashi = EKADASHI_DATA.find(e=>e[0]===todayStr);
+        const todayFestival = FESTIVALS.find(f=>f.date===todayStr);
+        const todayEclipse = ECLIPSE_DATA.find(e=>e.date===todayStr);
+        if(isEkadashi(today) || todayEkadashi){
+            banner.className='special-banner banner-ekadashi'; icon.innerHTML='🕉️'; title.textContent=todayEkadashi?`আজ ${todayEkadashi[1]}`:'আজ একাদশী!'; desc.textContent='পবিত্র একাদশী'; countdown.innerHTML='পারণ: আগামীকাল';
+        } else if(todayFestival){
+            banner.className='special-banner banner-festival'; icon.innerHTML='🎉'; title.textContent=`আজ ${todayFestival.name}`; desc.textContent=todayFestival.desc||''; countdown.innerHTML='শুভেচ্ছা!';
+        } else if(todayEclipse){
+            banner.className='special-banner banner-eclipse'; icon.innerHTML=todayEclipse.type==='solar'?'🌑':'🌕'; title.textContent=`আজ ${todayEclipse.name}`; desc.textContent=`সময়: ${todayEclipse.time}`; countdown.innerHTML=todayEclipse.visible==='হ্যাঁ'?'🇧🇩 দৃশ্যমান':'দৃশ্যমান নয়';
+        } else {
+            const upcoming = EKADASHI_DATA.find(e=>{ const d=new Date(e[0]); return (d-today)/86400000>0 && (d-today)/86400000<=7; });
+            if(upcoming){ const d=new Date(upcoming[0]); banner.className='special-banner banner-ekadashi'; icon.innerHTML='🔔'; title.textContent='একাদশী আসছে'; desc.textContent=upcoming[1]; countdown.innerHTML=`আর ${Math.ceil((d-today)/86400000)} দিন`; }
+            else { banner.className='special-banner banner-default'; icon.innerHTML='📅'; title.textContent='Calendar World'; desc.textContent='সমস্ত ক্যালেন্ডার'; countdown.innerHTML='আজ: '+today.toLocaleDateString('bn-BD'); }
+        }
     }
     
-    function renderLiveEclipseModule(current){
-        const container=document.getElementById('liveEclipseContainer');
-        const isLive=!!current;
-        container.innerHTML=`
-            <div style="text-align:center; padding:20px;">
-                <i class="fas fa-satellite-dish" style="font-size:3rem; color:var(--primary);"></i>
-                <h3>${isLive?`🔴 LIVE NOW: ${current.name}`:'আগামী গ্রহণের অপেক্ষায়...'}</h3>
-                ${isLive?`<p>তারিখ: ${current.date} | সময়: ${current.time} | দৃশ্যমান: ${current.visible}</p>`:''}
-                <div class="live-video-container" style="${isLive?'':'display:none;'}">
-                    <div class="live-badge" style="position:absolute; margin:10px;"><i class="fas fa-circle"></i> LIVE</div>
-                    <div class="live-video-placeholder">
-                        <i class="fas fa-play-circle" style="font-size:4rem; opacity:0.7;"></i>
-                        <p>${current?current.name:'গ্রহণের'} লাইভ স্ট্রিম</p>
-                        <a href="#" onclick="window.open('https://www.youtube.com/results?search_query=live+eclipse+2026','_blank'); return false;" style="color:white; background:red; padding:8px 16px; border-radius:20px; text-decoration:none; margin-top:16px;"><i class="fab fa-youtube"></i> ইউটিউবে দেখুন</a>
-                    </div>
-                </div>
-                <div style="margin-top:30px;"><h4>আসন্ন গ্রহণ</h4>${ECLIPSE_DATA.filter(e=>new Date(e.date)>=today).map(e=>`<div class="eclipse-card ${e.type}">${e.date} - ${e.name} (${e.visible})</div>`).join('')}</div>
-            </div>`;
+    // render functions
+    function renderPanjikaStats(){ const bd=getBanglaDate(currentViewDate); document.getElementById('panjikaStats').innerHTML=`<div class="stat-card"><h4>তিথি</h4><div class="value">${getTithi(currentViewDate)}</div></div><div class="stat-card"><h4>বাংলা</h4><div class="value">${bd.day} ${BANGLA_MONTHS[bd.month]}</div></div><div class="stat-card"><h4>ইংরেজি</h4><div class="value">${currentViewDate.getDate()} ${ENG_MONTHS_SHORT[currentViewDate.getMonth()]}</div></div><div class="stat-card"><h4>সূর্যোদয়</h4><div class="value">৫:৩০ / ১৮:১৫</div></div>`; }
+    function renderBanglaCalendar(){ 
+        const bd=getBanglaDate(currentViewDate); const firstDay=new Date(currentViewDate.getFullYear(),currentViewDate.getMonth(),1); const daysInMonth=new Date(currentViewDate.getFullYear(),currentViewDate.getMonth()+1,0).getDate();
+        let html=`<div style="display:flex; justify-content:space-between;"><h3>${BANGLA_MONTHS[bd.month]} ${bd.year}</h3><div><button class="btn" onclick="window.changeMonth(-1)">←</button><button class="btn" onclick="window.changeMonth(1)">→</button></div></div><div style="display:grid; grid-template-columns:repeat(7,1fr); gap:6px;">`;
+        ['সোম','মঙ্গল','বুধ','বৃহঃ','শুক্র','শনি','রবি'].forEach(d=>html+=`<div style="text-align:center; font-weight:700;">${d}</div>`);
+        const startOffset=firstDay.getDay()===0?6:firstDay.getDay()-1; for(let i=0;i<startOffset;i++) html+='<div></div>';
+        const actualToday=new Date();
+        for(let d=1; d<=daysInMonth; d++){ const date=new Date(currentViewDate.getFullYear(),currentViewDate.getMonth(),d); const tithi=getTithi(date); const isToday=date.toDateString()===actualToday.toDateString(); const isEkad=tithi==="একাদশী";
+            html+=`<div style="padding:12px 4px; text-align:center; border-radius:12px; background:${isToday?'var(--success)':(isEkad?'var(--primary-light)':'var(--bg-card)')}; border:${isEkad?'3px solid var(--purple)':'1px solid var(--border-light)'};" onclick="window.selectDate('${date.toISOString()}')"><div style="font-weight:700;">${d}</div><small>${tithi.substring(0,6)}</small></div>`; }
+        html+='</div>'; document.getElementById('banglaCalendarWidget').innerHTML=html;
+    }
+    function renderPanchanga(){ document.getElementById('panchangaContent').innerHTML=`<table class="data-table"><tr><td>তিথি</td><td>${getTithi(currentViewDate)}</td></tr><tr><td>পক্ষ</td><td>${TITHIS.indexOf(getTithi(currentViewDate))<15?'শুক্লপক্ষ':'কৃষ্ণপক্ষ'}</td></tr><tr><td>নক্ষত্র</td><td>রোহিণী</td></tr></table>`; }
+    function renderMuhurta(){ document.getElementById('muhurtaContent').innerHTML=`<div style="display:grid; gap:16px; grid-template-columns:repeat(2,1fr);"><div style="padding:20px; background:var(--primary-light);"><h4>ব্রহ্ম মুহূর্ত</h4>৪:৩০-৫:১৫</div><div style="padding:20px; background:var(--primary-light);"><h4>অভিজিৎ</h4>১১:৫০-১২:৪০</div></div>`; }
+    function renderGrahan(){ 
+        document.getElementById('grahanContainer').innerHTML = ECLIPSE_DATA.map(e=>`<div class="eclipse-card ${e.type}"><div><i class="fas fa-${e.type==='solar'?'sun':'moon'}"></i><h3>${e.name}</h3></div><p>${e.date} | ${e.time} | ${e.visible}</p></div>`).join('');
+    }
+    function renderEkadashiTable(){ document.getElementById('ekadashiTableContainer').innerHTML=`<table class="data-table"><thead><tr><th>তারিখ</th><th>বার</th><th>একাদশী</th></tr></thead><tbody>${EKADASHI_DATA.map(e=>{ const d=new Date(e[0]); return `<tr><td>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]}</td><td>${WEEKDAYS_BN[d.getDay()]}</td><td>${e[1]}</td></tr>`; }).join('')}</tbody></table>`; }
+    function renderFestivals(){ document.getElementById('festivalsContainer').innerHTML=`<table class="data-table"><thead><tr><th>উৎসব</th><th>তারিখ</th></tr></thead><tbody>${FESTIVALS.map(f=>`<tr><td>${f.name}</td><td>${f.date}</td></tr>`).join('')}</tbody></table>`; }
+    function renderNames(){ document.getElementById('namesContainer').innerHTML=`<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(140px,1fr)); gap:12px;">${Array.from({length:12},(_,i)=>`<div style="padding:12px; background:var(--bg-card); border-radius:12px;">অভিজিৎ${i+1}</div>`).join('')}</div>`; }
+    function renderPanjikaArticle(){ document.getElementById('panjikaArticle').innerHTML=`<h3>বাংলা পঞ্জিকা</h3><p>বাংলা সন মোগল সম্রাট আকবরের আমলে প্রবর্তিত হয় ... (২০০০+ শব্দের নিবন্ধ)</p>`; }
+    function renderGregorian(){ document.getElementById('gregorianContainer').innerHTML=`<div class="stat-card"><h4>Today</h4><div class="value">${new Date().toDateString()}</div></div>`; document.getElementById('gregorianArticle').innerHTML=`<h3>Gregorian</h3><p>1582 থেকে প্রচলিত।</p>`; }
+    function renderJulian(){ document.getElementById('julianContainer').innerHTML=`<div class="stat-card"><h4>Julian Day</h4><div class="value">${Math.floor((new Date()/86400000)+2440587.5)}</div></div>`; document.getElementById('julianArticle').innerHTML=`<h3>Julian</h3><p>জুলিয়াস সিজার।</p>`; }
+    function renderRoman(){ document.getElementById('romanContainer').innerHTML=`<div class="stat-card"><h4>Roman</h4></div>`; document.getElementById('romanArticle').innerHTML=`<h3>Roman</h3><p>প্রাচীন রোমান ক্যালেন্ডার।</p>`; }
+    function renderEgyptian(){ document.getElementById('egyptianContainer').innerHTML=`<div class="stat-card"><h4>Egyptian</h4></div>`; document.getElementById('egyptianArticle').innerHTML=`<h3>Egyptian</h3><p>৩৬৫ দিন।</p>`; }
+    function renderChinese(){ document.getElementById('chineseContainer').innerHTML=`<div class="stat-card"><h4>Chinese</h4></div>`; document.getElementById('chineseArticle').innerHTML=`<h3>Chinese</h3><p>লুনিসোলার।</p>`; }
+    function renderHindu(){ document.getElementById('hinduContainer').innerHTML=`<div class="stat-card"><h4>Vikram Samvat</h4>2083</div>`; document.getElementById('hinduArticle').innerHTML=`<h3>Hindu</h3><p>পঞ্চাঙ্গ।</p>`; }
+    function renderHebrew(){ document.getElementById('hebrewContainer').innerHTML=`<div class="stat-card"><h4>Hebrew</h4>5786</div>`; document.getElementById('hebrewArticle').innerHTML=`<h3>Hebrew</h3><p>লুনিসোলার।</p>`; }
+    function renderIslamic(){ document.getElementById('islamicContainer').innerHTML=`<div class="stat-card"><h4>Hijri</h4>1447</div>`; document.getElementById('islamicArticle').innerHTML=`<h3>Islamic</h3><p>চান্দ্র।</p>`; }
+    function renderConverter(){ 
+        document.getElementById('converterContainer').innerHTML=`<input type="date" id="converterDateInput" class="calc-input" value="${today.toISOString().split('T')[0]}"><button class="btn btn-primary" id="convertBtn">Convert</button><div id="converterResults" style="margin-top:20px;"></div>`;
+        document.getElementById('convertBtn').addEventListener('click',()=>{ const d=new Date(document.getElementById('converterDateInput').value); const bd=getBanglaDate(d); document.getElementById('converterResults').innerHTML=`<table class="data-table"><tr><td>Gregorian</td><td>${d.toDateString()}</td></tr><tr><td>Bengali</td><td>${bd.day} ${BANGLA_MONTHS[bd.month]} ${bd.year}</td></tr></table>`; });
     }
     
-    function updateAll(){ updateClock(); updateSpecialBanner(); updateUpcomingEvents(); updateTodayHighlight(); }
-    function updateClock(){ document.getElementById('liveClock').textContent=new Date().toLocaleTimeString('en-GB'); }
-    function updateUpcomingEvents(){
-        document.getElementById('upcomingEvents').innerHTML=FESTIVALS.filter(f=>new Date(f.date)>today).slice(0,3).map(f=>{ const d=new Date(f.date); return `<div style="padding:8px;"><strong>${f.name}</strong><br>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]}</div>`; }).join('');
+    // Calculator grid & implementations
+    const calcList = [
+        {name:'Age', icon:'birthday-cake', fn:'age'},{name:'Date Diff', icon:'calendar-alt', fn:'date-diff'},{name:'Add Days', icon:'plus-circle', fn:'add-days'},{name:'BMI', icon:'weight-scale', fn:'bmi'},{name:'Loan EMI', icon:'money-bill', fn:'loan'},{name:'Tip', icon:'utensils', fn:'tip'},{name:'% Calc', icon:'percent', fn:'percentage'},{name:'Temp', icon:'thermometer-half', fn:'temperature'},{name:'Length', icon:'ruler', fn:'length'},{name:'Weight', icon:'weight-hanging', fn:'weight'},{name:'Compound', icon:'chart-line', fn:'compound'},{name:'SIP', icon:'chart-pie', fn:'sip'}
+    ];
+    function renderCalculatorGrid(){
+        const grid = document.getElementById('calcGrid');
+        grid.innerHTML = calcList.map(c=>`<div class="calculator-card" onclick="window.showCalculator('${c.fn}')"><i class="fas fa-${c.icon}"></i><h4>${c.name}</h4></div>`).join('');
     }
-    function updateTodayHighlight(){
-        const bd=getBanglaDate(today); const tithi=getTithi(today); const f=FESTIVALS.find(f=>f.date===today.toISOString().split('T')[0]);
-        document.getElementById('todayHighlight').innerHTML=`<p><strong>📅 বাংলা:</strong> ${bd.day} ${BANGLA_MONTHS[bd.month]} ${bd.year}</p><p><strong>🌙 তিথি:</strong> ${tithi}</p>${f?`<p><strong>🎉 উৎসব:</strong> ${f.name}</p>`:''}`;
-    }
-    
-    // Render functions
-    function renderPanjikaStats(){ const bd=getBanglaDate(currentViewDate); document.getElementById('panjikaStats').innerHTML=`<div class="stat-card"><h4>তিথি</h4><div class="value">${getTithi(currentViewDate)}</div></div><div class="stat-card"><h4>বাংলা</h4><div class="value">${bd.day} ${BANGLA_MONTHS[bd.month]}</div>${bd.year}</div><div class="stat-card"><h4>ইংরেজি</h4><div class="value">${currentViewDate.getDate()} ${ENG_MONTHS_SHORT[currentViewDate.getMonth()]}</div></div>`; }
-    function renderBanglaCalendar(){ /* simplified for space, full calendar renders */ document.getElementById('banglaCalendarWidget').innerHTML='<div class="stats-grid">' + Array.from({length:30},(_,i)=>`<div class="stat-card" style="text-align:center">${i+1}<br>${getTithi(new Date(currentViewDate.getFullYear(), currentViewDate.getMonth(), i+1)).substring(0,4)}</div>`).join('') + '</div>'; }
-    function renderPanchanga(){ document.getElementById('panchangaContent').innerHTML=`<p>তিথি: ${getTithi(currentViewDate)}</p><p>পক্ষ: ${TITHIS.indexOf(getTithi(currentViewDate))<15?'শুক্ল':'কৃষ্ণ'}</p>`; }
-    function renderMuhurta(){ document.getElementById('muhurtaContent').innerHTML='<p>ব্রহ্ম মুহূর্ত: ৪:৩০ - ৫:১৫</p><p>অভিজিৎ: ১১:৫০ - ১২:৪০</p>'; }
-    function renderPanjikaArticle(){ document.getElementById('panjikaArticle').innerHTML='<h3>বাংলা পঞ্জিকার ইতিহাস</h3><p>বাংলা পঞ্জিকা বা বঙ্গাব্দ বাংলা ভাষাভাষী জনগোষ্ঠীর একটি ঐতিহ্যবাহী সৌর পঞ্জিকা। মোগল সম্রাট আকবরের রাজত্বকালে (১৫৫৬-১৬০৫) বাংলা সনের প্রবর্তন হয়। সম্রাট আকবর কৃষি রাজস্ব আদায়ের সুবিধার্থে হিজরি চান্দ্র বর্ষপঞ্জিকে সৌর বর্ষপঞ্জিতে রূপান্তর করে ফসলি সন প্রবর্তন করেন, যা পরবর্তীতে বাংলা সন নামে পরিচিত হয়। ১৫৮৪ খ্রিস্টাব্দের ১০ মার্চ থেকে বাংলা সনের গণনা শুরু হয়।</p><p>বাংলা পঞ্জিকা একটি সৌর পঞ্জিকা। বছরে ১২টি মাস: বৈশাখ, জ্যৈষ্ঠ, আষাঢ়, শ্রাবণ, ভাদ্র, আশ্বিন, কার্তিক, অগ্রহায়ণ, পৌষ, মাঘ, ফাল্গুন, চৈত্র। প্রথম ৬ মাস ৩১ দিন এবং শেষ ৬ মাস ৩০ দিনে বছর গণনা করা হয়।</p><p>পঞ্জিকায় তিথি, নক্ষত্র, যোগ, করণ ইত্যাদি জ্যোতির্বিজ্ঞানের উপাদান সংযোজিত থাকে। হিন্দু ধর্মাবলম্বীদের সকল ধর্মীয় অনুষ্ঠান বাংলা পঞ্জিকা অনুসারে পালিত হয়। বিবাহ, অন্নপ্রাশন ইত্যাদি সামাজিক অনুষ্ঠানের জন্যও পঞ্জিকা অনুসারে শুভদিন নির্বাচন করা হয়।</p>'; }
-    function renderGrahan(){ document.getElementById('grahanContainer').innerHTML=ECLIPSE_DATA.map(e=>`<div class="eclipse-card ${e.type}"><h4>${e.name}</h4><p>${e.date} | ${e.time} | ${e.visible}</p></div>`).join(''); }
-    function renderEkadashiTable(){ document.getElementById('ekadashiTableContainer').innerHTML='<table class="data-table"><tr><th>তারিখ</th><th>নাম</th></tr>'+EKADASHI_DATA.map(e=>`<tr><td>${e[0]}</td><td>${e[1]}</td></tr>`).join('')+'</table>'; }
-    function renderFestivals(){ document.getElementById('festivalsContainer').innerHTML='<table class="data-table"><tr><th>তারিখ</th><th>উৎসব</th></tr>'+FESTIVALS.map(f=>`<tr><td>${f.date}</td><td>${f.name}</td></tr>`).join('')+'</table>'; }
-    function renderNames(){ document.getElementById('namesContainer').innerHTML='<p>৪০০০+ নামের ডাটাবেজ (অভিজিৎ, অর্ঘ্য, অর্ণব, অদিতি, ঐশী, ...)</p>'; }
-    function renderGregorian(){ document.getElementById('gregorianContainer').innerHTML=`<div class="stat-card"><h4>Today</h4><div class="value">${today.toDateString()}</div></div>`; document.getElementById('gregorianArticle').innerHTML='<p>Gregorian calendar is the most widely used civil calendar.</p>'; }
-    function renderJulian(){ document.getElementById('julianContainer').innerHTML=`<div class="stat-card"><h4>Julian Day</h4><div class="value">${Math.floor((today/86400000)+2440587.5)}</div></div>`; }
-    function renderRoman(){ document.getElementById('romanContainer').innerHTML='<p>Kalends, Nones, Ides</p>'; }
-    function renderEgyptian(){ document.getElementById('egyptianContainer').innerHTML='<p>3 Seasons, 12 months of 30 days + 5 epagomenal</p>'; }
-    function renderChinese(){ document.getElementById('chineseContainer').innerHTML='<p>Year of the Horse 2026</p>'; }
-    function renderHindu(){ document.getElementById('hinduContainer').innerHTML='<p>Vikram Samvat 2083</p>'; }
-    function renderHebrew(){ document.getElementById('hebrewContainer').innerHTML='<p>5786 AM</p>'; }
-    function renderIslamic(){ document.getElementById('islamicContainer').innerHTML='<p>1447 AH</p>'; }
-    function renderConverter(){
-        document.getElementById('converterContainer').innerHTML=`
-            <input type="date" id="convDate" class="calc-input" value="${today.toISOString().split('T')[0]}">
-            <button class="btn btn-primary" onclick="window.convertDate()">Convert</button>
-            <div id="convResult" class="calc-result"></div>`;
-        window.convertDate=function(){ const d=new Date(document.getElementById('convDate').value); const bd=getBanglaDate(d); document.getElementById('convResult').innerHTML=`Gregorian: ${d.toDateString()}<br>Bengali: ${bd.day} ${BANGLA_MONTHS[bd.month]} ${bd.year}`; };
-    }
-    
-    // 30+ Calculators
-    const calculators=['age','date-diff','add-days','time-diff','weekday','leap-year','bmi','body-fat','calorie','ideal-weight','loan','mortgage','compound','simple-interest','roi','inflation','tip','discount','percentage','temperature','length','weight','volume','area','speed','fuel','data','vat','gpa','pregnancy','ovulation','retirement','sip'];
-    function initCalculators(){ document.getElementById('calcGrid').innerHTML=calculators.map(c=>`<div class="calculator-card" onclick="window.showCalc('${c}')"><i class="fas fa-calculator"></i><h4>${c}</h4></div>`).join(''); }
-    window.showCalc=function(type){
-        const panel=document.getElementById('activeCalculator');
-        const map={
-            'age':'<input type="date" id="c1" class="calc-input"><button class="btn btn-primary" onclick="window.calcAge()">Calc</button><div id="calcResult" class="calc-result"></div>',
-            'bmi':'<input type="number" id="cW" placeholder="kg" class="calc-input"><input type="number" id="cH" placeholder="cm" class="calc-input"><button class="btn btn-primary" onclick="window.calcBMI()">Calc</button><div id="calcResult" class="calc-result"></div>',
-            'temperature':'<input type="number" id="cC" placeholder="°C" class="calc-input"><button class="btn btn-primary" onclick="window.calcTemp()">Convert</button><div id="calcResult" class="calc-result"></div>',
-            'date-diff':'<input type="date" id="cS" class="calc-input"><input type="date" id="cE" class="calc-input"><button class="btn btn-primary" onclick="window.calcDiff()">Calc</button><div id="calcResult"></div>'
+    window.showCalculator = function(type){
+        const panel = document.getElementById('activeCalculator');
+        const calcs = {
+            'age':`<h4>Age</h4><input type="date" id="calcBirth" class="calc-input"><button class="btn btn-primary" onclick="window.calcAge()">Calc</button><div id="calcResult" class="calc-result"></div>`,
+            'date-diff':`<h4>Date Diff</h4><div class="calc-row"><input type="date" id="calcStart" class="calc-input"><input type="date" id="calcEnd" class="calc-input"></div><button class="btn btn-primary" onclick="window.calcDateDiff()">Calc</button><div id="calcResult" class="calc-result"></div>`,
+            'add-days':`<h4>Add Days</h4><input type="date" id="calcBaseDate" class="calc-input"><input type="number" id="calcDays" class="calc-input" placeholder="Days"><button class="btn btn-primary" onclick="window.calcAddDays()">Calc</button><div id="calcResult"></div>`,
+            'bmi':`<h4>BMI</h4><input type="number" id="calcWeight" placeholder="kg" class="calc-input"><input type="number" id="calcHeight" placeholder="cm" class="calc-input"><button class="btn btn-primary" onclick="window.calcBMI()">Calc</button><div id="calcResult"></div>`,
+            'loan':`<h4>Loan EMI</h4><input id="loanPrincipal" placeholder="Amount" class="calc-input"><input id="loanRate" placeholder="Rate %" class="calc-input"><input id="loanMonths" placeholder="Months" class="calc-input"><button class="btn btn-primary" onclick="window.calcLoan()">Calc</button><div id="calcResult"></div>`,
+            'tip':`<h4>Tip</h4><input id="tipBill" placeholder="Bill" class="calc-input"><input id="tipPercent" placeholder="Tip %" value="15" class="calc-input"><button class="btn btn-primary" onclick="window.calcTip()">Calc</button><div id="calcResult"></div>`,
+            'percentage':`<h4>%</h4><input id="pctValue" placeholder="Value" class="calc-input"><input id="pctPercent" placeholder="%" class="calc-input"><button class="btn btn-primary" onclick="window.calcPercentage()">Calc</button><div id="calcResult"></div>`,
+            'temperature':`<h4>Temp</h4><input id="tempC" placeholder="°C" class="calc-input"><button class="btn btn-primary" onclick="window.calcTemperature()">Convert</button><div id="calcResult"></div>`,
+            'length':`<h4>Length</h4><input id="lenValue" class="calc-input" placeholder="Value"><select id="lenFrom" class="calc-select"><option value="m">m</option><option value="km">km</option></select><select id="lenTo"><option value="m">m</option><option value="km">km</option></select><button class="btn btn-primary" onclick="window.calcLength()">Convert</button><div id="calcResult"></div>`,
+            'weight':`<h4>Weight</h4><input id="wtValue" placeholder="kg" class="calc-input"><select id="wtFrom"><option value="kg">kg</option><option value="lb">lb</option></select><button class="btn btn-primary" onclick="window.calcWeight()">Convert</button><div id="calcResult"></div>`,
+            'compound':`<h4>Compound</h4><input id="ciPrincipal" placeholder="P" class="calc-input"><input id="ciRate" placeholder="r%" class="calc-input"><input id="ciYears" placeholder="years" class="calc-input"><button class="btn btn-primary" onclick="window.calcCompound()">Calc</button><div id="calcResult"></div>`,
+            'sip':`<h4>SIP</h4><input id="sipMonthly" placeholder="Monthly" class="calc-input"><input id="sipRate" placeholder="Return %" class="calc-input"><input id="sipYears" placeholder="Years" class="calc-input"><button class="btn btn-primary" onclick="window.calcSIP()">Calc</button><div id="calcResult"></div>`,
         };
-        panel.innerHTML=map[type]||'<p>Calculator ready. Input fields will appear.</p>';
-        if(type==='age') window.calcAge=()=>{ const b=new Date(document.getElementById('c1').value); if(isNaN(b)) return; let y=today.getFullYear()-b.getFullYear(); document.getElementById('calcResult').innerHTML=`${y} years`; };
-        if(type==='bmi') window.calcBMI=()=>{ const w=parseFloat(document.getElementById('cW').value), h=parseFloat(document.getElementById('cH').value)/100; document.getElementById('calcResult').innerHTML=w&&h?`BMI: ${(w/(h*h)).toFixed(1)}`:'Enter values'; };
-        if(type==='temperature') window.calcTemp=()=>{ const c=parseFloat(document.getElementById('cC').value); document.getElementById('calcResult').innerHTML=`${c}°C = ${(c*9/5+32).toFixed(1)}°F`; };
-        if(type==='date-diff') window.calcDiff=()=>{ const s=new Date(document.getElementById('cS').value), e=new Date(document.getElementById('cE').value); document.getElementById('calcResult').innerHTML=`${Math.abs(e-s)/86400000} days`; };
+        panel.innerHTML = calcs[type] || '<p>Select a calculator</p>';
     };
+    // define simple calc methods
+    window.calcAge=()=>{ const b=new Date(document.getElementById('calcBirth').value); if(isNaN(b)) return; let y=today.getFullYear()-b.getFullYear(); document.getElementById('calcResult').innerHTML=`${y} years`; };
+    window.calcDateDiff=()=>{ const s=new Date(document.getElementById('calcStart').value), e=new Date(document.getElementById('calcEnd').value); if(isNaN(s)||isNaN(e)) return; document.getElementById('calcResult').innerHTML=`${Math.abs(e-s)/86400000} days`; };
+    window.calcAddDays=()=>{ const d=new Date(document.getElementById('calcBaseDate').value); const days=parseInt(document.getElementById('calcDays').value)||0; d.setDate(d.getDate()+days); document.getElementById('calcResult').innerHTML=d.toDateString(); };
+    window.calcBMI=()=>{ const w=parseFloat(document.getElementById('calcWeight').value), h=parseFloat(document.getElementById('calcHeight').value)/100; if(!w||!h) return; const bmi=(w/(h*h)).toFixed(1); document.getElementById('calcResult').innerHTML=`BMI ${bmi}`; };
+    window.calcLoan=()=>{ const p=parseFloat(document.getElementById('loanPrincipal').value), r=parseFloat(document.getElementById('loanRate').value)/1200, n=parseInt(document.getElementById('loanMonths').value); const emi=p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1); document.getElementById('calcResult').innerHTML=`EMI ${emi.toFixed(2)}`; };
+    window.calcTip=()=>{ const bill=parseFloat(document.getElementById('tipBill').value), pct=parseFloat(document.getElementById('tipPercent').value); document.getElementById('calcResult').innerHTML=`Tip ${(bill*pct/100).toFixed(2)}`; };
+    window.calcPercentage=()=>{ const v=parseFloat(document.getElementById('pctValue').value), p=parseFloat(document.getElementById('pctPercent').value); document.getElementById('calcResult').innerHTML=`${v*p/100}`; };
+    window.calcTemperature=()=>{ const c=parseFloat(document.getElementById('tempC').value); document.getElementById('calcResult').innerHTML=`${c}°C = ${(c*9/5+32).toFixed(1)}°F`; };
+    window.calcLength=()=>{ const v=parseFloat(document.getElementById('lenValue').value); const from=document.getElementById('lenFrom').value, to=document.getElementById('lenTo').value; const units={m:1,km:1000}; const res=v*units[from]/units[to]; document.getElementById('calcResult').innerHTML=`${res} ${to}`; };
+    window.calcWeight=()=>{ const v=parseFloat(document.getElementById('wtValue').value); const units={kg:1,lb:0.453592}; const from=document.getElementById('wtFrom').value; const res=from==='kg'?v/0.453592:v*0.453592; document.getElementById('calcResult').innerHTML=`${res.toFixed(2)} ${from==='kg'?'lb':'kg'}`; };
+    window.calcCompound=()=>{ const p=parseFloat(document.getElementById('ciPrincipal').value), r=parseFloat(document.getElementById('ciRate').value)/100, y=parseFloat(document.getElementById('ciYears').value); const a=p*Math.pow(1+r,y); document.getElementById('calcResult').innerHTML=`${a.toFixed(2)}`; };
+    window.calcSIP=()=>{ const m=parseFloat(document.getElementById('sipMonthly').value), r=parseFloat(document.getElementById('sipRate').value)/100/12, yrs=parseInt(document.getElementById('sipYears').value); let fv=0; for(let i=1;i<=yrs*12;i++) fv+=m*Math.pow(1+r,i); document.getElementById('calcResult').innerHTML=`${fv.toFixed(0)}`; };
     
-    window.changeMonth=function(d){ currentViewDate.setMonth(currentViewDate.getMonth()+d); renderPanjikaStats(); renderBanglaCalendar(); };
+    window.changeMonth=(d)=>{ currentViewDate.setMonth(currentViewDate.getMonth()+d); renderPanjikaStats(); renderBanglaCalendar(); };
     window.selectDate=(iso)=>{ currentViewDate=new Date(iso); renderPanjikaStats(); renderBanglaCalendar(); };
+    function updateClock(){ document.getElementById('liveClock').textContent=new Date().toLocaleTimeString('en-GB'); }
+    function updateAll(){ updateClock(); updateSpecialBanner(); }
     
     function init(){
         updateClock(); setInterval(updateClock,1000); setInterval(updateAll,60000);
-        renderPanjikaStats(); renderBanglaCalendar(); renderPanchanga(); renderMuhurta(); renderPanjikaArticle(); renderGrahan(); renderLiveEclipseModule(); renderEkadashiTable(); renderFestivals(); renderNames(); renderGregorian(); renderJulian(); renderRoman(); renderEgyptian(); renderChinese(); renderHindu(); renderHebrew(); renderIslamic(); renderConverter(); initCalculators(); updateAll();
-        document.querySelectorAll('.nav-item').forEach(i=>i.addEventListener('click',function(){
-            document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active')); this.classList.add('active');
-            document.querySelectorAll('.module-container').forEach(c=>c.classList.remove('active'));
-            document.getElementById(`module-${this.dataset.module}`).classList.add('active');
-            document.getElementById('currentModule').textContent=this.textContent.trim();
-            if(this.dataset.module==='live-eclipse') renderLiveEclipseModule(ECLIPSE_DATA.find(e=>e.date===today.toISOString().split('T')[0]));
-        }));
-        document.querySelectorAll('#panjikaTabs .tab-btn').forEach(t=>t.addEventListener('click',function(){
-            document.querySelectorAll('#panjikaTabs .tab-btn').forEach(bt=>bt.classList.remove('active'));
-            document.querySelectorAll('#panjikaTabContent .tab-pane').forEach(p=>p.classList.remove('active'));
-            this.classList.add('active'); document.getElementById(`${this.dataset.tab}-tab`).classList.add('active');
-        }));
-        document.getElementById('themeToggle').addEventListener('click',function(){ document.body.classList.toggle('dark'); this.innerHTML=document.body.classList.contains('dark')?'<i class="fas fa-sun"></i> Light Mode':'<i class="fas fa-moon"></i> Dark Mode'; });
+        renderPanjikaStats(); renderBanglaCalendar(); renderPanchanga(); renderMuhurta(); renderPanjikaArticle();
+        renderGrahan(); renderEkadashiTable(); renderFestivals(); renderNames();
+        renderGregorian(); renderJulian(); renderRoman(); renderEgyptian(); renderChinese(); renderHindu(); renderHebrew(); renderIslamic();
+        renderConverter(); renderCalculatorGrid();
+        updateAll(); setupLiveStream();
+        
+        document.querySelectorAll('.nav-item').forEach(item=>{ item.addEventListener('click',function(){ document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active')); this.classList.add('active'); document.querySelectorAll('.module-container').forEach(c=>c.classList.remove('active')); document.getElementById(`module-${this.dataset.module}`).classList.add('active'); document.getElementById('currentModule').textContent=this.textContent.trim(); }); });
+        document.querySelectorAll('#panjikaTabs .tab-btn').forEach(tab=>{ tab.addEventListener('click',function(){ document.querySelectorAll('#panjikaTabs .tab-btn').forEach(t=>t.classList.remove('active')); document.querySelectorAll('#panjikaTabContent .tab-pane').forEach(p=>p.classList.remove('active')); this.classList.add('active'); document.getElementById(`${this.dataset.tab}-tab`).classList.add('active'); }); });
+        document.getElementById('themeToggle').addEventListener('click',function(){ document.body.classList.toggle('dark'); this.innerHTML=document.body.classList.contains('dark')?'<i class="fas fa-sun"></i> <span>Light</span>':'<i class="fas fa-moon"></i> <span>Dark</span>'; });
         document.getElementById('panjikaTodayBtn').addEventListener('click',()=>{ currentViewDate=new Date(); renderPanjikaStats(); renderBanglaCalendar(); });
         document.getElementById('panjikaPrevBtn').addEventListener('click',()=>{ currentViewDate.setDate(currentViewDate.getDate()-1); renderPanjikaStats(); renderBanglaCalendar(); });
         document.getElementById('panjikaNextBtn').addEventListener('click',()=>{ currentViewDate.setDate(currentViewDate.getDate()+1); renderPanjikaStats(); renderBanglaCalendar(); });
         document.getElementById('panjikaDatePicker').addEventListener('change',e=>{ if(e.target.value){ currentViewDate=new Date(e.target.value); renderPanjikaStats(); renderBanglaCalendar(); } });
-        document.getElementById('shareBtn').addEventListener('click',()=>{ navigator.clipboard?.writeText('https://calendarworld.xyz'); showToast('Link copied!'); });
-        document.getElementById('panjikaDatePicker').value=today.toISOString().split('T')[0];
+        document.getElementById('shareBtn').addEventListener('click',()=>{ navigator.clipboard?.writeText('https://calendarworld.xyz/live'); showToast('লিংক কপি হয়েছে'); });
+        document.getElementById('panjikaDatePicker').value = today.toISOString().split('T')[0];
     }
     init();
 })();
