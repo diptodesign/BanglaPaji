@@ -1074,15 +1074,40 @@
         ["2026-11-21","দেবতানা একাদশী"],["2026-12-04","উৎপন্না একাদশী"],["2026-12-20","মোক্ষদা একাদশী"]
     ];
     
+    // UPDATED FESTIVALS LIST WITH ALL 2026 DATA
     const FESTIVALS = [
-        {name:"পহেলা বৈশাখ", date:"2026-04-14", desc:"বাংলা নববর্ষ ১৪৩৩ as (BD Gov)"},
-        {name:"পহেলা বৈশাখ", date:"2026-04-15", desc:"বাংলা নববর্ষ ১৪৩৩ as (Hindu Panjika)"},
+        {name:"গুড ফ্রাইডে", date:"2026-04-03", desc:"যিশুখ্রিষ্টের ক্রুশবিদ্ধ হওয়ার দিন"},
+        {name:"নীল পূজা", date:"2026-04-13", desc:"চৈত্র সংক্রান্তি"},
+        {name:"চড়ক", date:"2026-04-14", desc:"চড়ক পূজা"},
+        {name:"পহেলা বৈশাখ", date:"2026-04-15", desc:"বাংলা নববর্ষ ১৪৩৩"},
+        {name:"অক্ষয় তৃতীয়া", date:"2026-04-19", desc:"পুণ্য তিথি"},
         {name:"বুদ্ধ পূর্ণিমা", date:"2026-05-01", desc:"বুদ্ধদেবের জন্মতিথি"},
-        {name:"রথযাত্রা", date:"2026-07-05", desc:"জগন্নাথদেবের রথযাত্রা"},
-        {name:"জামাইষষ্ঠী", date:"2026-06-20", desc:"জামাইষষ্ঠী"},
-        {name:"জন্মাষ্টমী", date:"2026-08-26", desc:"শ্রীকৃষ্ণের জন্ম"},
-        {name:"দুর্গাপূজা", date:"2026-10-08", desc:"শারদীয় দুর্গোৎসব"},
-        {name:"কালীপূজা", date:"2026-11-01", desc:"দীপাবলি"}
+        {name:"আরাফাতের দিন", date:"2026-05-26", desc:"হজের পূর্বদিন"},
+        {name:"ইদুজ্জোহা", date:"2026-05-27", desc:"কুরবানির ঈদ"},
+        {name:"বাবা লোকনাথ তিরোধান দিবস", date:"2026-06-03", desc:"লোকনাথ ব্রহ্মচারীর তিরোধান"},
+        {name:"জামাই ষষ্ঠী", date:"2026-06-20", desc:"জামাই ষষ্ঠী"},
+        {name:"মহরম", date:"2026-06-26", desc:"ইসলামী বর্ষের প্রথম মাস"},
+        {name:"রথযাত্রা", date:"2026-07-16", desc:"জগন্নাথদেবের রথযাত্রা"},
+        {name:"গুরুপূর্ণিমা", date:"2026-07-29", desc:"গুরু পূর্ণিমা"},
+        {name:"রাখি পূর্ণিমা", date:"2026-08-28", desc:"রাখী বন্ধন"},
+        {name:"জন্মাষ্টমী", date:"2026-09-04", desc:"শ্রীকৃষ্ণের জন্ম"},
+        {name:"গণেশ চতুর্থী", date:"2026-09-14", desc:"গণেশ পূজা"},
+        {name:"বিশ্বকর্মা পূজা", date:"2026-09-17", desc:"বিশ্বকর্মা পূজা"},
+        {name:"রাধাষ্টমী", date:"2026-09-19", desc:"রাধারাণীর জন্মতিথি"},
+        {name:"মহালয়া", date:"2026-10-10", desc:"দুর্গাপূজার সূচনা"},
+        {name:"নবরাত্রি", date:"2026-10-11", desc:"নবরাত্রি শুরু", endDate:"2026-10-20"},
+        {name:"দুর্গাপূজা", date:"2026-10-17", desc:"শারদীয় দুর্গোৎসব", endDate:"2026-10-20"},
+        {name:"কোজাগরী লক্ষ্মীপূজা", date:"2026-10-25", desc:"লক্ষ্মী পূজা"},
+        {name:"ভূত চতুর্দশী", date:"2026-11-08", desc:"কালীপূজার আগের দিন"},
+        {name:"কালীপূজো", date:"2026-11-09", desc:"কালীপূজা ও দীপাবলি"},
+        {name:"দীপাবলি", date:"2026-11-08", desc:"দীপাবলি উৎসব", endDate:"2026-11-12"},
+        {name:"ভাইফোঁটা", date:"2026-11-11", desc:"ভাই ফোঁটা"},
+        {name:"ছট পূজা", date:"2026-11-12", desc:"ছট পূজা", endDate:"2026-11-16"},
+        {name:"জগদ্ধাত্রী পূজা", date:"2026-11-15", desc:"জগদ্ধাত্রী পূজা", endDate:"2026-11-19"},
+        {name:"কার্তিক পূজা", date:"2026-11-24", desc:"কার্তিক পূজা"},
+        {name:"গুরু নানক জয়ন্তী", date:"2026-11-24", desc:"গুরু নানকের জন্মদিন"},
+        {name:"কার্ত্তিক পূজা", date:"2026-11-25", desc:"কার্তিক পূজা"},
+        {name:"বড়দিন", date:"2026-12-25", desc:"যিশুখ্রিষ্টের জন্মদিন"}
     ];
     
     const ECLIPSE_DATA = [
@@ -1102,10 +1127,10 @@
     }
     
     function getBanglaDate(date) {
-        const base = new Date(2026, 3, 14);
+        const base = new Date(2026, 3, 15);
         const diff = Math.floor((date - base) / 86400000);
         let year = 1433, offset = diff;
-        if (diff < 0) { year = 1432; offset = Math.floor((date - new Date(2025,3,14)) / 86400000); }
+        if (diff < 0) { year = 1432; offset = Math.floor((date - new Date(2025,3,15)) / 86400000); }
         const ml = [31,31,31,31,31,31,30,30,30,30,30,30];
         let m = 0, d = offset + 1;
         for(let i=0; i<12; i++) {
@@ -1750,7 +1775,10 @@
                 <thead><tr><th>উৎসব</th><th>তারিখ</th><th>বিবরণ</th></tr></thead>
                 <tbody>${FESTIVALS.map(f => {
                     const d = new Date(f.date);
-                    return `<tr><td><strong>${f.name}</strong></td><td>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}</td><td>${f.desc}</td></tr>`;
+                    const displayDate = f.endDate ? 
+                        `${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} - ${new Date(f.endDate).getDate()} ${ENG_MONTHS_SHORT[new Date(f.endDate).getMonth()]}` :
+                        `${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}`;
+                    return `<tr><td><strong>${f.name}</strong></td><td>${displayDate}</td><td>${f.desc}</td></tr>`;
                 }).join('')}</tbody>
             </table>
         `;
