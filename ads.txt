@@ -1,0 +1,12 @@
+# ads.txt for বাংলা পঞ্জিকা (banglapanjika.netlify.app)
+# Last updated: April 15, 2026
+
+# Google AdSense
+google.com, pub-5123188644150792, DIRECT, f08c47fec0942fa0
+
+# ============================================
+# Format: Domain, Publisher ID, Relationship, Certificate Authority ID
+# 
+# This file authorizes Google AdSense to serve ads on this domain.
+# Do not modify unless you add additional ad networks.
+# ============================================
