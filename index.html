@@ -767,7 +767,7 @@
 <!-- LEFT SIDEBAR -->
 <div class="sidebar-left">
     <div class="logo">
-        <i class="fas fa-calendar-alt"></i>CalendarWorld
+        <i class="fas fa-calendar-alt"></i>BanglaPanjika
         <div style="font-size:0.7rem; color:rgba(255,255,255,0.5); margin-top:4px;">
             <span class="pulse-dot"></span> Your Bangla Panjika & 30+CALCULATORS
         </div>
@@ -1036,14 +1036,14 @@
     
     <!-- Footer -->
     <div class="footer">
-        <h2>CalendarWorld</h2>
+        <h2>BanglaPanjika</h2>
         <p>© 2026 Dipto Design Studio LLC.All rights reserved</p>
         <div style="display:flex; justify-content:center; gap:32px; margin:24px 0; flex-wrap:wrap;">
             <a href="https://diptodesign.github.io/BanglaPaji/privacy.html" style="color:white;">Privacy</a>
             <a href="https://diptodesign.github.io/BanglaPaji/about" style="color:white;">About us</a>
             <a href="https://diptodesign.github.io/BanglaPaji/contact.html" style="color:white;">Contact</a>
         </div>
-        <p>© 2026 CalendarWorld</p>
+        <p>© 2026 BanglaPanjika</p>
     </div>
 </div>
 
@@ -2146,7 +2146,7 @@
         document.getElementById('panjikaPrevBtn').addEventListener('click', () => { currentViewDate.setDate(currentViewDate.getDate() - 1); renderPanjikaStats(); renderBanglaCalendar(); });
         document.getElementById('panjikaNextBtn').addEventListener('click', () => { currentViewDate.setDate(currentViewDate.getDate() + 1); renderPanjikaStats(); renderBanglaCalendar(); });
         document.getElementById('panjikaDatePicker').addEventListener('change', e => { if(e.target.value) { currentViewDate = new Date(e.target.value); renderPanjikaStats(); renderBanglaCalendar(); } });
-        document.getElementById('shareBtn').addEventListener('click', () => { navigator.clipboard?.writeText('https://calendarworld.xyz'); showToast('🔗 Link copied!'); });
+        document.getElementById('shareBtn').addEventListener('click', () => { navigator.clipboard?.writeText('https://BanglaPanjika.xyz'); showToast('🔗 Link copied!'); });
         document.getElementById('panjikaDatePicker').value = today.toISOString().split('T')[0];
     }
     
