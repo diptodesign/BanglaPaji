@@ -2,18 +2,19 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
     
-    <title>Calendar World | বাংলা পঞ্জিকা • 30+ Calculators • Complete Articles</title>
+    <title>Calendar World | বাংলা পঞ্জিকা • 30+ Calculators</title>
     <meta name="description" content="Complete Bengali Panjika with 2000+ word articles, 30+ working calculators, animated Ekadashi & Festival banners, Grahan data, and all world calendars.">
     
-    <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-5123188644150792">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5123188644150792" crossorigin="anonymous"></script>
     
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
+        /* ... [All previous styles remain exactly the same] ... */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary: #FF6B35; --primary-dark: #E8551E; --primary-light: #FFF0E8;
@@ -207,6 +208,8 @@
             border-radius: var(--radius-xl);
             margin-bottom: 24px;
             box-shadow: var(--shadow-md);
+            flex-wrap: wrap;
+            gap: 10px;
         }
         .live-clock {
             font-family: 'Courier New', monospace;
@@ -298,10 +301,14 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            color: var(--text-primary);
         }
         .btn-primary {
             background: linear-gradient(135deg, var(--primary), var(--purple));
             color: white;
+            border: none;
         }
         .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
         
@@ -323,6 +330,7 @@
             color: var(--text-secondary);
             border-radius: var(--radius-full);
             cursor: pointer;
+            flex: 0 1 auto;
         }
         .tab-btn.active {
             background: linear-gradient(135deg, var(--primary), var(--purple));
@@ -363,7 +371,7 @@
         .calc-input, .calc-select {
             width: 100%;
             padding: 14px;
-            border: 2px solid var(--border-medium);
+            border: 2px solid var(--border-light);
             border-radius: var(--radius-full);
             font-size: 1rem;
             background: var(--bg-card);
@@ -414,6 +422,92 @@
         .eclipse-card.solar { border-left-color: #FF6B35; }
         .eclipse-card.lunar { border-left-color: #4169E1; }
         
+        .eclipse-year-section {
+            margin-bottom: 24px;
+        }
+        .eclipse-year-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border-light);
+            color: var(--primary);
+        }
+        .visibility-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        .visibility-yes {
+            background: var(--success);
+            color: white;
+        }
+        .visibility-no {
+            background: var(--danger);
+            color: white;
+        }
+        .visibility-partial {
+            background: var(--warning);
+            color: white;
+        }
+        
+        /* Live Stream Styles */
+        .live-stream-container {
+            background: #000;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            margin: 30px 0;
+            border: 2px solid var(--primary);
+        }
+        .live-header {
+            background: linear-gradient(135deg, #1e1b4b, #312e81);
+            color: white;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .live-badge {
+            background: #ef4444;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            animation: pulse 1.5s infinite;
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            background: #0a0a1a;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .stream-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #0b1120;
+            color: white;
+            text-align: center;
+        }
+        
         .toast {
             position: fixed;
             bottom: 30px;
@@ -438,17 +532,233 @@
             text-align: center;
         }
         
+        /* IMPROVED MOBILE RESPONSIVE DESIGN */
         @media (max-width: 1200px) {
             .sidebar-right { display: none; }
             .main-content { margin-right: 0; }
             .calculator-grid { grid-template-columns: repeat(4, 1fr); }
         }
+        
+        @media (max-width: 900px) {
+            .calculator-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        
         @media (max-width: 768px) {
-            body { flex-direction: column; }
-            .sidebar-left { position: relative; width: 100%; max-height: 300px; }
-            .main-content { margin-left: 0; padding: 16px; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .calculator-grid { grid-template-columns: repeat(2, 1fr); }
+            body { 
+                flex-direction: column; 
+                font-size: 14px;
+            }
+            .sidebar-left { 
+                position: relative; 
+                width: 100%; 
+                max-height: 350px;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .main-content { 
+                margin-left: 0; 
+                padding: 16px;
+                width: 100%;
+            }
+            .stats-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 12px;
+            }
+            .calculator-grid { 
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            .top-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 16px;
+            }
+            .live-clock {
+                font-size: 1.2rem;
+            }
+            .section-card {
+                padding: 16px;
+                margin-bottom: 16px;
+            }
+            .section-header {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .section-header h2 {
+                font-size: 1.3rem;
+            }
+            .section-header i {
+                font-size: 1.5rem;
+                padding: 10px;
+            }
+            .btn {
+                padding: 10px 16px;
+                font-size: 0.85rem;
+            }
+            .tabs-container {
+                border-radius: var(--radius-lg);
+                padding: 4px;
+            }
+            .tab-btn {
+                padding: 8px 12px;
+                font-size: 0.85rem;
+                flex: 1 0 auto;
+                text-align: center;
+            }
+            .data-table {
+                font-size: 0.8rem;
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .data-table th,
+            .data-table td {
+                padding: 8px 10px;
+                white-space: nowrap;
+            }
+            .stat-card {
+                padding: 12px;
+            }
+            .stat-card .value {
+                font-size: 1.2rem;
+            }
+            .calculator-card {
+                padding: 12px 6px;
+            }
+            .calculator-card i {
+                font-size: 1.2rem;
+            }
+            .calculator-card h4 {
+                font-size: 0.7rem;
+            }
+            .calc-input, .calc-select {
+                padding: 10px 14px;
+                font-size: 0.9rem;
+            }
+            .calc-row {
+                grid-template-columns: 1fr;
+            }
+            .article-content {
+                font-size: 0.95rem;
+                max-height: 400px;
+            }
+            .article-content h3 {
+                font-size: 1.2rem;
+            }
+            .live-header {
+                padding: 12px 16px;
+            }
+            .live-header h3 {
+                font-size: 1rem;
+            }
+            .banner-title {
+                font-size: 1.2rem;
+            }
+            .banner-desc {
+                font-size: 0.8rem;
+            }
+            .banner-countdown {
+                font-size: 1rem;
+            }
+            .footer {
+                padding: 20px;
+                margin-top: 24px;
+            }
+            .logo {
+                font-size: 1.1rem;
+                padding: 16px;
+            }
+            .nav-item {
+                padding: 10px 16px;
+                font-size: 0.85rem;
+            }
+            .nav-section-title {
+                padding: 15px 16px 5px;
+                font-size: 0.65rem;
+            }
+            #panjikaDatePicker {
+                width: 100%;
+            }
+            .stats-grid + div {
+                flex-direction: column;
+            }
+            .stats-grid + div .btn {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-content {
+                padding: 12px;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            .calculator-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
+            }
+            .section-header h2 {
+                font-size: 1.1rem;
+            }
+            .top-bar {
+                padding: 12px;
+                margin-bottom: 16px;
+            }
+            .live-clock {
+                font-size: 1rem;
+            }
+            .btn {
+                padding: 8px 12px;
+                font-size: 0.8rem;
+            }
+            .tab-btn {
+                padding: 6px 10px;
+                font-size: 0.75rem;
+            }
+            .calculator-card {
+                padding: 10px 4px;
+            }
+            .calculator-card i {
+                font-size: 1rem;
+            }
+            .calculator-card h4 {
+                font-size: 0.65rem;
+            }
+            .special-banner {
+                padding: 16px;
+            }
+            .banner-icon {
+                font-size: 2rem;
+            }
+            .banner-title {
+                font-size: 1rem;
+            }
+            .video-wrapper {
+                padding-bottom: 75%;
+            }
+        }
+        
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .nav-item, .btn, .tab-btn, .calculator-card {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+            .calculator-card {
+                min-height: 80px;
+                flex-direction: column;
+                justify-content: center;
+            }
+            input, select, button {
+                min-height: 44px;
+            }
+            .close-btn, .modal-close {
+                min-width: 44px;
+                min-height: 44px;
+            }
         }
     </style>
 </head>
@@ -466,23 +776,22 @@
     <div style="padding:12px;">
         <div class="nav-section-title">🇧🇩 BENGALI Area</div>
         <div class="nav-item active" data-module="panjika"><i class="fas fa-om"></i> বাংলা পঞ্জিকা ১৪৩৩</div>
-        <div class="nav-item" data-module="panjika-article"><i class="fas fa-book-open"></i> পঞ্জিকা সম্পর্কে (Article)</div>
+        <div class="nav-item" data-module="panjika-article"><i class="fas fa-book-open"></i> পঞ্জিকা সম্পর্কে</div>
         <div class="nav-item" data-module="ekadashi"><i class="fas fa-moon"></i> একাদশী তালিকা</div>
-        <div class="nav-item" data-module="grahan"><i class="fas fa-eclipse"></i> গ্রহণ (Eclipse)</div>
+        <div class="nav-item" data-module="grahan"><i class="fas fa-sun"></i> গ্রহণ (Eclipse +LIVE)</div>
         <div class="nav-item" data-module="festivals"><i class="fas fa-gift"></i> উৎসব ২০২৬</div>
-        <div class="nav-item" data-module="names"><i class="fas fa-baby"></i> নামকরণ (৪০০০+)</div>
         
         <div class="nav-section-title">☀️ SOLAR CALENDARS</div>
-        <div class="nav-item" data-module="gregorian"><i class="fas fa-calendar"></i> Gregorian + Article</div>
-        <div class="nav-item" data-module="julian"><i class="fas fa-history"></i> Julian + Article</div>
-        <div class="nav-item" data-module="roman"><i class="fas fa-landmark"></i> Roman + Article</div>
-        <div class="nav-item" data-module="egyptian"><i class="fas fa-pyramid"></i> Egyptian + Article</div>
+        <div class="nav-item" data-module="gregorian"><i class="fas fa-cross"></i> Gregorian</div>
+        <div class="nav-item" data-module="julian"><i class="fas fa-history"></i> Julian</div>
+        <div class="nav-item" data-module="roman"><i class="fas fa-landmark"></i> Roman</div>
+        <div class="nav-item" data-module="egyptian"><i class="fas fa-ankh"></i> Egyptian</div>
         
         <div class="nav-section-title">🌙 LUNAR CALENDARS</div>
-        <div class="nav-item" data-module="chinese"><i class="fas fa-dragon"></i> Chinese + Article</div>
-        <div class="nav-item" data-module="hindu"><i class="fas fa-star"></i> Hindu + Article</div>
-        <div class="nav-item" data-module="hebrew"><i class="fas fa-star-of-david"></i> Hebrew + Article</div>
-        <div class="nav-item" data-module="islamic"><i class="fas fa-mosque"></i> Islamic + Article</div>
+        <div class="nav-item" data-module="chinese"><i class="fas fa-dragon"></i> Chinese</div>
+        <div class="nav-item" data-module="hindu"><i class="fas fa-om"></i> Hindu</div>
+        <div class="nav-item" data-module="hebrew"><i class="fas fa-star-of-david"></i> Hebrew</div>
+        <div class="nav-item" data-module="islamic"><i class="fas fa-mosque"></i> Islamic</div>
         
         <div class="nav-section-title">🧮 30+ CALCULATORS</div>
         <div class="nav-item" data-module="calculators"><i class="fas fa-calculator"></i> All Calculators</div>
@@ -491,7 +800,7 @@
     
     <div style="padding:20px; border-top:1px solid rgba(255,255,255,0.1); margin-top:auto;">
         <div id="themeToggle" style="cursor:pointer; display:flex; align-items:center; gap:10px;">
-            <i class="fas fa-moon"></i> <span>Dark Mode</span>
+            <i class="fas fa-moon"></i> <span>Dark Theme</span>
         </div>
     </div>
 </div>
@@ -500,7 +809,7 @@
 <div class="main-content">
     <div class="top-bar">
         <div>
-            <span id="currentModule" style="font-weight:700;">বাংলা পঞ্জিকা ১৪৩৩</span>
+            <span id="currentModule" style="font-weight:700;">বাংলা পঞ্জিকা</span>
             <span style="background:var(--success); color:white; padding:2px 10px; border-radius:20px; font-size:0.7rem; margin-left:10px;"> Build 1404.26</span>
         </div>
         <div style="display:flex; align-items:center; gap:15px;">
@@ -512,7 +821,7 @@
     
     <!-- Ad Space -->
     <div style="background:var(--border-light); border-radius:var(--radius-lg); min-height:90px; display:flex; align-items:center; justify-content:center; margin-bottom:24px;">
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="2222222222" data-ad-format="horizontal"></ins>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5123188644150792" data-ad-slot="2222222222" data-ad-format="horizontal"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         <span style="padding:20px;">Advertisement</span>
     </div>
@@ -521,10 +830,10 @@
     <div id="module-panjika" class="module-container active">
         <div class="stats-grid" id="panjikaStats"></div>
         <div style="display:flex; gap:12px; margin:20px 0; flex-wrap:wrap;">
-            <input type="date" id="panjikaDatePicker" style="padding:12px 20px; border-radius:30px; border:2px solid var(--border-medium); background:var(--bg-card); color:var(--text-primary);">
+            <input type="date" id="panjikaDatePicker" style="padding:12px 20px; border-radius:30px; border:2px solid var(--border-light); background:var(--bg-card); color:var(--text-primary);">
             <button class="btn btn-primary" id="panjikaTodayBtn"><i class="fas fa-sun"></i> আজ</button>
-            <button class="btn" id="panjikaPrevBtn" style="background:var(--bg-card); border:1px solid var(--border-medium);"><i class="fas fa-chevron-left"></i></button>
-            <button class="btn" id="panjikaNextBtn" style="background:var(--bg-card); border:1px solid var(--border-medium);"><i class="fas fa-chevron-right"></i></button>
+            <button class="btn" id="panjikaPrevBtn" style="background:var(--bg-card); border:1px solid var(--border-light);"><i class="fas fa-chevron-left"></i></button>
+            <button class="btn" id="panjikaNextBtn" style="background:var(--bg-card); border:1px solid var(--border-light);"><i class="fas fa-chevron-right"></i></button>
         </div>
         <div class="tabs-container" id="panjikaTabs">
             <button class="tab-btn active" data-tab="calendar">📅 ক্যালেন্ডার</button>
@@ -546,11 +855,35 @@
         </div>
     </div>
     
-    <!-- ========== GRAHAN MODULE ========== -->
+    <!-- ========== GRAHAN MODULE WITH LIVE STREAM ========== -->
     <div id="module-grahan" class="module-container">
         <div class="section-card">
-            <div class="section-header"><i class="fas fa-eclipse"></i><h2>গ্রহণ • Eclipse 2025-2030</h2></div>
+            <div class="section-header"><i class="fas fa-moon"></i><h2>গ্রহণ • Eclipse 2026-2036 + সরাসরি সম্প্রচার</h2></div>
             <div id="grahanContainer"></div>
+            
+            <!-- LIVE ECLIPSE STREAM SECTION -->
+            <div class="live-stream-container">
+                <div class="live-header">
+                    <i class="fas fa-satellite-dish fa-2x"></i>
+                    <div style="flex:1">
+                        <h3 style="margin:0; color:white;">🌓Eclipse Live Stream</h3>
+                        <p style="opacity:0.8; margin:0; color:white;">timeanddate | NASA | Virtual Telescope</p>
+                    </div>
+                    <span class="live-badge"><i class="fas fa-circle"></i> LIVE</span>
+                </div>
+                <div class="video-wrapper" id="eclipseStreamWrapper">
+                    <div class="stream-placeholder" id="streamPlaceholder">
+                        <i class="fas fa-play-circle" style="font-size:4rem; opacity:0.5; margin-bottom:16px;"></i>
+                        <h3 style="color:white;">গ্রহণের লাইভ স্ট্রিম</h3>
+                        <p style="color:#ccc;">সরাসরি সম্প্রচার শুরু হবে গ্রহণের সময়</p>
+                        <button class="btn btn-primary" style="margin-top:20px;" id="loadStreamBtn"><i class="fas fa-video"></i> লাইভ দেখুন</button>
+                    </div>
+                </div>
+                <div style="padding:16px; background:#1e1e2f; color:#ccc; font-size:0.9rem; display:flex; gap:16px; flex-wrap:wrap;">
+                    <span><i class="fas fa-clock"></i> পরবর্তী: 27-28 Aug 2026 (আংশিক চন্দ্রগ্রহণ)</span>
+                    <span><i class="fas fa-globe"></i> উৎস: timeanddate / YouTube</span>
+                </div>
+            </div>
         </div>
     </div>
     
@@ -567,14 +900,6 @@
         <div class="section-card">
             <div class="section-header"><i class="fas fa-gift"></i><h2>উৎসব ও পার্বণ ২০২৬</h2></div>
             <div id="festivalsContainer"></div>
-        </div>
-    </div>
-    
-    <!-- ========== NAMES MODULE ========== -->
-    <div id="module-names" class="module-container">
-        <div class="section-card">
-            <div class="section-header"><i class="fas fa-baby"></i><h2>বাংলা নামকরণ (৪০০০+)</h2></div>
-            <div id="namesContainer"></div>
         </div>
     </div>
     
@@ -617,7 +942,7 @@
     <!-- ========== CHINESE + ARTICLE ========== -->
     <div id="module-chinese" class="module-container">
         <div class="section-card">
-            <div class="section-header"><i class="fas fa-dragon"></i><h2>Chinese Calendar</h2></div>
+            <div class="section-header"><i class="fas fa-dragon"></i><h2>Chinese Calendar 2026 (Year of the Horse)</h2></div>
             <div id="chineseContainer"></div>
             <div class="article-content" id="chineseArticle"></div>
         </div>
@@ -626,7 +951,7 @@
     <!-- ========== HINDU + ARTICLE ========== -->
     <div id="module-hindu" class="module-container">
         <div class="section-card">
-            <div class="section-header"><i class="fas fa-star"></i><h2>Hindu Panchang</h2></div>
+            <div class="section-header"><i class="fas fa-star"></i><h2>Hindu Panjika</h2></div>
             <div id="hinduContainer"></div>
             <div class="article-content" id="hinduArticle"></div>
         </div>
@@ -635,7 +960,7 @@
     <!-- ========== HEBREW + ARTICLE ========== -->
     <div id="module-hebrew" class="module-container">
         <div class="section-card">
-            <div class="section-header"><i class="fas fa-star-of-david"></i><h2>Hebrew Calendar</h2></div>
+            <div class="section-header"><i class="fas fa-star-of-david"></i><h2>Hebrew Calendar 5786-5787 (2026-2027)</h2></div>
             <div id="hebrewContainer"></div>
             <div class="article-content" id="hebrewArticle"></div>
         </div>
@@ -653,7 +978,7 @@
     <!-- ========== 30+ CALCULATORS MODULE ========== -->
     <div id="module-calculators" class="module-container">
         <div class="section-card">
-            <div class="section-header"><i class="fas fa-calculator"></i><h2>30+ Working Calculators</h2></div>
+            <div class="section-header"><i class="fas fa-calculator"></i><h2>30+ Calculators</h2></div>
             
             <div class="calculator-grid">
                 <div class="calculator-card" onclick="window.showCalculator('age')"><i class="fas fa-birthday-cake"></i><h4>Age</h4></div>
@@ -716,7 +1041,7 @@
         <div style="display:flex; justify-content:center; gap:32px; margin:24px 0; flex-wrap:wrap;">
             <a href="https://diptodesign.github.io/BanglaPaji/privacy.html" style="color:white;">Privacy</a>
             <a href="https://diptodesign.github.io/BanglaPaji/about" style="color:white;">About us</a>
-            <a href="/contact.html" style="color:white;">Contact</a>
+            <a href="https://diptodesign.github.io/BanglaPaji/contact.html" style="color:white;">Contact</a>
         </div>
         <p>© 2026 CalendarWorld</p>
     </div>
@@ -733,7 +1058,7 @@
     </div>
     
     <div style="background:var(--border-light); border-radius:var(--radius-lg); min-height:250px; margin:16px 0; display:flex; align-items:center; justify-content:center;">
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="3333333333" data-ad-format="vertical"></ins>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5123188644150792" data-ad-slot="3333333333" data-ad-format="vertical"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         <span>Ad</span>
     </div>
@@ -749,7 +1074,7 @@
     </div>
     
     <div style="background:var(--border-light); border-radius:var(--radius-lg); min-height:250px; display:flex; align-items:center; justify-content:center;">
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="4444444444" data-ad-format="rectangle"></ins>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5123188644150792" data-ad-slot="4444444444" data-ad-format="rectangle"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         <span>Ad</span>
     </div>
@@ -780,22 +1105,102 @@
     ];
     
     const FESTIVALS = [
-        {name:"পহেলা বৈশাখ", date:"2026-04-14", desc:"বাংলা নববর্ষ ১৪৩৩ as (BD Gov)"},
-        {name:"পহেলা বৈশাখ", date:"2026-04-15", desc:"বাংলা নববর্ষ ১৪৩৩ as (Hindu Panjika)"},
+        {name:"গুড ফ্রাইডে", date:"2026-04-03", desc:"যিশুখ্রিষ্টের ক্রুশবিদ্ধ হওয়ার দিন"},
+        {name:"নীল পূজা", date:"2026-04-13", desc:"চৈত্র সংক্রান্তি"},
+        {name:"চড়ক", date:"2026-04-14", desc:"চড়ক পূজা"},
+        {name:"পহেলা বৈশাখ", date:"2026-04-14", desc:"বাংলা নববর্ষ ১৪৩৩ *BD Gov"},
+        {name:"পহেলা বৈশাখ", date:"2026-04-15", desc:"বাংলা নববর্ষ ১৪৩৩ *Hindu Panjika"},
+        {name:"অক্ষয় তৃতীয়া", date:"2026-04-19", desc:"পুণ্য তিথি"},
         {name:"বুদ্ধ পূর্ণিমা", date:"2026-05-01", desc:"বুদ্ধদেবের জন্মতিথি"},
-        {name:"রথযাত্রা", date:"2026-07-05", desc:"জগন্নাথদেবের রথযাত্রা"},
-        {name:"জামাইষষ্ঠী", date:"2026-06-20", desc:"জামাইষষ্ঠী"},
-        {name:"জন্মাষ্টমী", date:"2026-08-26", desc:"শ্রীকৃষ্ণের জন্ম"},
-        {name:"দুর্গাপূজা", date:"2026-10-08", desc:"শারদীয় দুর্গোৎসব"},
-        {name:"কালীপূজা", date:"2026-11-01", desc:"দীপাবলি"}
-        
-
+        {name:"আরাফাতের দিন", date:"2026-05-26", desc:"হজের পূর্বদিন"},
+        {name:"ইদুজ্জোহা", date:"2026-05-27", desc:"কুরবানির ঈদ"},
+        {name:"বাবা লোকনাথ তিরোধান দিবস", date:"2026-06-03", desc:"লোকনাথ ব্রহ্মচারীর তিরোধান"},
+        {name:"জামাই ষষ্ঠী", date:"2026-06-20", desc:"জামাই ষষ্ঠী"},
+        {name:"মহরম", date:"2026-06-26", desc:"ইসলামী বর্ষের প্রথম মাস"},
+        {name:"রথযাত্রা", date:"2026-07-16", desc:"জগন্নাথদেবের রথযাত্রা"},
+        {name:"গুরুপূর্ণিমা", date:"2026-07-29", desc:"গুরু পূর্ণিমা"},
+        {name:"রাখি পূর্ণিমা", date:"2026-08-28", desc:"রাখী বন্ধন"},
+        {name:"জন্মাষ্টমী", date:"2026-09-04", desc:"শ্রীকৃষ্ণের জন্ম"},
+        {name:"গণেশ চতুর্থী", date:"2026-09-14", desc:"গণেশ পূজা"},
+        {name:"বিশ্বকর্মা পূজা", date:"2026-09-17", desc:"বিশ্বকর্মা পূজা"},
+        {name:"রাধাষ্টমী", date:"2026-09-19", desc:"রাধারাণীর জন্মতিথি"},
+        {name:"মহালয়া", date:"2026-10-10", desc:"দুর্গাপূজার সূচনা"},
+        {name:"নবরাত্রি", date:"2026-10-11", desc:"নবরাত্রি শুরু", endDate:"2026-10-20"},
+        {name:"দুর্গাপূজা", date:"2026-10-17", desc:"শারদীয় দুর্গোৎসব", endDate:"2026-10-20"},
+        {name:"কোজাগরী লক্ষ্মীপূজা", date:"2026-10-25", desc:"লক্ষ্মী পূজা"},
+        {name:"ভূত চতুর্দশী", date:"2026-11-08", desc:"কালীপূজার আগের দিন"},
+        {name:"কালীপূজো", date:"2026-11-09", desc:"কালীপূজা ও দীপাবলি"},
+        {name:"দীপাবলি", date:"2026-11-08", desc:"দীপাবলি উৎসব", endDate:"2026-11-12"},
+        {name:"ভাইফোঁটা", date:"2026-11-11", desc:"ভাই ফোঁটা"},
+        {name:"ছট পূজা", date:"2026-11-12", desc:"ছট পূজা", endDate:"2026-11-16"},
+        {name:"জগদ্ধাত্রী পূজা", date:"2026-11-15", desc:"জগদ্ধাত্রী পূজা", endDate:"2026-11-19"},
+        {name:"কার্তিক পূজা", date:"2026-11-24", desc:"কার্তিক পূজা"},
+        {name:"গুরু নানক জয়ন্তী", date:"2026-11-24", desc:"গুরু নানকের জন্মদিন"},
+        {name:"কার্ত্তিক পূজা", date:"2026-11-25", desc:"কার্তিক পূজা"},
+        {name:"বড়দিন", date:"2026-12-25", desc:"যিশুখ্রিষ্টের জন্মদিন"}
     ];
     
+    // COMPLETE ECLIPSE DATA 2026-2036 WITH BANGLA NAMES AND VISIBILITY
     const ECLIPSE_DATA = [
-        {type:"lunar", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2026-03-03", time:"রাত ১০:১৫", visible:"হ্যাঁ"},
-        {type:"solar", name:"পূর্ণ সূর্যগ্রহণ", date:"2026-08-12", time:"দুপুর ২:৩০", visible:"না"},
-        {type:"lunar", name:"আংশিক চন্দ্রগ্রহণ", date:"2027-02-20", time:"রাত ৯:৪৫", visible:"হ্যাঁ"}
+        // 2026
+        {year: 2026, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2026-08-12", visibleInBD: false, desc:"ইউরোপ, উত্তর এশিয়া, উত্তর/পশ্চিম আফ্রিকা, উত্তর আমেরিকা"},
+        {year: 2026, type:"lunar", eclipseType:"আংশিক", name:"আংশিক চন্দ্রগ্রহণ", date:"2026-08-28", visibleInBD: true, desc:"ইউরোপ, পশ্চিম এশিয়া, আফ্রিকা, আমেরিকা"},
+        // 2027
+        {year: 2027, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2027-02-06", visibleInBD: false, desc:"আফ্রিকা, দক্ষিণ আমেরিকা"},
+        {year: 2027, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2027-02-20", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা, আমেরিকা"},
+        {year: 2027, type:"lunar", eclipseType:"প্রায়", name:"প্রায় চন্দ্রগ্রহণ", date:"2027-07-18", visibleInBD: true, desc:"বিশ্বের অধিকাংশ স্থান"},
+        {year: 2027, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2027-08-02", visibleInBD: false, desc:"ইউরোপ, দক্ষিণ/পশ্চিম এশিয়া, আফ্রিকা"},
+        {year: 2027, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2027-08-17", visibleInBD: false, desc:"পশ্চিম ইউরোপ, উত্তর এশিয়া, অস্ট্রেলিয়া, আমেরিকা"},
+        // 2028
+        {year: 2028, type:"lunar", eclipseType:"আংশিক", name:"আংশিক চন্দ্রগ্রহণ", date:"2028-01-12", visibleInBD: true, desc:"ইউরোপ, উত্তর/পশ্চিম এশিয়া, আফ্রিকা, আমেরিকা"},
+        {year: 2028, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2028-01-26", visibleInBD: false, desc:"দক্ষিণ/পশ্চিম ইউরোপ, আফ্রিকা, আমেরিকা"},
+        {year: 2028, type:"lunar", eclipseType:"আংশিক", name:"আংশিক চন্দ্রগ্রহণ", date:"2028-07-06", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
+        {year: 2028, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2028-07-22", visibleInBD: false, desc:"দক্ষিণ এশিয়া, অস্ট্রেলিয়া"},
+        {year: 2028, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2028-12-31", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
+        // 2029
+        {year: 2029, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2029-01-14", visibleInBD: false, desc:"উত্তর আমেরিকা"},
+        {year: 2029, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2029-06-12", visibleInBD: false, desc:"ইউরোপ, উত্তর এশিয়া, উত্তর আমেরিকা"},
+        {year: 2029, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2029-06-26", visibleInBD: true, desc:"ইউরোপ, পশ্চিম এশিয়া, আফ্রিকা, আমেরিকা"},
+        {year: 2029, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2029-07-11", visibleInBD: false, desc:"দক্ষিণ দক্ষিণ আমেরিকা"},
+        {year: 2029, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2029-12-05", visibleInBD: false, desc:"দক্ষিণ দক্ষিণ আমেরিকা"},
+        {year: 2029, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2029-12-20", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা, আমেরিকা"},
+        // 2030
+        {year: 2030, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2030-06-01", visibleInBD: false, desc:"ইউরোপ, এশিয়া, আফ্রিকা"},
+        {year: 2030, type:"lunar", eclipseType:"আংশিক", name:"আংশিক চন্দ্রগ্রহণ", date:"2030-06-15", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
+        {year: 2030, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2030-11-25", visibleInBD: false, desc:"দক্ষিণ এশিয়া, অস্ট্রেলিয়া, দক্ষিণ/পূর্ব আফ্রিকা"},
+        {year: 2030, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2030-12-09", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা, আমেরিকা"},
+        // 2031
+        {year: 2031, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2031-05-07", visibleInBD: false, desc:"ইউরোপ, পশ্চিম এশিয়া, আফ্রিকা, আমেরিকা"},
+        {year: 2031, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2031-05-21", visibleInBD: true, desc:"এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
+        {year: 2031, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2031-06-05", visibleInBD: false, desc:"এশিয়া, অস্ট্রেলিয়া, আমেরিকা"},
+        {year: 2031, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2031-10-30", visibleInBD: false, desc:"ইউরোপ, উত্তর/পূর্ব এশিয়া, অস্ট্রেলিয়া, আমেরিকা"},
+        {year: 2031, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2031-11-14", visibleInBD: false, desc:"উত্তর আমেরিকা"},
+        // 2032
+        {year: 2032, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2032-04-25", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
+        {year: 2032, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2032-05-09", visibleInBD: false, desc:"দক্ষিণ আফ্রিকা, দক্ষিণ আমেরিকা"},
+        {year: 2032, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2032-10-18", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা, আমেরিকা"},
+        {year: 2032, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2032-11-03", visibleInBD: true, desc:"পূর্ব ইউরোপ, এশিয়া"},
+        // 2033
+        {year: 2033, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2033-03-30", visibleInBD: false, desc:"পশ্চিম ইউরোপ, উত্তর এশিয়া, উত্তর আমেরিকা"},
+        {year: 2033, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2033-04-14", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
+        {year: 2033, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2033-09-23", visibleInBD: false, desc:"দক্ষিণ আমেরিকা"},
+        {year: 2033, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2033-10-08", visibleInBD: true, desc:"পূর্ব ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আমেরিকা"},
+        // 2034
+        {year: 2034, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2034-03-20", visibleInBD: true, desc:"ইউরোপ, এশিয়া, আফ্রিকা"},
+        {year: 2034, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2034-04-03", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
+        {year: 2034, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2034-09-12", visibleInBD: false, desc:"দক্ষিণ উত্তর আমেরিকা, দক্ষিণ আমেরিকা"},
+        {year: 2034, type:"lunar", eclipseType:"আংশিক", name:"আংশিক চন্দ্রগ্রহণ", date:"2034-09-28", visibleInBD: true, desc:"ইউরোপ, এশিয়া, আফ্রিকা, আমেরিকা"},
+        // 2035
+        {year: 2035, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2035-02-22", visibleInBD: false, desc:"উত্তর/পশ্চিম ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আমেরিকা"},
+        {year: 2035, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2035-03-09", visibleInBD: false, desc:"অস্ট্রেলিয়া"},
+        {year: 2035, type:"lunar", eclipseType:"আংশিক", name:"আংশিক চন্দ্রগ্রহণ", date:"2035-08-19", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা, আমেরিকা"},
+        {year: 2035, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2035-09-02", visibleInBD: false, desc:"পূর্ব ইউরোপ, এশিয়া, পশ্চিম উত্তর আমেরিকা"},
+        // 2036
+        {year: 2036, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2036-02-11", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা, আমেরিকা"},
+        {year: 2036, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2036-02-27", visibleInBD: false, desc:"দক্ষিণ/পূর্ব অস্ট্রেলিয়া"},
+        {year: 2036, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2036-07-23", visibleInBD: false, desc:"আটলান্টিক, ভারত মহাসাগর"},
+        {year: 2036, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2036-08-07", visibleInBD: true, desc:"ইউরোপ, এশিয়া, আফ্রিকা, আমেরিকা"},
+        {year: 2036, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2036-08-21", visibleInBD: false, desc:"ইউরোপ, উত্তর এশিয়া, উত্তর আমেরিকা"}
     ];
     
     let today = new Date();
@@ -809,10 +1214,10 @@
     }
     
     function getBanglaDate(date) {
-        const base = new Date(2026, 3, 14);
+        const base = new Date(2026, 3, 15);
         const diff = Math.floor((date - base) / 86400000);
         let year = 1433, offset = diff;
-        if (diff < 0) { year = 1432; offset = Math.floor((date - new Date(2025,3,14)) / 86400000); }
+        if (diff < 0) { year = 1432; offset = Math.floor((date - new Date(2025,3,15)) / 86400000); }
         const ml = [31,31,31,31,31,31,30,30,30,30,30,30];
         let m = 0, d = offset + 1;
         for(let i=0; i<12; i++) {
@@ -829,6 +1234,19 @@
     }
     
     function isEkadashi(date) { return getTithi(date) === "একাদশী"; }
+    
+    // ========== LIVE STREAM FUNCTIONALITY ==========
+    function setupLiveStream() {
+        const btn = document.getElementById('loadStreamBtn');
+        if (btn) {
+            btn.addEventListener('click', function() {
+                const wrapper = document.getElementById('eclipseStreamWrapper');
+                // Using the timeanddate live stream link for the partial lunar eclipse on Aug 27-28, 2026
+                wrapper.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/ktP8-OX4Iug?autoplay=1&mute=0" title="timeanddate Eclipse Live Stream" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                showToast('🔴 timeanddate লাইভ স্ট্রিম চালু হচ্ছে...');
+            });
+        }
+    }
     
     // ========== ANIMATED BANNER ==========
     function updateSpecialBanner() {
@@ -870,8 +1288,8 @@
             banner.className = 'special-banner banner-eclipse';
             icon.innerHTML = todayEclipse.type === 'solar' ? '🌑' : '🌕';
             title.textContent = `আজ ${todayEclipse.name}!`;
-            desc.textContent = `সময়: ${todayEclipse.time}`;
-            countdown.innerHTML = todayEclipse.visible === 'হ্যাঁ' ? '🇧🇩 বাংলাদেশ থেকে দৃশ্যমান' : '⚠️ দৃশ্যমান নয়';
+            desc.textContent = todayEclipse.desc;
+            countdown.innerHTML = todayEclipse.visibleInBD ? '🇧🇩 বাংলাদেশ থেকে দৃশ্যমান' : '⚠️ বাংলাদেশ থেকে দৃশ্যমান নয়';
             cta.innerHTML = 'গ্রহণ দেখুন <i class="fas fa-arrow-right"></i>';
             cta.onclick = () => { document.querySelector('[data-module="grahan"]').click(); return false; };
             return;
@@ -912,6 +1330,25 @@
             countdown.innerHTML = `📅 আর মাত্র ${daysLeft} দিন`;
             cta.innerHTML = 'উৎসব দেখুন <i class="fas fa-arrow-right"></i>';
             cta.onclick = () => { document.querySelector('[data-module="festivals"]').click(); return false; };
+            return;
+        }
+        
+        const upcomingEclipse = ECLIPSE_DATA.find(e => {
+            const d = new Date(e.date);
+            const diff = Math.ceil((d - today) / 86400000);
+            return diff > 0 && diff <= 30;
+        });
+        
+        if (upcomingEclipse) {
+            const d = new Date(upcomingEclipse.date);
+            const daysLeft = Math.ceil((d - today) / 86400000);
+            banner.className = 'special-banner banner-eclipse';
+            icon.innerHTML = upcomingEclipse.type === 'solar' ? '🌑' : '🌕';
+            title.textContent = `${upcomingEclipse.name} আসছে!`;
+            desc.textContent = `${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}`;
+            countdown.innerHTML = `📅 আর মাত্র ${daysLeft} দিন${upcomingEclipse.visibleInBD ? ' | 🇧🇩 দৃশ্যমান' : ''}`;
+            cta.innerHTML = 'গ্রহণ দেখুন <i class="fas fa-arrow-right"></i>';
+            cta.onclick = () => { document.querySelector('[data-module="grahan"]').click(); return false; };
             return;
         }
         
@@ -1410,50 +1847,47 @@
             </ul>
             <p>লিপ ইয়ার বা অধিবর্ষে ফাল্গুন মাস ৩১ দিনের হয়। মোট ৩৬৫ দিনে একটি বছর সম্পন্ন হয়।</p>
             
-            <h3>ঋতুচক্র</h3>
-            <p>বাংলা পঞ্জিকায় ছয়টি ঋতুর উল্লেখ রয়েছে। প্রতিটি ঋতু দুই মাস ব্যাপী স্থায়ী হয়:</p>
-            <ul>
-                <li><strong>গ্রীষ্মকাল</strong> - বৈশাখ ও জ্যৈষ্ঠ</li>
-                <li><strong>বর্ষাকাল</strong> - আষাঢ় ও শ্রাবণ</li>
-                <li><strong>শরৎকাল</strong> - ভাদ্র ও আশ্বিন</li>
-                <li><strong>হেমন্তকাল</strong> - কার্তিক ও অগ্রহায়ণ</li>
-                <li><strong>শীতকাল</strong> - পৌষ ও মাঘ</li>
-                <li><strong>বসন্তকাল</strong> - ফাল্গুন ও চৈত্র</li>
-            </ul>
-            
-            <h3>পঞ্জিকার গুরুত্বপূর্ণ উপাদান</h3>
-            <p>বাংলা পঞ্জিকা শুধু তারিখ নয়, বরং এতে জ্যোতির্বিজ্ঞানের নানা উপাদান সংযোজিত থাকে:</p>
-            <h4>তিথি</h4>
-            <p>চন্দ্রকলার উপর ভিত্তি করে তিথি নির্ধারিত হয়। এক অমাবস্যা থেকে পরবর্তী অমাবস্যা পর্যন্ত সময়কে ৩০ ভাগে ভাগ করে ৩০টি তিথি পাওয়া যায়। ১৫টি তিথি নিয়ে শুক্লপক্ষ এবং ১৫টি তিথি নিয়ে কৃষ্ণপক্ষ গঠিত। প্রতিটি তিথির আলাদা নাম ও তাৎপর্য রয়েছে। একাদশী, পূর্ণিমা, অমাবস্যা প্রভৃতি বিশেষ তিথি হিন্দু ধর্মাবলম্বীদের কাছে অত্যন্ত গুরুত্বপূর্ণ।</p>
-            <h4>নক্ষত্র</h4>
-            <p>চাঁদের আকাশপথে ২৭টি নক্ষত্রের অবস্থান নির্ণয় করা হয়। এই নক্ষত্রগুলি হল: অশ্বিনী, ভরণী, কৃত্তিকা, রোহিণী, মৃগশিরা, আর্দ্রা, পুনর্বসু, পুষ্যা, অশ্লেষা, মঘা, পূর্বফাল্গুনী, উত্তরফাল্গুনী, হস্তা, চিত্রা, স্বাতী, বিশাখা, অনুরাধা, জ্যেষ্ঠা, মূলা, পূর্বাষাঢ়া, উত্তরাষাঢ়া, শ্রবণা, ধনিষ্ঠা, শতভিষা, পূর্বভাদ্রপদ, উত্তরভাদ্রপদ, রেবতী।</p>
-            <h4>যোগ ও করণ</h4>
-            <p>সূর্য ও চন্দ্রের আপেক্ষিক অবস্থানের ভিত্তিতে ২৭টি যোগ এবং তিথির অর্ধাংশ হিসেবে ১১টি করণ নির্ণয় করা হয়।</p>
-            
-            <h3>বাংলা পঞ্জিকার ধর্মীয় ও সাংস্কৃতিক গুরুত্ব</h3>
-            <p>বাঙালি হিন্দু সম্প্রদায়ের সকল ধর্মীয় অনুষ্ঠান বাংলা পঞ্জিকা অনুসারে পালিত হয়। দুর্গাপূজা, কালীপূজা, সরস্বতী পূজা, জন্মাষ্টমী, রথযাত্রা, দোলযাত্রা প্রভৃতি উৎসবের তারিখ পঞ্জিকা অনুযায়ী নির্ধারিত হয়। বিবাহ, অন্নপ্রাশন, নামকরণ ইত্যাদি সামাজিক অনুষ্ঠানের জন্যও পঞ্জিকা অনুসারে শুভদিন নির্বাচন করা হয়।</p>
-            
-            <h3>আধুনিক যুগে বাংলা পঞ্জিকা</h3>
-            <p>২০১৯ সালের ১৪ এপ্রিল থেকে বাংলাদেশ সরকার বাংলা বর্ষপঞ্জিতে একটি গুরুত্বপূর্ণ সংশোধন আনে। এই সংশোধনীর ফলে বৈশাখ থেকে ভাদ্র পর্যন্ত প্রথম ছয় মাস ৩১ দিনের এবং কার্তিক থেকে চৈত্র পর্যন্ত শেষ ছয় মাস ৩০ দিনের হয়। পূর্বে বৈশাখ-জ্যৈষ্ঠ-আষাঢ়-শ্রাবণ-ভাদ্র ৩১ দিন, আশ্বিন-কার্তিক ৩০ দিন এবং অগ্রহায়ণ-পৌষ-মাঘ ৩০ দিন এবং ফাল্গুন ৩০ দিন (অধিবর্ষে ৩১) হতো। নতুন নিয়মে ঋতুচক্রের সাথে সামঞ্জস্য রক্ষা করা সহজ হয়েছে।</p>
-            
-            <h3>পঞ্জিকা ও কৃষি</h3>
-            <p>বাংলাদেশ একটি কৃষিপ্রধান দেশ। বাংলা পঞ্জিকা কৃষিকাজের সাথে ওতপ্রোতভাবে জড়িত। কোন মাসে কোন ফসল বপন করতে হবে, কখন ফসল কাটতে হবে - এসব নির্ধারণে পঞ্জিকা গুরুত্বপূর্ণ ভূমিকা পালন করে। আষাঢ়-শ্রাবণে আমন ধানের চারা রোপণ, অগ্রহায়ণ-পৌষে আমন ধান কাটা, ফাল্গুন-চৈত্রে বোরো ধান কাটা - এসবই পঞ্জিকা অনুসারে পরিচালিত হয়।</p>
-            
             <h3>উপসংহার</h3>
             <p>বাংলা পঞ্জিকা শুধু একটি তারিখ গণনার মাধ্যম নয়, এটি বাঙালির হাজার বছরের ইতিহাস, ঐতিহ্য, সংস্কৃতি ও কৃষিজীবনের প্রতিচ্ছবি। আধুনিক প্রযুক্তির যুগেও বাংলা পঞ্জিকা তার প্রাসঙ্গিকতা হারায়নি। বরং ডিজিটাল মাধ্যমে পঞ্জিকা এখন আরও সহজলভ্য হয়েছে। ক্যালেন্ডার ওয়ার্ল্ডের মতো ওয়েবসাইটগুলি বাংলা পঞ্জিকাকে বিশ্বব্যাপী ছড়িয়ে দিতে গুরুত্বপূর্ণ ভূমিকা পালন করছে।</p>
         `;
     }
     
     function renderGrahan() {
-        document.getElementById('grahanContainer').innerHTML = ECLIPSE_DATA.map(e => {
-            const d = new Date(e.date);
-            return `<div class="eclipse-card ${e.type}">
-                <div style="display:flex; align-items:center; gap:12px;"><i class="fas fa-${e.type==='solar'?'sun':'moon'}"></i><h3>${e.name}</h3></div>
-                <p><strong>তারিখ:</strong> ${d.getDate()} ${ENG_MONTHS[d.getMonth()]} ${d.getFullYear()}</p>
-                <p><strong>সময়:</strong> ${e.time}</p>
-                <p><strong>দৃশ্যমান:</strong> <span style="color:${e.visible==='হ্যাঁ'?'var(--success)':'var(--danger)'};">${e.visible}</span></p>
-            </div>`;
-        }).join('');
+        // Group eclipses by year
+        const eclipsesByYear = {};
+        ECLIPSE_DATA.forEach(e => {
+            if (!eclipsesByYear[e.year]) eclipsesByYear[e.year] = [];
+            eclipsesByYear[e.year].push(e);
+        });
+        
+        let html = '';
+        const years = Object.keys(eclipsesByYear).sort((a,b) => a - b);
+        
+        years.forEach(year => {
+            html += `<div class="eclipse-year-section">`;
+            html += `<div class="eclipse-year-title">${year} সালের গ্রহণসমূহ</div>`;
+            
+            eclipsesByYear[year].forEach(e => {
+                const d = new Date(e.date);
+                const visibilityBadge = e.visibleInBD ? 
+                    '<span class="visibility-badge visibility-yes"><i class="fas fa-check-circle"></i> বাংলাদেশ থেকে দৃশ্যমান</span>' : 
+                    '<span class="visibility-badge visibility-no"><i class="fas fa-times-circle"></i> বাংলাদেশ থেকে দৃশ্যমান নয়</span>';
+                
+                html += `<div class="eclipse-card ${e.type}">
+                    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+                        <i class="fas fa-${e.type==='solar'?'sun':'moon'}" style="font-size:1.5rem;"></i>
+                        <h3 style="margin:0;">${e.name} (${e.eclipseType})</h3>
+                        ${visibilityBadge}
+                    </div>
+                    <p style="margin-top:12px;"><strong>📅 তারিখ:</strong> ${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}</p>
+                    <p><strong>🌍 দৃশ্যমান অঞ্চল:</strong> ${e.desc}</p>
+                </div>`;
+            });
+            
+            html += `</div>`;
+        });
+        
+        document.getElementById('grahanContainer').innerHTML = html;
     }
     
     function renderEkadashiTable() {
@@ -1474,21 +1908,12 @@
                 <thead><tr><th>উৎসব</th><th>তারিখ</th><th>বিবরণ</th></tr></thead>
                 <tbody>${FESTIVALS.map(f => {
                     const d = new Date(f.date);
-                    return `<tr><td><strong>${f.name}</strong></td><td>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}</td><td>${f.desc}</td></tr>`;
+                    const displayDate = f.endDate ? 
+                        `${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} - ${new Date(f.endDate).getDate()} ${ENG_MONTHS_SHORT[new Date(f.endDate).getMonth()]}` :
+                        `${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}`;
+                    return `<tr><td><strong>${f.name}</strong></td><td>${displayDate}</td><td>${f.desc}</td></tr>`;
                 }).join('')}</tbody>
             </table>
-        `;
-    }
-    
-    function renderNames() {
-        const names = Array.from({length:20}, (_,i) => ({bn:`অভিজিৎ${i+1}`, en:`Abhijit${i+1}`}));
-        document.getElementById('namesContainer').innerHTML = `
-            <p>৪০০০+ নামের ডাটাবেজ</p>
-            <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(180px,1fr)); gap:12px;">
-                ${names.map(n => `<div style="padding:16px; background:var(--bg-card); border-radius:var(--radius-md); border:1px solid var(--border-light);">
-                    <div style="font-size:1.2rem; color:var(--primary);">${n.bn}</div><div>${n.en}</div>
-                </div>`).join('')}
-            </div>
         `;
     }
     
@@ -1514,8 +1939,49 @@
     }
     
     function renderChinese() {
-        document.getElementById('chineseContainer').innerHTML = `<div class="stat-card"><h4>Chinese</h4><div class="value">Year of the Horse</div></div>`;
-        document.getElementById('chineseArticle').innerHTML = `<h3>The Chinese Calendar</h3><p>A lunisolar calendar combining lunar months with solar years. Each year is associated with one of 12 zodiac animals and 5 elements. The calendar uses a 60-year cycle and 24 solar terms. Chinese New Year falls on the second new moon after winter solstice.</p>`;
+        let html = `
+            <div style="margin-bottom:20px;">
+                <h3 style="color:var(--primary);">🐎 2026 - Year of the Horse</h3>
+                <p>The Chinese New Year begins on February 17, 2026, marking the start of the Year of the Horse.</p>
+            </div>
+            
+            <h4>Major Chinese Holidays 2026</h4>
+            <table class="data-table">
+                <thead><tr><th>Holiday</th><th>Gregorian Date</th><th>Lunar Date</th></tr></thead>
+                <tbody>
+                    <tr><td>New Year's Day</td><td>January 1, 2026</td><td>November 13, 2025</td></tr>
+                    <tr><td>Laba Festival</td><td>January 26, 2026</td><td>December 8, 2025</td></tr>
+                    <tr><td>Spring Festival Eve</td><td>February 16, 2026</td><td>December 29, 2025</td></tr>
+                    <tr><td><strong>Spring Festival (Chinese New Year)</strong></td><td><strong>February 17, 2026</strong></td><td><strong>January 1, 2026</strong></td></tr>
+                    <tr><td>Lantern Festival</td><td>March 3, 2026</td><td>January 15, 2026</td></tr>
+                    <tr><td>Qing Ming Festival</td><td>April 5, 2026</td><td>February 18, 2026</td></tr>
+                    <tr><td>Dragon Boat Festival</td><td>June 19, 2026</td><td>May 5, 2026</td></tr>
+                    <tr><td>Mid-Autumn Festival</td><td>September 25, 2026</td><td>August 15, 2026</td></tr>
+                    <tr><td>National Day</td><td>October 1, 2026</td><td>August 21, 2026</td></tr>
+                </tbody>
+            </table>
+            
+            <h4 style="margin-top:24px;">2026 Lunar Months</h4>
+            <table class="data-table">
+                <thead><tr><th>Lunar Month</th><th>From (Gregorian)</th><th>To (Gregorian)</th></tr></thead>
+                <tbody>
+                    <tr><td>1st Lunar Month</td><td>Feb 17, 2026</td><td>Mar 18, 2026</td></tr>
+                    <tr><td>2nd Lunar Month</td><td>Mar 19, 2026</td><td>Apr 16, 2026</td></tr>
+                    <tr><td>3rd Lunar Month</td><td>Apr 17, 2026</td><td>May 16, 2026</td></tr>
+                    <tr><td>4th Lunar Month</td><td>May 17, 2026</td><td>Jun 14, 2026</td></tr>
+                    <tr><td>5th Lunar Month</td><td>Jun 15, 2026</td><td>Jul 13, 2026</td></tr>
+                    <tr><td>6th Lunar Month</td><td>Jul 14, 2026</td><td>Aug 12, 2026</td></tr>
+                    <tr><td>7th Lunar Month</td><td>Aug 13, 2026</td><td>Sep 10, 2026</td></tr>
+                    <tr><td>8th Lunar Month</td><td>Sep 11, 2026</td><td>Oct 9, 2026</td></tr>
+                    <tr><td>9th Lunar Month</td><td>Oct 10, 2026</td><td>Nov 8, 2026</td></tr>
+                    <tr><td>10th Lunar Month</td><td>Nov 9, 2026</td><td>Dec 8, 2026</td></tr>
+                    <tr><td>11th Lunar Month</td><td>Dec 9, 2026</td><td>Jan 7, 2027</td></tr>
+                    <tr><td>12th Lunar Month</td><td>Jan 8, 2027</td><td>Feb 5, 2027</td></tr>
+                </tbody>
+            </table>
+        `;
+        document.getElementById('chineseContainer').innerHTML = html;
+        document.getElementById('chineseArticle').innerHTML = `<h3>The Chinese Calendar</h3><p>The Chinese calendar is a lunisolar calendar that incorporates elements of both lunar and solar cycles. 2026 is the Year of the Horse (Bing Wu). The calendar is used to determine traditional holidays like the Spring Festival (Chinese New Year), which falls on February 17, 2026. It also guides agricultural activities and is deeply connected with Chinese astrology.</p>`;
     }
     
     function renderHindu() {
@@ -1524,8 +1990,50 @@
     }
     
     function renderHebrew() {
-        document.getElementById('hebrewContainer').innerHTML = `<div class="stat-card"><h4>Hebrew</h4><div class="value">5786 AM</div></div>`;
-        document.getElementById('hebrewArticle').innerHTML = `<h3>The Hebrew Calendar</h3><p>A lunisolar calendar used for Jewish religious observances. Years are counted from Creation (Anno Mundi). Leap years add an extra month 7 times in a 19-year cycle. Major holidays include Rosh Hashanah, Yom Kippur, and Passover.</p>`;
+        let html = `
+            <div style="margin-bottom:20px;">
+                <h3 style="color:var(--primary);">✡️ Hebrew Year 5786-5787 (2026-2027)</h3>
+                <p>The Hebrew calendar is a lunisolar calendar used for Jewish religious observances.</p>
+            </div>
+            
+            <h4>Major Jewish Holidays 2026-2027</h4>
+            <table class="data-table">
+                <thead><tr><th>Holiday</th><th>Hebrew Date</th><th>Gregorian Date</th></tr></thead>
+                <tbody>
+                    <tr><td>Rosh Hashanah (New Year)</td><td>1-2 Tishrei 5787</td><td>September 11-12, 2026</td></tr>
+                    <tr><td>Yom Kippur</td><td>10 Tishrei 5787</td><td>September 20, 2026</td></tr>
+                    <tr><td>Sukkot</td><td>15-21 Tishrei 5787</td><td>September 25 - October 1, 2026</td></tr>
+                    <tr><td>Shemini Atzeret</td><td>22 Tishrei 5787</td><td>October 2, 2026</td></tr>
+                    <tr><td>Simchat Torah</td><td>23 Tishrei 5787</td><td>October 3, 2026</td></tr>
+                    <tr><td>Chanukah</td><td>25 Kislev - 2 Tevet 5787</td><td>December 5-12, 2026</td></tr>
+                    <tr><td>Purim</td><td>14 Adar 5787</td><td>February 21, 2027</td></tr>
+                    <tr><td>Passover (Pesach)</td><td>15-22 Nisan 5787</td><td>March 23-30, 2027</td></tr>
+                    <tr><td>Shavuot</td><td>6-7 Sivan 5787</td><td>May 11-12, 2027</td></tr>
+                    <tr><td>Tisha B'Av</td><td>9 Av 5787</td><td>July 15, 2027</td></tr>
+                </tbody>
+            </table>
+            
+            <h4 style="margin-top:24px;">Hebrew Months (5786-5787)</h4>
+            <table class="data-table">
+                <thead><tr><th>Month</th><th>Gregorian Period</th></tr></thead>
+                <tbody>
+                    <tr><td>Tishrei</td><td>September 11 - October 10, 2026</td></tr>
+                    <tr><td>Cheshvan</td><td>October 11 - November 9, 2026</td></tr>
+                    <tr><td>Kislev</td><td>November 10 - December 9, 2026</td></tr>
+                    <tr><td>Tevet</td><td>December 10, 2026 - January 8, 2027</td></tr>
+                    <tr><td>Shevat</td><td>January 9 - February 7, 2027</td></tr>
+                    <tr><td>Adar</td><td>February 8 - March 9, 2027</td></tr>
+                    <tr><td>Nisan</td><td>March 10 - April 8, 2027</td></tr>
+                    <tr><td>Iyar</td><td>April 9 - May 8, 2027</td></tr>
+                    <tr><td>Sivan</td><td>May 9 - June 7, 2027</td></tr>
+                    <tr><td>Tammuz</td><td>June 8 - July 7, 2027</td></tr>
+                    <tr><td>Av</td><td>July 8 - August 6, 2027</td></tr>
+                    <tr><td>Elul</td><td>August 7 - September 5, 2027</td></tr>
+                </tbody>
+            </table>
+        `;
+        document.getElementById('hebrewContainer').innerHTML = html;
+        document.getElementById('hebrewArticle').innerHTML = `<h3>The Hebrew Calendar</h3><p>The Hebrew calendar is a lunisolar calendar used for Jewish religious observances. Years are counted from Creation (Anno Mundi). The year 5786 begins at sunset on September 22, 2025, and 5787 begins at sunset on September 11, 2026. Leap years add an extra month (Adar II) 7 times in a 19-year cycle. Major holidays include Rosh Hashanah, Yom Kippur, Sukkot, Passover, and Shavuot.</p>`;
     }
     
     function renderIslamic() {
@@ -1591,7 +2099,6 @@
         renderGrahan();
         renderEkadashiTable();
         renderFestivals();
-        renderNames();
         renderGregorian();
         renderJulian();
         renderRoman();
@@ -1601,6 +2108,7 @@
         renderHebrew();
         renderIslamic();
         renderConverter();
+        setupLiveStream();
         updateAll();
         
         document.querySelectorAll('.nav-item').forEach(item => {
@@ -1625,7 +2133,7 @@
         document.getElementById('themeToggle').addEventListener('click', function() {
             document.body.classList.toggle('dark');
             const isDark = document.body.classList.contains('dark');
-            this.innerHTML = isDark ? '<i class="fas fa-sun"></i> <span>Light Mode</span>' : '<i class="fas fa-moon"></i> <span>Dark Mode</span>';
+            this.innerHTML = isDark ? '<i class="fas fa-sun"></i> <span>Light</span>' : '<i class="fas fa-moon"></i> <span>Dark</span>';
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
         });
         
