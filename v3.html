@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
+        /* ... [All previous styles remain exactly the same] ... */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary: #FF6B35; --primary-dark: #E8551E; --primary-light: #FFF0E8;
@@ -941,7 +942,7 @@
     <!-- ========== CHINESE + ARTICLE ========== -->
     <div id="module-chinese" class="module-container">
         <div class="section-card">
-            <div class="section-header"><i class="fas fa-dragon"></i><h2>Chinese Calendar</h2></div>
+            <div class="section-header"><i class="fas fa-dragon"></i><h2>Chinese Calendar 2026 (Year of the Horse)</h2></div>
             <div id="chineseContainer"></div>
             <div class="article-content" id="chineseArticle"></div>
         </div>
@@ -959,7 +960,7 @@
     <!-- ========== HEBREW + ARTICLE ========== -->
     <div id="module-hebrew" class="module-container">
         <div class="section-card">
-            <div class="section-header"><i class="fas fa-star-of-david"></i><h2>Hebrew Calendar</h2></div>
+            <div class="section-header"><i class="fas fa-star-of-david"></i><h2>Hebrew Calendar 5786-5787 (2026-2027)</h2></div>
             <div id="hebrewContainer"></div>
             <div class="article-content" id="hebrewArticle"></div>
         </div>
@@ -1866,8 +1867,6 @@
             
             eclipsesByYear[year].forEach(e => {
                 const d = new Date(e.date);
-                const eclipseTypeIcon = e.type === 'solar' ? '☀️' : '🌙';
-                const eclipseTypeText = e.type === 'solar' ? 'সূর্যগ্রহণ' : 'চন্দ্রগ্রহণ';
                 const visibilityBadge = e.visibleInBD ? 
                     '<span class="visibility-badge visibility-yes"><i class="fas fa-check-circle"></i> বাংলাদেশ থেকে দৃশ্যমান</span>' : 
                     '<span class="visibility-badge visibility-no"><i class="fas fa-times-circle"></i> বাংলাদেশ থেকে দৃশ্যমান নয়</span>';
@@ -1938,8 +1937,49 @@
     }
     
     function renderChinese() {
-        document.getElementById('chineseContainer').innerHTML = `<div class="stat-card"><h4>Chinese</h4><div class="value">Year of the Horse</div></div>`;
-        document.getElementById('chineseArticle').innerHTML = `<h3>The Chinese Calendar</h3><p>A lunisolar calendar combining lunar months with solar years. Each year is associated with one of 12 zodiac animals and 5 elements. The calendar uses a 60-year cycle and 24 solar terms. Chinese New Year falls on the second new moon after winter solstice.</p>`;
+        let html = `
+            <div style="margin-bottom:20px;">
+                <h3 style="color:var(--primary);">🐎 2026 - Year of the Horse</h3>
+                <p>The Chinese New Year begins on February 17, 2026, marking the start of the Year of the Horse.</p>
+            </div>
+            
+            <h4>Major Chinese Holidays 2026</h4>
+            <table class="data-table">
+                <thead><tr><th>Holiday</th><th>Gregorian Date</th><th>Lunar Date</th></tr></thead>
+                <tbody>
+                    <tr><td>New Year's Day</td><td>January 1, 2026</td><td>November 13, 2025</td></tr>
+                    <tr><td>Laba Festival</td><td>January 26, 2026</td><td>December 8, 2025</td></tr>
+                    <tr><td>Spring Festival Eve</td><td>February 16, 2026</td><td>December 29, 2025</td></tr>
+                    <tr><td><strong>Spring Festival (Chinese New Year)</strong></td><td><strong>February 17, 2026</strong></td><td><strong>January 1, 2026</strong></td></tr>
+                    <tr><td>Lantern Festival</td><td>March 3, 2026</td><td>January 15, 2026</td></tr>
+                    <tr><td>Qing Ming Festival</td><td>April 5, 2026</td><td>February 18, 2026</td></tr>
+                    <tr><td>Dragon Boat Festival</td><td>June 19, 2026</td><td>May 5, 2026</td></tr>
+                    <tr><td>Mid-Autumn Festival</td><td>September 25, 2026</td><td>August 15, 2026</td></tr>
+                    <tr><td>National Day</td><td>October 1, 2026</td><td>August 21, 2026</td></tr>
+                </tbody>
+            </table>
+            
+            <h4 style="margin-top:24px;">2026 Lunar Months</h4>
+            <table class="data-table">
+                <thead><tr><th>Lunar Month</th><th>From (Gregorian)</th><th>To (Gregorian)</th></tr></thead>
+                <tbody>
+                    <tr><td>1st Lunar Month</td><td>Feb 17, 2026</td><td>Mar 18, 2026</td></tr>
+                    <tr><td>2nd Lunar Month</td><td>Mar 19, 2026</td><td>Apr 16, 2026</td></tr>
+                    <tr><td>3rd Lunar Month</td><td>Apr 17, 2026</td><td>May 16, 2026</td></tr>
+                    <tr><td>4th Lunar Month</td><td>May 17, 2026</td><td>Jun 14, 2026</td></tr>
+                    <tr><td>5th Lunar Month</td><td>Jun 15, 2026</td><td>Jul 13, 2026</td></tr>
+                    <tr><td>6th Lunar Month</td><td>Jul 14, 2026</td><td>Aug 12, 2026</td></tr>
+                    <tr><td>7th Lunar Month</td><td>Aug 13, 2026</td><td>Sep 10, 2026</td></tr>
+                    <tr><td>8th Lunar Month</td><td>Sep 11, 2026</td><td>Oct 9, 2026</td></tr>
+                    <tr><td>9th Lunar Month</td><td>Oct 10, 2026</td><td>Nov 8, 2026</td></tr>
+                    <tr><td>10th Lunar Month</td><td>Nov 9, 2026</td><td>Dec 8, 2026</td></tr>
+                    <tr><td>11th Lunar Month</td><td>Dec 9, 2026</td><td>Jan 7, 2027</td></tr>
+                    <tr><td>12th Lunar Month</td><td>Jan 8, 2027</td><td>Feb 5, 2027</td></tr>
+                </tbody>
+            </table>
+        `;
+        document.getElementById('chineseContainer').innerHTML = html;
+        document.getElementById('chineseArticle').innerHTML = `<h3>The Chinese Calendar</h3><p>The Chinese calendar is a lunisolar calendar that incorporates elements of both lunar and solar cycles. 2026 is the Year of the Horse (Bing Wu). The calendar is used to determine traditional holidays like the Spring Festival (Chinese New Year), which falls on February 17, 2026. It also guides agricultural activities and is deeply connected with Chinese astrology.</p>`;
     }
     
     function renderHindu() {
@@ -1948,8 +1988,50 @@
     }
     
     function renderHebrew() {
-        document.getElementById('hebrewContainer').innerHTML = `<div class="stat-card"><h4>Hebrew</h4><div class="value">5786 AM</div></div>`;
-        document.getElementById('hebrewArticle').innerHTML = `<h3>The Hebrew Calendar</h3><p>A lunisolar calendar used for Jewish religious observances. Years are counted from Creation (Anno Mundi). Leap years add an extra month 7 times in a 19-year cycle. Major holidays include Rosh Hashanah, Yom Kippur, and Passover.</p>`;
+        let html = `
+            <div style="margin-bottom:20px;">
+                <h3 style="color:var(--primary);">✡️ Hebrew Year 5786-5787 (2026-2027)</h3>
+                <p>The Hebrew calendar is a lunisolar calendar used for Jewish religious observances.</p>
+            </div>
+            
+            <h4>Major Jewish Holidays 2026-2027</h4>
+            <table class="data-table">
+                <thead><tr><th>Holiday</th><th>Hebrew Date</th><th>Gregorian Date</th></tr></thead>
+                <tbody>
+                    <tr><td>Rosh Hashanah (New Year)</td><td>1-2 Tishrei 5787</td><td>September 11-12, 2026</td></tr>
+                    <tr><td>Yom Kippur</td><td>10 Tishrei 5787</td><td>September 20, 2026</td></tr>
+                    <tr><td>Sukkot</td><td>15-21 Tishrei 5787</td><td>September 25 - October 1, 2026</td></tr>
+                    <tr><td>Shemini Atzeret</td><td>22 Tishrei 5787</td><td>October 2, 2026</td></tr>
+                    <tr><td>Simchat Torah</td><td>23 Tishrei 5787</td><td>October 3, 2026</td></tr>
+                    <tr><td>Chanukah</td><td>25 Kislev - 2 Tevet 5787</td><td>December 5-12, 2026</td></tr>
+                    <tr><td>Purim</td><td>14 Adar 5787</td><td>February 21, 2027</td></tr>
+                    <tr><td>Passover (Pesach)</td><td>15-22 Nisan 5787</td><td>March 23-30, 2027</td></tr>
+                    <tr><td>Shavuot</td><td>6-7 Sivan 5787</td><td>May 11-12, 2027</td></tr>
+                    <tr><td>Tisha B'Av</td><td>9 Av 5787</td><td>July 15, 2027</td></tr>
+                </tbody>
+            </table>
+            
+            <h4 style="margin-top:24px;">Hebrew Months (5786-5787)</h4>
+            <table class="data-table">
+                <thead><tr><th>Month</th><th>Gregorian Period</th></tr></thead>
+                <tbody>
+                    <tr><td>Tishrei</td><td>September 11 - October 10, 2026</td></tr>
+                    <tr><td>Cheshvan</td><td>October 11 - November 9, 2026</td></tr>
+                    <tr><td>Kislev</td><td>November 10 - December 9, 2026</td></tr>
+                    <tr><td>Tevet</td><td>December 10, 2026 - January 8, 2027</td></tr>
+                    <tr><td>Shevat</td><td>January 9 - February 7, 2027</td></tr>
+                    <tr><td>Adar</td><td>February 8 - March 9, 2027</td></tr>
+                    <tr><td>Nisan</td><td>March 10 - April 8, 2027</td></tr>
+                    <tr><td>Iyar</td><td>April 9 - May 8, 2027</td></tr>
+                    <tr><td>Sivan</td><td>May 9 - June 7, 2027</td></tr>
+                    <tr><td>Tammuz</td><td>June 8 - July 7, 2027</td></tr>
+                    <tr><td>Av</td><td>July 8 - August 6, 2027</td></tr>
+                    <tr><td>Elul</td><td>August 7 - September 5, 2027</td></tr>
+                </tbody>
+            </table>
+        `;
+        document.getElementById('hebrewContainer').innerHTML = html;
+        document.getElementById('hebrewArticle').innerHTML = `<h3>The Hebrew Calendar</h3><p>The Hebrew calendar is a lunisolar calendar used for Jewish religious observances. Years are counted from Creation (Anno Mundi). The year 5786 begins at sunset on September 22, 2025, and 5787 begins at sunset on September 11, 2026. Leap years add an extra month (Adar II) 7 times in a 19-year cycle. Major holidays include Rosh Hashanah, Yom Kippur, Sukkot, Passover, and Shavuot.</p>`;
     }
     
     function renderIslamic() {
