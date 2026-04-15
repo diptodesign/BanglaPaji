@@ -1,0 +1,30 @@
+# robots.txt for বাংলা পঞ্জিকা (banglapanjika.netlify.app)
+# Last updated: April 15, 2026
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow crawling of admin/private areas (none currently, but good practice)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /drafts/
+
+# Allow Google AdsBot to crawl for ad relevance
+User-agent: AdsBot-Google
+Allow: /
+
+# Allow Googlebot to crawl JavaScript and CSS
+User-agent: Googlebot
+Allow: *.js
+Allow: *.css
+
+# Crawl delay (polite crawling - 1 second between requests)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://banglapanjika.netlify.app/sitemap.xml
+
+# Host declaration
+Host: banglapanjika.netlify.app
