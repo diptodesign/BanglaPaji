@@ -752,7 +752,7 @@
         <div class="nav-item" data-module="gregorian"><i class="fas fa-calendar"></i> Gregorian</div>
         <div class="nav-item" data-module="julian"><i class="fas fa-history"></i> Julian</div>
         <div class="nav-item" data-module="roman"><i class="fas fa-landmark"></i> Roman</div>
-        <div class="nav-item" data-module="egyptian"><i class="fas fa-chart-pyramid"></i> Egyptian</div>
+        <div class="nav-item" data-module="egyptian"><i class="fas fa-ankh"></i> Egyptian</div>
         
         <div class="nav-section-title">🌙 LUNAR CALENDARS</div>
         <div class="nav-item" data-module="chinese"><i class="fas fa-dragon"></i> Chinese</div>
@@ -918,7 +918,7 @@
     <!-- ========== HINDU + ARTICLE ========== -->
     <div id="module-hindu" class="module-container">
         <div class="section-card">
-            <div class="section-header"><i class="fas fa-star"></i><h2>Hindu Panchang</h2></div>
+            <div class="section-header"><i class="fas fa-star"></i><h2>Hindu Panjika</h2></div>
             <div id="hinduContainer"></div>
             <div class="article-content" id="hinduArticle"></div>
         </div>
@@ -945,7 +945,7 @@
     <!-- ========== 30+ CALCULATORS MODULE ========== -->
     <div id="module-calculators" class="module-container">
         <div class="section-card">
-            <div class="section-header"><i class="fas fa-calculator"></i><h2>30+ Working Calculators</h2></div>
+            <div class="section-header"><i class="fas fa-calculator"></i><h2>30+ Calculators</h2></div>
             
             <div class="calculator-grid">
                 <div class="calculator-card" onclick="window.showCalculator('age')"><i class="fas fa-birthday-cake"></i><h4>Age</h4></div>
@@ -1008,7 +1008,7 @@
         <div style="display:flex; justify-content:center; gap:32px; margin:24px 0; flex-wrap:wrap;">
             <a href="https://diptodesign.github.io/BanglaPaji/privacy.html" style="color:white;">Privacy</a>
             <a href="https://diptodesign.github.io/BanglaPaji/about" style="color:white;">About us</a>
-            <a href="/contact.html" style="color:white;">Contact</a>
+            <a href="https://diptodesign.github.io/BanglaPaji/contact.html" style="color:white;">Contact</a>
         </div>
         <p>© 2026 CalendarWorld</p>
     </div>
@@ -1889,7 +1889,7 @@
         document.getElementById('themeToggle').addEventListener('click', function() {
             document.body.classList.toggle('dark');
             const isDark = document.body.classList.contains('dark');
-            this.innerHTML = isDark ? '<i class="fas fa-sun"></i> <span>Light Mode</span>' : '<i class="fas fa-moon"></i> <span>Dark Mode</span>';
+            this.innerHTML = isDark ? '<i class="fas fa-sun"></i> <span>Light</span>' : '<i class="fas fa-moon"></i> <span>Dark Mode</span>';
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
         });
         
