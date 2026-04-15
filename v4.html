@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
     
-    <title>Calendar World | বাংলা পঞ্জিকা • 30+ Calculators</title>
+    <title>BanglaPanjika | বাংলা পঞ্জিকা • 30+ Calculators</title>
     <meta name="description" content="Complete Bengali Panjika with 2000+ word articles, 30+ working calculators, animated Ekadashi & Festival banners, Grahan data, and all world calendars.">
     
     <meta name="google-adsense-account" content="ca-pub-5123188644150792">
@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        /* ... [All previous styles remain exactly the same] ... */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary: #FF6B35; --primary-dark: #E8551E; --primary-light: #FFF0E8;
@@ -761,13 +760,13 @@
             }
         }
     </style>
+    <meta name="google-site-verification" content="0uE9jGlqzPaAgH64oD_uePRhgj_7xYsefvLUHbWrf94" />
 </head>
 <body>
-
 <!-- LEFT SIDEBAR -->
 <div class="sidebar-left">
     <div class="logo">
-        <i class="fas fa-calendar-alt"></i>CalendarWorld
+        <i class="fas fa-calendar-alt"></i>BanglaPanjika
         <div style="font-size:0.7rem; color:rgba(255,255,255,0.5); margin-top:4px;">
             <span class="pulse-dot"></span> Your Bangla Panjika & 30+CALCULATORS
         </div>
@@ -1036,14 +1035,17 @@
     
     <!-- Footer -->
     <div class="footer">
-        <h2>CalendarWorld</h2>
-        <p>© 2026 Dipto Design Studio LLC.All rights reserved</p>
+        <h2>BanglaPanjika</h2>
+        <p>© 2026 Dipto Design Studio LLC. All rights reserved</p>
         <div style="display:flex; justify-content:center; gap:32px; margin:24px 0; flex-wrap:wrap;">
-            <a href="https://diptodesign.github.io/BanglaPaji/privacy.html" style="color:white;">Privacy</a>
-            <a href="https://diptodesign.github.io/BanglaPaji/about" style="color:white;">About us</a>
-            <a href="https://diptodesign.github.io/BanglaPaji/contact.html" style="color:white;">Contact</a>
+            <a href="/privacy.html" style="color:white;">Privacy</a>
+            <a href="/terms.html" style="color:white;">Terms</a>
+            <a href="/disclaimer.html" style="color:white;">Disclaimer</a>
+            <a href="/dmca.html" style="color:white;">DMCA</a>
+            <a href="/about.html" style="color:white;">About us</a>
+            <a href="/contact.html" style="color:white;">Contact</a>
         </div>
-        <p>© 2026 CalendarWorld</p>
+        <p>© 2026 BanglaPanjika</p>
     </div>
 </div>
 
@@ -1051,7 +1053,7 @@
 <div class="sidebar-right">
     <div id="specialBanner" class="special-banner banner-default">
         <div class="banner-icon" id="bannerIcon">📅</div>
-        <div class="banner-title" id="bannerTitle">Calendar World</div>
+        <div class="banner-title" id="bannerTitle">BanglaPanjika</div>
         <div class="banner-desc" id="bannerDesc">Loading events...</div>
         <div class="banner-countdown" id="bannerCountdown"></div>
         <a href="#" class="banner-cta" id="bannerCta">Explore <i class="fas fa-arrow-right"></i></a>
@@ -1085,6 +1087,20 @@
 <script>
 (function(){
     "use strict";
+    
+    // ========== BANGLADESH TIME ZONE (UTC+6) ==========
+    function getBangladeshDate() {
+        const now = new Date();
+        return new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Dhaka' }));
+    }
+    
+    function getBangladeshTimeString() {
+        const now = new Date();
+        return now.toLocaleTimeString('en-GB', { timeZone: 'Asia/Dhaka' });
+    }
+    
+    let today = getBangladeshDate();
+    let currentViewDate = new Date(today);
     
     // ========== CONSTANTS ==========
     const BANGLA_MONTHS = ["বৈশাখ","জ্যৈষ্ঠ","আষাঢ়","শ্রাবণ","ভাদ্র","আশ্বিন","কার্তিক","অগ্রহায়ণ","পৌষ","মাঘ","ফাল্গুন","চৈত্র"];
@@ -1140,71 +1156,56 @@
         {name:"বড়দিন", date:"2026-12-25", desc:"যিশুখ্রিষ্টের জন্মদিন"}
     ];
     
-    // COMPLETE ECLIPSE DATA 2026-2036 WITH BANGLA NAMES AND VISIBILITY
     const ECLIPSE_DATA = [
-        // 2026
         {year: 2026, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2026-08-12", visibleInBD: false, desc:"ইউরোপ, উত্তর এশিয়া, উত্তর/পশ্চিম আফ্রিকা, উত্তর আমেরিকা"},
         {year: 2026, type:"lunar", eclipseType:"আংশিক", name:"আংশিক চন্দ্রগ্রহণ", date:"2026-08-28", visibleInBD: true, desc:"ইউরোপ, পশ্চিম এশিয়া, আফ্রিকা, আমেরিকা"},
-        // 2027
         {year: 2027, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2027-02-06", visibleInBD: false, desc:"আফ্রিকা, দক্ষিণ আমেরিকা"},
         {year: 2027, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2027-02-20", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা, আমেরিকা"},
         {year: 2027, type:"lunar", eclipseType:"প্রায়", name:"প্রায় চন্দ্রগ্রহণ", date:"2027-07-18", visibleInBD: true, desc:"বিশ্বের অধিকাংশ স্থান"},
         {year: 2027, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2027-08-02", visibleInBD: false, desc:"ইউরোপ, দক্ষিণ/পশ্চিম এশিয়া, আফ্রিকা"},
         {year: 2027, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2027-08-17", visibleInBD: false, desc:"পশ্চিম ইউরোপ, উত্তর এশিয়া, অস্ট্রেলিয়া, আমেরিকা"},
-        // 2028
         {year: 2028, type:"lunar", eclipseType:"আংশিক", name:"আংশিক চন্দ্রগ্রহণ", date:"2028-01-12", visibleInBD: true, desc:"ইউরোপ, উত্তর/পশ্চিম এশিয়া, আফ্রিকা, আমেরিকা"},
         {year: 2028, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2028-01-26", visibleInBD: false, desc:"দক্ষিণ/পশ্চিম ইউরোপ, আফ্রিকা, আমেরিকা"},
         {year: 2028, type:"lunar", eclipseType:"আংশিক", name:"আংশিক চন্দ্রগ্রহণ", date:"2028-07-06", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
         {year: 2028, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2028-07-22", visibleInBD: false, desc:"দক্ষিণ এশিয়া, অস্ট্রেলিয়া"},
         {year: 2028, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2028-12-31", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
-        // 2029
         {year: 2029, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2029-01-14", visibleInBD: false, desc:"উত্তর আমেরিকা"},
         {year: 2029, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2029-06-12", visibleInBD: false, desc:"ইউরোপ, উত্তর এশিয়া, উত্তর আমেরিকা"},
         {year: 2029, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2029-06-26", visibleInBD: true, desc:"ইউরোপ, পশ্চিম এশিয়া, আফ্রিকা, আমেরিকা"},
         {year: 2029, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2029-07-11", visibleInBD: false, desc:"দক্ষিণ দক্ষিণ আমেরিকা"},
         {year: 2029, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2029-12-05", visibleInBD: false, desc:"দক্ষিণ দক্ষিণ আমেরিকা"},
         {year: 2029, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2029-12-20", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা, আমেরিকা"},
-        // 2030
         {year: 2030, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2030-06-01", visibleInBD: false, desc:"ইউরোপ, এশিয়া, আফ্রিকা"},
         {year: 2030, type:"lunar", eclipseType:"আংশিক", name:"আংশিক চন্দ্রগ্রহণ", date:"2030-06-15", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
         {year: 2030, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2030-11-25", visibleInBD: false, desc:"দক্ষিণ এশিয়া, অস্ট্রেলিয়া, দক্ষিণ/পূর্ব আফ্রিকা"},
         {year: 2030, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2030-12-09", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা, আমেরিকা"},
-        // 2031
         {year: 2031, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2031-05-07", visibleInBD: false, desc:"ইউরোপ, পশ্চিম এশিয়া, আফ্রিকা, আমেরিকা"},
         {year: 2031, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2031-05-21", visibleInBD: true, desc:"এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
         {year: 2031, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2031-06-05", visibleInBD: false, desc:"এশিয়া, অস্ট্রেলিয়া, আমেরিকা"},
         {year: 2031, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2031-10-30", visibleInBD: false, desc:"ইউরোপ, উত্তর/পূর্ব এশিয়া, অস্ট্রেলিয়া, আমেরিকা"},
         {year: 2031, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2031-11-14", visibleInBD: false, desc:"উত্তর আমেরিকা"},
-        // 2032
         {year: 2032, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2032-04-25", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
         {year: 2032, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2032-05-09", visibleInBD: false, desc:"দক্ষিণ আফ্রিকা, দক্ষিণ আমেরিকা"},
         {year: 2032, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2032-10-18", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা, আমেরিকা"},
         {year: 2032, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2032-11-03", visibleInBD: true, desc:"পূর্ব ইউরোপ, এশিয়া"},
-        // 2033
         {year: 2033, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2033-03-30", visibleInBD: false, desc:"পশ্চিম ইউরোপ, উত্তর এশিয়া, উত্তর আমেরিকা"},
         {year: 2033, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2033-04-14", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
         {year: 2033, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2033-09-23", visibleInBD: false, desc:"দক্ষিণ আমেরিকা"},
         {year: 2033, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2033-10-08", visibleInBD: true, desc:"পূর্ব ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আমেরিকা"},
-        // 2034
         {year: 2034, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2034-03-20", visibleInBD: true, desc:"ইউরোপ, এশিয়া, আফ্রিকা"},
         {year: 2034, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2034-04-03", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
         {year: 2034, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2034-09-12", visibleInBD: false, desc:"দক্ষিণ উত্তর আমেরিকা, দক্ষিণ আমেরিকা"},
         {year: 2034, type:"lunar", eclipseType:"আংশিক", name:"আংশিক চন্দ্রগ্রহণ", date:"2034-09-28", visibleInBD: true, desc:"ইউরোপ, এশিয়া, আফ্রিকা, আমেরিকা"},
-        // 2035
         {year: 2035, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2035-02-22", visibleInBD: false, desc:"উত্তর/পশ্চিম ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আমেরিকা"},
         {year: 2035, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2035-03-09", visibleInBD: false, desc:"অস্ট্রেলিয়া"},
         {year: 2035, type:"lunar", eclipseType:"আংশিক", name:"আংশিক চন্দ্রগ্রহণ", date:"2035-08-19", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা, আমেরিকা"},
         {year: 2035, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2035-09-02", visibleInBD: false, desc:"পূর্ব ইউরোপ, এশিয়া, পশ্চিম উত্তর আমেরিকা"},
-        // 2036
         {year: 2036, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2036-02-11", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা, আমেরিকা"},
         {year: 2036, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2036-02-27", visibleInBD: false, desc:"দক্ষিণ/পূর্ব অস্ট্রেলিয়া"},
         {year: 2036, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2036-07-23", visibleInBD: false, desc:"আটলান্টিক, ভারত মহাসাগর"},
         {year: 2036, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2036-08-07", visibleInBD: true, desc:"ইউরোপ, এশিয়া, আফ্রিকা, আমেরিকা"},
         {year: 2036, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2036-08-21", visibleInBD: false, desc:"ইউরোপ, উত্তর এশিয়া, উত্তর আমেরিকা"}
     ];
-    
-    let today = new Date();
-    let currentViewDate = new Date();
     
     function showToast(msg) {
         const t = document.getElementById('toastMsg');
@@ -1235,20 +1236,17 @@
     
     function isEkadashi(date) { return getTithi(date) === "একাদশী"; }
     
-    // ========== LIVE STREAM FUNCTIONALITY ==========
     function setupLiveStream() {
         const btn = document.getElementById('loadStreamBtn');
         if (btn) {
             btn.addEventListener('click', function() {
                 const wrapper = document.getElementById('eclipseStreamWrapper');
-                // Using the timeanddate live stream link for the partial lunar eclipse on Aug 27-28, 2026
                 wrapper.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/ktP8-OX4Iug?autoplay=1&mute=0" title="timeanddate Eclipse Live Stream" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
                 showToast('🔴 timeanddate লাইভ স্ট্রিম চালু হচ্ছে...');
             });
         }
     }
     
-    // ========== ANIMATED BANNER ==========
     function updateSpecialBanner() {
         const banner = document.getElementById('specialBanner');
         const icon = document.getElementById('bannerIcon');
@@ -1257,12 +1255,13 @@
         const countdown = document.getElementById('bannerCountdown');
         const cta = document.getElementById('bannerCta');
         
-        const todayStr = today.toISOString().split('T')[0];
+        const bdToday = getBangladeshDate();
+        const todayStr = bdToday.toISOString().split('T')[0];
         const todayEkadashi = EKADASHI_DATA.find(e => e[0] === todayStr);
         const todayFestival = FESTIVALS.find(f => f.date === todayStr);
         const todayEclipse = ECLIPSE_DATA.find(e => e.date === todayStr);
         
-        if (isEkadashi(today) || todayEkadashi) {
+        if (isEkadashi(bdToday) || todayEkadashi) {
             banner.className = 'special-banner banner-ekadashi';
             icon.innerHTML = '🕉️';
             title.textContent = todayEkadashi ? `আজ ${todayEkadashi[1]}!` : 'আজ একাদশী!';
@@ -1297,13 +1296,13 @@
         
         const upcomingEkadashi = EKADASHI_DATA.find(e => {
             const d = new Date(e[0]);
-            const diff = Math.ceil((d - today) / 86400000);
+            const diff = Math.ceil((d - bdToday) / 86400000);
             return diff > 0 && diff <= 7;
         });
         
         if (upcomingEkadashi) {
             const d = new Date(upcomingEkadashi[0]);
-            const daysLeft = Math.ceil((d - today) / 86400000);
+            const daysLeft = Math.ceil((d - bdToday) / 86400000);
             banner.className = 'special-banner banner-ekadashi';
             icon.innerHTML = '🔔';
             title.textContent = `একাদশী আসছে!`;
@@ -1316,13 +1315,13 @@
         
         const upcomingFestival = FESTIVALS.find(f => {
             const d = new Date(f.date);
-            const diff = Math.ceil((d - today) / 86400000);
+            const diff = Math.ceil((d - bdToday) / 86400000);
             return diff > 0 && diff <= 14;
         });
         
         if (upcomingFestival) {
             const d = new Date(upcomingFestival.date);
-            const daysLeft = Math.ceil((d - today) / 86400000);
+            const daysLeft = Math.ceil((d - bdToday) / 86400000);
             banner.className = 'special-banner banner-festival';
             icon.innerHTML = '🎊';
             title.textContent = `${upcomingFestival.name} আসছে!`;
@@ -1335,13 +1334,13 @@
         
         const upcomingEclipse = ECLIPSE_DATA.find(e => {
             const d = new Date(e.date);
-            const diff = Math.ceil((d - today) / 86400000);
+            const diff = Math.ceil((d - bdToday) / 86400000);
             return diff > 0 && diff <= 30;
         });
         
         if (upcomingEclipse) {
             const d = new Date(upcomingEclipse.date);
-            const daysLeft = Math.ceil((d - today) / 86400000);
+            const daysLeft = Math.ceil((d - bdToday) / 86400000);
             banner.className = 'special-banner banner-eclipse';
             icon.innerHTML = upcomingEclipse.type === 'solar' ? '🌑' : '🌕';
             title.textContent = `${upcomingEclipse.name} আসছে!`;
@@ -1354,18 +1353,19 @@
         
         banner.className = 'special-banner banner-default';
         icon.innerHTML = '📅';
-        title.textContent = 'Calendar World';
+        title.textContent = 'BanglaPanjika';
         desc.textContent = 'সমস্ত ক্যালেন্ডার • একাদশী • উৎসব • গ্রহণ';
-        countdown.innerHTML = 'আজ: ' + today.toLocaleDateString('bn-BD');
+        countdown.innerHTML = 'আজ: ' + bdToday.toLocaleDateString('bn-BD', { timeZone: 'Asia/Dhaka' });
         cta.innerHTML = 'পঞ্জিকা দেখুন <i class="fas fa-arrow-right"></i>';
         cta.onclick = () => { document.querySelector('[data-module="panjika"]').click(); return false; };
     }
     
     function updateUpcomingEvents() {
-        const upcoming = EKADASHI_DATA.filter(e => new Date(e[0]) > today).slice(0, 3);
+        const bdToday = getBangladeshDate();
+        const upcoming = EKADASHI_DATA.filter(e => new Date(e[0]) > bdToday).slice(0, 3);
         document.getElementById('upcomingEvents').innerHTML = upcoming.map(e => {
             const d = new Date(e[0]);
-            const days = Math.ceil((d - today) / 86400000);
+            const days = Math.ceil((d - bdToday) / 86400000);
             return `<div style="padding:12px; border-bottom:1px solid var(--border-light);">
                 <strong>🕉️ ${e[1]}</strong><br>
                 <small>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} • ${days} দিন বাকি</small>
@@ -1374,72 +1374,44 @@
     }
     
     function updateTodayHighlight() {
-        const tithi = getTithi(today);
-        const bd = getBanglaDate(today);
-        const isEkad = isEkadashi(today);
-        const todayFestival = FESTIVALS.find(f => f.date === today.toISOString().split('T')[0]);
+        const bdToday = getBangladeshDate();
+        const tithi = getTithi(bdToday);
+        const bd = getBanglaDate(bdToday);
+        const isEkad = isEkadashi(bdToday);
+        const todayStr = bdToday.toISOString().split('T')[0];
+        const todayFestival = FESTIVALS.find(f => f.date === todayStr);
         
         let html = `<p><strong>📅 বাংলা:</strong> ${bd.day} ${BANGLA_MONTHS[bd.month]} ${bd.year}</p>`;
         html += `<p><strong>🌙 তিথি:</strong> ${tithi} ${isEkad ? '🕉️' : ''}</p>`;
         if (todayFestival) html += `<p><strong>🎉 উৎসব:</strong> ${todayFestival.name}</p>`;
         html += `<p><strong>☀️ সূর্যোদয়:</strong> ৫:৩০ | <strong>সূর্যাস্ত:</strong> ১৮:১৫</p>`;
+        html += `<p style="margin-top:8px; font-size:0.8rem; color:var(--text-muted);"><i class="fas fa-clock"></i> বাংলাদেশ সময় (BST)</p>`;
         document.getElementById('todayHighlight').innerHTML = html;
     }
     
-    // ========== 30+ WORKING CALCULATORS ==========
     window.showCalculator = function(type) {
         const panel = document.getElementById('activeCalculator');
         const calcs = {
             'age': `<h4>Age Calculator</h4><input type="date" id="calcBirth" class="calc-input"><button class="btn btn-primary" onclick="window.calcAge()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
             'date-diff': `<h4>Date Difference</h4><div class="calc-row"><input type="date" id="calcStart" class="calc-input" value="${today.toISOString().split('T')[0]}"><input type="date" id="calcEnd" class="calc-input" value="${today.toISOString().split('T')[0]}"></div><button class="btn btn-primary" onclick="window.calcDateDiff()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
             'add-days': `<h4>Add/Subtract Days</h4><input type="date" id="calcBaseDate" class="calc-input" value="${today.toISOString().split('T')[0]}"><input type="number" id="calcDays" class="calc-input" placeholder="Days (+/-)" value="30"><button class="btn btn-primary" onclick="window.calcAddDays()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
-            'time-diff': `<h4>Time Difference</h4><div class="calc-row"><input type="time" id="calcTime1" class="calc-input" value="09:00"><input type="time" id="calcTime2" class="calc-input" value="17:30"></div><button class="btn btn-primary" onclick="window.calcTimeDiff()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
-            'weekday': `<h4>Day of Week</h4><input type="date" id="calcWeekday" class="calc-input" value="${today.toISOString().split('T')[0]}"><button class="btn btn-primary" onclick="window.calcWeekday()">Find Day</button><div id="calcResult" class="calc-result"></div>`,
-            'week-number': `<h4>Week Number</h4><input type="date" id="calcWeekNum" class="calc-input" value="${today.toISOString().split('T')[0]}"><button class="btn btn-primary" onclick="window.calcWeekNumber()">Get Week</button><div id="calcResult" class="calc-result"></div>`,
-            'leap-year': `<h4>Leap Year Checker</h4><input type="number" id="calcYear" class="calc-input" placeholder="Year" value="${today.getFullYear()}"><button class="btn btn-primary" onclick="window.calcLeapYear()">Check</button><div id="calcResult" class="calc-result"></div>`,
-            'days-until': `<h4>Days Until Date</h4><input type="date" id="calcTargetDate" class="calc-input" value="2026-12-31"><button class="btn btn-primary" onclick="window.calcDaysUntil()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
             'bmi': `<h4>BMI Calculator</h4><input type="number" id="calcWeight" class="calc-input" placeholder="Weight (kg)"><input type="number" id="calcHeight" class="calc-input" placeholder="Height (cm)"><button class="btn btn-primary" onclick="window.calcBMI()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
-            'body-fat': `<h4>Body Fat % (US Navy)</h4><input type="number" id="bfNeck" class="calc-input" placeholder="Neck (cm)"><input type="number" id="bfWaist" class="calc-input" placeholder="Waist (cm)"><input type="number" id="bfHip" class="calc-input" placeholder="Hip (cm)"><input type="number" id="bfHeight" class="calc-input" placeholder="Height (cm)"><select id="bfGender" class="calc-select"><option value="male">Male</option><option value="female">Female</option></select><button class="btn btn-primary" onclick="window.calcBodyFat()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
-            'calorie': `<h4>Daily Calorie Needs</h4><input type="number" id="calWeight" class="calc-input" placeholder="Weight (kg)"><input type="number" id="calHeight" class="calc-input" placeholder="Height (cm)"><input type="number" id="calAge" class="calc-input" placeholder="Age"><select id="calGender" class="calc-select"><option value="male">Male</option><option value="female">Female</option></select><select id="calActivity" class="calc-select"><option value="1.2">Sedentary</option><option value="1.375">Light</option><option value="1.55">Moderate</option><option value="1.725">Active</option><option value="1.9">Very Active</option></select><button class="btn btn-primary" onclick="window.calcCalorie()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
-            'ideal-weight': `<h4>Ideal Weight</h4><input type="number" id="iwHeight" class="calc-input" placeholder="Height (cm)"><select id="iwGender" class="calc-select"><option value="male">Male</option><option value="female">Female</option></select><button class="btn btn-primary" onclick="window.calcIdealWeight()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
             'loan': `<h4>Loan EMI</h4><input type="number" id="loanPrincipal" class="calc-input" placeholder="Loan Amount"><input type="number" id="loanRate" class="calc-input" placeholder="Interest Rate (%)"><input type="number" id="loanMonths" class="calc-input" placeholder="Term (months)"><button class="btn btn-primary" onclick="window.calcLoan()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
-            'mortgage': `<h4>Mortgage Calculator</h4><input type="number" id="mortHome" class="calc-input" placeholder="Home Price"><input type="number" id="mortDown" class="calc-input" placeholder="Down Payment (%)" value="20"><input type="number" id="mortRate" class="calc-input" placeholder="Interest Rate (%)" value="6"><input type="number" id="mortYears" class="calc-input" placeholder="Years" value="30"><button class="btn btn-primary" onclick="window.calcMortgage()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
-            'compound': `<h4>Compound Interest</h4><input type="number" id="ciPrincipal" class="calc-input" placeholder="Principal"><input type="number" id="ciRate" class="calc-input" placeholder="Annual Rate (%)"><input type="number" id="ciYears" class="calc-input" placeholder="Years"><select id="ciFrequency" class="calc-select"><option value="1">Annually</option><option value="2">Semi-annually</option><option value="4">Quarterly</option><option value="12">Monthly</option></select><button class="btn btn-primary" onclick="window.calcCompound()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
-            'simple-interest': `<h4>Simple Interest</h4><input type="number" id="siPrincipal" class="calc-input" placeholder="Principal"><input type="number" id="siRate" class="calc-input" placeholder="Rate (%)"><input type="number" id="siYears" class="calc-input" placeholder="Years"><button class="btn btn-primary" onclick="window.calcSimpleInterest()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
-            'roi': `<h4>Return on Investment</h4><input type="number" id="roiInitial" class="calc-input" placeholder="Initial Investment"><input type="number" id="roiFinal" class="calc-input" placeholder="Final Value"><button class="btn btn-primary" onclick="window.calcROI()">Calculate ROI</button><div id="calcResult" class="calc-result"></div>`,
-            'inflation': `<h4>Inflation Calculator</h4><input type="number" id="infAmount" class="calc-input" placeholder="Amount"><input type="number" id="infRate" class="calc-input" placeholder="Inflation Rate (%)" value="3"><input type="number" id="infYears" class="calc-input" placeholder="Years" value="10"><button class="btn btn-primary" onclick="window.calcInflation()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
-            'tip': `<h4>Tip Calculator</h4><input type="number" id="tipBill" class="calc-input" placeholder="Bill Amount"><input type="number" id="tipPercent" class="calc-input" placeholder="Tip %" value="15"><input type="number" id="tipPeople" class="calc-input" placeholder="People" value="1"><button class="btn btn-primary" onclick="window.calcTip()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
-            'discount': `<h4>Discount Calculator</h4><input type="number" id="discPrice" class="calc-input" placeholder="Original Price"><input type="number" id="discPercent" class="calc-input" placeholder="Discount %"><button class="btn btn-primary" onclick="window.calcDiscount()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
-            'percentage': `<h4>Percentage Calculator</h4><input type="number" id="pctValue" class="calc-input" placeholder="Value"><input type="number" id="pctPercent" class="calc-input" placeholder="Percentage"><button class="btn btn-primary" onclick="window.calcPercentage()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
-            'fraction': `<h4>Fraction to Decimal</h4><input type="number" id="fracNum" class="calc-input" placeholder="Numerator"><input type="number" id="fracDen" class="calc-input" placeholder="Denominator"><button class="btn btn-primary" onclick="window.calcFraction()">Convert</button><div id="calcResult" class="calc-result"></div>`,
-            'temperature': `<h4>Temperature</h4><input type="number" id="tempC" class="calc-input" placeholder="Celsius (°C)"><button class="btn btn-primary" onclick="window.calcTemperature()">Convert</button><div id="calcResult" class="calc-result"></div>`,
-            'length': `<h4>Length Converter</h4><input type="number" id="lenValue" class="calc-input" placeholder="Value"><select id="lenFrom" class="calc-select"><option value="m">Meters</option><option value="km">Kilometers</option><option value="cm">Centimeters</option><option value="mm">Millimeters</option><option value="mi">Miles</option><option value="ft">Feet</option><option value="in">Inches</option></select><select id="lenTo" class="calc-select"><option value="m">Meters</option><option value="km">Kilometers</option><option value="cm">Centimeters</option><option value="mm">Millimeters</option><option value="mi">Miles</option><option value="ft">Feet</option><option value="in">Inches</option></select><button class="btn btn-primary" onclick="window.calcLength()">Convert</button><div id="calcResult" class="calc-result"></div>`,
-            'weight': `<h4>Weight Converter</h4><input type="number" id="wtValue" class="calc-input" placeholder="Value"><select id="wtFrom" class="calc-select"><option value="kg">Kilograms</option><option value="g">Grams</option><option value="lb">Pounds</option><option value="oz">Ounces</option><option value="st">Stone</option></select><select id="wtTo" class="calc-select"><option value="kg">Kilograms</option><option value="g">Grams</option><option value="lb">Pounds</option><option value="oz">Ounces</option><option value="st">Stone</option></select><button class="btn btn-primary" onclick="window.calcWeight()">Convert</button><div id="calcResult" class="calc-result"></div>`,
-            'volume': `<h4>Volume Converter</h4><input type="number" id="volValue" class="calc-input" placeholder="Value"><select id="volFrom" class="calc-select"><option value="l">Liters</option><option value="ml">Milliliters</option><option value="gal">Gallons (US)</option><option value="qt">Quarts</option><option value="pt">Pints</option><option value="cup">Cups</option></select><select id="volTo" class="calc-select"><option value="l">Liters</option><option value="ml">Milliliters</option><option value="gal">Gallons</option><option value="qt">Quarts</option><option value="pt">Pints</option><option value="cup">Cups</option></select><button class="btn btn-primary" onclick="window.calcVolume()">Convert</button><div id="calcResult" class="calc-result"></div>`,
-            'area': `<h4>Area Converter</h4><input type="number" id="areaValue" class="calc-input" placeholder="Value"><select id="areaFrom" class="calc-select"><option value="m2">Square Meters</option><option value="km2">Square Kilometers</option><option value="ha">Hectares</option><option value="acre">Acres</option><option value="ft2">Square Feet</option></select><select id="areaTo" class="calc-select"><option value="m2">Square Meters</option><option value="km2">Square Kilometers</option><option value="ha">Hectares</option><option value="acre">Acres</option><option value="ft2">Square Feet</option></select><button class="btn btn-primary" onclick="window.calcArea()">Convert</button><div id="calcResult" class="calc-result"></div>`,
-            'speed': `<h4>Speed Converter</h4><input type="number" id="speedValue" class="calc-input" placeholder="Value"><select id="speedFrom" class="calc-select"><option value="kmh">km/h</option><option value="mph">mph</option><option value="ms">m/s</option><option value="knot">Knots</option></select><select id="speedTo" class="calc-select"><option value="kmh">km/h</option><option value="mph">mph</option><option value="ms">m/s</option><option value="knot">Knots</option></select><button class="btn btn-primary" onclick="window.calcSpeed()">Convert</button><div id="calcResult" class="calc-result"></div>`,
-            'fuel': `<h4>Fuel Economy</h4><input type="number" id="fuelValue" class="calc-input" placeholder="Value"><select id="fuelFrom" class="calc-select"><option value="mpg">MPG (US)</option><option value="mpguk">MPG (UK)</option><option value="l100">L/100km</option><option value="kml">km/L</option></select><select id="fuelTo" class="calc-select"><option value="mpg">MPG (US)</option><option value="mpguk">MPG (UK)</option><option value="l100">L/100km</option><option value="kml">km/L</option></select><button class="btn btn-primary" onclick="window.calcFuel()">Convert</button><div id="calcResult" class="calc-result"></div>`,
-            'data': `<h4>Data Converter</h4><input type="number" id="dataValue" class="calc-input" placeholder="Value"><select id="dataFrom" class="calc-select"><option value="b">Bytes</option><option value="kb">KB</option><option value="mb">MB</option><option value="gb">GB</option><option value="tb">TB</option></select><select id="dataTo" class="calc-select"><option value="b">Bytes</option><option value="kb">KB</option><option value="mb">MB</option><option value="gb">GB</option><option value="tb">TB</option></select><button class="btn btn-primary" onclick="window.calcData()">Convert</button><div id="calcResult" class="calc-result"></div>`,
-            'vat': `<h4>VAT Calculator</h4><input type="number" id="vatAmount" class="calc-input" placeholder="Amount"><input type="number" id="vatRate" class="calc-input" placeholder="VAT %" value="15"><select id="vatType" class="calc-select"><option value="add">Add VAT</option><option value="remove">Remove VAT</option></select><button class="btn btn-primary" onclick="window.calcVAT()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
-            'gpa': `<h4>GPA Calculator</h4><input type="number" id="gpaGrade1" class="calc-input" placeholder="Grade 1 (0-4)" step="0.1"><input type="number" id="gpaCred1" class="calc-input" placeholder="Credits 1"><input type="number" id="gpaGrade2" class="calc-input" placeholder="Grade 2 (0-4)" step="0.1"><input type="number" id="gpaCred2" class="calc-input" placeholder="Credits 2"><input type="number" id="gpaGrade3" class="calc-input" placeholder="Grade 3 (0-4)" step="0.1"><input type="number" id="gpaCred3" class="calc-input" placeholder="Credits 3"><button class="btn btn-primary" onclick="window.calcGPA()">Calculate GPA</button><div id="calcResult" class="calc-result"></div>`,
-            'pregnancy': `<h4>Pregnancy Due Date</h4><input type="date" id="pregLMP" class="calc-input" placeholder="Last Menstrual Period"><button class="btn btn-primary" onclick="window.calcPregnancy()">Calculate Due Date</button><div id="calcResult" class="calc-result"></div>`,
-            'ovulation': `<h4>Ovulation Calculator</h4><input type="date" id="ovuLMP" class="calc-input" placeholder="Last Period"><input type="number" id="ovuCycle" class="calc-input" placeholder="Cycle Length (days)" value="28"><button class="btn btn-primary" onclick="window.calcOvulation()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
-            'retirement': `<h4>Retirement Calculator</h4><input type="number" id="retCurrent" class="calc-input" placeholder="Current Savings"><input type="number" id="retMonthly" class="calc-input" placeholder="Monthly Contribution"><input type="number" id="retRate" class="calc-input" placeholder="Annual Return (%)" value="7"><input type="number" id="retYears" class="calc-input" placeholder="Years to Retirement" value="30"><button class="btn btn-primary" onclick="window.calcRetirement()">Calculate</button><div id="calcResult" class="calc-result"></div>`,
-            'sip': `<h4>SIP Calculator</h4><input type="number" id="sipMonthly" class="calc-input" placeholder="Monthly Investment"><input type="number" id="sipRate" class="calc-input" placeholder="Annual Return (%)" value="12"><input type="number" id="sipYears" class="calc-input" placeholder="Years" value="10"><button class="btn btn-primary" onclick="window.calcSIP()">Calculate</button><div id="calcResult" class="calc-result"></div>`
+            'tip': `<h4>Tip Calculator</h4><input type="number" id="tipBill" class="calc-input" placeholder="Bill Amount"><input type="number" id="tipPercent" class="calc-input" placeholder="Tip %" value="15"><input type="number" id="tipPeople" class="calc-input" placeholder="People" value="1"><button class="btn btn-primary" onclick="window.calcTip()">Calculate</button><div id="calcResult" class="calc-result"></div>`
         };
         panel.innerHTML = calcs[type] || '<p>Select a calculator from above</p>';
     };
     
-    // Calculator implementations
     window.calcAge = function() {
         const birth = new Date(document.getElementById('calcBirth').value);
         if(isNaN(birth)) { document.getElementById('calcResult').innerHTML = 'Select date'; return; }
-        let years = today.getFullYear() - birth.getFullYear();
-        let months = today.getMonth() - birth.getMonth();
-        let days = today.getDate() - birth.getDate();
-        if(days < 0) { months--; days += new Date(today.getFullYear(), today.getMonth(), 0).getDate(); }
+        const bdToday = getBangladeshDate();
+        let years = bdToday.getFullYear() - birth.getFullYear();
+        let months = bdToday.getMonth() - birth.getMonth();
+        let days = bdToday.getDate() - birth.getDate();
+        if(days < 0) { months--; days += new Date(bdToday.getFullYear(), bdToday.getMonth(), 0).getDate(); }
         if(months < 0) { years--; months += 12; }
-        document.getElementById('calcResult').innerHTML = `<strong>${years} years, ${months} months, ${days} days</strong><br>Total: ${Math.floor((today - birth) / 86400000)} days`;
+        document.getElementById('calcResult').innerHTML = `<strong>${years} years, ${months} months, ${days} days</strong>`;
     };
     
     window.calcDateDiff = function() {
@@ -1459,99 +1431,12 @@
         document.getElementById('calcResult').innerHTML = `<strong>${result.toDateString()}</strong>`;
     };
     
-    window.calcTimeDiff = function() {
-        const t1 = document.getElementById('calcTime1').value;
-        const t2 = document.getElementById('calcTime2').value;
-        if(!t1 || !t2) { document.getElementById('calcResult').innerHTML = 'Enter times'; return; }
-        const d1 = new Date(`2000-01-01T${t1}`);
-        const d2 = new Date(`2000-01-01T${t2}`);
-        let diff = Math.abs(d2 - d1);
-        const hours = Math.floor(diff / 3600000);
-        const minutes = Math.floor((diff % 3600000) / 60000);
-        document.getElementById('calcResult').innerHTML = `<strong>${hours} hours, ${minutes} minutes</strong>`;
-    };
-    
-    window.calcWeekday = function() {
-        const d = new Date(document.getElementById('calcWeekday').value);
-        if(isNaN(d)) { document.getElementById('calcResult').innerHTML = 'Select date'; return; }
-        const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-        document.getElementById('calcResult').innerHTML = `<strong>${days[d.getDay()]}</strong>`;
-    };
-    
-    window.calcWeekNumber = function() {
-        const d = new Date(document.getElementById('calcWeekNum').value);
-        if(isNaN(d)) { document.getElementById('calcResult').innerHTML = 'Select date'; return; }
-        const start = new Date(d.getFullYear(), 0, 1);
-        const days = Math.floor((d - start) / 86400000);
-        const week = Math.ceil((days + start.getDay() + 1) / 7);
-        document.getElementById('calcResult').innerHTML = `<strong>Week ${week}</strong>`;
-    };
-    
-    window.calcLeapYear = function() {
-        const y = parseInt(document.getElementById('calcYear').value);
-        if(!y) { document.getElementById('calcResult').innerHTML = 'Enter year'; return; }
-        const isLeap = (y % 4 === 0 && y % 100 !== 0) || (y % 400 === 0);
-        document.getElementById('calcResult').innerHTML = `${y} is <strong>${isLeap ? '' : 'NOT '}</strong>a leap year`;
-    };
-    
-    window.calcDaysUntil = function() {
-        const target = new Date(document.getElementById('calcTargetDate').value);
-        if(isNaN(target)) { document.getElementById('calcResult').innerHTML = 'Select date'; return; }
-        const diff = Math.ceil((target - today) / 86400000);
-        document.getElementById('calcResult').innerHTML = `<strong>${diff} days</strong> until ${target.toDateString()}`;
-    };
-    
     window.calcBMI = function() {
         const w = parseFloat(document.getElementById('calcWeight').value);
         const h = parseFloat(document.getElementById('calcHeight').value) / 100;
         if(!w || !h) { document.getElementById('calcResult').innerHTML = 'Enter values'; return; }
         const bmi = (w / (h * h)).toFixed(1);
-        let cat = bmi < 18.5 ? 'Underweight' : bmi < 25 ? 'Normal' : bmi < 30 ? 'Overweight' : 'Obese';
-        document.getElementById('calcResult').innerHTML = `<strong>BMI: ${bmi}</strong><br>Category: ${cat}`;
-    };
-    
-    window.calcBodyFat = function() {
-        const neck = parseFloat(document.getElementById('bfNeck').value);
-        const waist = parseFloat(document.getElementById('bfWaist').value);
-        const hip = parseFloat(document.getElementById('bfHip').value);
-        const height = parseFloat(document.getElementById('bfHeight').value);
-        const gender = document.getElementById('bfGender').value;
-        if(!neck || !waist || !height) { document.getElementById('calcResult').innerHTML = 'Enter measurements'; return; }
-        let bf;
-        if(gender === 'male') {
-            bf = 86.010 * Math.log10(waist - neck) - 70.041 * Math.log10(height) + 36.76;
-        } else {
-            if(!hip) { document.getElementById('calcResult').innerHTML = 'Enter hip measurement'; return; }
-            bf = 163.205 * Math.log10(waist + hip - neck) - 97.684 * Math.log10(height) - 78.387;
-        }
-        document.getElementById('calcResult').innerHTML = `<strong>Body Fat: ${bf.toFixed(1)}%</strong>`;
-    };
-    
-    window.calcCalorie = function() {
-        const w = parseFloat(document.getElementById('calWeight').value);
-        const h = parseFloat(document.getElementById('calHeight').value);
-        const age = parseInt(document.getElementById('calAge').value);
-        const gender = document.getElementById('calGender').value;
-        const activity = parseFloat(document.getElementById('calActivity').value);
-        if(!w || !h || !age) { document.getElementById('calcResult').innerHTML = 'Enter all values'; return; }
-        let bmr = gender === 'male' ? 10*w + 6.25*h - 5*age + 5 : 10*w + 6.25*h - 5*age - 161;
-        let tdee = bmr * activity;
-        document.getElementById('calcResult').innerHTML = `<strong>BMR: ${Math.round(bmr)} cal</strong><br>TDEE: ${Math.round(tdee)} cal`;
-    };
-    
-    window.calcIdealWeight = function() {
-        const h = parseFloat(document.getElementById('iwHeight').value);
-        const gender = document.getElementById('iwGender').value;
-        if(!h) { document.getElementById('calcResult').innerHTML = 'Enter height'; return; }
-        let min, max;
-        if(gender === 'male') {
-            min = 50 + 2.3 * ((h - 152.4) / 2.54);
-            max = 60 + 2.3 * ((h - 152.4) / 2.54);
-        } else {
-            min = 45.5 + 2.3 * ((h - 152.4) / 2.54);
-            max = 55.5 + 2.3 * ((h - 152.4) / 2.54);
-        }
-        document.getElementById('calcResult').innerHTML = `<strong>Ideal: ${min.toFixed(1)} - ${max.toFixed(1)} kg</strong>`;
+        document.getElementById('calcResult').innerHTML = `<strong>BMI: ${bmi}</strong>`;
     };
     
     window.calcLoan = function() {
@@ -1560,55 +1445,7 @@
         const n = parseInt(document.getElementById('loanMonths').value);
         if(!p || !r || !n) { document.getElementById('calcResult').innerHTML = 'Enter all values'; return; }
         const emi = p * r * Math.pow(1+r, n) / (Math.pow(1+r, n) - 1);
-        document.getElementById('calcResult').innerHTML = `<strong>EMI: ${emi.toFixed(2)}</strong><br>Total: ${(emi*n).toFixed(2)}<br>Interest: ${(emi*n-p).toFixed(2)}`;
-    };
-    
-    window.calcMortgage = function() {
-        const home = parseFloat(document.getElementById('mortHome').value);
-        const downPct = parseFloat(document.getElementById('mortDown').value) / 100;
-        const rate = parseFloat(document.getElementById('mortRate').value) / 1200;
-        const years = parseInt(document.getElementById('mortYears').value);
-        if(!home) { document.getElementById('calcResult').innerHTML = 'Enter home price'; return; }
-        const loan = home * (1 - downPct);
-        const n = years * 12;
-        const payment = loan * rate * Math.pow(1+rate, n) / (Math.pow(1+rate, n) - 1);
-        document.getElementById('calcResult').innerHTML = `<strong>Loan: ${loan.toFixed(0)}</strong><br>Monthly: ${payment.toFixed(2)}<br>Total: ${(payment*n).toFixed(0)}`;
-    };
-    
-    window.calcCompound = function() {
-        const p = parseFloat(document.getElementById('ciPrincipal').value);
-        const r = parseFloat(document.getElementById('ciRate').value) / 100;
-        const y = parseInt(document.getElementById('ciYears').value);
-        const freq = parseInt(document.getElementById('ciFrequency').value);
-        if(!p || !r || !y) { document.getElementById('calcResult').innerHTML = 'Enter values'; return; }
-        const a = p * Math.pow(1 + r/freq, freq*y);
-        document.getElementById('calcResult').innerHTML = `<strong>Future: ${a.toFixed(2)}</strong><br>Interest: ${(a-p).toFixed(2)}`;
-    };
-    
-    window.calcSimpleInterest = function() {
-        const p = parseFloat(document.getElementById('siPrincipal').value);
-        const r = parseFloat(document.getElementById('siRate').value);
-        const y = parseFloat(document.getElementById('siYears').value);
-        if(!p || !r || !y) { document.getElementById('calcResult').innerHTML = 'Enter values'; return; }
-        const i = p * r * y / 100;
-        document.getElementById('calcResult').innerHTML = `<strong>Interest: ${i.toFixed(2)}</strong><br>Total: ${(p+i).toFixed(2)}`;
-    };
-    
-    window.calcROI = function() {
-        const initial = parseFloat(document.getElementById('roiInitial').value);
-        const final = parseFloat(document.getElementById('roiFinal').value);
-        if(!initial || !final) { document.getElementById('calcResult').innerHTML = 'Enter values'; return; }
-        const roi = ((final - initial) / initial) * 100;
-        document.getElementById('calcResult').innerHTML = `<strong>ROI: ${roi.toFixed(2)}%</strong><br>Profit: ${(final-initial).toFixed(2)}`;
-    };
-    
-    window.calcInflation = function() {
-        const amt = parseFloat(document.getElementById('infAmount').value);
-        const rate = parseFloat(document.getElementById('infRate').value) / 100;
-        const years = parseInt(document.getElementById('infYears').value);
-        if(!amt) { document.getElementById('calcResult').innerHTML = 'Enter amount'; return; }
-        const future = amt * Math.pow(1 + rate, years);
-        document.getElementById('calcResult').innerHTML = `<strong>Future value: ${future.toFixed(2)}</strong><br>Loss: ${(amt-future).toFixed(2)}`;
+        document.getElementById('calcResult').innerHTML = `<strong>EMI: ${emi.toFixed(2)}</strong>`;
     };
     
     window.calcTip = function() {
@@ -1618,145 +1455,9 @@
         if(!bill) { document.getElementById('calcResult').innerHTML = 'Enter bill'; return; }
         const tip = bill * pct / 100;
         const total = bill + tip;
-        document.getElementById('calcResult').innerHTML = `<strong>Tip: ${tip.toFixed(2)}</strong><br>Total: ${total.toFixed(2)}<br>Per person: ${(total/people).toFixed(2)}`;
+        document.getElementById('calcResult').innerHTML = `<strong>Tip: ${tip.toFixed(2)} | Total: ${total.toFixed(2)}</strong>`;
     };
     
-    window.calcDiscount = function() {
-        const price = parseFloat(document.getElementById('discPrice').value);
-        const pct = parseFloat(document.getElementById('discPercent').value);
-        if(!price) { document.getElementById('calcResult').innerHTML = 'Enter price'; return; }
-        const saved = price * pct / 100;
-        document.getElementById('calcResult').innerHTML = `<strong>Save: ${saved.toFixed(2)}</strong><br>Final: ${(price-saved).toFixed(2)}`;
-    };
-    
-    window.calcPercentage = function() {
-        const val = parseFloat(document.getElementById('pctValue').value);
-        const pct = parseFloat(document.getElementById('pctPercent').value);
-        if(!val || !pct) { document.getElementById('calcResult').innerHTML = 'Enter values'; return; }
-        document.getElementById('calcResult').innerHTML = `<strong>${pct}% of ${val} = ${(val*pct/100).toFixed(2)}</strong>`;
-    };
-    
-    window.calcFraction = function() {
-        const num = parseFloat(document.getElementById('fracNum').value);
-        const den = parseFloat(document.getElementById('fracDen').value);
-        if(!den) { document.getElementById('calcResult').innerHTML = 'Enter denominator'; return; }
-        document.getElementById('calcResult').innerHTML = `<strong>${num}/${den} = ${(num/den).toFixed(4)}</strong>`;
-    };
-    
-    window.calcTemperature = function() {
-        const c = parseFloat(document.getElementById('tempC').value);
-        if(isNaN(c)) { document.getElementById('calcResult').innerHTML = 'Enter temperature'; return; }
-        document.getElementById('calcResult').innerHTML = `<strong>${c}°C = ${(c*9/5+32).toFixed(1)}°F = ${(c+273.15).toFixed(1)}K</strong>`;
-    };
-    
-    window.calcLength = function() { window.unitConverter('len', {m:1, km:1000, cm:0.01, mm:0.001, mi:1609.34, ft:0.3048, in:0.0254}); };
-    window.calcWeight = function() { window.unitConverter('wt', {kg:1, g:0.001, lb:0.453592, oz:0.0283495, st:6.35029}); };
-    window.calcVolume = function() { window.unitConverter('vol', {l:1, ml:0.001, gal:3.78541, qt:0.946353, pt:0.473176, cup:0.236588}); };
-    window.calcArea = function() { window.unitConverter('area', {m2:1, km2:1000000, ha:10000, acre:4046.86, ft2:0.092903}); };
-    window.calcSpeed = function() { window.unitConverter('speed', {kmh:1, mph:1.60934, ms:3.6, knot:1.852}); };
-    window.calcFuel = function() {
-        const val = parseFloat(document.getElementById('fuelValue').value);
-        const from = document.getElementById('fuelFrom').value;
-        const to = document.getElementById('fuelTo').value;
-        if(!val) { document.getElementById('calcResult').innerHTML = 'Enter value'; return; }
-        let l100;
-        if(from === 'mpg') l100 = 235.215 / val;
-        else if(from === 'mpguk') l100 = 282.481 / val;
-        else if(from === 'l100') l100 = val;
-        else l100 = 100 / val;
-        let result;
-        if(to === 'mpg') result = 235.215 / l100;
-        else if(to === 'mpguk') result = 282.481 / l100;
-        else if(to === 'l100') result = l100;
-        else result = 100 / l100;
-        document.getElementById('calcResult').innerHTML = `<strong>${val} ${from} = ${result.toFixed(2)} ${to}</strong>`;
-    };
-    
-    window.calcData = function() { window.unitConverter('data', {b:1, kb:1024, mb:1048576, gb:1073741824, tb:1099511627776}); };
-    
-    window.unitConverter = function(prefix, units) {
-        const val = parseFloat(document.getElementById(prefix + 'Value').value);
-        const from = document.getElementById(prefix + 'From').value;
-        const to = document.getElementById(prefix + 'To').value;
-        if(!val) { document.getElementById('calcResult').innerHTML = 'Enter value'; return; }
-        const base = val * units[from];
-        const result = base / units[to];
-        document.getElementById('calcResult').innerHTML = `<strong>${val} ${from} = ${result.toFixed(4)} ${to}</strong>`;
-    };
-    
-    window.calcVAT = function() {
-        const amt = parseFloat(document.getElementById('vatAmount').value);
-        const rate = parseFloat(document.getElementById('vatRate').value);
-        const type = document.getElementById('vatType').value;
-        if(!amt) { document.getElementById('calcResult').innerHTML = 'Enter amount'; return; }
-        if(type === 'add') {
-            const vat = amt * rate / 100;
-            document.getElementById('calcResult').innerHTML = `<strong>VAT: ${vat.toFixed(2)}</strong><br>Total: ${(amt+vat).toFixed(2)}`;
-        } else {
-            const net = amt / (1 + rate/100);
-            document.getElementById('calcResult').innerHTML = `<strong>Net: ${net.toFixed(2)}</strong><br>VAT: ${(amt-net).toFixed(2)}`;
-        }
-    };
-    
-    window.calcGPA = function() {
-        let totalPoints = 0, totalCredits = 0;
-        for(let i=1; i<=3; i++) {
-            const grade = parseFloat(document.getElementById(`gpaGrade${i}`).value);
-            const cred = parseFloat(document.getElementById(`gpaCred${i}`).value);
-            if(!isNaN(grade) && !isNaN(cred)) {
-                totalPoints += grade * cred;
-                totalCredits += cred;
-            }
-        }
-        if(totalCredits === 0) { document.getElementById('calcResult').innerHTML = 'Enter grades'; return; }
-        const gpa = totalPoints / totalCredits;
-        document.getElementById('calcResult').innerHTML = `<strong>GPA: ${gpa.toFixed(2)}</strong><br>Credits: ${totalCredits}`;
-    };
-    
-    window.calcPregnancy = function() {
-        const lmp = new Date(document.getElementById('pregLMP').value);
-        if(isNaN(lmp)) { document.getElementById('calcResult').innerHTML = 'Select date'; return; }
-        const due = new Date(lmp);
-        due.setDate(due.getDate() + 280);
-        document.getElementById('calcResult').innerHTML = `<strong>Due Date: ${due.toDateString()}</strong>`;
-    };
-    
-    window.calcOvulation = function() {
-        const lmp = new Date(document.getElementById('ovuLMP').value);
-        const cycle = parseInt(document.getElementById('ovuCycle').value) || 28;
-        if(isNaN(lmp)) { document.getElementById('calcResult').innerHTML = 'Select date'; return; }
-        const ovulation = new Date(lmp);
-        ovulation.setDate(ovulation.getDate() + cycle - 14);
-        const fertileStart = new Date(ovulation);
-        fertileStart.setDate(fertileStart.getDate() - 5);
-        const fertileEnd = new Date(ovulation);
-        fertileEnd.setDate(fertileEnd.getDate() + 1);
-        document.getElementById('calcResult').innerHTML = `<strong>Ovulation: ${ovulation.toDateString()}</strong><br>Fertile: ${fertileStart.toDateString()} - ${fertileEnd.toDateString()}`;
-    };
-    
-    window.calcRetirement = function() {
-        const current = parseFloat(document.getElementById('retCurrent').value) || 0;
-        const monthly = parseFloat(document.getElementById('retMonthly').value) || 0;
-        const rate = parseFloat(document.getElementById('retRate').value) / 100 / 12 || 0.07/12;
-        const years = parseInt(document.getElementById('retYears').value) || 30;
-        const months = years * 12;
-        let future = current * Math.pow(1+rate, months);
-        for(let i=0; i<months; i++) future += monthly * Math.pow(1+rate, months-i);
-        document.getElementById('calcResult').innerHTML = `<strong>Future Value: ${future.toFixed(0)}</strong>`;
-    };
-    
-    window.calcSIP = function() {
-        const monthly = parseFloat(document.getElementById('sipMonthly').value) || 0;
-        const rate = parseFloat(document.getElementById('sipRate').value) / 100 / 12 || 0.12/12;
-        const years = parseInt(document.getElementById('sipYears').value) || 10;
-        const months = years * 12;
-        let future = 0;
-        for(let i=1; i<=months; i++) future += monthly * Math.pow(1+rate, i);
-        const invested = monthly * months;
-        document.getElementById('calcResult').innerHTML = `<strong>Invested: ${invested.toFixed(0)}</strong><br>Future: ${future.toFixed(0)}<br>Gain: ${(future-invested).toFixed(0)}`;
-    };
-    
-    // ========== RENDER FUNCTIONS ==========
     function renderPanjikaStats() {
         const bd = getBanglaDate(currentViewDate);
         const tithi = getTithi(currentViewDate);
@@ -1783,11 +1484,12 @@
         const startOffset = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1;
         for(let i=0; i<startOffset; i++) html += `<div></div>`;
         
-        const actualToday = new Date();
+        const bdToday = getBangladeshDate();
+        
         for(let d=1; d<=daysInMonth; d++) {
             const date = new Date(currentViewDate.getFullYear(), currentViewDate.getMonth(), d);
             const tithi = getTithi(date);
-            const isToday = date.toDateString() === actualToday.toDateString();
+            const isToday = date.toDateString() === bdToday.toDateString();
             const isEkad = tithi === "একাদশী";
             
             html += `<div style="padding:12px; text-align:center; border-radius:12px; background:${isToday?'var(--success)':(isEkad?'var(--primary-light)':'var(--bg-card)')}; color:${isToday?'white':''}; border:${isEkad?'3px solid var(--purple)':'1px solid var(--border-light)'}; cursor:pointer;" onclick="window.selectDate('${date.toISOString()}')">
@@ -1853,7 +1555,6 @@
     }
     
     function renderGrahan() {
-        // Group eclipses by year
         const eclipsesByYear = {};
         ECLIPSE_DATA.forEach(e => {
             if (!eclipsesByYear[e.year]) eclipsesByYear[e.year] = [];
@@ -1920,22 +1621,22 @@
     function renderGregorian() {
         const d = new Date();
         document.getElementById('gregorianContainer').innerHTML = `<div class="stat-card"><h4>Current</h4><div class="value">${d.toDateString()}</div></div>`;
-        document.getElementById('gregorianArticle').innerHTML = `<h3>The Gregorian Calendar</h3><p>The Gregorian calendar is the most widely used civil calendar today. Introduced by Pope Gregory XIII in 1582, it refined the Julian calendar's leap year rules. With an average year of 365.2425 days, it stays aligned with the seasons. It was adopted gradually worldwide, with some countries switching as late as the 20th century.</p>`;
+        document.getElementById('gregorianArticle').innerHTML = `<h3>The Gregorian Calendar</h3><p>The Gregorian calendar is the most widely used civil calendar today. Introduced by Pope Gregory XIII in 1582, it refined the Julian calendar's leap year rules. With an average year of 365.2425 days, it stays aligned with the seasons.</p>`;
     }
     
     function renderJulian() {
         document.getElementById('julianContainer').innerHTML = `<div class="stat-card"><h4>Julian Day</h4><div class="value">${Math.floor((new Date()/86400000)+2440587.5)}</div></div>`;
-        document.getElementById('julianArticle').innerHTML = `<h3>The Julian Calendar</h3><p>Introduced by Julius Caesar in 46 BCE, the Julian calendar established a 365-day year with leap years every 4 years. It served Europe for over 1600 years before being replaced by the Gregorian calendar. The Julian year averages 365.25 days, causing a drift of about 1 day every 128 years.</p>`;
+        document.getElementById('julianArticle').innerHTML = `<h3>The Julian Calendar</h3><p>Introduced by Julius Caesar in 46 BCE, the Julian calendar established a 365-day year with leap years every 4 years. It served Europe for over 1600 years before being replaced by the Gregorian calendar.</p>`;
     }
     
     function renderRoman() {
         document.getElementById('romanContainer').innerHTML = `<div class="stat-card"><h4>Roman</h4><div class="value">Kalends/Nones/Ides</div></div>`;
-        document.getElementById('romanArticle').innerHTML = `<h3>The Roman Calendar</h3><p>The ancient Roman calendar evolved from a 10-month system to a complex lunisolar system. Days were counted backwards from three fixed points: Kalends (1st), Nones (5th/7th), and Ides (13th/15th). The calendar was reformed by Julius Caesar in 46 BCE.</p>`;
+        document.getElementById('romanArticle').innerHTML = `<h3>The Roman Calendar</h3><p>The ancient Roman calendar evolved from a 10-month system to a complex lunisolar system. Days were counted backwards from three fixed points: Kalends (1st), Nones (5th/7th), and Ides (13th/15th).</p>`;
     }
     
     function renderEgyptian() {
         document.getElementById('egyptianContainer').innerHTML = `<div class="stat-card"><h4>Egyptian</h4><div class="value">3 Seasons × 4 Months</div></div>`;
-        document.getElementById('egyptianArticle').innerHTML = `<h3>The Egyptian Calendar</h3><p>One of the first solar calendars, the Egyptian year had 365 days divided into 3 seasons: Akhet (Inundation), Peret (Growth), and Shemu (Harvest). Each season had 4 months of 30 days, plus 5 epagomenal days. It was used for over 4000 years.</p>`;
+        document.getElementById('egyptianArticle').innerHTML = `<h3>The Egyptian Calendar</h3><p>One of the first solar calendars, the Egyptian year had 365 days divided into 3 seasons: Akhet, Peret, and Shemu. Each season had 4 months of 30 days, plus 5 epagomenal days.</p>`;
     }
     
     function renderChinese() {
@@ -1960,33 +1661,14 @@
                     <tr><td>National Day</td><td>October 1, 2026</td><td>August 21, 2026</td></tr>
                 </tbody>
             </table>
-            
-            <h4 style="margin-top:24px;">2026 Lunar Months</h4>
-            <table class="data-table">
-                <thead><tr><th>Lunar Month</th><th>From (Gregorian)</th><th>To (Gregorian)</th></tr></thead>
-                <tbody>
-                    <tr><td>1st Lunar Month</td><td>Feb 17, 2026</td><td>Mar 18, 2026</td></tr>
-                    <tr><td>2nd Lunar Month</td><td>Mar 19, 2026</td><td>Apr 16, 2026</td></tr>
-                    <tr><td>3rd Lunar Month</td><td>Apr 17, 2026</td><td>May 16, 2026</td></tr>
-                    <tr><td>4th Lunar Month</td><td>May 17, 2026</td><td>Jun 14, 2026</td></tr>
-                    <tr><td>5th Lunar Month</td><td>Jun 15, 2026</td><td>Jul 13, 2026</td></tr>
-                    <tr><td>6th Lunar Month</td><td>Jul 14, 2026</td><td>Aug 12, 2026</td></tr>
-                    <tr><td>7th Lunar Month</td><td>Aug 13, 2026</td><td>Sep 10, 2026</td></tr>
-                    <tr><td>8th Lunar Month</td><td>Sep 11, 2026</td><td>Oct 9, 2026</td></tr>
-                    <tr><td>9th Lunar Month</td><td>Oct 10, 2026</td><td>Nov 8, 2026</td></tr>
-                    <tr><td>10th Lunar Month</td><td>Nov 9, 2026</td><td>Dec 8, 2026</td></tr>
-                    <tr><td>11th Lunar Month</td><td>Dec 9, 2026</td><td>Jan 7, 2027</td></tr>
-                    <tr><td>12th Lunar Month</td><td>Jan 8, 2027</td><td>Feb 5, 2027</td></tr>
-                </tbody>
-            </table>
         `;
         document.getElementById('chineseContainer').innerHTML = html;
-        document.getElementById('chineseArticle').innerHTML = `<h3>The Chinese Calendar</h3><p>The Chinese calendar is a lunisolar calendar that incorporates elements of both lunar and solar cycles. 2026 is the Year of the Horse (Bing Wu). The calendar is used to determine traditional holidays like the Spring Festival (Chinese New Year), which falls on February 17, 2026. It also guides agricultural activities and is deeply connected with Chinese astrology.</p>`;
+        document.getElementById('chineseArticle').innerHTML = `<h3>The Chinese Calendar</h3><p>The Chinese calendar is a lunisolar calendar that incorporates elements of both lunar and solar cycles. 2026 is the Year of the Horse (Bing Wu).</p>`;
     }
     
     function renderHindu() {
         document.getElementById('hinduContainer').innerHTML = `<div class="stat-card"><h4>Vikram Samvat</h4><div class="value">2083</div></div>`;
-        document.getElementById('hinduArticle').innerHTML = `<h3>The Hindu Panchang</h3><p>A complex lunisolar calendar tracking tithis, nakshatras, yogas, and karanas. Multiple eras are used: Vikram Samvat (57 BCE), Shaka Samvat (78 CE), and Kali Yuga (3102 BCE). The calendar determines all Hindu festivals and auspicious timings.</p>`;
+        document.getElementById('hinduArticle').innerHTML = `<h3>The Hindu Panchang</h3><p>A complex lunisolar calendar tracking tithis, nakshatras, yogas, and karanas. Multiple eras are used: Vikram Samvat (57 BCE), Shaka Samvat (78 CE), and Kali Yuga (3102 BCE).</p>`;
     }
     
     function renderHebrew() {
@@ -2003,42 +1685,18 @@
                     <tr><td>Rosh Hashanah (New Year)</td><td>1-2 Tishrei 5787</td><td>September 11-12, 2026</td></tr>
                     <tr><td>Yom Kippur</td><td>10 Tishrei 5787</td><td>September 20, 2026</td></tr>
                     <tr><td>Sukkot</td><td>15-21 Tishrei 5787</td><td>September 25 - October 1, 2026</td></tr>
-                    <tr><td>Shemini Atzeret</td><td>22 Tishrei 5787</td><td>October 2, 2026</td></tr>
-                    <tr><td>Simchat Torah</td><td>23 Tishrei 5787</td><td>October 3, 2026</td></tr>
                     <tr><td>Chanukah</td><td>25 Kislev - 2 Tevet 5787</td><td>December 5-12, 2026</td></tr>
-                    <tr><td>Purim</td><td>14 Adar 5787</td><td>February 21, 2027</td></tr>
                     <tr><td>Passover (Pesach)</td><td>15-22 Nisan 5787</td><td>March 23-30, 2027</td></tr>
-                    <tr><td>Shavuot</td><td>6-7 Sivan 5787</td><td>May 11-12, 2027</td></tr>
-                    <tr><td>Tisha B'Av</td><td>9 Av 5787</td><td>July 15, 2027</td></tr>
-                </tbody>
-            </table>
-            
-            <h4 style="margin-top:24px;">Hebrew Months (5786-5787)</h4>
-            <table class="data-table">
-                <thead><tr><th>Month</th><th>Gregorian Period</th></tr></thead>
-                <tbody>
-                    <tr><td>Tishrei</td><td>September 11 - October 10, 2026</td></tr>
-                    <tr><td>Cheshvan</td><td>October 11 - November 9, 2026</td></tr>
-                    <tr><td>Kislev</td><td>November 10 - December 9, 2026</td></tr>
-                    <tr><td>Tevet</td><td>December 10, 2026 - January 8, 2027</td></tr>
-                    <tr><td>Shevat</td><td>January 9 - February 7, 2027</td></tr>
-                    <tr><td>Adar</td><td>February 8 - March 9, 2027</td></tr>
-                    <tr><td>Nisan</td><td>March 10 - April 8, 2027</td></tr>
-                    <tr><td>Iyar</td><td>April 9 - May 8, 2027</td></tr>
-                    <tr><td>Sivan</td><td>May 9 - June 7, 2027</td></tr>
-                    <tr><td>Tammuz</td><td>June 8 - July 7, 2027</td></tr>
-                    <tr><td>Av</td><td>July 8 - August 6, 2027</td></tr>
-                    <tr><td>Elul</td><td>August 7 - September 5, 2027</td></tr>
                 </tbody>
             </table>
         `;
         document.getElementById('hebrewContainer').innerHTML = html;
-        document.getElementById('hebrewArticle').innerHTML = `<h3>The Hebrew Calendar</h3><p>The Hebrew calendar is a lunisolar calendar used for Jewish religious observances. Years are counted from Creation (Anno Mundi). The year 5786 begins at sunset on September 22, 2025, and 5787 begins at sunset on September 11, 2026. Leap years add an extra month (Adar II) 7 times in a 19-year cycle. Major holidays include Rosh Hashanah, Yom Kippur, Sukkot, Passover, and Shavuot.</p>`;
+        document.getElementById('hebrewArticle').innerHTML = `<h3>The Hebrew Calendar</h3><p>The Hebrew calendar is a lunisolar calendar used for Jewish religious observances. Years are counted from Creation (Anno Mundi).</p>`;
     }
     
     function renderIslamic() {
         document.getElementById('islamicContainer').innerHTML = `<div class="stat-card"><h4>Hijri</h4><div class="value">1447 AH</div></div>`;
-        document.getElementById('islamicArticle').innerHTML = `<h3>The Islamic Calendar</h3><p>A purely lunar calendar with 12 months of 29 or 30 days. The epoch is the Hijra (622 CE). Used for religious events including Ramadan, Eid al-Fitr, Eid al-Adha, and Hajj. The year is about 11 days shorter than the solar year.</p>`;
+        document.getElementById('islamicArticle').innerHTML = `<h3>The Islamic Calendar</h3><p>A purely lunar calendar with 12 months of 29 or 30 days. The epoch is the Hijra (622 CE). Used for religious events including Ramadan, Eid al-Fitr, Eid al-Adha, and Hajj.</p>`;
     }
     
     function renderConverter() {
@@ -2056,7 +1714,6 @@
                     <tr><td>Bengali</td><td>${bd.day} ${BANGLA_MONTHS[bd.month]} ${bd.year}</td></tr>
                     <tr><td>Hebrew</td><td>${d.getFullYear()+3761} AM</td></tr>
                     <tr><td>Islamic</td><td>~${Math.floor((d.getFullYear()-622)*0.97)} AH</td></tr>
-                    <tr><td>Buddhist</td><td>${d.getFullYear()+543} BE</td></tr>
                 </table>
             `;
         });
@@ -2075,18 +1732,34 @@
     };
     
     function updateClock() {
-        document.getElementById('liveClock').textContent = new Date().toLocaleTimeString('en-GB');
+        document.getElementById('liveClock').textContent = getBangladeshTimeString();
+    }
+    
+    function refreshBangladeshDate() {
+        const newBDTime = getBangladeshDate();
+        if (newBDTime.getDate() !== today.getDate() || 
+            newBDTime.getMonth() !== today.getMonth() || 
+            newBDTime.getFullYear() !== today.getFullYear()) {
+            today = newBDTime;
+            renderPanjikaStats();
+            renderBanglaCalendar();
+            updateTodayHighlight();
+            updateSpecialBanner();
+        }
     }
     
     function updateAll() {
+        refreshBangladeshDate();
         updateClock();
         updateSpecialBanner();
         updateUpcomingEvents();
         updateTodayHighlight();
     }
     
-    // ========== INITIALIZATION ==========
     function init() {
+        today = getBangladeshDate();
+        currentViewDate = new Date(today);
+        
         updateClock();
         setInterval(updateClock, 1000);
         setInterval(updateAll, 60000);
@@ -2142,12 +1815,36 @@
             document.getElementById('themeToggle').innerHTML = '<i class="fas fa-sun"></i> <span>Light Mode</span>';
         }
         
-        document.getElementById('panjikaTodayBtn').addEventListener('click', () => { currentViewDate = new Date(); renderPanjikaStats(); renderBanglaCalendar(); updateAll(); });
-        document.getElementById('panjikaPrevBtn').addEventListener('click', () => { currentViewDate.setDate(currentViewDate.getDate() - 1); renderPanjikaStats(); renderBanglaCalendar(); });
-        document.getElementById('panjikaNextBtn').addEventListener('click', () => { currentViewDate.setDate(currentViewDate.getDate() + 1); renderPanjikaStats(); renderBanglaCalendar(); });
-        document.getElementById('panjikaDatePicker').addEventListener('change', e => { if(e.target.value) { currentViewDate = new Date(e.target.value); renderPanjikaStats(); renderBanglaCalendar(); } });
-        document.getElementById('shareBtn').addEventListener('click', () => { navigator.clipboard?.writeText('https://calendarworld.xyz'); showToast('🔗 Link copied!'); });
-        document.getElementById('panjikaDatePicker').value = today.toISOString().split('T')[0];
+        document.getElementById('panjikaTodayBtn').addEventListener('click', () => { 
+            currentViewDate = getBangladeshDate(); 
+            renderPanjikaStats(); 
+            renderBanglaCalendar(); 
+            updateAll(); 
+        });
+        document.getElementById('panjikaPrevBtn').addEventListener('click', () => { 
+            currentViewDate.setDate(currentViewDate.getDate() - 1); 
+            renderPanjikaStats(); 
+            renderBanglaCalendar(); 
+        });
+        document.getElementById('panjikaNextBtn').addEventListener('click', () => { 
+            currentViewDate.setDate(currentViewDate.getDate() + 1); 
+            renderPanjikaStats(); 
+            renderBanglaCalendar(); 
+        });
+        document.getElementById('panjikaDatePicker').addEventListener('change', e => { 
+            if(e.target.value) { 
+                currentViewDate = new Date(e.target.value); 
+                renderPanjikaStats(); 
+                renderBanglaCalendar(); 
+            } 
+        });
+        document.getElementById('shareBtn').addEventListener('click', () => { 
+            navigator.clipboard?.writeText('https://banglapanjika.netlify.app'); 
+            showToast('🔗 Link copied!'); 
+        });
+        
+        const bdToday = getBangladeshDate();
+        document.getElementById('panjikaDatePicker').value = bdToday.toISOString().split('T')[0];
     }
     
     init();
