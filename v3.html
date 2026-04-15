@@ -1889,7 +1889,7 @@
         document.getElementById('themeToggle').addEventListener('click', function() {
             document.body.classList.toggle('dark');
             const isDark = document.body.classList.contains('dark');
-            this.innerHTML = isDark ? '<i class="fas fa-sun"></i> <span>Light</span>' : '<i class="fas fa-moon"></i> <span>Dark Mode</span>';
+            this.innerHTML = isDark ? '<i class="fas fa-sun"></i> <span>Light</span>' : '<i class="fas fa-moon"></i> <span>Dark</span>';
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
         });
         
