@@ -421,6 +421,38 @@
         .eclipse-card.solar { border-left-color: #FF6B35; }
         .eclipse-card.lunar { border-left-color: #4169E1; }
         
+        .eclipse-year-section {
+            margin-bottom: 24px;
+        }
+        .eclipse-year-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border-light);
+            color: var(--primary);
+        }
+        .visibility-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        .visibility-yes {
+            background: var(--success);
+            color: white;
+        }
+        .visibility-no {
+            background: var(--danger);
+            color: white;
+        }
+        .visibility-partial {
+            background: var(--warning);
+            color: white;
+        }
+        
         /* Live Stream Styles */
         .live-stream-container {
             background: #000;
@@ -749,14 +781,14 @@
         <div class="nav-item" data-module="festivals"><i class="fas fa-gift"></i> উৎসব ২০২৬</div>
         
         <div class="nav-section-title">☀️ SOLAR CALENDARS</div>
-        <div class="nav-item" data-module="gregorian"><i class="fas fa-calendar"></i> Gregorian</div>
+        <div class="nav-item" data-module="gregorian"><i class="fas fa-cross"></i> Gregorian</div>
         <div class="nav-item" data-module="julian"><i class="fas fa-history"></i> Julian</div>
         <div class="nav-item" data-module="roman"><i class="fas fa-landmark"></i> Roman</div>
         <div class="nav-item" data-module="egyptian"><i class="fas fa-ankh"></i> Egyptian</div>
         
         <div class="nav-section-title">🌙 LUNAR CALENDARS</div>
         <div class="nav-item" data-module="chinese"><i class="fas fa-dragon"></i> Chinese</div>
-        <div class="nav-item" data-module="hindu"><i class="fas fa-star"></i> Hindu</div>
+        <div class="nav-item" data-module="hindu"><i class="fas fa-om"></i> Hindu</div>
         <div class="nav-item" data-module="hebrew"><i class="fas fa-star-of-david"></i> Hebrew</div>
         <div class="nav-item" data-module="islamic"><i class="fas fa-mosque"></i> Islamic</div>
         
@@ -825,7 +857,7 @@
     <!-- ========== GRAHAN MODULE WITH LIVE STREAM ========== -->
     <div id="module-grahan" class="module-container">
         <div class="section-card">
-            <div class="section-header"><i class="fas fa-eclipse"></i><h2>গ্রহণ • Eclipse Dates 2025-2030 + সরাসরি সম্প্রচার</h2></div>
+            <div class="section-header"><i class="fas fa-eclipse"></i><h2>গ্রহণ • Eclipse 2026-2036 + সরাসরি সম্প্রচার</h2></div>
             <div id="grahanContainer"></div>
             
             <!-- LIVE ECLIPSE STREAM SECTION -->
@@ -1050,9 +1082,6 @@
 <div class="toast" id="toastMsg"></div>
 
 <script>
-// All the original JavaScript functionality remains exactly the same
-// Only added the live stream functionality and mobile improvements in CSS
-
 (function(){
     "use strict";
     
@@ -1074,7 +1103,6 @@
         ["2026-11-21","দেবতানা একাদশী"],["2026-12-04","উৎপন্না একাদশী"],["2026-12-20","মোক্ষদা একাদশী"]
     ];
     
-    // UPDATED FESTIVALS LIST WITH ALL 2026 DATA
     const FESTIVALS = [
         {name:"গুড ফ্রাইডে", date:"2026-04-03", desc:"যিশুখ্রিষ্টের ক্রুশবিদ্ধ হওয়ার দিন"},
         {name:"নীল পূজা", date:"2026-04-13", desc:"চৈত্র সংক্রান্তি"},
@@ -1110,10 +1138,67 @@
         {name:"বড়দিন", date:"2026-12-25", desc:"যিশুখ্রিষ্টের জন্মদিন"}
     ];
     
+    // COMPLETE ECLIPSE DATA 2026-2036 WITH BANGLA NAMES AND VISIBILITY
     const ECLIPSE_DATA = [
-        {type:"lunar", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2026-03-03", time:"রাত ১০:১৫", visible:"হ্যাঁ"},
-        {type:"solar", name:"পূর্ণ সূর্যগ্রহণ", date:"2026-08-12", time:"দুপুর ২:৩০", visible:"না"},
-        {type:"lunar", name:"আংশিক চন্দ্রগ্রহণ", date:"2027-02-20", time:"রাত ৯:৪৫", visible:"হ্যাঁ"}
+        // 2026
+        {year: 2026, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2026-08-12", visibleInBD: false, desc:"ইউরোপ, উত্তর এশিয়া, উত্তর/পশ্চিম আফ্রিকা, উত্তর আমেরিকা"},
+        {year: 2026, type:"lunar", eclipseType:"আংশিক", name:"আংশিক চন্দ্রগ্রহণ", date:"2026-08-28", visibleInBD: true, desc:"ইউরোপ, পশ্চিম এশিয়া, আফ্রিকা, আমেরিকা"},
+        // 2027
+        {year: 2027, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2027-02-06", visibleInBD: false, desc:"আফ্রিকা, দক্ষিণ আমেরিকা"},
+        {year: 2027, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2027-02-20", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা, আমেরিকা"},
+        {year: 2027, type:"lunar", eclipseType:"প্রায়", name:"প্রায় চন্দ্রগ্রহণ", date:"2027-07-18", visibleInBD: true, desc:"বিশ্বের অধিকাংশ স্থান"},
+        {year: 2027, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2027-08-02", visibleInBD: false, desc:"ইউরোপ, দক্ষিণ/পশ্চিম এশিয়া, আফ্রিকা"},
+        {year: 2027, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2027-08-17", visibleInBD: false, desc:"পশ্চিম ইউরোপ, উত্তর এশিয়া, অস্ট্রেলিয়া, আমেরিকা"},
+        // 2028
+        {year: 2028, type:"lunar", eclipseType:"আংশিক", name:"আংশিক চন্দ্রগ্রহণ", date:"2028-01-12", visibleInBD: true, desc:"ইউরোপ, উত্তর/পশ্চিম এশিয়া, আফ্রিকা, আমেরিকা"},
+        {year: 2028, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2028-01-26", visibleInBD: false, desc:"দক্ষিণ/পশ্চিম ইউরোপ, আফ্রিকা, আমেরিকা"},
+        {year: 2028, type:"lunar", eclipseType:"আংশিক", name:"আংশিক চন্দ্রগ্রহণ", date:"2028-07-06", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
+        {year: 2028, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2028-07-22", visibleInBD: false, desc:"দক্ষিণ এশিয়া, অস্ট্রেলিয়া"},
+        {year: 2028, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2028-12-31", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
+        // 2029
+        {year: 2029, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2029-01-14", visibleInBD: false, desc:"উত্তর আমেরিকা"},
+        {year: 2029, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2029-06-12", visibleInBD: false, desc:"ইউরোপ, উত্তর এশিয়া, উত্তর আমেরিকা"},
+        {year: 2029, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2029-06-26", visibleInBD: true, desc:"ইউরোপ, পশ্চিম এশিয়া, আফ্রিকা, আমেরিকা"},
+        {year: 2029, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2029-07-11", visibleInBD: false, desc:"দক্ষিণ দক্ষিণ আমেরিকা"},
+        {year: 2029, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2029-12-05", visibleInBD: false, desc:"দক্ষিণ দক্ষিণ আমেরিকা"},
+        {year: 2029, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2029-12-20", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা, আমেরিকা"},
+        // 2030
+        {year: 2030, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2030-06-01", visibleInBD: false, desc:"ইউরোপ, এশিয়া, আফ্রিকা"},
+        {year: 2030, type:"lunar", eclipseType:"আংশিক", name:"আংশিক চন্দ্রগ্রহণ", date:"2030-06-15", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
+        {year: 2030, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2030-11-25", visibleInBD: false, desc:"দক্ষিণ এশিয়া, অস্ট্রেলিয়া, দক্ষিণ/পূর্ব আফ্রিকা"},
+        {year: 2030, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2030-12-09", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা, আমেরিকা"},
+        // 2031
+        {year: 2031, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2031-05-07", visibleInBD: false, desc:"ইউরোপ, পশ্চিম এশিয়া, আফ্রিকা, আমেরিকা"},
+        {year: 2031, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2031-05-21", visibleInBD: true, desc:"এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
+        {year: 2031, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2031-06-05", visibleInBD: false, desc:"এশিয়া, অস্ট্রেলিয়া, আমেরিকা"},
+        {year: 2031, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2031-10-30", visibleInBD: false, desc:"ইউরোপ, উত্তর/পূর্ব এশিয়া, অস্ট্রেলিয়া, আমেরিকা"},
+        {year: 2031, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2031-11-14", visibleInBD: false, desc:"উত্তর আমেরিকা"},
+        // 2032
+        {year: 2032, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2032-04-25", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
+        {year: 2032, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2032-05-09", visibleInBD: false, desc:"দক্ষিণ আফ্রিকা, দক্ষিণ আমেরিকা"},
+        {year: 2032, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2032-10-18", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা, আমেরিকা"},
+        {year: 2032, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2032-11-03", visibleInBD: true, desc:"পূর্ব ইউরোপ, এশিয়া"},
+        // 2033
+        {year: 2033, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2033-03-30", visibleInBD: false, desc:"পশ্চিম ইউরোপ, উত্তর এশিয়া, উত্তর আমেরিকা"},
+        {year: 2033, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2033-04-14", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
+        {year: 2033, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2033-09-23", visibleInBD: false, desc:"দক্ষিণ আমেরিকা"},
+        {year: 2033, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2033-10-08", visibleInBD: true, desc:"পূর্ব ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আমেরিকা"},
+        // 2034
+        {year: 2034, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2034-03-20", visibleInBD: true, desc:"ইউরোপ, এশিয়া, আফ্রিকা"},
+        {year: 2034, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2034-04-03", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা"},
+        {year: 2034, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2034-09-12", visibleInBD: false, desc:"দক্ষিণ উত্তর আমেরিকা, দক্ষিণ আমেরিকা"},
+        {year: 2034, type:"lunar", eclipseType:"আংশিক", name:"আংশিক চন্দ্রগ্রহণ", date:"2034-09-28", visibleInBD: true, desc:"ইউরোপ, এশিয়া, আফ্রিকা, আমেরিকা"},
+        // 2035
+        {year: 2035, type:"lunar", eclipseType:"পেনাম্ব্রাল", name:"পেনাম্ব্রাল চন্দ্রগ্রহণ", date:"2035-02-22", visibleInBD: false, desc:"উত্তর/পশ্চিম ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আমেরিকা"},
+        {year: 2035, type:"solar", eclipseType:"বলয়", name:"বলয় সূর্যগ্রহণ", date:"2035-03-09", visibleInBD: false, desc:"অস্ট্রেলিয়া"},
+        {year: 2035, type:"lunar", eclipseType:"আংশিক", name:"আংশিক চন্দ্রগ্রহণ", date:"2035-08-19", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা, আমেরিকা"},
+        {year: 2035, type:"solar", eclipseType:"পূর্ণ", name:"পূর্ণ সূর্যগ্রহণ", date:"2035-09-02", visibleInBD: false, desc:"পূর্ব ইউরোপ, এশিয়া, পশ্চিম উত্তর আমেরিকা"},
+        // 2036
+        {year: 2036, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2036-02-11", visibleInBD: true, desc:"ইউরোপ, এশিয়া, অস্ট্রেলিয়া, আফ্রিকা, আমেরিকা"},
+        {year: 2036, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2036-02-27", visibleInBD: false, desc:"দক্ষিণ/পূর্ব অস্ট্রেলিয়া"},
+        {year: 2036, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2036-07-23", visibleInBD: false, desc:"আটলান্টিক, ভারত মহাসাগর"},
+        {year: 2036, type:"lunar", eclipseType:"পূর্ণ", name:"পূর্ণ চন্দ্রগ্রহণ", date:"2036-08-07", visibleInBD: true, desc:"ইউরোপ, এশিয়া, আফ্রিকা, আমেরিকা"},
+        {year: 2036, type:"solar", eclipseType:"আংশিক", name:"আংশিক সূর্যগ্রহণ", date:"2036-08-21", visibleInBD: false, desc:"ইউরোপ, উত্তর এশিয়া, উত্তর আমেরিকা"}
     ];
     
     let today = new Date();
@@ -1200,8 +1285,8 @@
             banner.className = 'special-banner banner-eclipse';
             icon.innerHTML = todayEclipse.type === 'solar' ? '🌑' : '🌕';
             title.textContent = `আজ ${todayEclipse.name}!`;
-            desc.textContent = `সময়: ${todayEclipse.time}`;
-            countdown.innerHTML = todayEclipse.visible === 'হ্যাঁ' ? '🇧🇩 বাংলাদেশ থেকে দৃশ্যমান' : '⚠️ দৃশ্যমান নয়';
+            desc.textContent = todayEclipse.desc;
+            countdown.innerHTML = todayEclipse.visibleInBD ? '🇧🇩 বাংলাদেশ থেকে দৃশ্যমান' : '⚠️ বাংলাদেশ থেকে দৃশ্যমান নয়';
             cta.innerHTML = 'গ্রহণ দেখুন <i class="fas fa-arrow-right"></i>';
             cta.onclick = () => { document.querySelector('[data-module="grahan"]').click(); return false; };
             return;
@@ -1242,6 +1327,25 @@
             countdown.innerHTML = `📅 আর মাত্র ${daysLeft} দিন`;
             cta.innerHTML = 'উৎসব দেখুন <i class="fas fa-arrow-right"></i>';
             cta.onclick = () => { document.querySelector('[data-module="festivals"]').click(); return false; };
+            return;
+        }
+        
+        const upcomingEclipse = ECLIPSE_DATA.find(e => {
+            const d = new Date(e.date);
+            const diff = Math.ceil((d - today) / 86400000);
+            return diff > 0 && diff <= 30;
+        });
+        
+        if (upcomingEclipse) {
+            const d = new Date(upcomingEclipse.date);
+            const daysLeft = Math.ceil((d - today) / 86400000);
+            banner.className = 'special-banner banner-eclipse';
+            icon.innerHTML = upcomingEclipse.type === 'solar' ? '🌑' : '🌕';
+            title.textContent = `${upcomingEclipse.name} আসছে!`;
+            desc.textContent = `${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}`;
+            countdown.innerHTML = `📅 আর মাত্র ${daysLeft} দিন${upcomingEclipse.visibleInBD ? ' | 🇧🇩 দৃশ্যমান' : ''}`;
+            cta.innerHTML = 'গ্রহণ দেখুন <i class="fas fa-arrow-right"></i>';
+            cta.onclick = () => { document.querySelector('[data-module="grahan"]').click(); return false; };
             return;
         }
         
@@ -1746,15 +1850,43 @@
     }
     
     function renderGrahan() {
-        document.getElementById('grahanContainer').innerHTML = ECLIPSE_DATA.map(e => {
-            const d = new Date(e.date);
-            return `<div class="eclipse-card ${e.type}">
-                <div style="display:flex; align-items:center; gap:12px;"><i class="fas fa-${e.type==='solar'?'sun':'moon'}"></i><h3>${e.name}</h3></div>
-                <p><strong>তারিখ:</strong> ${d.getDate()} ${ENG_MONTHS[d.getMonth()]} ${d.getFullYear()}</p>
-                <p><strong>সময়:</strong> ${e.time}</p>
-                <p><strong>দৃশ্যমান:</strong> <span style="color:${e.visible==='হ্যাঁ'?'var(--success)':'var(--danger)'};">${e.visible}</span></p>
-            </div>`;
-        }).join('');
+        // Group eclipses by year
+        const eclipsesByYear = {};
+        ECLIPSE_DATA.forEach(e => {
+            if (!eclipsesByYear[e.year]) eclipsesByYear[e.year] = [];
+            eclipsesByYear[e.year].push(e);
+        });
+        
+        let html = '';
+        const years = Object.keys(eclipsesByYear).sort((a,b) => a - b);
+        
+        years.forEach(year => {
+            html += `<div class="eclipse-year-section">`;
+            html += `<div class="eclipse-year-title">${year} সালের গ্রহণসমূহ</div>`;
+            
+            eclipsesByYear[year].forEach(e => {
+                const d = new Date(e.date);
+                const eclipseTypeIcon = e.type === 'solar' ? '☀️' : '🌙';
+                const eclipseTypeText = e.type === 'solar' ? 'সূর্যগ্রহণ' : 'চন্দ্রগ্রহণ';
+                const visibilityBadge = e.visibleInBD ? 
+                    '<span class="visibility-badge visibility-yes"><i class="fas fa-check-circle"></i> বাংলাদেশ থেকে দৃশ্যমান</span>' : 
+                    '<span class="visibility-badge visibility-no"><i class="fas fa-times-circle"></i> বাংলাদেশ থেকে দৃশ্যমান নয়</span>';
+                
+                html += `<div class="eclipse-card ${e.type}">
+                    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+                        <i class="fas fa-${e.type==='solar'?'sun':'moon'}" style="font-size:1.5rem;"></i>
+                        <h3 style="margin:0;">${e.name} (${e.eclipseType})</h3>
+                        ${visibilityBadge}
+                    </div>
+                    <p style="margin-top:12px;"><strong>📅 তারিখ:</strong> ${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}</p>
+                    <p><strong>🌍 দৃশ্যমান অঞ্চল:</strong> ${e.desc}</p>
+                </div>`;
+            });
+            
+            html += `</div>`;
+        });
+        
+        document.getElementById('grahanContainer').innerHTML = html;
     }
     
     function renderEkadashiTable() {
