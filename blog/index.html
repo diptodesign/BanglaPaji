@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>বাংলা পঞ্জিকা ব্লগ | Panjika • Ekadashi • Festival • Eclipse Articles</title>
+    <meta name="description" content="বাংলা পঞ্জিকা, একাদশী, হিন্দু উৎসব, গ্রহণ ও ক্যালেন্ডার সম্পর্কে বিশেষজ্ঞ-লিখিত তথ্যপূর্ণ ব্লগ। ৩০০০+ শব্দের গভীর নিবন্ধ।">
+    <meta name="keywords" content="বাংলা পঞ্জিকা ব্লগ, একাদশী নিবন্ধ, দুর্গাপূজা ২০২৬, গ্রহণের খবর, পঞ্জিকা শিক্ষা, Bangla Panjika Blog">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://banglapanjika.netlify.app/blog/">
+    
+    <!-- Google AdSense -->
+    <meta name="google-adsense-account" content="ca-pub-5123188644150792">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5123188644150792" crossorigin="anonymous"></script>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #FF6B35; --primary-dark: #E8551E; --primary-light: #FFF0E8;
+            --secondary: #FFB347; --purple: #8B5CF6; --pink: #EC4899; --teal: #14B8A6;
+            --success: #10B981; --warning: #F59E0B; --danger: #EF4444;
+            --bg-page: #F8FAFC; --bg-card: #FFFFFF; --bg-dark: #1E293B;
+            --text-primary: #0F172A; --text-secondary: #475569; --text-muted: #64748B;
+            --border-light: #E2E8F0; --border-medium: #CBD5E1;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px; --radius-full: 9999px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-page);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        .lang-bn { font-family: 'Hind Siliguri', sans-serif; }
+        
+        /* Premium Header */
+        .premium-header {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+            color: white;
+            padding: 20px 0;
+            border-bottom: 3px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--purple));
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+        .logo-text h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FF6B35, #FFB347, #8B5CF6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+        .logo-text p {
+            font-size: 0.8rem;
+            color: #94A3B8;
+            letter-spacing: 1px;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--radius-full);
+            padding: 8px 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .search-box i { color: #94A3B8; margin-right: 8px; }
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 0.9rem;
+            outline: none;
+            width: 200px;
+        }
+        .search-box input::placeholder { color: #64748B; }
+        .back-to-app {
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .back-to-app:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255,107,53,0.3);
+        }
+        
+        /* Category Navigation */
+        .category-nav {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border-light);
+            padding: 12px 0;
+        }
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .category-link {
+            padding: 8px 20px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s;
+            background: var(--bg-page);
+            border: 1px solid var(--border-light);
+        }
+        .category-link:hover, .category-link.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .category-link i { margin-right: 6px; }
+        
+        /* Hero Section */
+        .hero-section {
+            max-width: 1280px;
+            margin: 40px auto;
+            padding: 0 32px;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+        .hero-main {
+            background: linear-gradient(135deg, var(--primary), var(--purple));
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            position: relative;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 40px;
+            color: white;
+            box-shadow: var(--shadow-xl);
+        }
+        .hero-main::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-label {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
+            padding: 6px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .hero-main h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        .hero-main p { opacity: 0.9; margin-bottom: 24px; font-size: 1.1rem; }
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: var(--primary);
+            padding: 12px 28px;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .hero-btn:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .hero-side {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .hero-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .hero-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+        .hero-card .category-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .hero-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+        .hero-card p { color: var(--text-muted); font-size: 0.9rem; }
+        
+        /* Main Content Grid */
+        .main-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px 60px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 40px;
+        }
+        
+        /* Featured Posts Section */
+        .section-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+        .section-title h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title h2 i { color: var(--primary); }
+        .view-all {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .post-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        .post-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s;
+        }
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        .post-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #E2E8F0, #CBD5E1);
+        }
+        .post-content { padding: 24px; }
+        .post-category {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .post-category.calendar { background: #FFF0E8; color: #FF6B35; }
+        .post-category.ekadashi { background: #EDE9FE; color: #8B5CF6; }
+        .post-category.festival { background: #FEF3C7; color: #F59E0B; }
+        .post-category.eclipse { background: #E0E7FF; color: #4F46E5; }
+        .post-card h3 { font-size: 1.2rem; margin-bottom: 10px; line-height: 1.4; }
+        .post-card h3 a { color: var(--text-primary); text-decoration: none; }
+        .post-card h3 a:hover { color: var(--primary); }
+        .post-excerpt { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px; }
+        .post-meta {
+            display: flex;
+            gap: 16px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-light);
+        }
+        
+        /* Ad Container */
+        .ad-container {
+            background: var(--border-light);
+            border-radius: var(--radius-lg);
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+        }
+        .widget-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .trending-list { list-style: none; }
+        .trending-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .trending-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .trending-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--border-medium);
+            line-height: 1;
+        }
+        .trending-content h4 { font-size: 0.95rem; margin-bottom: 5px; }
+        .trending-content h4 a { color: var(--text-primary); text-decoration: none; }
+        .trending-content .date { color: var(--text-muted); font-size: 0.75rem; }
+        
+        .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag {
+            padding: 6px 14px;
+            background: var(--bg-page);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .tag:hover { background: var(--primary); color: white; border-color: var(--primary); }
+        
+        .newsletter-box {
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            color: white;
+            padding: 28px;
+            border-radius: var(--radius-lg);
+            text-align: center;
+        }
+        .newsletter-box h3 { margin-bottom: 12px; }
+        .newsletter-box p { opacity: 0.9; font-size: 0.9rem; margin-bottom: 20px; }
+        .newsletter-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: none;
+            border-radius: var(--radius-full);
+            margin-bottom: 12px;
+            outline: none;
+        }
+        .newsletter-btn {
+            width: 100%;
+            padding: 12px;
+            background: white;
+            color: var(--purple);
+            border: none;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .newsletter-btn:hover { background: var(--primary); color: white; }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 40px;
+        }
+        .page-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .page-link:hover, .page-link.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        /* Footer */
+        .premium-footer {
+            background: var(--bg-dark);
+            color: white;
+            padding: 50px 0 30px;
+            margin-top: 60px;
+        }
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+        .footer-about p { color: #94A3B8; margin: 20px 0; }
+        .social-links { display: flex; gap: 12px; }
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .social-links a:hover { background: var(--primary); transform: translateY(-3px); }
+        .footer-links h4 { margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: #94A3B8; text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: white; }
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 40px auto 0;
+            padding: 20px 32px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: #94A3B8;
+        }
+        
+        @media (max-width: 1024px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .post-grid { grid-template-columns: 1fr; }
+            .main-grid { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; gap: 15px; }
+            .search-box input { width: 150px; }
+            .footer-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Premium Header -->
+<header class="premium-header">
+    <div class="header-container">
+        <div class="logo-section">
+            <div class="logo-icon">📅</div>
+            <div class="logo-text">
+                <h1 class="lang-bn">বাংলা পঞ্জিকা ব্লগ</h1>
+                <p>PANJIKA • EKADASHI • FESTIVAL • ECLIPSE</p>
+            </div>
+        </div>
+        <div class="header-actions">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="খুঁজুন..." class="lang-bn">
+            </div>
+            <a href="/" class="back-to-app"><i class="fas fa-calendar-alt"></i> পঞ্জিকা অ্যাপ</a>
+        </div>
+    </div>
+</header>
+
+<!-- Category Navigation -->
+<nav class="category-nav">
+    <div class="nav-container">
+        <a href="index.html" class="category-link active"><i class="fas fa-home"></i> সকল</a>
+        <a href="#" class="category-link"><i class="fas fa-calendar"></i> বাংলা পঞ্জিকা</a>
+        <a href="#" class="category-link"><i class="fas fa-moon"></i> একাদশী</a>
+        <a href="#" class="category-link"><i class="fas fa-gift"></i> উৎসব</a>
+        <a href="#" class="category-link"><i class="fas fa-eclipse"></i> গ্রহণ</a>
+        <a href="#" class="category-link"><i class="fas fa-om"></i> হিন্দু পঞ্জিকা</a>
+        <a href="#" class="category-link"><i class="fas fa-calculator"></i> ক্যালকুলেটর</a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-grid">
+        <a href="bangla-calendar-complete-history.html" class="hero-main">
+            <div class="hero-content">
+                <span class="hero-label"><i class="fas fa-fire"></i> জনপ্রিয় নিবন্ধ</span>
+                <h2 class="lang-bn">বাংলা পঞ্জিকার সম্পূর্ণ ইতিহাস: সম্রাট আকবর থেকে ২০৪০ সাল পর্যন্ত</h2>
+                <p class="lang-bn">বাংলা পঞ্জিকার ৪৩৭ বছরের সম্পূর্ণ ইতিহাস। সম্রাট আকবরের আমল থেকে ২০১৯ সালের সংস্কার পর্যন্ত।</p>
+                <span class="hero-btn">পড়ুন <i class="fas fa-arrow-right"></i></span>
+            </div>
+        </a>
+        <div class="hero-side">
+            <a href="ekadashi-complete-guide.html" class="hero-card">
+                <span class="category-badge" style="background:#EDE9FE; color:#8B5CF6;">🕉️ একাদশী</span>
+                <h3 class="lang-bn">একাদশী ব্রতের সম্পূর্ণ গাইড: ২৪ একাদশীর নাম ও মাহাত্ম্য</h3>
+                <p>একাদশী কী, কেন পালন করা হয়? উপবাসের নিয়ম ও পারণের সময়...</p>
+            </a>
+            <a href="durga-puja-2026-schedule.html" class="hero-card">
+                <span class="category-badge" style="background:#FEF3C7; color:#F59E0B;">🎉 উৎসব</span>
+                <h3 class="lang-bn">দুর্গাপূজা ২০২৬ সম্পূর্ণ সময়সূচী: ষষ্ঠী থেকে দশমী</h3>
+                <p>২০২৬ সালের দুর্গাপূজার তারিখ, পূজার নিয়ম ও বিসর্জনের সময়...</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content Grid -->
+<div class="main-grid">
+    <div class="content-area">
+        <!-- Featured Posts -->
+        <div class="section-title">
+            <h2><i class="fas fa-star" style="color: var(--warning);"></i> <span class="lang-bn">ফিচারড নিবন্ধ</span></h2>
+            <a href="#" class="view-all">সব দেখুন <i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+        <div class="post-grid">
+            <article class="post-card">
+                <img src="images/calendar-history.jpg" alt="Calendar History" class="post-img" onerror="this.style.background='linear-gradient(135deg, #FF6B35, #8B5CF6)'">
+                <div class="post-content">
+                    <span class="post-category calendar">📅 বাংলা পঞ্জিকা</span>
+                    <h3 class="lang-bn"><a href="bangla-month-names-origin.html">বাংলা মাসের নামের উৎপত্তি ও রহস্য: বৈশাখ থেকে চৈত্র</a></h3>
+                    <p class="post-excerpt lang-bn">বাংলা ১২ মাসের নামকরণের পেছনে লুকিয়ে আছে নক্ষত্রমণ্ডলের ইতিহাস...</p>
+                    <div class="post-meta"><span><i class="far fa-calendar"></i> ১২ এপ্রিল</span><span><i class="far fa-clock"></i> ৮ মিনিট</span></div>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                <img src="images/ekadashi-guide.jpg" alt="Ekadashi Guide" class="post-img" onerror="this.style.background='linear-gradient(135deg, #8B5CF6, #A78BFA)'">
+                <div class="post-content">
+                    <span class="post-category ekadashi">🕉️ একাদশী</span>
+                    <h3 class="lang-bn"><a href="nirjala-ekadashi-special.html">নির্জলা একাদশীর বিশেষ মাহাত্ম্য ও উপবাসের নিয়ম</a></h3>
+                    <p class="post-excerpt lang-bn">২৪টি একাদশীর মধ্যে নির্জলা একাদশী সবচেয়ে কঠোর ও পুণ্যময়...</p>
+                    <div class="post-meta"><span><i class="far fa-calendar"></i> ১০ এপ্রিল</span><span><i class="far fa-clock"></i> ১০ মিনিট</span></div>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                <img src="images/durga-puja-2026.jpg" alt="Durga Puja" class="post-img" onerror="this.style.background='linear-gradient(135deg, #DC2626, #F59E0B)'">
+                <div class="post-content">
+                    <span class="post-category festival">🎉 উৎসব</span>
+                    <h3 class="lang-bn"><a href="bengali-festivals-2026.html">২০২৬ সালের সকল বাঙালি উৎসবের সম্পূর্ণ তালিকা</a></h3>
+                    <p class="post-excerpt lang-bn">পহেলা বৈশাখ থেকে শুরু করে বড়দিন পর্যন্ত সকল উৎসবের তারিখ...</p>
+                    <div class="post-meta"><span><i class="far fa-calendar"></i> ৮ এপ্রিল</span><span><i class="far fa-clock"></i> ১২ মিনিট</span></div>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                <img src="images/eclipse-guide.jpg" alt="Eclipse Guide" class="post-img" onerror="this.style.background='linear-gradient(135deg, #1E1B4B, #312E81)'">
+                <div class="post-content">
+                    <span class="post-category eclipse">🌑 গ্রহণ</span>
+                    <h3 class="lang-bn"><a href="solar-eclipse-guide.html">সূর্যগ্রহণ: বৈজ্ঞানিক ব্যাখ্যা, প্রকারভেদ ও সতর্কতা</a></h3>
+                    <p class="post-excerpt lang-bn">সূর্যগ্রহণ কেন হয়? পূর্ণ, বলয় ও আংশিক গ্রহণের পার্থক্য...</p>
+                    <div class="post-meta"><span><i class="far fa-calendar"></i> ৫ এপ্রিল</span><span><i class="far fa-clock"></i> ৯ মিনিট</span></div>
+                </div>
+            </article>
+        </div>
+        
+        <!-- AdSense Ad Unit 1 -->
+        <div class="ad-container">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5123188644150792" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+        
+        <!-- Latest Posts -->
+        <div class="section-title">
+            <h2><i class="fas fa-clock" style="color: var(--primary);"></i> <span class="lang-bn">সাম্প্রতিক নিবন্ধ</span></h2>
+        </div>
+        
+        <div class="post-grid">
+            <article class="post-card">
+                <div class="post-content">
+                    <span class="post-category calendar">📅 বাংলা পঞ্জিকা</span>
+                    <h3 class="lang-bn"><a href="government-vs-hindu-calendar.html">সরকারি বনাম হিন্দু পঞ্জিকার পার্থক্য ও কারণ</a></h3>
+                    <p class="post-excerpt lang-bn">কেন পহেলা বৈশাখ দুই দিনে পালিত হয়? দ্বৈত পঞ্জিকা ব্যবস্থার ইতিহাস...</p>
+                    <div class="post-meta"><span><i class="far fa-calendar"></i> ৩ এপ্রিল</span></div>
+                </div>
+            </article>
+            <article class="post-card">
+                <div class="post-content">
+                    <span class="post-category ekadashi">🕉️ একাদশী</span>
+                    <h3 class="lang-bn"><a href="ekadashi-calendar-2026-2040.html">২০২৬-২০৪০ একাদশী ক্যালেন্ডার (পূর্ণাঙ্গ তালিকা)</a></h3>
+                    <p class="post-excerpt lang-bn">আগামী ১৫ বছরের সকল একাদশীর তারিখ, বার ও নামের তালিকা...</p>
+                    <div class="post-meta"><span><i class="far fa-calendar"></i> ১ এপ্রিল</span></div>
+                </div>
+            </article>
+            <article class="post-card">
+                <div class="post-content">
+                    <span class="post-category festival">🎉 উৎসব</span>
+                    <h3 class="lang-bn"><a href="kali-puja-diwali-guide.html">কালীপূজা ও দীপাবলি উদযাপনের সম্পূর্ণ গাইড</a></h3>
+                    <p class="post-excerpt lang-bn">কার্তিক মাসের অমাবস্যায় পালিত হয় কালীপূজা। জানুন পূজার নিয়ম...</p>
+                    <div class="post-meta"><span><i class="far fa-calendar"></i> ২৮ মার্চ</span></div>
+                </div>
+            </article>
+            <article class="post-card">
+                <div class="post-content">
+                    <span class="post-category eclipse">🌑 গ্রহণ</span>
+                    <h3 class="lang-bn"><a href="eclipse-2026-2040-bangladesh.html">২০২৬-২০৪০: বাংলাদেশ থেকে দৃশ্যমান সকল গ্রহণ</a></h3>
+                    <p class="post-excerpt lang-bn">আগামী ১৫ বছরে বাংলাদেশ থেকে যেসব সূর্যগ্রহণ ও চন্দ্রগ্রহণ দেখা যাবে...</p>
+                    <div class="post-meta"><span><i class="far fa-calendar"></i> ২৫ মার্চ</span></div>
+                </div>
+            </article>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="pagination">
+            <a href="#" class="page-link active">১</a>
+            <a href="#" class="page-link">২</a>
+            <a href="#" class="page-link">৩</a>
+            <a href="#" class="page-link">৪</a>
+            <a href="#" class="page-link"><i class="fas fa-chevron-right"></i></a>
+        </div>
+    </div>
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <!-- AdSense Sidebar -->
+        <div class="ad-container" style="min-height: 300px;">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5123188644150792" data-ad-slot="2222222222" data-ad-format="vertical"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+        
+        <!-- Trending Posts -->
+        <div class="sidebar-widget">
+            <h3 class="widget-title"><i class="fas fa-fire" style="color: var(--primary);"></i> <span class="lang-bn">ট্রেন্ডিং</span></h3>
+            <ul class="trending-list">
+                <li class="trending-item">
+                    <span class="trending-number">০১</span>
+                    <div class="trending-content">
+                        <h4 class="lang-bn"><a href="bangla-calendar-complete-history.html">বাংলা পঞ্জিকার সম্পূর্ণ ইতিহাস</a></h4>
+                        <span class="date">২,৫০০+ পড়া হয়েছে</span>
+                    </div>
+                </li>
+                <li class="trending-item">
+                    <span class="trending-number">০২</span>
+                    <div class="trending-content">
+                        <h4 class="lang-bn"><a href="ekadashi-complete-guide.html">একাদশী ব্রতের সম্পূর্ণ গাইড</a></h4>
+                        <span class="date">১,৮০০+ পড়া হয়েছে</span>
+                    </div>
+                </li>
+                <li class="trending-item">
+                    <span class="trending-number">০৩</span>
+                    <div class="trending-content">
+                        <h4 class="lang-bn"><a href="durga-puja-2026-schedule.html">দুর্গাপূজা ২০২৬ সময়সূচী</a></h4>
+                        <span class="date">১,৫০০+ পড়া হয়েছে</span>
+                    </div>
+                </li>
+                <li class="trending-item">
+                    <span class="trending-number">০৪</span>
+                    <div class="trending-content">
+                        <h4 class="lang-bn"><a href="solar-eclipse-guide.html">সূর্যগ্রহণের সম্পূর্ণ গাইড</a></h4>
+                        <span class="date">১,২০০+ পড়া হয়েছে</span>
+                    </div>
+                </li>
+                <li class="trending-item">
+                    <span class="trending-number">০৫</span>
+                    <div class="trending-content">
+                        <h4 class="lang-bn"><a href="bangla-month-names-origin.html">বাংলা মাসের নামের উৎপত্তি</a></h4>
+                        <span class="date">৯০০+ পড়া হয়েছে</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Categories Widget -->
+        <div class="sidebar-widget">
+            <h3 class="widget-title"><i class="fas fa-folder"></i> <span class="lang-bn">বিষয়সমূহ</span></h3>
+            <ul class="trending-list" style="list-style: none;">
+                <li style="display: flex; justify-content: space-between; padding: 8px 0;"><a href="#" style="color: var(--text-primary); text-decoration: none;">📅 বাংলা পঞ্জিকা</a> <span style="color: var(--text-muted);">৮</span></li>
+                <li style="display: flex; justify-content: space-between; padding: 8px 0;"><a href="#" style="color: var(--text-primary); text-decoration: none;">🕉️ একাদশী</a> <span style="color: var(--text-muted);">৬</span></li>
+                <li style="display: flex; justify-content: space-between; padding: 8px 0;"><a href="#" style="color: var(--text-primary); text-decoration: none;">🎉 উৎসব</a> <span style="color: var(--text-muted);">৬</span></li>
+                <li style="display: flex; justify-content: space-between; padding: 8px 0;"><a href="#" style="color: var(--text-primary); text-decoration: none;">🌑 গ্রহণ</a> <span style="color: var(--text-muted);">৪</span></li>
+                <li style="display: flex; justify-content: space-between; padding: 8px 0;"><a href="#" style="color: var(--text-primary); text-decoration: none;">🕉️ হিন্দু পঞ্জিকা</a> <span style="color: var(--text-muted);">৪</span></li>
+            </ul>
+        </div>
+        
+        <!-- Tags Widget -->
+        <div class="sidebar-widget">
+            <h3 class="widget-title"><i class="fas fa-tags"></i> <span class="lang-bn">জনপ্রিয় ট্যাগ</span></h3>
+            <div class="tag-cloud">
+                <a href="#" class="tag">বাংলা পঞ্জিকা</a>
+                <a href="#" class="tag">একাদশী</a>
+                <a href="#" class="tag">দুর্গাপূজা</a>
+                <a href="#" class="tag">পহেলা বৈশাখ</a>
+                <a href="#" class="tag">সূর্যগ্রহণ</a>
+                <a href="#" class="tag">চন্দ্রগ্রহণ</a>
+                <a href="#" class="tag">তিথি</a>
+                <a href="#" class="tag">পূর্ণিমা</a>
+                <a href="#" class="tag">অমাবস্যা</a>
+                <a href="#" class="tag">কালীপূজা</a>
+                <a href="#" class="tag">রথযাত্রা</a>
+                <a href="#" class="tag">জন্মাষ্টমী</a>
+            </ul>
+        </div>
+        
+        <!-- Newsletter Widget -->
+        <div class="newsletter-box">
+            <h3 class="lang-bn"><i class="fas fa-envelope"></i> নিউজলেটার</h3>
+            <p class="lang-bn">পঞ্জিকা ও উৎসবের আপডেট পেতে সাবস্ক্রাইব করুন</p>
+            <input type="email" placeholder="আপনার ইমেইল" class="newsletter-input lang-bn">
+            <button class="newsletter-btn lang-bn">সাবস্ক্রাইব</button>
+        </div>
+        
+        <!-- AdSense Sidebar 2 -->
+        <div class="ad-container" style="min-height: 300px;">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5123188644150792" data-ad-slot="3333333333" data-ad-format="rectangle"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </aside>
+</div>
+
+<!-- Premium Footer -->
+<footer class="premium-footer">
+    <div class="footer-container">
+        <div class="footer-about">
+            <div class="logo-section">
+                <div class="logo-icon">📅</div>
+                <div class="logo-text">
+                    <h1 style="font-size:1.4rem; background: linear-gradient(135deg, #FF6B35, #FFB347, #8B5CF6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">বাংলা পঞ্জিকা</h1>
+                </div>
+            </div>
+            <p class="lang-bn">বাংলা পঞ্জিকা, একাদশী, উৎসব ও গ্রহণ সম্পর্কে বিশেষজ্ঞ-লিখিত তথ্যপূর্ণ ব্লগ। ২০২৬-২০৪০ সাল পর্যন্ত সম্পূর্ণ পঞ্জিকা।</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <h4 class="lang-bn">দ্রুত লিঙ্ক</h4>
+            <ul>
+                <li><a href="/">হোম</a></li>
+                <li><a href="/about.html">আমাদের সম্পর্কে</a></li>
+                <li><a href="/contact.html">যোগাযোগ</a></li>
+                <li><a href="/privacy.html">প্রাইভেসি পলিসি</a></li>
+                <li><a href="/terms.html">শর্তাবলী</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4 class="lang-bn">বিষয়সমূহ</h4>
+            <ul>
+                <li><a href="#">বাংলা পঞ্জিকা</a></li>
+                <li><a href="#">একাদশী</a></li>
+                <li><a href="#">উৎসব</a></li>
+                <li><a href="#">গ্রহণ</a></li>
+                <li><a href="#">ক্যালকুলেটর</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4 class="lang-bn">জনপ্রিয় নিবন্ধ</h4>
+            <ul>
+                <li><a href="bangla-calendar-complete-history.html">পঞ্জিকার ইতিহাস</a></li>
+                <li><a href="ekadashi-complete-guide.html">একাদশী গাইড</a></li>
+                <li><a href="durga-puja-2026-schedule.html">দুর্গাপূজা ২০২৬</a></li>
+                <li><a href="solar-eclipse-guide.html">সূর্যগ্রহণ গাইড</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 BanglaPanjika. All rights reserved. | Designed with ❤️ for Bengali Community</p>
+    </div>
+</footer>
+
+</body>
+</html>
