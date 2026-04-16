@@ -6,6 +6,13 @@
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
+        <url>
+        <loc>https://banglapanjika.netlify.app/</loc>
+        <lastmod>2026-04-16</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>5.0</priority>
+    </url>
+
     <url>
         <loc>https://banglapanjika.netlify.app/privacy.html</loc>
         <lastmod>2026-04-15</lastmod>
