@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
+        /* All CSS remains exactly the same */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary: #FF6B35; --primary-dark: #E8551E; --primary-light: #FFF0E8;
@@ -854,83 +855,476 @@
     function setupLiveStream(){ const b=document.getElementById('loadStreamBtn'); if(b)b.addEventListener('click',()=>{ document.getElementById('eclipseStreamWrapper').innerHTML=`<iframe width="100%" height="100%" src="https://www.youtube.com/embed/ktP8-OX4Iug?autoplay=1&mute=0" title="timeanddate Eclipse Live Stream" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`; showToast('🔴 timeanddate লাইভ স্ট্রিম চালু হচ্ছে...'); }); }
     
     // Widget functions
-    async function fetchWeather(){ try{ const r=await fetch('https://api.open-meteo.com/v1/forecast?latitude=23.8103&longitude=90.4125&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&timezone=Asia/Dhaka'); const d=await r.json(); const t=Math.round(d.current.temperature_2m); const h=d.current.relative_humidity_2m; const w=Math.round(d.current.wind_speed_10m); const c=d.current.weather_code; const m={0:{icon:'☀️',desc:'পরিষ্কার'},1:{icon:'🌤️',desc:'আংশিক মেঘলা'},2:{icon:'⛅',desc:'মেঘলা'},3:{icon:'☁️',desc:'ঘন মেঘলা'},45:{icon:'🌫️',desc:'কুয়াশা'},51:{icon:'🌦️',desc:'হালকা বৃষ্টি'},61:{icon:'🌧️',desc:'বৃষ্টি'},80:{icon:'🌦️',desc:'বৃষ্টি'},95:{icon:'⛈️',desc:'বজ্রপাত'}}; const wm=m[c]||{icon:'🌡️',desc:'অজানা'}; document.getElementById('weatherIcon').textContent=wm.icon; document.getElementById('weatherTemp').textContent=`${t}°C`; document.getElementById('weatherDesc').textContent=wm.desc; document.getElementById('weatherHumidity').innerHTML=`<i class="fas fa-tint"></i> ${h}%`; document.getElementById('weatherWind').innerHTML=`<i class="fas fa-wind"></i> ${w} km/h`; }catch(e){}
+    async function fetchWeather(){ 
+        try{ 
+            const r=await fetch('https://api.open-meteo.com/v1/forecast?latitude=23.8103&longitude=90.4125&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&timezone=Asia/Dhaka'); 
+            const d=await r.json(); 
+            const t=Math.round(d.current.temperature_2m); 
+            const h=d.current.relative_humidity_2m; 
+            const w=Math.round(d.current.wind_speed_10m); 
+            const c=d.current.weather_code; 
+            const m={
+                0:{icon:'☀️',desc:'পরিষ্কার'},
+                1:{icon:'🌤️',desc:'আংশিক মেঘলা'},
+                2:{icon:'⛅',desc:'মেঘলা'},
+                3:{icon:'☁️',desc:'ঘন মেঘলা'},
+                45:{icon:'🌫️',desc:'কুয়াশা'},
+                51:{icon:'🌦️',desc:'হালকা বৃষ্টি'},
+                61:{icon:'🌧️',desc:'বৃষ্টি'},
+                80:{icon:'🌦️',desc:'বৃষ্টি'},
+                95:{icon:'⛈️',desc:'বজ্রপাত'}
+            }; 
+            const wm=m[c]||{icon:'🌡️',desc:'অজানা'}; 
+            document.getElementById('weatherIcon').textContent=wm.icon; 
+            document.getElementById('weatherTemp').textContent=`${t}°C`; 
+            document.getElementById('weatherDesc').textContent=wm.desc; 
+            document.getElementById('weatherHumidity').innerHTML=`<i class="fas fa-tint"></i> ${h}%`; 
+            document.getElementById('weatherWind').innerHTML=`<i class="fas fa-wind"></i> ${w} km/h`; 
+        }catch(e){}
     }
     
-    const horoscopeTexts={aries:'আজ আত্মবিশ্বাস বৃদ্ধি পাবে।',taurus:'আর্থিক বিষয়ে সতর্ক থাকুন।',gemini:'যোগাযোগ দক্ষতা বৃদ্ধি পাবে।',cancer:'আবেগপ্রবণ হবেন না।',leo:'নেতৃত্ব দেওয়ার সুযোগ আসবে।',virgo:'পরিকল্পনা অনুযায়ী কাজ হবে।',libra:'সম্পর্কের উন্নতি হবে।',scorpio:'গোপন বিষয় প্রকাশ পেতে পারে।',sagittarius:'ভ্রমণের সুযোগ আসতে পারে।',capricorn:'ক্যারিয়ারে উন্নতি হবে।',aquarius:'নতুন আইডিয়া আসবে।',pisces:'সৃজনশীল কাজে সাফল্য পাবেন।'};
-    async function fetchHoroscope(s){ try{ const r=await fetch(`https://aztro.sameerkumar.website/?sign=${s}&day=today`,{method:'POST'}); const d=await r.json(); document.getElementById('horoscopeText').textContent=d.description||horoscopeTexts[s]; document.getElementById('horoscopeLuck').textContent='⭐'.repeat(Math.min(Math.floor(d.lucky_number/2)||3,5))||'⭐⭐⭐'; document.getElementById('horoscopeColor').textContent=d.color||'লাল'; document.getElementById('horoscopeNumber').textContent=d.lucky_number||'৫'; }catch(e){ document.getElementById('horoscopeText').textContent=horoscopeTexts[s]; } }
+    const horoscopeTexts={
+        aries:'আজ আত্মবিশ্বাস বৃদ্ধি পাবে।',
+        taurus:'আর্থিক বিষয়ে সতর্ক থাকুন।',
+        gemini:'যোগাযোগ দক্ষতা বৃদ্ধি পাবে।',
+        cancer:'আবেগপ্রবণ হবেন না।',
+        leo:'নেতৃত্ব দেওয়ার সুযোগ আসবে।',
+        virgo:'পরিকল্পনা অনুযায়ী কাজ হবে।',
+        libra:'সম্পর্কের উন্নতি হবে।',
+        scorpio:'গোপন বিষয় প্রকাশ পেতে পারে।',
+        sagittarius:'ভ্রমণের সুযোগ আসতে পারে।',
+        capricorn:'ক্যারিয়ারে উন্নতি হবে।',
+        aquarius:'নতুন আইডিয়া আসবে।',
+        pisces:'সৃজনশীল কাজে সাফল্য পাবেন।'
+    };
     
-    async function fetchExchangeRates(){ try{ const r=await fetch('https://api.exchangerate-api.com/v4/latest/BDT'); const d=await r.json(); const rates=d.rates; document.getElementById('usdRate').textContent=`৳ ${(1/rates.USD).toFixed(2)}`; document.getElementById('eurRate').textContent=`৳ ${(1/rates.EUR).toFixed(2)}`; document.getElementById('gbpRate').textContent=`৳ ${(1/rates.GBP).toFixed(2)}`; document.getElementById('inrRate').textContent=`৳ ${(1/rates.INR).toFixed(2)}`; document.getElementById('aedRate').textContent=`৳ ${(1/rates.AED).toFixed(2)}`; document.getElementById('exchangeUpdate').textContent=`🕐 ${new Date().toLocaleTimeString('bn-BD',{hour:'2-digit',minute:'2-digit'})}`; }catch(e){ document.getElementById('usdRate').textContent='৳ ১২১.৫০'; document.getElementById('eurRate').textContent='৳ ১৩২.৮০'; document.getElementById('gbpRate').textContent='৳ ১৫৫.২০'; document.getElementById('inrRate').textContent='৳ ১.৪৫'; document.getElementById('aedRate').textContent='৳ ৩৩.১০'; } }
+    async function fetchHoroscope(s){ 
+        try{ 
+            const r=await fetch(`https://aztro.sameerkumar.website/?sign=${s}&day=today`,{method:'POST'}); 
+            const d=await r.json(); 
+            document.getElementById('horoscopeText').textContent=d.description||horoscopeTexts[s]; 
+            document.getElementById('horoscopeLuck').textContent='⭐'.repeat(Math.min(Math.floor(d.lucky_number/2)||3,5))||'⭐⭐⭐'; 
+            document.getElementById('horoscopeColor').textContent=d.color||'লাল'; 
+            document.getElementById('horoscopeNumber').textContent=d.lucky_number||'৫'; 
+        }catch(e){ 
+            document.getElementById('horoscopeText').textContent=horoscopeTexts[s]; 
+        } 
+    }
     
-    function initWidgets(){ fetchWeather(); setInterval(fetchWeather,30*60*1000); fetchHoroscope('aries'); document.getElementById('zodiacSelect').addEventListener('change',function(){ fetchHoroscope(this.value); }); fetchExchangeRates(); setInterval(fetchExchangeRates,60*60*1000); }
+    async function fetchExchangeRates(){ 
+        try{ 
+            const r=await fetch('https://api.exchangerate-api.com/v4/latest/BDT'); 
+            const d=await r.json(); 
+            const rates=d.rates; 
+            document.getElementById('usdRate').textContent=`৳ ${(1/rates.USD).toFixed(2)}`; 
+            document.getElementById('eurRate').textContent=`৳ ${(1/rates.EUR).toFixed(2)}`; 
+            document.getElementById('gbpRate').textContent=`৳ ${(1/rates.GBP).toFixed(2)}`; 
+            document.getElementById('inrRate').textContent=`৳ ${(1/rates.INR).toFixed(2)}`; 
+            document.getElementById('aedRate').textContent=`৳ ${(1/rates.AED).toFixed(2)}`; 
+            document.getElementById('exchangeUpdate').textContent=`🕐 ${new Date().toLocaleTimeString('bn-BD',{hour:'2-digit',minute:'2-digit'})}`; 
+        }catch(e){ 
+            document.getElementById('usdRate').textContent='৳ ১২১.৫০'; 
+            document.getElementById('eurRate').textContent='৳ ১৩২.৮০'; 
+            document.getElementById('gbpRate').textContent='৳ ১৫৫.২০'; 
+            document.getElementById('inrRate').textContent='৳ ১.৪৫'; 
+            document.getElementById('aedRate').textContent='৳ ৩৩.১০'; 
+        } 
+    }
     
-    function updateSpecialBanner(){ const b=document.getElementById('specialBanner'); const i=document.getElementById('bannerIcon'); const t=document.getElementById('bannerTitle'); const d=document.getElementById('bannerDesc'); const c=document.getElementById('bannerCountdown'); const cta=document.getElementById('bannerCta'); const bd=getBangladeshDate(); const ts=bd.toISOString().split('T')[0]; const te=ECLIPSE_DATA.find(e=>e.date===ts); const tf=FESTIVALS.find(f=>f.date===ts); const tek=EKADASHI_DATA.find(e=>e[0]===ts); if(isEkadashi(bd)||tek){ b.className='special-banner banner-ekadashi'; i.innerHTML='🕉️'; t.textContent=tek?`আজ ${tek[1]}!`:'আজ একাদশী!'; d.textContent='পবিত্র একাদশী তিথি।'; c.innerHTML='<i class="fas fa-clock"></i> পারণ: আগামীকাল'; }else if(tf){ b.className='special-banner banner-festival'; i.innerHTML='🎉'; t.textContent=`আজ ${tf.name}!`; d.textContent=tf.desc||''; c.innerHTML='<i class="fas fa-gift"></i> শুভেচ্ছা!'; }else if(te){ b.className='special-banner banner-eclipse'; i.innerHTML=te.type==='solar'?'🌑':'🌕'; t.textContent=`আজ ${te.name}!`; d.textContent=te.desc; c.innerHTML=te.visibleInBD?'🇧🇩 বাংলাদেশ থেকে দৃশ্যমান':'⚠️ দৃশ্যমান নয়'; }else{ b.className='special-banner banner-default'; i.innerHTML='📅'; t.textContent='BanglaPanjika'; d.textContent='ক্যালেন্ডার • একাদশী • উৎসব • গ্রহণকাল
-''; c.innerHTML='আজ: '+bd.toLocaleDateString('bn-BD',{timeZone:'Asia/Dhaka'}); } }
+    function initWidgets(){ 
+        fetchWeather(); 
+        setInterval(fetchWeather,30*60*1000); 
+        fetchHoroscope('aries'); 
+        document.getElementById('zodiacSelect').addEventListener('change',function(){ fetchHoroscope(this.value); }); 
+        fetchExchangeRates(); 
+        setInterval(fetchExchangeRates,60*60*1000); 
+    }
     
-    function updateUpcomingEvents(){ const bd=getBangladeshDate(); const up=EKADASHI_DATA.filter(e=>new Date(e[0])>bd).slice(0,3); document.getElementById('upcomingEvents').innerHTML=up.map(e=>{ const d=new Date(e[0]); const days=Math.ceil((d-bd)/86400000); return `<div style="padding:12px; border-bottom:1px solid var(--border-light);"><strong>🕉️ ${e[1]}</strong><br><small>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} • ${days} দিন বাকি</small></div>`; }).join('')||'<p>কোনো আসন্ন একাদশী নেই</p>'; }
+    function updateSpecialBanner(){ 
+        const b=document.getElementById('specialBanner'); 
+        const i=document.getElementById('bannerIcon'); 
+        const t=document.getElementById('bannerTitle'); 
+        const d=document.getElementById('bannerDesc'); 
+        const c=document.getElementById('bannerCountdown'); 
+        const cta=document.getElementById('bannerCta'); 
+        const bd=getBangladeshDate(); 
+        const ts=bd.toISOString().split('T')[0]; 
+        const te=ECLIPSE_DATA.find(e=>e.date===ts); 
+        const tf=FESTIVALS.find(f=>f.date===ts); 
+        const tek=EKADASHI_DATA.find(e=>e[0]===ts); 
+        if(isEkadashi(bd)||tek){ 
+            b.className='special-banner banner-ekadashi'; 
+            i.innerHTML='🕉️'; 
+            t.textContent=tek?`আজ ${tek[1]}!`:'আজ একাদশী!'; 
+            d.textContent='পবিত্র একাদশী তিথি।'; 
+            c.innerHTML='<i class="fas fa-clock"></i> পারণ: আগামীকাল'; 
+        }else if(tf){ 
+            b.className='special-banner banner-festival'; 
+            i.innerHTML='🎉'; 
+            t.textContent=`আজ ${tf.name}!`; 
+            d.textContent=tf.desc||''; 
+            c.innerHTML='<i class="fas fa-gift"></i> শুভেচ্ছা!'; 
+        }else if(te){ 
+            b.className='special-banner banner-eclipse'; 
+            i.innerHTML=te.type==='solar'?'🌑':'🌕'; 
+            t.textContent=`আজ ${te.name}!`; 
+            d.textContent=te.desc; 
+            c.innerHTML=te.visibleInBD?'🇧🇩 বাংলাদেশ থেকে দৃশ্যমান':'⚠️ দৃশ্যমান নয়'; 
+        }else{ 
+            b.className='special-banner banner-default'; 
+            i.innerHTML='📅'; 
+            t.textContent='BanglaPanjika'; 
+            d.textContent='ক্যালেন্ডার • একাদশী • উৎসব • গ্রহণকাল'; 
+            c.innerHTML='আজ: '+bd.toLocaleDateString('bn-BD',{timeZone:'Asia/Dhaka'}); 
+        } 
+    }
     
-    function updateTodayHighlight(){ const bd=getBangladeshDate(); const tithi=getTithi(bd); const bdGov=getBanglaDateGov(bd); const bdHindu=getBanglaDateHindu(bd); const isEkad=isEkadashi(bd); const ts=bd.toISOString().split('T')[0]; const tf=FESTIVALS.find(f=>f.date===ts); let h=`<p><strong>📅 সরকারি:</strong> ${bdGov.day} ${BANGLA_MONTHS[bdGov.month]} ${bdGov.year}</p>`; h+=`<p><strong>🕉️ হিন্দু:</strong> ${bdHindu.day} ${BANGLA_MONTHS[bdHindu.month]} ${bdHindu.year}</p>`; h+=`<p><strong>🌙 তিথি:</strong> ${tithi} ${isEkad?'🕉️':''}</p>`; if(tf)h+=`<p><strong>🎉 উৎসব:</strong> ${tf.name}</p>`; h+=`<p><strong>☀️ সূর্যোদয়:</strong> ৫:৩০ | <strong>সূর্যাস্ত:</strong> ১৮:১৫</p><p style="margin-top:8px; font-size:0.8rem; color:var(--text-muted);"><i class="fas fa-clock"></i> বাংলাদেশ সময় (BST)</p>`; document.getElementById('todayHighlight').innerHTML=h; }
+    function updateUpcomingEvents(){ 
+        const bd=getBangladeshDate(); 
+        const up=EKADASHI_DATA.filter(e=>new Date(e[0])>bd).slice(0,3); 
+        document.getElementById('upcomingEvents').innerHTML=up.map(e=>{ 
+            const d=new Date(e[0]); 
+            const days=Math.ceil((d-bd)/86400000); 
+            return `<div style="padding:12px; border-bottom:1px solid var(--border-light);"><strong>🕉️ ${e[1]}</strong><br><small>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} • ${days} দিন বাকি</small></div>`; 
+        }).join('')||'<p>কোনো আসন্ন একাদশী নেই</p>'; 
+    }
     
-    window.showCalculator=function(type){ const p=document.getElementById('activeCalculator'); const c={age:'<h4>Age</h4><input type="date" id="calcBirth" class="calc-input"><button class="btn btn-primary" onclick="window.calcAge()">Calculate</button><div id="calcResult" class="calc-result"></div>',bmi:'<h4>BMI</h4><input type="number" id="calcWeight" class="calc-input" placeholder="kg"><input type="number" id="calcHeight" class="calc-input" placeholder="cm"><button class="btn btn-primary" onclick="window.calcBMI()">Calculate</button><div id="calcResult" class="calc-result"></div>'}; p.innerHTML=c[type]||'<p>Select a calculator</p>'; };
-    window.calcAge=function(){ const b=new Date(document.getElementById('calcBirth').value); if(isNaN(b))return; const bd=getBangladeshDate(); document.getElementById('calcResult').innerHTML=`<strong>${bd.getFullYear()-b.getFullYear()} years</strong>`; };
-    window.calcBMI=function(){ const w=parseFloat(document.getElementById('calcWeight').value); const h=parseFloat(document.getElementById('calcHeight').value)/100; if(!w||!h)return; document.getElementById('calcResult').innerHTML=`<strong>BMI: ${(w/(h*h)).toFixed(1)}</strong>`; };
+    function updateTodayHighlight(){ 
+        const bd=getBangladeshDate(); 
+        const tithi=getTithi(bd); 
+        const bdGov=getBanglaDateGov(bd); 
+        const bdHindu=getBanglaDateHindu(bd); 
+        const isEkad=isEkadashi(bd); 
+        const ts=bd.toISOString().split('T')[0]; 
+        const tf=FESTIVALS.find(f=>f.date===ts); 
+        let h=`<p><strong>📅 সরকারি:</strong> ${bdGov.day} ${BANGLA_MONTHS[bdGov.month]} ${bdGov.year}</p>`; 
+        h+=`<p><strong>🕉️ হিন্দু:</strong> ${bdHindu.day} ${BANGLA_MONTHS[bdHindu.month]} ${bdHindu.year}</p>`; 
+        h+=`<p><strong>🌙 তিথি:</strong> ${tithi} ${isEkad?'🕉️':''}</p>`; 
+        if(tf)h+=`<p><strong>🎉 উৎসব:</strong> ${tf.name}</p>`; 
+        h+=`<p><strong>☀️ সূর্যোদয়:</strong> ৫:৩০ | <strong>সূর্যাস্ত:</strong> ১৮:১৫</p><p style="margin-top:8px; font-size:0.8rem; color:var(--text-muted);"><i class="fas fa-clock"></i> বাংলাদেশ সময় (BST)</p>`; 
+        document.getElementById('todayHighlight').innerHTML=h; 
+    }
     
-    function renderPanjikaStats(){ const bd=getBanglaDate(currentViewDate,currentCalendarType); const tithi=getTithi(currentViewDate); const label=currentCalendarType==='gov'?'সরকারি':'হিন্দু'; document.getElementById('panjikaStats').innerHTML=`<div class="stat-card"><h4>তিথি</h4><div class="value">${tithi}</div></div><div class="stat-card"><h4>বাংলা (${label})</h4><div class="value">${bd.day} ${BANGLA_MONTHS[bd.month]}</div><p>${bd.year}</p></div><div class="stat-card"><h4>ইংরেজি</h4><div class="value">${currentViewDate.getDate()} ${ENG_MONTHS_SHORT[currentViewDate.getMonth()]}</div></div><div class="stat-card"><h4>সূর্যোদয়</h4><div class="value">৫:৩০ / ১৮:১৫</div></div>`; }
+    window.showCalculator=function(type){ 
+        const p=document.getElementById('activeCalculator'); 
+        const c={
+            age:'<h4>Age</h4><input type="date" id="calcBirth" class="calc-input"><button class="btn btn-primary" onclick="window.calcAge()">Calculate</button><div id="calcResult" class="calc-result"></div>',
+            bmi:'<h4>BMI</h4><input type="number" id="calcWeight" class="calc-input" placeholder="kg"><input type="number" id="calcHeight" class="calc-input" placeholder="cm"><button class="btn btn-primary" onclick="window.calcBMI()">Calculate</button><div id="calcResult" class="calc-result"></div>'
+        }; 
+        p.innerHTML=c[type]||'<p>Select a calculator</p>'; 
+    };
     
-    function renderBanglaCalendar(){ const bd=getBanglaDate(currentViewDate,currentCalendarType); const first=new Date(currentViewDate.getFullYear(),currentViewDate.getMonth(),1); const days=new Date(currentViewDate.getFullYear(),currentViewDate.getMonth()+1,0).getDate(); let h=`<div style="display:flex; justify-content:space-between; margin-bottom:20px;"><h3>${BANGLA_MONTHS[bd.month]} ${bd.year} (${currentCalendarType==='gov'?'সরকারি':'হিন্দু'})</h3><div><button class="btn" onclick="window.changeMonth(-1)">←</button><button class="btn" onclick="window.changeMonth(1)">→</button></div></div><div style="display:grid; grid-template-columns:repeat(7,1fr); gap:8px;">`; ['সোম','মঙ্গল','বুধ','বৃহঃ','শুক্র','শনি','রবি'].forEach(d=>h+=`<div style="text-align:center; font-weight:700;">${d}</div>`); const so=first.getDay()===0?6:first.getDay()-1; for(let i=0;i<so;i++)h+='<div></div>'; const bdt=getBangladeshDate(); for(let d=1;d<=days;d++){ const dt=new Date(currentViewDate.getFullYear(),currentViewDate.getMonth(),d); const tithi=getTithi(dt); const isToday=dt.toDateString()===bdt.toDateString(); const isEkad=tithi==="একাদশী"; h+=`<div style="padding:12px; text-align:center; border-radius:12px; background:${isToday?'var(--success)':(isEkad?'var(--primary-light)':'var(--bg-card)')}; color:${isToday?'white':''}; border:${isEkad?'3px solid var(--purple)':'1px solid var(--border-light)'}; cursor:pointer;" onclick="window.selectDate('${dt.toISOString()}')"><div style="font-weight:700;">${d}</div><small>${tithi.substring(0,6)}</small></div>`; } h+='</div>'; document.getElementById('banglaCalendarWidget').innerHTML=h; }
+    window.calcAge=function(){ 
+        const b=new Date(document.getElementById('calcBirth').value); 
+        if(isNaN(b))return; 
+        const bd=getBangladeshDate(); 
+        document.getElementById('calcResult').innerHTML=`<strong>${bd.getFullYear()-b.getFullYear()} years</strong>`; 
+    };
     
-    function renderPanchanga(){ document.getElementById('panchangaContent').innerHTML=`<table class="data-table"><tr><td><strong>তিথি</strong></td><td>${getTithi(currentViewDate)}</td></tr><tr><td><strong>পক্ষ</strong></td><td>${TITHIS.indexOf(getTithi(currentViewDate))<15?'শুক্লপক্ষ':'কৃষ্ণপক্ষ'}</td></tr></table>`; }
-    function renderMuhurta(){ document.getElementById('muhurtaContent').innerHTML=`<div style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px;"><div style="padding:20px; background:var(--primary-light);"><h4>🕉️ ব্রহ্ম মুহূর্ত</h4><p>৪:৩০ - ৫:১৫</p></div><div style="padding:20px; background:var(--primary-light);"><h4>✨ অভিজিৎ</h4><p>১১:৫০ - ১২:৪০</p></div></div>`; }
-    function renderPanjikaArticle(){ document.getElementById('panjikaArticle').innerHTML=`<h3>বাংলা পঞ্জিকা - দ্বৈত ব্যবস্থা</h3><p>বাংলাদেশে দুটি বাংলা পঞ্জিকা প্রচলিত: সরকারি (পহেলা বৈশাখ ১৪ এপ্রিল) এবং হিন্দু পঞ্জিকা (পহেলা বৈশাখ ১৫ এপ্রিল)। আমাদের সাইটে ২০২৬-২০৪০ পর্যন্ত তথ্য রয়েছে।</p>`; }
+    window.calcBMI=function(){ 
+        const w=parseFloat(document.getElementById('calcWeight').value); 
+        const h=parseFloat(document.getElementById('calcHeight').value)/100; 
+        if(!w||!h)return; 
+        document.getElementById('calcResult').innerHTML=`<strong>BMI: ${(w/(h*h)).toFixed(1)}</strong>`; 
+    };
     
-    function renderGrahan(){ const byYear={}; ECLIPSE_DATA.forEach(e=>{ if(!byYear[e.year])byYear[e.year]=[]; byYear[e.year].push(e); }); let h=''; Object.keys(byYear).sort((a,b)=>a-b).forEach(y=>{ h+=`<div class="eclipse-year-section"><div class="eclipse-year-title">${y} সালের গ্রহণসমূহ</div>`; byYear[y].forEach(e=>{ const d=new Date(e.date); const vb=e.visibleInBD?'<span class="visibility-badge visibility-yes"><i class="fas fa-check-circle"></i> বাংলাদেশ থেকে দৃশ্যমান</span>':'<span class="visibility-badge visibility-no"><i class="fas fa-times-circle"></i> বাংলাদেশ থেকে দৃশ্যমান নয়</span>'; h+=`<div class="eclipse-card ${e.type}"><div style="display:flex; align-items:center; gap:12px;"><i class="fas fa-${e.type==='solar'?'sun':'moon'}"></i><h3>${e.name} (${e.eclipseType})</h3>${vb}</div><p><strong>📅 তারিখ:</strong> ${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}</p><p><strong>🌍 দৃশ্যমান:</strong> ${e.desc}</p></div>`; }); h+='</div>'; }); document.getElementById('grahanContainer').innerHTML=h; }
+    function renderPanjikaStats(){ 
+        const bd=getBanglaDate(currentViewDate,currentCalendarType); 
+        const tithi=getTithi(currentViewDate); 
+        const label=currentCalendarType==='gov'?'সরকারি':'হিন্দু'; 
+        document.getElementById('panjikaStats').innerHTML=`
+            <div class="stat-card"><h4>তিথি</h4><div class="value">${tithi}</div></div>
+            <div class="stat-card"><h4>বাংলা (${label})</h4><div class="value">${bd.day} ${BANGLA_MONTHS[bd.month]}</div><p>${bd.year}</p></div>
+            <div class="stat-card"><h4>ইংরেজি</h4><div class="value">${currentViewDate.getDate()} ${ENG_MONTHS_SHORT[currentViewDate.getMonth()]}</div></div>
+            <div class="stat-card"><h4>সূর্যোদয়</h4><div class="value">৫:৩০ / ১৮:১৫</div></div>
+        `; 
+    }
     
-    function renderEkadashiTable(){ document.getElementById('ekadashiTableContainer').innerHTML=`<table class="data-table"><thead><tr><th>তারিখ</th><th>বার</th><th>একাদশী</th></tr></thead><tbody>${EKADASHI_DATA.map(e=>{ const d=new Date(e[0]); return `<tr><td>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}</td><td>${WEEKDAYS_BN[d.getDay()]}</td><td>${e[1]}</td></tr>`; }).join('')}</tbody></table>`; }
+    function renderBanglaCalendar(){ 
+        const bd=getBanglaDate(currentViewDate,currentCalendarType); 
+        const first=new Date(currentViewDate.getFullYear(),currentViewDate.getMonth(),1); 
+        const days=new Date(currentViewDate.getFullYear(),currentViewDate.getMonth()+1,0).getDate(); 
+        let h=`<div style="display:flex; justify-content:space-between; margin-bottom:20px;"><h3>${BANGLA_MONTHS[bd.month]} ${bd.year} (${currentCalendarType==='gov'?'সরকারি':'হিন্দু'})</h3><div><button class="btn" onclick="window.changeMonth(-1)">←</button><button class="btn" onclick="window.changeMonth(1)">→</button></div></div><div style="display:grid; grid-template-columns:repeat(7,1fr); gap:8px;">`; 
+        ['সোম','মঙ্গল','বুধ','বৃহঃ','শুক্র','শনি','রবি'].forEach(d=>h+=`<div style="text-align:center; font-weight:700;">${d}</div>`); 
+        const so=first.getDay()===0?6:first.getDay()-1; 
+        for(let i=0;i<so;i++)h+='<div></div>'; 
+        const bdt=getBangladeshDate(); 
+        for(let d=1;d<=days;d++){ 
+            const dt=new Date(currentViewDate.getFullYear(),currentViewDate.getMonth(),d); 
+            const tithi=getTithi(dt); 
+            const isToday=dt.toDateString()===bdt.toDateString(); 
+            const isEkad=tithi==="একাদশী"; 
+            h+=`<div style="padding:12px; text-align:center; border-radius:12px; background:${isToday?'var(--success)':(isEkad?'var(--primary-light)':'var(--bg-card)')}; color:${isToday?'white':''}; border:${isEkad?'3px solid var(--purple)':'1px solid var(--border-light)'}; cursor:pointer;" onclick="window.selectDate('${dt.toISOString()}')"><div style="font-weight:700;">${d}</div><small>${tithi.substring(0,6)}</small></div>`; 
+        } 
+        h+='</div>'; 
+        document.getElementById('banglaCalendarWidget').innerHTML=h; 
+    }
+    
+    function renderPanchanga(){ 
+        document.getElementById('panchangaContent').innerHTML=`
+            <table class="data-table">
+                <tr><td><strong>তিথি</strong></td><td>${getTithi(currentViewDate)}</td></tr>
+                <tr><td><strong>পক্ষ</strong></td><td>${TITHIS.indexOf(getTithi(currentViewDate))<15?'শুক্লপক্ষ':'কৃষ্ণপক্ষ'}</td></tr>
+            </table>
+        `; 
+    }
+    
+    function renderMuhurta(){ 
+        document.getElementById('muhurtaContent').innerHTML=`
+            <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px;">
+                <div style="padding:20px; background:var(--primary-light);"><h4>🕉️ ব্রহ্ম মুহূর্ত</h4><p>৪:৩০ - ৫:১৫</p></div>
+                <div style="padding:20px; background:var(--primary-light);"><h4>✨ অভিজিৎ</h4><p>১১:৫০ - ১২:৪০</p></div>
+            </div>
+        `; 
+    }
+    
+    function renderPanjikaArticle(){ 
+        document.getElementById('panjikaArticle').innerHTML=`
+            <h3>বাংলা পঞ্জিকা - দ্বৈত ব্যবস্থা</h3>
+            <p>বাংলাদেশে দুটি বাংলা পঞ্জিকা প্রচলিত: সরকারি (পহেলা বৈশাখ ১৪ এপ্রিল) এবং হিন্দু পঞ্জিকা (পহেলা বৈশাখ ১৫ এপ্রিল)। আমাদের সাইটে ২০২৬-২০৪০ পর্যন্ত তথ্য রয়েছে।</p>
+        `; 
+    }
+    
+    function renderGrahan(){ 
+        const byYear={}; 
+        ECLIPSE_DATA.forEach(e=>{ 
+            if(!byYear[e.year])byYear[e.year]=[]; 
+            byYear[e.year].push(e); 
+        }); 
+        let h=''; 
+        Object.keys(byYear).sort((a,b)=>a-b).forEach(y=>{ 
+            h+=`<div class="eclipse-year-section"><div class="eclipse-year-title">${y} সালের গ্রহণসমূহ</div>`; 
+            byYear[y].forEach(e=>{ 
+                const d=new Date(e.date); 
+                const vb=e.visibleInBD?'<span class="visibility-badge visibility-yes"><i class="fas fa-check-circle"></i> বাংলাদেশ থেকে দৃশ্যমান</span>':'<span class="visibility-badge visibility-no"><i class="fas fa-times-circle"></i> বাংলাদেশ থেকে দৃশ্যমান নয়</span>'; 
+                h+=`<div class="eclipse-card ${e.type}"><div style="display:flex; align-items:center; gap:12px;"><i class="fas fa-${e.type==='solar'?'sun':'moon'}"></i><h3>${e.name} (${e.eclipseType})</h3>${vb}</div><p><strong>📅 তারিখ:</strong> ${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}</p><p><strong>🌍 দৃশ্যমান:</strong> ${e.desc}</p></div>`; 
+            }); 
+            h+='</div>'; 
+        }); 
+        document.getElementById('grahanContainer').innerHTML=h; 
+    }
+    
+    function renderEkadashiTable(){ 
+        document.getElementById('ekadashiTableContainer').innerHTML=`
+            <table class="data-table">
+                <thead><tr><th>তারিখ</th><th>বার</th><th>একাদশী</th></tr></thead>
+                <tbody>
+                    ${EKADASHI_DATA.map(e=>{ 
+                        const d=new Date(e[0]); 
+                        return `<tr><td>${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}</td><td>${WEEKDAYS_BN[d.getDay()]}</td><td>${e[1]}</td></tr>`; 
+                    }).join('')}
+                </tbody>
+            </table>
+        `; 
+    }
     
     function renderFestivals(){ 
-        document.getElementById('festivalsContainer').innerHTML=`<table class="data-table"><thead><tr><th>উৎসব</th><th>তারিখ</th><th>বিবরণ</th></tr></thead><tbody>${FESTIVALS.map(f=>{ 
-            const d=new Date(f.date); 
-            const displayDate = f.endDate ? `${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} - ${new Date(f.endDate).getDate()} ${ENG_MONTHS_SHORT[new Date(f.endDate).getMonth()]} ${d.getFullYear()}` : `${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}`;
-            return `<tr><td><strong>${f.name}</strong></td><td>${displayDate}</td><td>${f.desc||''}</td></tr>`; 
-        }).join('')}</tbody></table>`; 
+        document.getElementById('festivalsContainer').innerHTML=`
+            <table class="data-table">
+                <thead><tr><th>উৎসব</th><th>তারিখ</th><th>বিবরণ</th></tr></thead>
+                <tbody>
+                    ${FESTIVALS.map(f=>{ 
+                        const d=new Date(f.date); 
+                        const displayDate = f.endDate ? `${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} - ${new Date(f.endDate).getDate()} ${ENG_MONTHS_SHORT[new Date(f.endDate).getMonth()]} ${d.getFullYear()}` : `${d.getDate()} ${ENG_MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}`;
+                        return `<tr><td><strong>${f.name}</strong></td><td>${displayDate}</td><td>${f.desc||''}</td></tr>`; 
+                    }).join('')}
+                </tbody>
+            </table>
+        `; 
     }
     
-    function renderGregorian(){ document.getElementById('gregorianContainer').innerHTML=`<div class="stat-card"><h4>Today</h4><div class="value">${new Date().toDateString()}</div></div>`; document.getElementById('gregorianArticle').innerHTML=`<h3>Gregorian Calendar</h3><p>The Gregorian calendar is the most widely used civil calendar today. Introduced by Pope Gregory XIII in 1582, it refined the Julian calendar's leap year rules. With an average year of 365.2425 days, it stays aligned with the seasons.</p>`; }
-    function renderJulian(){ document.getElementById('julianContainer').innerHTML=`<div class="stat-card"><h4>Julian Day</h4><div class="value">${Math.floor((new Date()/86400000)+2440587.5)}</div></div>`; document.getElementById('julianArticle').innerHTML=`<h3>Julian Calendar</h3><p>Introduced by Julius Caesar in 46 BCE, the Julian calendar established a 365-day year with leap years every 4 years.</p>`; }
-    function renderRoman(){ document.getElementById('romanContainer').innerHTML=`<div class="stat-card"><h4>Roman</h4><div class="value">Kalends/Nones/Ides</div></div>`; document.getElementById('romanArticle').innerHTML=`<h3>Roman Calendar</h3><p>Ancient Roman calendar system that evolved from a 10-month system to a complex lunisolar system.</p>`; }
-    function renderEgyptian(){ document.getElementById('egyptianContainer').innerHTML=`<div class="stat-card"><h4>Egyptian</h4><div class="value">3 Seasons × 4 Months</div></div>`; document.getElementById('egyptianArticle').innerHTML=`<h3>Egyptian Calendar</h3><p>One of the first solar calendars, the Egyptian year had 365 days divided into 3 seasons of 4 months each.</p>`; }
-    function renderChinese(){ document.getElementById('chineseContainer').innerHTML=`<h3>🐎 Year of the Horse</h3><p>Chinese New Year 2026: Feb 17</p>`; document.getElementById('chineseArticle').innerHTML=`<h3>Chinese Calendar</h3><p>Lunisolar calendar with 12 zodiac animals and 24 solar terms.</p>`; }
-    function renderHindu(){ document.getElementById('hinduContainer').innerHTML=`<div class="stat-card"><h4>Vikram Samvat</h4><div class="value">2083</div></div>`; document.getElementById('hinduArticle').innerHTML=`<h3>Hindu Panchang</h3><p>Complex lunisolar calendar tracking tithis, nakshatras, yogas, and karanas.</p>`; }
-    function renderHebrew(){ document.getElementById('hebrewContainer').innerHTML=`<div class="stat-card"><h4>Hebrew</h4><div class="value">5786 AM</div></div>`; document.getElementById('hebrewArticle').innerHTML=`<h3>Hebrew Calendar</h3><p>Lunisolar calendar used for Jewish religious observances. Years counted from Creation.</p>`; }
-    function renderIslamic(){ document.getElementById('islamicContainer').innerHTML=`<div class="stat-card"><h4>Hijri</h4><div class="value">1447 AH</div></div>`; document.getElementById('islamicArticle').innerHTML=`<h3>Islamic Calendar</h3><p>Purely lunar calendar with 12 months. The epoch is the Hijra (622 CE).</p>`; }
+    function renderGregorian(){ 
+        document.getElementById('gregorianContainer').innerHTML=`<div class="stat-card"><h4>Today</h4><div class="value">${new Date().toDateString()}</div></div>`; 
+        document.getElementById('gregorianArticle').innerHTML=`<h3>Gregorian Calendar</h3><p>The Gregorian calendar is the most widely used civil calendar today. Introduced by Pope Gregory XIII in 1582, it refined the Julian calendar's leap year rules. With an average year of 365.2425 days, it stays aligned with the seasons.</p>`; 
+    }
     
-    function renderConverter(){ document.getElementById('converterContainer').innerHTML=`<input type="date" id="converterDateInput" class="calc-input" value="${today.toISOString().split('T')[0]}"><button class="btn btn-primary" id="convertBtn">Convert</button><div id="converterResults"></div>`; document.getElementById('convertBtn').addEventListener('click',()=>{ const d=new Date(document.getElementById('converterDateInput').value); const g=getBanglaDateGov(d); const h=getBanglaDateHindu(d); document.getElementById('converterResults').innerHTML=`<table class="data-table"><tr><td>Gregorian</td><td>${d.toDateString()}</td></tr><tr><td>Bengali (Govt)</td><td>${g.day} ${BANGLA_MONTHS[g.month]} ${g.year}</td></tr><tr><td>Bengali (Hindu)</td><td>${h.day} ${BANGLA_MONTHS[h.month]} ${h.year}</td></tr></table>`; }); }
+    function renderJulian(){ 
+        document.getElementById('julianContainer').innerHTML=`<div class="stat-card"><h4>Julian Day</h4><div class="value">${Math.floor((new Date()/86400000)+2440587.5)}</div></div>`; 
+        document.getElementById('julianArticle').innerHTML=`<h3>Julian Calendar</h3><p>Introduced by Julius Caesar in 46 BCE, the Julian calendar established a 365-day year with leap years every 4 years.</p>`; 
+    }
     
-    window.changeMonth=function(d){ currentViewDate.setMonth(currentViewDate.getMonth()+d); renderPanjikaStats(); renderBanglaCalendar(); };
-    window.selectDate=function(i){ currentViewDate=new Date(i); renderPanjikaStats(); renderBanglaCalendar(); };
+    function renderRoman(){ 
+        document.getElementById('romanContainer').innerHTML=`<div class="stat-card"><h4>Roman</h4><div class="value">Kalends/Nones/Ides</div></div>`; 
+        document.getElementById('romanArticle').innerHTML=`<h3>Roman Calendar</h3><p>Ancient Roman calendar system that evolved from a 10-month system to a complex lunisolar system.</p>`; 
+    }
     
-    function updateClock(){ document.getElementById('liveClock').textContent=getBangladeshTimeString(); }
-    function refreshBangladeshDate(){ const n=getBangladeshDate(); if(n.getDate()!==today.getDate()||n.getMonth()!==today.getMonth()||n.getFullYear()!==today.getFullYear()){ today=n; renderPanjikaStats(); renderBanglaCalendar(); updateTodayHighlight(); updateSpecialBanner(); } }
-    function updateAll(){ refreshBangladeshDate(); updateClock(); updateSpecialBanner(); updateUpcomingEvents(); updateTodayHighlight(); }
+    function renderEgyptian(){ 
+        document.getElementById('egyptianContainer').innerHTML=`<div class="stat-card"><h4>Egyptian</h4><div class="value">3 Seasons × 4 Months</div></div>`; 
+        document.getElementById('egyptianArticle').innerHTML=`<h3>Egyptian Calendar</h3><p>One of the first solar calendars, the Egyptian year had 365 days divided into 3 seasons of 4 months each.</p>`; 
+    }
+    
+    function renderChinese(){ 
+        document.getElementById('chineseContainer').innerHTML=`<h3>🐎 Year of the Horse</h3><p>Chinese New Year 2026: Feb 17</p>`; 
+        document.getElementById('chineseArticle').innerHTML=`<h3>Chinese Calendar</h3><p>Lunisolar calendar with 12 zodiac animals and 24 solar terms.</p>`; 
+    }
+    
+    function renderHindu(){ 
+        document.getElementById('hinduContainer').innerHTML=`<div class="stat-card"><h4>Vikram Samvat</h4><div class="value">2083</div></div>`; 
+        document.getElementById('hinduArticle').innerHTML=`<h3>Hindu Panchang</h3><p>Complex lunisolar calendar tracking tithis, nakshatras, yogas, and karanas.</p>`; 
+    }
+    
+    function renderHebrew(){ 
+        document.getElementById('hebrewContainer').innerHTML=`<div class="stat-card"><h4>Hebrew</h4><div class="value">5786 AM</div></div>`; 
+        document.getElementById('hebrewArticle').innerHTML=`<h3>Hebrew Calendar</h3><p>Lunisolar calendar used for Jewish religious observances. Years counted from Creation.</p>`; 
+    }
+    
+    function renderIslamic(){ 
+        document.getElementById('islamicContainer').innerHTML=`<div class="stat-card"><h4>Hijri</h4><div class="value">1447 AH</div></div>`; 
+        document.getElementById('islamicArticle').innerHTML=`<h3>Islamic Calendar</h3><p>Purely lunar calendar with 12 months. The epoch is the Hijra (622 CE).</p>`; 
+    }
+    
+    function renderConverter(){ 
+        document.getElementById('converterContainer').innerHTML=`
+            <input type="date" id="converterDateInput" class="calc-input" value="${today.toISOString().split('T')[0]}">
+            <button class="btn btn-primary" id="convertBtn">Convert</button>
+            <div id="converterResults"></div>
+        `; 
+        document.getElementById('convertBtn').addEventListener('click',()=>{ 
+            const d=new Date(document.getElementById('converterDateInput').value); 
+            const g=getBanglaDateGov(d); 
+            const h=getBanglaDateHindu(d); 
+            document.getElementById('converterResults').innerHTML=`
+                <table class="data-table">
+                    <tr><td>Gregorian</td><td>${d.toDateString()}</td></tr>
+                    <tr><td>Bengali (Govt)</td><td>${g.day} ${BANGLA_MONTHS[g.month]} ${g.year}</td></tr>
+                    <tr><td>Bengali (Hindu)</td><td>${h.day} ${BANGLA_MONTHS[h.month]} ${h.year}</td></tr>
+                </table>
+            `; 
+        }); 
+    }
+    
+    window.changeMonth=function(d){ 
+        currentViewDate.setMonth(currentViewDate.getMonth()+d); 
+        renderPanjikaStats(); 
+        renderBanglaCalendar(); 
+    };
+    
+    window.selectDate=function(i){ 
+        currentViewDate=new Date(i); 
+        renderPanjikaStats(); 
+        renderBanglaCalendar(); 
+    };
+    
+    function updateClock(){ 
+        document.getElementById('liveClock').textContent=getBangladeshTimeString(); 
+    }
+    
+    function refreshBangladeshDate(){ 
+        const n=getBangladeshDate(); 
+        if(n.getDate()!==today.getDate()||n.getMonth()!==today.getMonth()||n.getFullYear()!==today.getFullYear()){ 
+            today=n; 
+            renderPanjikaStats(); 
+            renderBanglaCalendar(); 
+            updateTodayHighlight(); 
+            updateSpecialBanner(); 
+        } 
+    }
+    
+    function updateAll(){ 
+        refreshBangladeshDate(); 
+        updateClock(); 
+        updateSpecialBanner(); 
+        updateUpcomingEvents(); 
+        updateTodayHighlight(); 
+    }
     
     function init(){
-        today=getBangladeshDate(); currentViewDate=new Date(today);
-        updateClock(); setInterval(updateClock,1000); setInterval(updateAll,60000);
-        renderPanjikaStats(); renderBanglaCalendar(); renderPanchanga(); renderMuhurta(); renderPanjikaArticle();
-        renderGrahan(); renderEkadashiTable(); renderFestivals();
-        renderGregorian(); renderJulian(); renderRoman(); renderEgyptian(); renderChinese(); renderHindu(); renderHebrew(); renderIslamic();
-        renderConverter(); setupLiveStream(); initWidgets(); updateAll();
+        today=getBangladeshDate(); 
+        currentViewDate=new Date(today);
+        updateClock(); 
+        setInterval(updateClock,1000); 
+        setInterval(updateAll,60000);
+        renderPanjikaStats(); 
+        renderBanglaCalendar(); 
+        renderPanchanga(); 
+        renderMuhurta(); 
+        renderPanjikaArticle();
+        renderGrahan(); 
+        renderEkadashiTable(); 
+        renderFestivals();
+        renderGregorian(); 
+        renderJulian(); 
+        renderRoman(); 
+        renderEgyptian(); 
+        renderChinese(); 
+        renderHindu(); 
+        renderHebrew(); 
+        renderIslamic();
+        renderConverter(); 
+        setupLiveStream(); 
+        initWidgets(); 
+        updateAll();
         
-        document.querySelectorAll('.toggle-option').forEach(o=>o.addEventListener('click',function(){ document.querySelectorAll('.toggle-option').forEach(x=>x.classList.remove('active')); this.classList.add('active'); currentCalendarType=this.dataset.type; renderPanjikaStats(); renderBanglaCalendar(); }));
-        document.querySelectorAll('.nav-item').forEach(i=>i.addEventListener('click',function(){ document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active')); this.classList.add('active'); document.querySelectorAll('.module-container').forEach(c=>c.classList.remove('active')); document.getElementById(`module-${this.dataset.module}`).classList.add('active'); document.getElementById('currentModule').textContent=this.textContent.trim(); }));
-        document.querySelectorAll('#panjikaTabs .tab-btn').forEach(t=>t.addEventListener('click',function(){ document.querySelectorAll('#panjikaTabs .tab-btn').forEach(x=>x.classList.remove('active')); document.querySelectorAll('#panjikaTabContent .tab-pane').forEach(p=>p.classList.remove('active')); this.classList.add('active'); document.getElementById(`${this.dataset.tab}-tab`).classList.add('active'); }));
-        document.getElementById('themeToggle').addEventListener('click',function(){ document.body.classList.toggle('dark'); const isDark=document.body.classList.contains('dark'); this.innerHTML=isDark?'<i class="fas fa-sun"></i> <span>Light</span>':'<i class="fas fa-moon"></i> <span>Dark</span>'; localStorage.setItem('theme',isDark?'dark':'light'); });
-        if(localStorage.getItem('theme')==='dark'){ document.body.classList.add('dark'); document.getElementById('themeToggle').innerHTML='<i class="fas fa-sun"></i> <span>Light</span>'; }
-        document.getElementById('panjikaTodayBtn').addEventListener('click',()=>{ currentViewDate=getBangladeshDate(); renderPanjikaStats(); renderBanglaCalendar(); });
-        document.getElementById('panjikaPrevBtn').addEventListener('click',()=>{ currentViewDate.setDate(currentViewDate.getDate()-1); renderPanjikaStats(); renderBanglaCalendar(); });
-        document.getElementById('panjikaNextBtn').addEventListener('click',()=>{ currentViewDate.setDate(currentViewDate.getDate()+1); renderPanjikaStats(); renderBanglaCalendar(); });
-        document.getElementById('panjikaDatePicker').addEventListener('change',e=>{ if(e.target.value){ currentViewDate=new Date(e.target.value); renderPanjikaStats(); renderBanglaCalendar(); } });
-        document.getElementById('shareBtn').addEventListener('click',()=>{ navigator.clipboard?.writeText('https://banglapanjika.netlify.app'); showToast('🔗 Link copied!'); });
+        document.querySelectorAll('.toggle-option').forEach(o=>o.addEventListener('click',function(){ 
+            document.querySelectorAll('.toggle-option').forEach(x=>x.classList.remove('active')); 
+            this.classList.add('active'); 
+            currentCalendarType=this.dataset.type; 
+            renderPanjikaStats(); 
+            renderBanglaCalendar(); 
+        }));
+        
+        document.querySelectorAll('.nav-item').forEach(i=>i.addEventListener('click',function(){ 
+            document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active')); 
+            this.classList.add('active'); 
+            document.querySelectorAll('.module-container').forEach(c=>c.classList.remove('active')); 
+            const moduleId = `module-${this.dataset.module}`;
+            const moduleElement = document.getElementById(moduleId);
+            if(moduleElement) moduleElement.classList.add('active'); 
+            document.getElementById('currentModule').textContent=this.textContent.trim(); 
+        }));
+        
+        document.querySelectorAll('#panjikaTabs .tab-btn').forEach(t=>t.addEventListener('click',function(){ 
+            document.querySelectorAll('#panjikaTabs .tab-btn').forEach(x=>x.classList.remove('active')); 
+            document.querySelectorAll('#panjikaTabContent .tab-pane').forEach(p=>p.classList.remove('active')); 
+            this.classList.add('active'); 
+            const tabId = `${this.dataset.tab}-tab`;
+            const tabElement = document.getElementById(tabId);
+            if(tabElement) tabElement.classList.add('active'); 
+        }));
+        
+        document.getElementById('themeToggle').addEventListener('click',function(){ 
+            document.body.classList.toggle('dark'); 
+            const isDark=document.body.classList.contains('dark'); 
+            this.innerHTML=isDark?'<i class="fas fa-sun"></i> <span>Light</span>':'<i class="fas fa-moon"></i> <span>Dark</span>'; 
+            localStorage.setItem('theme',isDark?'dark':'light'); 
+        });
+        
+        if(localStorage.getItem('theme')==='dark'){ 
+            document.body.classList.add('dark'); 
+            document.getElementById('themeToggle').innerHTML='<i class="fas fa-sun"></i> <span>Light</span>'; 
+        }
+        
+        document.getElementById('panjikaTodayBtn').addEventListener('click',()=>{ 
+            currentViewDate=getBangladeshDate(); 
+            renderPanjikaStats(); 
+            renderBanglaCalendar(); 
+        });
+        
+        document.getElementById('panjikaPrevBtn').addEventListener('click',()=>{ 
+            currentViewDate.setDate(currentViewDate.getDate()-1); 
+            renderPanjikaStats(); 
+            renderBanglaCalendar(); 
+        });
+        
+        document.getElementById('panjikaNextBtn').addEventListener('click',()=>{ 
+            currentViewDate.setDate(currentViewDate.getDate()+1); 
+            renderPanjikaStats(); 
+            renderBanglaCalendar(); 
+        });
+        
+        document.getElementById('panjikaDatePicker').addEventListener('change',e=>{ 
+            if(e.target.value){ 
+                currentViewDate=new Date(e.target.value); 
+                renderPanjikaStats(); 
+                renderBanglaCalendar(); 
+            } 
+        });
+        
+        document.getElementById('shareBtn').addEventListener('click',()=>{ 
+            navigator.clipboard?.writeText('https://banglapanjika.netlify.app'); 
+            showToast('🔗 Link copied!'); 
+        });
+        
         document.getElementById('panjikaDatePicker').value=today.toISOString().split('T')[0];
     }
     init();
